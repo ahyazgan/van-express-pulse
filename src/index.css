@@ -4,66 +4,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minivan Express Logistics - Bold Dark Theme Design System */
+/* Minivan Express Logistics - DHL-Inspired PWA Design System */
 
 @layer base {
   :root {
-    --background: 222 47% 4%;
-    --foreground: 210 40% 98%;
+    /* DHL-Inspired Color Palette */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 47% 7%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222 47% 7%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 18 100% 60%;
-    --primary-foreground: 222 47% 4%;
+    /* DHL Yellow - Primary Action Color */
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 222 30% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 222 30% 12%;
-    --muted-foreground: 215 20% 55%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 18 100% 60%;
-    --accent-foreground: 222 47% 4%;
+    /* DHL Red - Express/Urgent Color */
+    --accent: 356 94% 43%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 356 94% 43%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 222 30% 18%;
-    --input: 222 30% 18%;
-    --ring: 18 100% 60%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Custom colors */
-    --neon-orange: 18 100% 60%;
-    --neon-orange-glow: 18 100% 50%;
+    /* Custom DHL Colors */
+    --dhl-yellow: 45 100% 50%;
+    --dhl-red: 356 94% 43%;
+    --charcoal: 0 0% 7%;
+    --charcoal-light: 0 0% 12%;
+    --charcoal-elevated: 0 0% 18%;
+    
+    /* Success state */
     --success: 142 76% 45%;
-    --success-glow: 142 76% 55%;
-    --slate-deep: 222 47% 4%;
-    --slate-card: 222 47% 7%;
-    --slate-elevated: 222 30% 14%;
-
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 4%) 0%, hsl(222 30% 12%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 9%) 0%, hsl(222 47% 5%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(18 100% 60%) 0%, hsl(28 100% 55%) 100%);
 
     /* Shadows */
-    --shadow-glow: 0 0 40px -10px hsl(18 100% 50% / 0.4);
-    --shadow-card: 0 4px 24px -8px hsl(0 0% 0% / 0.5);
+    --shadow-sheet: 0 -10px 40px -10px hsl(0 0% 0% / 0.5);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.4);
+    --shadow-glow-yellow: 0 0 30px -5px hsl(45 100% 50% / 0.4);
 
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 18 100% 60%;
-    --sidebar-primary-foreground: 222 47% 4%;
-    --sidebar-accent: 222 30% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 18 100% 60%;
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 100% 50%;
   }
 }
 
@@ -74,61 +74,88 @@
 
   html {
     font-size: 16px;
+    overflow: hidden;
+    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+  }
+
+  #root {
+    height: 100%;
+    overflow: hidden;
   }
 }
 
 @layer components {
+  /* Primary CTA Button with glow */
   .btn-primary-glow {
-    @apply bg-primary text-primary-foreground font-semibold;
-    box-shadow: var(--shadow-glow);
+    @apply bg-primary text-primary-foreground font-bold;
+    box-shadow: var(--shadow-glow-yellow);
     transition: all 0.2s ease;
   }
 
   .btn-primary-glow:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 60px -10px hsl(18 100% 50% / 0.6);
+    box-shadow: 0 0 50px -5px hsl(45 100% 50% / 0.6);
   }
 
   .btn-primary-glow:active {
     transform: translateY(0);
   }
 
+  /* Bottom Sheet styling */
+  .bottom-sheet {
+    @apply bg-card rounded-t-[32px] border-t border-border;
+    box-shadow: var(--shadow-sheet);
+  }
+
+  /* Card with elevation */
   .card-elevated {
-    @apply bg-card border border-border rounded-xl;
-    background: var(--gradient-card);
+    @apply bg-card border border-border rounded-2xl;
     box-shadow: var(--shadow-card);
   }
 
-  .text-gradient-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Vehicle card styling */
+  .vehicle-card {
+    @apply bg-secondary/50 border border-border rounded-2xl p-4 transition-all;
   }
 
-  .pulse-success {
-    @apply relative;
+  .vehicle-card:hover {
+    @apply border-primary/50;
   }
 
-  .pulse-success::before {
-    content: '';
-    @apply absolute inset-0 rounded-full bg-success;
-    animation: pulse-ring 1.5s ease-out infinite;
+  .vehicle-card.selected {
+    @apply border-primary bg-primary/5;
   }
 
-  .pulse-success::after {
-    content: '';
-    @apply absolute inset-1 rounded-full;
-    background: hsl(var(--success));
+  /* Express tag */
+  .express-tag {
+    @apply bg-accent text-accent-foreground text-xs font-bold px-2 py-0.5 rounded-full;
   }
 
+  /* Route chip */
+  .route-chip {
+    @apply bg-secondary text-foreground text-sm font-medium px-4 py-2 rounded-full whitespace-nowrap transition-colors;
+  }
+
+  .route-chip:hover {
+    @apply bg-secondary/80;
+  }
+
+  .route-chip.active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Bottom navigation */
   .bottom-nav-item {
-    @apply flex flex-col items-center justify-center gap-1 text-muted-foreground transition-colors min-h-[48px] min-w-[48px];
+    @apply flex flex-col items-center justify-center gap-1 text-muted-foreground transition-colors min-h-[48px] flex-1;
   }
 
   .bottom-nav-item:hover,
@@ -136,21 +163,36 @@
     @apply text-primary;
   }
 
-  .bento-box {
-    @apply card-elevated p-4 flex flex-col justify-between overflow-hidden;
+  /* Glass effect for floating elements */
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl;
   }
 
-  .tracking-step {
-    @apply relative pl-8 pb-6;
+  /* Pill button */
+  .pill-button {
+    @apply px-4 py-2 rounded-full text-sm font-medium glass border border-border/50;
   }
 
-  .tracking-step::before {
+  /* Sheet handle */
+  .sheet-handle {
+    @apply w-12 h-1.5 rounded-full bg-muted-foreground/30 mx-auto;
+  }
+
+  /* Pulsing dot for live status */
+  .pulse-live {
+    @apply relative;
+  }
+
+  .pulse-live::before {
     content: '';
-    @apply absolute left-[11px] top-6 bottom-0 w-0.5 bg-border;
+    @apply absolute inset-0 rounded-full bg-success;
+    animation: pulse-ring 1.5s ease-out infinite;
   }
 
-  .tracking-step:last-child::before {
-    display: none;
+  .pulse-live::after {
+    content: '';
+    @apply absolute inset-0.5 rounded-full;
+    background: hsl(var(--success));
   }
 }
 
@@ -161,7 +203,11 @@
   }
 
   .safe-bottom {
-    padding-bottom: max(env(safe-area-inset-bottom), 80px);
+    padding-bottom: max(env(safe-area-inset-bottom), 16px);
+  }
+
+  .safe-top {
+    padding-top: max(env(safe-area-inset-top), 16px);
   }
 }
 
