@@ -1,140 +1,58 @@
 import { motion } from "framer-motion";
 import { Truck } from "lucide-react";
+import europeMap from "@/assets/europe-turkey-map.jpg";
 
+// Animated vans positioned along the highway routes (Turkey -> Europe corridor)
 const animatedVans = [
-  { id: 1, startX: 50, startY: 600, endX: 300, endY: 150, duration: 18, delay: 0 },
-  { id: 2, startX: 350, startY: 400, endX: 80, endY: 100, duration: 22, delay: 3 },
-  { id: 3, startX: 150, startY: 300, endX: 320, endY: 500, duration: 16, delay: 6 },
+  // Istanbul to Bulgaria route (E-80)
+  { id: 1, startX: "15%", startY: "75%", endX: "35%", endY: "45%", duration: 20, delay: 0 },
+  // Bulgaria to Romania route
+  { id: 2, startX: "38%", startY: "42%", endX: "52%", endY: "28%", duration: 18, delay: 4 },
+  // Romania to Hungary route (E-90)
+  { id: 3, startX: "55%", startY: "35%", endX: "62%", endY: "25%", duration: 16, delay: 8 },
+  // Hungary to Austria route
+  { id: 4, startX: "65%", startY: "22%", endX: "72%", endY: "18%", duration: 14, delay: 2 },
+  // Austria to Germany route
+  { id: 5, startX: "58%", startY: "15%", endX: "48%", endY: "8%", duration: 22, delay: 6 },
+];
+
+// Key city markers along the route
+const cityMarkers = [
+  { id: "istanbul", x: "18%", y: "72%", label: "İstanbul", isPrimary: true },
+  { id: "sofia", x: "38%", y: "48%", label: "Sofya", isPrimary: false },
+  { id: "bucharest", x: "52%", y: "38%", label: "Bükreş", isPrimary: false },
+  { id: "budapest", x: "58%", y: "28%", label: "Budapeşte", isPrimary: false },
+  { id: "vienna", x: "62%", y: "20%", label: "Viyana", isPrimary: false },
+  { id: "munich", x: "52%", y: "15%", label: "Münih", isPrimary: true },
 ];
 
 const MapBackground = () => {
   return (
     <div className="fixed inset-0 z-0">
-      {/* Premium Light Map Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[hsl(220,20%,97%)] via-[hsl(220,15%,94%)] to-[hsl(220,10%,92%)]" />
+      {/* High-Quality Geographic Map Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${europeMap})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }}
+      />
       
-      {/* Subtle Map Grid Pattern */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-40"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="hsl(220, 15%, 80%)" strokeWidth="0.5" />
-          </pattern>
-          <pattern id="largeGrid" width="100" height="100" patternUnits="userSpaceOnUse">
-            <rect width="100" height="100" fill="url(#smallGrid)" />
-            <path d="M 100 0 L 0 0 0 100" fill="none" stroke="hsl(220, 15%, 75%)" strokeWidth="1" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#largeGrid)" />
-      </svg>
+      {/* Subtle overlay for better UI contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/60" />
 
-      {/* Light Mode Roads */}
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox="0 0 400 800"
-        preserveAspectRatio="xMidYMid slice"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="roadGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(220, 15%, 70%)" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="hsl(220, 15%, 75%)" stopOpacity="0.5" />
-          </linearGradient>
-          <linearGradient id="roadGradient2" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="hsl(220, 15%, 65%)" stopOpacity="0.7" />
-            <stop offset="100%" stopColor="hsl(220, 15%, 78%)" stopOpacity="0.4" />
-          </linearGradient>
-          <linearGradient id="routeActive" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(45, 100%, 50%)" stopOpacity="1" />
-            <stop offset="50%" stopColor="hsl(45, 100%, 55%)" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="hsl(356, 94%, 43%)" stopOpacity="0.7" />
-          </linearGradient>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <filter id="softShadow">
-            <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.15" />
-          </filter>
-        </defs>
-
-        {/* Major Roads - Thicker and more prominent */}
-        <path d="M 0 200 Q 100 180 200 200 T 400 180" fill="none" stroke="url(#roadGradient1)" strokeWidth="16" strokeLinecap="round" filter="url(#softShadow)" />
-        <path d="M 0 450 Q 150 420 250 460 T 400 440" fill="none" stroke="url(#roadGradient1)" strokeWidth="14" strokeLinecap="round" filter="url(#softShadow)" />
-        <path d="M 0 650 Q 200 620 300 670 T 400 640" fill="none" stroke="url(#roadGradient2)" strokeWidth="18" strokeLinecap="round" filter="url(#softShadow)" />
-        
-        {/* Vertical Roads */}
-        <path d="M 100 0 Q 90 200 110 400 T 90 800" fill="none" stroke="url(#roadGradient2)" strokeWidth="12" strokeLinecap="round" />
-        <path d="M 300 0 Q 310 300 290 500 T 310 800" fill="none" stroke="url(#roadGradient1)" strokeWidth="14" strokeLinecap="round" />
-
-        {/* Diagonal Highways */}
-        <path d="M 0 100 L 150 300 L 250 280 L 400 500" fill="none" stroke="url(#roadGradient2)" strokeWidth="8" strokeLinecap="round" />
-        <path d="M 400 100 L 300 250 L 200 350 L 0 600" fill="none" stroke="url(#roadGradient1)" strokeWidth="8" strokeLinecap="round" />
-
-        {/* Active Route - Highlighted */}
-        <motion.path
-          d="M 80 720 Q 120 550 180 450 Q 240 350 280 280 Q 320 210 350 120"
-          fill="none"
-          stroke="url(#routeActive)"
-          strokeWidth="5"
-          strokeLinecap="round"
-          strokeDasharray="14 8"
-          filter="url(#glow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
-        />
-
-        {/* City Markers - Turkey (Istanbul) */}
-        <motion.circle
-          cx="80" cy="720" r="12"
-          fill="hsl(45, 100%, 50%)"
-          filter="url(#glow)"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.3, type: "spring" }}
-        />
-        <motion.circle
-          cx="80" cy="720" r="20"
-          fill="none"
-          stroke="hsl(45, 100%, 50%)"
-          strokeWidth="3"
-          opacity="0.5"
-          initial={{ scale: 0.8, opacity: 0.7 }}
-          animate={{ scale: 1.8, opacity: 0 }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
-        />
-        
-        {/* Destination Marker - Germany */}
-        <motion.circle
-          cx="350" cy="120" r="10"
-          fill="hsl(356, 94%, 43%)"
-          filter="url(#glow)"
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.6, type: "spring" }}
-        />
-        
-        {/* Intermediate Points */}
-        <circle cx="180" cy="450" r="5" fill="hsl(220, 15%, 55%)" />
-        <circle cx="280" cy="280" r="5" fill="hsl(220, 15%, 55%)" />
-      </svg>
-
-      {/* Animated Minivans */}
+      {/* Animated Minivans along highways */}
       {animatedVans.map((van) => (
         <motion.div
           key={van.id}
           className="absolute z-20"
-          initial={{ x: van.startX, y: van.startY, opacity: 0 }}
+          style={{ left: van.startX, top: van.startY }}
+          initial={{ opacity: 0 }}
           animate={{
-            x: [van.startX, (van.startX + van.endX) / 2, van.endX],
-            y: [van.startY, (van.startY + van.endY) / 2 - 50, van.endY],
-            opacity: [0, 1, 1, 0],
+            left: [van.startX, van.endX],
+            top: [van.startY, van.endY],
+            opacity: [0, 1, 1, 1, 0],
           }}
           transition={{
             duration: van.duration,
@@ -144,7 +62,9 @@ const MapBackground = () => {
           }}
         >
           <div className="relative">
-            <div className="absolute -inset-3 bg-primary/30 rounded-full blur-lg" />
+            {/* Glow effect */}
+            <div className="absolute -inset-3 bg-primary/40 rounded-full blur-lg" />
+            {/* Van icon */}
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/90 rounded-xl flex items-center justify-center shadow-lg border-2 border-white">
               <Truck className="w-5 h-5 text-primary-foreground" />
             </div>
@@ -152,43 +72,105 @@ const MapBackground = () => {
         </motion.div>
       ))}
 
-      {/* Pulsing Location Markers */}
-      <div className="absolute top-[15%] left-[20%] z-20">
+      {/* City Markers */}
+      {cityMarkers.map((city, index) => (
         <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1 }}
+          key={city.id}
+          className="absolute z-20"
+          style={{ left: city.x, top: city.y }}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.5 + index * 0.15, type: "spring" }}
         >
-          <motion.div
-            className="absolute inset-0 w-6 h-6 bg-primary rounded-full"
-            animate={{ scale: [1, 2, 1], opacity: [0.7, 0, 0.7] }}
-            transition={{ duration: 2, repeat: Infinity }}
+          {/* Pulsing ring for primary cities */}
+          {city.isPrimary && (
+            <motion.div
+              className="absolute inset-0 w-8 h-8 -translate-x-1/2 -translate-y-1/2 rounded-full"
+              style={{ 
+                background: city.isPrimary 
+                  ? "hsl(45 100% 50%)" 
+                  : "hsl(220 15% 60%)" 
+              }}
+              animate={{ scale: [1, 2, 1], opacity: [0.6, 0, 0.6] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
+            />
+          )}
+          
+          {/* City dot */}
+          <div 
+            className={`w-4 h-4 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2 ${
+              city.isPrimary 
+                ? "bg-primary" 
+                : "bg-muted-foreground/70"
+            }`}
+            style={{ 
+              boxShadow: city.isPrimary 
+                ? "0 0 20px hsl(45 100% 50% / 0.6)" 
+                : "0 2px 8px rgba(0,0,0,0.2)" 
+            }}
           />
-          <div className="w-6 h-6 bg-primary rounded-full shadow-lg border-2 border-white" style={{ boxShadow: '0 0 25px hsl(45, 100%, 50%, 0.6)' }} />
+          
+          {/* City label */}
+          <motion.div
+            className="absolute left-3 top-1/2 -translate-y-1/2 whitespace-nowrap"
+            initial={{ opacity: 0, x: -5 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1 + index * 0.1 }}
+          >
+            <span 
+              className={`text-xs font-bold px-2 py-1 rounded-full backdrop-blur-sm ${
+                city.isPrimary 
+                  ? "bg-primary/90 text-primary-foreground" 
+                  : "bg-card/80 text-foreground border border-border/50"
+              }`}
+            >
+              {city.label}
+            </span>
+          </motion.div>
         </motion.div>
-      </div>
+      ))}
 
-      <div className="absolute top-[40%] right-[25%] z-20">
-        <motion.div
-          className="w-4 h-4 bg-accent rounded-full border-2 border-white"
-          animate={{ scale: [1, 1.4, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          style={{ boxShadow: '0 0 20px hsl(356, 94%, 43%, 0.5)' }}
+      {/* Active Route Line Overlay (Istanbul to Munich) */}
+      <svg
+        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <linearGradient id="routeGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="hsl(45, 100%, 50%)" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="hsl(45, 100%, 55%)" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="hsl(356, 94%, 43%)" stopOpacity="0.5" />
+          </linearGradient>
+          <filter id="routeGlow">
+            <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Animated route path */}
+        <motion.path
+          d="M 18 72 Q 28 60 38 48 Q 45 40 52 38 Q 55 32 58 28 Q 60 24 62 20 Q 56 17 52 15"
+          fill="none"
+          stroke="url(#routeGradient)"
+          strokeWidth="0.4"
+          strokeLinecap="round"
+          strokeDasharray="2 1"
+          filter="url(#routeGlow)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{ duration: 3, ease: "easeInOut", delay: 0.8 }}
         />
-      </div>
+      </svg>
 
-      <div className="absolute bottom-[35%] left-[35%] z-20">
-        <motion.div
-          className="w-5 h-5 bg-muted-foreground/50 rounded-full border-2 border-white"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
-      </div>
-
-      {/* Gradient Overlays for depth - Light version */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40 z-10 pointer-events-none" />
-      <div className="absolute inset-x-0 bottom-0 h-[35%] bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+      {/* Bottom gradient for UI contrast */}
+      <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-background via-background/80 to-transparent z-10 pointer-events-none" />
+      
+      {/* Top gradient for header contrast */}
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/50 to-transparent z-10 pointer-events-none" />
     </div>
   );
 };
