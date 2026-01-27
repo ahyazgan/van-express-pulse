@@ -16,12 +16,12 @@ interface AppNavigationProps {
 const AppNavigation = ({ activeTab, onTabChange }: AppNavigationProps) => {
   return (
     <motion.nav
-      className="fixed bottom-0 left-0 right-0 z-50 safe-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 safe-bottom pointer-events-none"
       initial={{ y: 100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", damping: 20, stiffness: 300 }}
     >
-      <div className="mx-4 mb-2 rounded-2xl border border-border/60 bg-card/95 backdrop-blur-xl shadow-lg">
+      <div className="mx-4 mb-2 rounded-2xl border border-border/60 bg-card/95 backdrop-blur-xl shadow-lg pointer-events-auto">
         <div className="flex items-center justify-around h-16 px-2">
           {navItems.map((item) => (
             <button

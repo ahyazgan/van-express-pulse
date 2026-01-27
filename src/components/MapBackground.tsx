@@ -92,7 +92,7 @@ const MapBackground = () => {
       style: "mapbox://styles/mapbox/light-v11",
       center: [15.0, 45.0],
       zoom: 3.5,
-      interactive: false, // Disable interactions to act as background
+      interactive: true, // Enable map interactions (drag, zoom)
       attributionControl: false,
     });
 
@@ -365,8 +365,8 @@ const MapBackground = () => {
         }
       `}</style>
       
-      <div className="fixed inset-0 z-0">
-        <div ref={mapContainer} className="w-full h-full" />
+      <div className="fixed inset-0 z-0 pointer-events-auto">
+        <div ref={mapContainer} className="w-full h-full pointer-events-auto" />
         
         {/* Gradient overlays for UI contrast */}
         <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-background via-background/80 to-transparent z-10 pointer-events-none" />
