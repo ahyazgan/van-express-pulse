@@ -7,71 +7,173 @@ mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkc
 
 // City coordinates [lng, lat]
 const cities = [
+  // Primary Hubs
   { id: "istanbul", coords: [28.9784, 41.0082] as [number, number], label: "İstanbul", country: "TR", isPrimary: true },
+  { id: "paris", coords: [2.3522, 48.8566] as [number, number], label: "Paris", country: "FR", isPrimary: true },
+  { id: "berlin", coords: [13.4050, 52.5200] as [number, number], label: "Berlin", country: "DE", isPrimary: true },
+  { id: "amsterdam", coords: [4.9041, 52.3676] as [number, number], label: "Amsterdam", country: "NL", isPrimary: true },
+  { id: "madrid", coords: [-3.7038, 40.4168] as [number, number], label: "Madrid", country: "ES", isPrimary: true },
+  // Secondary Cities
   { id: "sofia", coords: [23.3219, 42.6977] as [number, number], label: "Sofya", country: "BG", isPrimary: false },
   { id: "belgrade", coords: [20.4489, 44.7866] as [number, number], label: "Belgrad", country: "RS", isPrimary: false },
   { id: "budapest", coords: [19.0402, 47.4979] as [number, number], label: "Budapeşte", country: "HU", isPrimary: false },
   { id: "vienna", coords: [16.3738, 48.2082] as [number, number], label: "Viyana", country: "AT", isPrimary: false },
-  { id: "munich", coords: [11.5820, 48.1351] as [number, number], label: "Münih", country: "DE", isPrimary: true },
-  { id: "berlin", coords: [13.4050, 52.5200] as [number, number], label: "Berlin", country: "DE", isPrimary: false },
-  { id: "paris", coords: [2.3522, 48.8566] as [number, number], label: "Paris", country: "FR", isPrimary: true },
+  { id: "munich", coords: [11.5820, 48.1351] as [number, number], label: "Münih", country: "DE", isPrimary: false },
+  { id: "frankfurt", coords: [8.6821, 50.1109] as [number, number], label: "Frankfurt", country: "DE", isPrimary: true },
+  { id: "prague", coords: [14.4378, 50.0755] as [number, number], label: "Prag", country: "CZ", isPrimary: true },
+  { id: "milan", coords: [9.1900, 45.4642] as [number, number], label: "Milano", country: "IT", isPrimary: true },
+  { id: "zagreb", coords: [15.9819, 45.8150] as [number, number], label: "Zagreb", country: "HR", isPrimary: false },
+  { id: "ljubljana", coords: [14.5058, 46.0569] as [number, number], label: "Ljubljana", country: "SI", isPrimary: false },
+  { id: "bratislava", coords: [17.1077, 48.1486] as [number, number], label: "Bratislava", country: "SK", isPrimary: false },
+  { id: "marseille", coords: [5.3698, 43.2965] as [number, number], label: "Marsilya", country: "FR", isPrimary: false },
 ];
 
-// Route paths for animated vans (arrays of coordinates)
+// 7 Unique logistics routes following European E-highways
 const vanRoutes = [
   {
+    // Route 1: Istanbul -> Madrid (via E-80, E-90)
     id: 1,
+    name: "Madrid Express",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
       [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [17.5, 45.2],
+      [12.5, 45.5],
+      [9.1900, 45.4642], // Milan
+      [7.0, 44.5],
+      [5.3698, 43.2965], // Marseille
+      [3.0, 42.5],
+      [0.0, 41.5],
+      [-3.7038, 40.4168], // Madrid
     ] as [number, number][],
-    duration: 12000,
+    duration: 28000,
   },
   {
+    // Route 2: Istanbul -> Amsterdam (via E-75, E-45)
     id: 2,
+    name: "Amsterdam Express",
     path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
       [23.3219, 42.6977], // Sofia
       [21.9, 43.7],
       [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+      [17.0, 48.5],
+      [14.0, 49.5],
+      [10.5, 50.0],
+      [8.6821, 50.1109], // Frankfurt
+      [7.0, 51.0],
+      [5.5, 51.8],
+      [4.9041, 52.3676], // Amsterdam
     ] as [number, number][],
-    duration: 10000,
+    duration: 26000,
   },
   {
+    // Route 3: Istanbul -> Frankfurt (via E-75, E-45)
     id: 3,
+    name: "Frankfurt Express",
     path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
       [20.4489, 44.7866], // Belgrade
       [19.5, 46.0],
       [19.0402, 47.4979], // Budapest
-    ] as [number, number][],
-    duration: 10000,
-  },
-  {
-    id: 4,
-    path: [
-      [19.0402, 47.4979], // Budapest
       [17.5, 47.8],
       [16.3738, 48.2082], // Vienna
+      [13.5, 48.8],
+      [11.0, 49.5],
+      [8.6821, 50.1109], // Frankfurt
     ] as [number, number][],
-    duration: 8000,
+    duration: 22000,
   },
   {
+    // Route 4: Istanbul -> Prague (via E-75, E-65)
+    id: 4,
+    name: "Prague Express",
+    path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+      [17.5, 48.0],
+      [17.1077, 48.1486], // Bratislava
+      [16.0, 48.8],
+      [15.0, 49.5],
+      [14.4378, 50.0755], // Prague
+    ] as [number, number][],
+    duration: 20000,
+  },
+  {
+    // Route 5: Istanbul -> Milan (via E-70, E-61)
     id: 5,
+    name: "Milan Express",
     path: [
-      [16.3738, 48.2082], // Vienna
-      [13.5, 48.1],
-      [11.5820, 48.1351], // Munich
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [18.0, 45.0],
+      [15.9819, 45.8150], // Zagreb
+      [15.0, 46.0],
+      [14.5058, 46.0569], // Ljubljana
+      [12.5, 46.0],
+      [10.5, 45.8],
+      [9.1900, 45.4642], // Milan
     ] as [number, number][],
-    duration: 10000,
+    duration: 18000,
   },
   {
+    // Route 6: Istanbul -> Berlin (via E-75, E-55)
     id: 6,
+    name: "Berlin Express",
     path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+      [17.5, 48.5],
+      [15.5, 49.5],
+      [14.5, 50.5],
+      [13.8, 51.5],
+      [13.4050, 52.5200], // Berlin
+    ] as [number, number][],
+    duration: 21000,
+  },
+  {
+    // Route 7: Istanbul -> Paris (via E-75, E-50, E-25)
+    id: 7,
+    name: "Paris Express",
+    path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+      [17.5, 47.8],
+      [14.0, 48.0],
       [11.5820, 48.1351], // Munich
-      [7.0, 48.5],
+      [9.0, 48.5],
+      [6.0, 48.8],
+      [4.0, 48.8],
       [2.3522, 48.8566], // Paris
     ] as [number, number][],
-    duration: 14000,
+    duration: 24000,
   },
 ];
 
@@ -101,29 +203,21 @@ const MapBackground = () => {
 
       // Add route line
       if (map.current) {
+        // Create a FeatureCollection with all route lines
+        const routeFeatures = vanRoutes.map(route => ({
+          type: "Feature" as const,
+          properties: { routeId: route.id, routeName: route.name },
+          geometry: {
+            type: "LineString" as const,
+            coordinates: route.path,
+          },
+        }));
+
         map.current.addSource("route", {
           type: "geojson",
           data: {
-            type: "Feature",
-            properties: {},
-            geometry: {
-              type: "LineString",
-              coordinates: [
-                [28.9784, 41.0082], // Istanbul
-                [26.5, 41.8],
-                [23.3219, 42.6977], // Sofia
-                [21.9, 43.7],
-                [20.4489, 44.7866], // Belgrade
-                [19.5, 46.0],
-                [19.0402, 47.4979], // Budapest
-                [17.5, 47.8],
-                [16.3738, 48.2082], // Vienna
-                [13.5, 48.1],
-                [11.5820, 48.1351], // Munich
-                [7.0, 48.5],
-                [2.3522, 48.8566], // Paris
-              ],
-            },
+            type: "FeatureCollection",
+            features: routeFeatures,
           },
         });
 
@@ -198,7 +292,7 @@ const MapBackground = () => {
           </div>
         `;
 
-        // Create popup for this van
+        // Create popup for this van with route-specific info
         const popup = new mapboxgl.Popup({
           offset: 25,
           closeButton: true,
@@ -207,7 +301,7 @@ const MapBackground = () => {
         }).setHTML(`
           <div class="van-popup-content">
             <div class="van-popup-header">
-              <span class="van-popup-title">Minivan Express</span>
+              <span class="van-popup-title">${route.name}</span>
               <span class="van-popup-badge">CANLI</span>
             </div>
             <div class="van-popup-info">
@@ -221,7 +315,7 @@ const MapBackground = () => {
               </div>
               <div class="van-popup-row">
                 <span class="van-popup-label">Tahmini Varış:</span>
-                <span class="van-popup-value van-popup-eta">24 saat</span>
+                <span class="van-popup-value van-popup-eta">${Math.round(route.duration / 1000)}h</span>
               </div>
             </div>
           </div>
