@@ -1,27 +1,27 @@
 import { motion } from "framer-motion";
 import { Truck } from "lucide-react";
-import europeMap from "@/assets/turkey-europe-corridor-map.jpg";
+import logisticsMap from "@/assets/logistics-map-static.jpg";
 
-// City positions aligned to the Turkey-Europe corridor map
+// City positions aligned to the static logistics map (E-80/E-90 corridor visible in image)
 const cityMarkers = [
-  { id: "istanbul", x: "86%", y: "56%", label: "İstanbul", country: "TR", isPrimary: true },
-  { id: "sofia", x: "70%", y: "50%", label: "Sofya", country: "BG", isPrimary: false },
-  { id: "belgrade", x: "58%", y: "48%", label: "Belgrad", country: "RS", isPrimary: false },
-  { id: "budapest", x: "50%", y: "40%", label: "Budapeşte", country: "HU", isPrimary: false },
-  { id: "vienna", x: "40%", y: "36%", label: "Viyana", country: "AT", isPrimary: false },
-  { id: "munich", x: "35%", y: "32%", label: "Münih", country: "DE", isPrimary: true },
-  { id: "berlin", x: "45%", y: "18%", label: "Berlin", country: "DE", isPrimary: false },
-  { id: "paris", x: "14%", y: "32%", label: "Paris", country: "FR", isPrimary: true },
+  { id: "istanbul", x: "12%", y: "58%", label: "İstanbul", country: "TR", isPrimary: true },
+  { id: "sofia", x: "42%", y: "48%", label: "Sofya", country: "BG", isPrimary: false },
+  { id: "belgrade", x: "88%", y: "58%", label: "Belgrad", country: "RS", isPrimary: false },
+  { id: "budapest", x: "72%", y: "78%", label: "Budapeşte", country: "HU", isPrimary: false },
+  { id: "vienna", x: "58%", y: "85%", label: "Viyana", country: "AT", isPrimary: false },
+  { id: "munich", x: "35%", y: "68%", label: "Münih", country: "DE", isPrimary: true },
+  { id: "berlin", x: "75%", y: "52%", label: "Berlin", country: "DE", isPrimary: false },
+  { id: "paris", x: "72%", y: "90%", label: "Paris", country: "FR", isPrimary: true },
 ];
 
-// Animated vans following the transport corridor
+// Animated vans following the E-80/E-90 highway corridor on static map
 const animatedVans = [
-  { id: 1, startX: "86%", startY: "56%", endX: "70%", endY: "50%", duration: 14, delay: 0 },
-  { id: 2, startX: "70%", startY: "50%", endX: "58%", endY: "48%", duration: 12, delay: 4 },
-  { id: 3, startX: "58%", startY: "48%", endX: "50%", endY: "40%", duration: 10, delay: 8 },
-  { id: 4, startX: "50%", startY: "40%", endX: "40%", endY: "36%", duration: 8, delay: 12 },
-  { id: 5, startX: "40%", startY: "36%", endX: "35%", endY: "32%", duration: 8, delay: 2 },
-  { id: 6, startX: "35%", startY: "32%", endX: "14%", endY: "32%", duration: 16, delay: 6 },
+  { id: 1, startX: "12%", startY: "58%", endX: "28%", endY: "52%", duration: 12, delay: 0 },
+  { id: 2, startX: "28%", startY: "52%", endX: "42%", endY: "48%", duration: 10, delay: 3 },
+  { id: 3, startX: "42%", startY: "48%", endX: "58%", endY: "52%", duration: 10, delay: 6 },
+  { id: 4, startX: "58%", startY: "52%", endX: "75%", endY: "52%", duration: 12, delay: 9 },
+  { id: 5, startX: "75%", startY: "52%", endX: "88%", endY: "58%", duration: 10, delay: 2 },
+  { id: 6, startX: "35%", startY: "68%", endX: "58%", endY: "85%", duration: 14, delay: 5 },
 ];
 
 const MapBackground = () => {
@@ -31,7 +31,7 @@ const MapBackground = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url(${europeMap})`,
+          backgroundImage: `url(${logisticsMap})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
         }}
@@ -61,12 +61,12 @@ const MapBackground = () => {
           </filter>
         </defs>
         
-        {/* Main route: Istanbul → Sofia → Belgrade → Budapest → Vienna → Munich */}
+        {/* Main route overlay following visible E-80/E-90 highway on static map */}
         <motion.path
-          d="M 86 56 Q 78 53 70 50 L 58 48 L 50 40 L 40 36 L 35 32"
+          d="M 12 58 Q 20 55 28 52 L 42 48 L 58 52 L 75 52 L 88 58"
           fill="none"
           stroke="url(#routeGradient)"
-          strokeWidth="0.5"
+          strokeWidth="0.6"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeDasharray="2 1"
@@ -76,9 +76,9 @@ const MapBackground = () => {
           transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
         />
         
-        {/* Extension to Paris */}
+        {/* Southern branch to Munich/Vienna/Paris */}
         <motion.path
-          d="M 35 32 L 14 32"
+          d="M 42 48 Q 38 58 35 68 L 45 78 L 58 85 L 72 90"
           fill="none"
           stroke="url(#routeGradient)"
           strokeWidth="0.4"
@@ -88,20 +88,6 @@ const MapBackground = () => {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 0.7 }}
           transition={{ duration: 2, ease: "easeInOut", delay: 3 }}
-        />
-        
-        {/* Extension to Berlin */}
-        <motion.path
-          d="M 40 36 L 45 18"
-          fill="none"
-          stroke="url(#routeGradient)"
-          strokeWidth="0.3"
-          strokeLinecap="round"
-          strokeDasharray="1 0.5"
-          filter="url(#routeGlow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ duration: 1.5, ease: "easeInOut", delay: 3.5 }}
         />
       </svg>
 
