@@ -1,181 +1,378 @@
-import { motion } from "framer-motion";
-import { Truck } from "lucide-react";
-import logisticsMap from "@/assets/logistics-map-static.jpg";
+import { useEffect, useRef, useState } from "react";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
-// City positions aligned to the static logistics map (E-80/E-90 corridor visible in image)
-const cityMarkers = [
-  { id: "istanbul", x: "12%", y: "58%", label: "İstanbul", country: "TR", isPrimary: true },
-  { id: "sofia", x: "42%", y: "48%", label: "Sofya", country: "BG", isPrimary: false },
-  { id: "belgrade", x: "88%", y: "58%", label: "Belgrad", country: "RS", isPrimary: false },
-  { id: "budapest", x: "72%", y: "78%", label: "Budapeşte", country: "HU", isPrimary: false },
-  { id: "vienna", x: "58%", y: "85%", label: "Viyana", country: "AT", isPrimary: false },
-  { id: "munich", x: "35%", y: "68%", label: "Münih", country: "DE", isPrimary: true },
-  { id: "berlin", x: "75%", y: "52%", label: "Berlin", country: "DE", isPrimary: false },
-  { id: "paris", x: "72%", y: "90%", label: "Paris", country: "FR", isPrimary: true },
+// Mapbox access token
+mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
+
+// City coordinates [lng, lat]
+const cities = [
+  { id: "istanbul", coords: [28.9784, 41.0082] as [number, number], label: "İstanbul", country: "TR", isPrimary: true },
+  { id: "sofia", coords: [23.3219, 42.6977] as [number, number], label: "Sofya", country: "BG", isPrimary: false },
+  { id: "belgrade", coords: [20.4489, 44.7866] as [number, number], label: "Belgrad", country: "RS", isPrimary: false },
+  { id: "budapest", coords: [19.0402, 47.4979] as [number, number], label: "Budapeşte", country: "HU", isPrimary: false },
+  { id: "vienna", coords: [16.3738, 48.2082] as [number, number], label: "Viyana", country: "AT", isPrimary: false },
+  { id: "munich", coords: [11.5820, 48.1351] as [number, number], label: "Münih", country: "DE", isPrimary: true },
+  { id: "berlin", coords: [13.4050, 52.5200] as [number, number], label: "Berlin", country: "DE", isPrimary: false },
+  { id: "paris", coords: [2.3522, 48.8566] as [number, number], label: "Paris", country: "FR", isPrimary: true },
 ];
 
-// Animated vans following the E-80/E-90 highway corridor on static map
-const animatedVans = [
-  { id: 1, startX: "12%", startY: "58%", endX: "28%", endY: "52%", duration: 12, delay: 0 },
-  { id: 2, startX: "28%", startY: "52%", endX: "42%", endY: "48%", duration: 10, delay: 3 },
-  { id: 3, startX: "42%", startY: "48%", endX: "58%", endY: "52%", duration: 10, delay: 6 },
-  { id: 4, startX: "58%", startY: "52%", endX: "75%", endY: "52%", duration: 12, delay: 9 },
-  { id: 5, startX: "75%", startY: "52%", endX: "88%", endY: "58%", duration: 10, delay: 2 },
-  { id: 6, startX: "35%", startY: "68%", endX: "58%", endY: "85%", duration: 14, delay: 5 },
+// Route paths for animated vans (arrays of coordinates)
+const vanRoutes = [
+  {
+    id: 1,
+    path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+    ] as [number, number][],
+    duration: 12000,
+  },
+  {
+    id: 2,
+    path: [
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+    ] as [number, number][],
+    duration: 10000,
+  },
+  {
+    id: 3,
+    path: [
+      [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+    ] as [number, number][],
+    duration: 10000,
+  },
+  {
+    id: 4,
+    path: [
+      [19.0402, 47.4979], // Budapest
+      [17.5, 47.8],
+      [16.3738, 48.2082], // Vienna
+    ] as [number, number][],
+    duration: 8000,
+  },
+  {
+    id: 5,
+    path: [
+      [16.3738, 48.2082], // Vienna
+      [13.5, 48.1],
+      [11.5820, 48.1351], // Munich
+    ] as [number, number][],
+    duration: 10000,
+  },
+  {
+    id: 6,
+    path: [
+      [11.5820, 48.1351], // Munich
+      [7.0, 48.5],
+      [2.3522, 48.8566], // Paris
+    ] as [number, number][],
+    duration: 14000,
+  },
 ];
 
 const MapBackground = () => {
-  return (
-    <div className="fixed inset-0 z-0">
-      {/* Geographic Map Background - Turkey to Europe Corridor */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url(${logisticsMap})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-        }}
-      />
-      
-      {/* Subtle overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/15 via-transparent to-background/40" />
+  const mapContainer = useRef<HTMLDivElement>(null);
+  const map = useRef<mapboxgl.Map | null>(null);
+  const markersRef = useRef<mapboxgl.Marker[]>([]);
+  const vanMarkersRef = useRef<mapboxgl.Marker[]>([]);
+  const animationFramesRef = useRef<number[]>([]);
+  const [mapLoaded, setMapLoaded] = useState(false);
 
-      {/* Route Path SVG Overlay */}
-      <svg
-        className="absolute inset-0 w-full h-full z-10 pointer-events-none"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <linearGradient id="routeGradient" x1="100%" y1="100%" x2="0%" y2="0%">
-            <stop offset="0%" stopColor="hsl(45, 100%, 50%)" stopOpacity="1" />
-            <stop offset="50%" stopColor="hsl(45, 100%, 55%)" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="hsl(356, 94%, 43%)" stopOpacity="0.6" />
-          </linearGradient>
-          <filter id="routeGlow">
-            <feGaussianBlur stdDeviation="0.4" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        
-        {/* Main route overlay following visible E-80/E-90 highway on static map */}
-        <motion.path
-          d="M 12 58 Q 20 55 28 52 L 42 48 L 58 52 L 75 52 L 88 58"
-          fill="none"
-          stroke="url(#routeGradient)"
-          strokeWidth="0.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeDasharray="2 1"
-          filter="url(#routeGlow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 1 }}
-          transition={{ duration: 3, ease: "easeInOut", delay: 0.5 }}
-        />
-        
-        {/* Southern branch to Munich/Vienna/Paris */}
-        <motion.path
-          d="M 42 48 Q 38 58 35 68 L 45 78 L 58 85 L 72 90"
-          fill="none"
-          stroke="url(#routeGradient)"
-          strokeWidth="0.4"
-          strokeLinecap="round"
-          strokeDasharray="1.5 0.8"
-          filter="url(#routeGlow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.7 }}
-          transition={{ duration: 2, ease: "easeInOut", delay: 3 }}
-        />
-      </svg>
+  useEffect(() => {
+    if (!mapContainer.current || map.current) return;
 
-      {/* Animated Minivans */}
-      {animatedVans.map((van) => (
-        <motion.div
-          key={van.id}
-          className="absolute z-20"
-          style={{ left: van.startX, top: van.startY }}
-          initial={{ opacity: 0 }}
-          animate={{
-            left: [van.startX, van.endX],
-            top: [van.startY, van.endY],
-            opacity: [0, 1, 1, 1, 0],
-          }}
-          transition={{
-            duration: van.duration,
-            delay: van.delay,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          <div className="relative -translate-x-1/2 -translate-y-1/2">
-            <div className="absolute -inset-2 bg-primary/50 rounded-full blur-md" />
-            <div className="w-9 h-9 bg-gradient-to-br from-primary to-primary/90 rounded-lg flex items-center justify-center shadow-lg border-2 border-white">
-              <Truck className="w-4 h-4 text-primary-foreground" />
+    // Initialize map
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [15.0, 45.0],
+      zoom: 3.5,
+      interactive: false, // Disable interactions to act as background
+      attributionControl: false,
+    });
+
+    map.current.on("load", () => {
+      setMapLoaded(true);
+
+      // Add route line
+      if (map.current) {
+        map.current.addSource("route", {
+          type: "geojson",
+          data: {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: [
+                [28.9784, 41.0082], // Istanbul
+                [26.5, 41.8],
+                [23.3219, 42.6977], // Sofia
+                [21.9, 43.7],
+                [20.4489, 44.7866], // Belgrade
+                [19.5, 46.0],
+                [19.0402, 47.4979], // Budapest
+                [17.5, 47.8],
+                [16.3738, 48.2082], // Vienna
+                [13.5, 48.1],
+                [11.5820, 48.1351], // Munich
+                [7.0, 48.5],
+                [2.3522, 48.8566], // Paris
+              ],
+            },
+          },
+        });
+
+        map.current.addLayer({
+          id: "route-line",
+          type: "line",
+          source: "route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "#FFCC00",
+            "line-width": 4,
+            "line-opacity": 0.8,
+          },
+        });
+
+        // Add glow effect layer
+        map.current.addLayer({
+          id: "route-glow",
+          type: "line",
+          source: "route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "#FFCC00",
+            "line-width": 12,
+            "line-opacity": 0.3,
+            "line-blur": 8,
+          },
+        }, "route-line");
+      }
+
+      // Add city markers
+      cities.forEach((city) => {
+        const el = document.createElement("div");
+        el.className = "city-marker";
+        el.innerHTML = `
+          <div class="marker-container ${city.isPrimary ? "primary" : "secondary"}">
+            ${city.isPrimary ? '<div class="pulse-ring"></div>' : ''}
+            <div class="marker-dot"></div>
+            <div class="marker-label">${city.label}</div>
+          </div>
+        `;
+
+        const marker = new mapboxgl.Marker({ element: el })
+          .setLngLat(city.coords)
+          .addTo(map.current!);
+        
+        markersRef.current.push(marker);
+      });
+
+      // Create and animate van markers
+      vanRoutes.forEach((route, index) => {
+        const el = document.createElement("div");
+        el.className = "van-marker";
+        el.innerHTML = `
+          <div class="van-container">
+            <div class="van-glow"></div>
+            <div class="van-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+                <path d="M15 18H9"/>
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+                <circle cx="17" cy="18" r="2"/>
+                <circle cx="7" cy="18" r="2"/>
+              </svg>
             </div>
           </div>
-        </motion.div>
-      ))}
+        `;
 
-      {/* City Markers */}
-      {cityMarkers.map((city, index) => (
-        <motion.div
-          key={city.id}
-          className="absolute z-20"
-          style={{ left: city.x, top: city.y }}
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.3 + index * 0.12, type: "spring", stiffness: 200 }}
-        >
-          {/* Pulsing ring for primary cities */}
-          {city.isPrimary && (
-            <motion.div
-              className="absolute w-7 h-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"
-              animate={{ scale: [1, 2.5, 1], opacity: [0.6, 0, 0.6] }}
-              transition={{ duration: 2.5, repeat: Infinity }}
-            />
-          )}
-          
-          {/* City dot */}
-          <div 
-            className={`w-4 h-4 rounded-full border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2 ${
-              city.isPrimary ? "bg-primary" : "bg-foreground/50"
-            }`}
-            style={{ 
-              boxShadow: city.isPrimary 
-                ? "0 0 18px hsl(45 100% 50% / 0.8)" 
-                : "0 2px 8px rgba(0,0,0,0.2)" 
-            }}
-          />
-          
-          {/* City label */}
-          <motion.div
-            className="absolute left-3 top-1/2 -translate-y-1/2 whitespace-nowrap"
-            initial={{ opacity: 0, x: -4 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 + index * 0.1 }}
-          >
-            <span 
-              className={`text-xs font-bold px-2 py-1 rounded-md backdrop-blur-sm shadow-sm ${
-                city.isPrimary 
-                  ? "bg-primary text-primary-foreground" 
-                  : "bg-card/85 text-foreground border border-border/50"
-              }`}
-            >
-              {city.label}
-            </span>
-          </motion.div>
-        </motion.div>
-      ))}
+        const marker = new mapboxgl.Marker({ element: el })
+          .setLngLat(route.path[0])
+          .addTo(map.current!);
+        
+        vanMarkersRef.current.push(marker);
 
-      {/* Bottom gradient for UI contrast */}
-      <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-background via-background/80 to-transparent z-10 pointer-events-none" />
+        // Animate van along path
+        const animateVan = () => {
+          let startTime: number | null = null;
+          const totalDuration = route.duration;
+
+          const animate = (timestamp: number) => {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = (elapsed % totalDuration) / totalDuration;
+
+            // Calculate position along path
+            const pathLength = route.path.length - 1;
+            const segmentProgress = progress * pathLength;
+            const segmentIndex = Math.floor(segmentProgress);
+            const segmentFraction = segmentProgress - segmentIndex;
+
+            if (segmentIndex < pathLength) {
+              const start = route.path[segmentIndex];
+              const end = route.path[segmentIndex + 1];
+              const lng = start[0] + (end[0] - start[0]) * segmentFraction;
+              const lat = start[1] + (end[1] - start[1]) * segmentFraction;
+              marker.setLngLat([lng, lat]);
+            }
+
+            animationFramesRef.current[index] = requestAnimationFrame(animate);
+          };
+
+          // Stagger start times
+          setTimeout(() => {
+            animationFramesRef.current[index] = requestAnimationFrame(animate);
+          }, index * 2000);
+        };
+
+        animateVan();
+      });
+    });
+
+    return () => {
+      // Cleanup animation frames
+      animationFramesRef.current.forEach((frame) => {
+        cancelAnimationFrame(frame);
+      });
       
-      {/* Top gradient for header contrast */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/50 to-transparent z-10 pointer-events-none" />
-    </div>
+      // Cleanup markers
+      markersRef.current.forEach((marker) => marker.remove());
+      vanMarkersRef.current.forEach((marker) => marker.remove());
+      
+      // Cleanup map
+      if (map.current) {
+        map.current.remove();
+        map.current = null;
+      }
+    };
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        .city-marker {
+          pointer-events: none;
+        }
+        
+        .marker-container {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+        
+        .marker-container.primary .marker-dot {
+          width: 16px;
+          height: 16px;
+          background: hsl(45, 100%, 50%);
+          border: 3px solid white;
+          border-radius: 50%;
+          box-shadow: 0 0 18px hsl(45, 100%, 50%, 0.8);
+        }
+        
+        .marker-container.secondary .marker-dot {
+          width: 12px;
+          height: 12px;
+          background: hsl(220, 15%, 40%);
+          border: 2px solid white;
+          border-radius: 50%;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .pulse-ring {
+          position: absolute;
+          width: 28px;
+          height: 28px;
+          left: -6px;
+          top: -6px;
+          border-radius: 50%;
+          background: hsl(45, 100%, 50%);
+          animation: pulse-ring 2.5s ease-out infinite;
+        }
+        
+        @keyframes pulse-ring {
+          0% { transform: scale(1); opacity: 0.6; }
+          100% { transform: scale(2.5); opacity: 0; }
+        }
+        
+        .marker-label {
+          position: absolute;
+          left: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          white-space: nowrap;
+          font-size: 12px;
+          font-weight: 700;
+          padding: 4px 10px;
+          border-radius: 6px;
+          backdrop-filter: blur(8px);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .marker-container.primary .marker-label {
+          background: hsl(45, 100%, 50%);
+          color: hsl(220, 15%, 10%);
+        }
+        
+        .marker-container.secondary .marker-label {
+          background: rgba(255, 255, 255, 0.9);
+          color: hsl(220, 15%, 15%);
+          border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .van-marker {
+          pointer-events: none;
+        }
+        
+        .van-container {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .van-glow {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background: hsl(45, 100%, 50%, 0.5);
+          border-radius: 50%;
+          filter: blur(10px);
+        }
+        
+        .van-icon {
+          width: 36px;
+          height: 36px;
+          background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(45, 100%, 45%) 100%);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+          border: 2px solid white;
+          color: hsl(220, 15%, 10%);
+        }
+      `}</style>
+      
+      <div className="fixed inset-0 z-0">
+        <div ref={mapContainer} className="w-full h-full" />
+        
+        {/* Gradient overlays for UI contrast */}
+        <div className="absolute inset-x-0 bottom-0 h-[50%] bg-gradient-to-t from-background via-background/80 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/50 to-transparent z-10 pointer-events-none" />
+      </div>
+    </>
   );
 };
 
