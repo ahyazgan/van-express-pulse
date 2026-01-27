@@ -120,19 +120,19 @@ const BottomSheet = () => {
                     selectedVehicle === vehicle.id ? "selected" : ""
                   }`}
                 >
-                  <div className="w-14 h-14 rounded-xl bg-secondary flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
                     <vehicle.icon className="w-7 h-7 text-primary" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-foreground">{vehicle.name}</span>
+                      <span className="font-bold text-foreground">{vehicle.name}</span>
                       {vehicle.express && <span className="express-tag">EXPRESS</span>}
                     </div>
                     <p className="text-sm text-muted-foreground">{vehicle.description}</p>
                   </div>
                   <div className="flex items-center gap-1.5 text-muted-foreground">
                     <Clock className="w-4 h-4" />
-                    <span className="text-sm font-medium">{vehicle.time}</span>
+                    <span className="text-sm font-bold">{vehicle.time}</span>
                   </div>
                 </button>
               ))}

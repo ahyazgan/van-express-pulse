@@ -1,22 +1,18 @@
-import { User, HelpCircle, Truck } from "lucide-react";
 import { motion } from "framer-motion";
+import { User, HelpCircle, Truck } from "lucide-react";
 
 const TopBar = () => {
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 z-30 px-4 safe-top"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      className="fixed top-0 left-0 right-0 z-30 safe-top"
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", damping: 20, delay: 0.2 }}
     >
-      <div className="flex items-center justify-between h-16 max-w-lg mx-auto">
-        {/* Profile Icon - Glassmorphism */}
+      <div className="flex items-center justify-between px-5 py-3">
+        {/* Profile Button */}
         <motion.button
-          className="w-11 h-11 rounded-full flex items-center justify-center touch-target border border-border/40"
-          style={{
-            background: "linear-gradient(135deg, hsl(220, 10%, 18%, 0.6) 0%, hsl(220, 10%, 14%, 0.8) 100%)",
-            backdropFilter: "blur(16px)",
-          }}
+          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -25,36 +21,26 @@ const TopBar = () => {
 
         {/* Logo */}
         <motion.div
-          className="flex items-center gap-2"
-          whileHover={{ scale: 1.02 }}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-border/60 shadow-md"
+          initial={{ scale: 0.9 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3 }}
         >
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center"
-            style={{
-              background: "linear-gradient(135deg, hsl(45, 100%, 55%) 0%, hsl(45, 100%, 45%) 100%)",
-              boxShadow: "0 0 25px -5px hsl(45, 100%, 50%, 0.5)",
-            }}
-          >
-            <Truck className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
+          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
+            <Truck className="w-5 h-5 text-primary-foreground" />
           </div>
-          <div className="hidden sm:block">
-            <span className="font-bold text-foreground">Minivan</span>
-            <span className="font-bold text-primary ml-1">Express</span>
-          </div>
+          <span className="font-black text-foreground tracking-tight">MINIVAN</span>
+          <span className="text-xs font-bold text-accent">EXPRESS</span>
         </motion.div>
 
-        {/* Help Button - Glassmorphism */}
+        {/* Help Button */}
         <motion.button
-          className="px-4 py-2.5 rounded-full text-sm font-semibold flex items-center gap-1.5 touch-target border border-border/40"
-          style={{
-            background: "linear-gradient(135deg, hsl(220, 10%, 18%, 0.6) 0%, hsl(220, 10%, 14%, 0.8) 100%)",
-            backdropFilter: "blur(16px)",
-          }}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
+          className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          <HelpCircle className="w-4 h-4" />
-          <span>Yardım</span>
+          <HelpCircle className="w-4 h-4 text-foreground" />
+          <span className="text-sm font-bold text-foreground">Yardım</span>
         </motion.button>
       </div>
     </motion.div>
