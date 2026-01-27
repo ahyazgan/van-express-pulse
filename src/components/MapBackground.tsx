@@ -198,8 +198,38 @@ const MapBackground = () => {
           </div>
         `;
 
+        // Create popup for this van
+        const popup = new mapboxgl.Popup({
+          offset: 25,
+          closeButton: true,
+          closeOnClick: true,
+          className: "van-popup",
+        }).setHTML(`
+          <div class="van-popup-content">
+            <div class="van-popup-header">
+              <span class="van-popup-title">Minivan Express</span>
+              <span class="van-popup-badge">CANLI</span>
+            </div>
+            <div class="van-popup-info">
+              <div class="van-popup-row">
+                <span class="van-popup-label">Durum:</span>
+                <span class="van-popup-value">Transit Halinde</span>
+              </div>
+              <div class="van-popup-row">
+                <span class="van-popup-label">Kapasite:</span>
+                <span class="van-popup-value">1200kg / 12m³</span>
+              </div>
+              <div class="van-popup-row">
+                <span class="van-popup-label">Tahmini Varış:</span>
+                <span class="van-popup-value van-popup-eta">24 saat</span>
+              </div>
+            </div>
+          </div>
+        `);
+
         const marker = new mapboxgl.Marker({ element: el })
           .setLngLat(route.path[0])
+          .setPopup(popup)
           .addTo(map.current!);
         
         vanMarkersRef.current.push(marker);
@@ -332,7 +362,97 @@ const MapBackground = () => {
         }
         
         .van-marker {
-          pointer-events: none;
+          pointer-events: auto;
+          cursor: pointer;
+        }
+        
+        /* Popup Styles */
+        .van-popup .mapboxgl-popup-content {
+          padding: 0;
+          border-radius: 16px;
+          box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          overflow: hidden;
+          min-width: 220px;
+        }
+        
+        .van-popup .mapboxgl-popup-close-button {
+          font-size: 18px;
+          padding: 8px 12px;
+          color: hsl(220, 15%, 40%);
+          right: 4px;
+          top: 4px;
+        }
+        
+        .van-popup .mapboxgl-popup-close-button:hover {
+          background: transparent;
+          color: hsl(220, 15%, 15%);
+        }
+        
+        .van-popup .mapboxgl-popup-tip {
+          border-top-color: white;
+        }
+        
+        .van-popup-content {
+          background: white;
+        }
+        
+        .van-popup-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 16px;
+          background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(45, 100%, 45%) 100%);
+          border-bottom: 1px solid hsl(45, 100%, 40%);
+        }
+        
+        .van-popup-title {
+          font-weight: 800;
+          font-size: 14px;
+          color: hsl(220, 15%, 10%);
+          letter-spacing: -0.3px;
+        }
+        
+        .van-popup-badge {
+          font-size: 10px;
+          font-weight: 700;
+          padding: 4px 8px;
+          border-radius: 6px;
+          background: hsl(142, 76%, 36%);
+          color: white;
+          letter-spacing: 0.5px;
+        }
+        
+        .van-popup-info {
+          padding: 14px 16px;
+        }
+        
+        .van-popup-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 6px 0;
+        }
+        
+        .van-popup-row:not(:last-child) {
+          border-bottom: 1px solid hsl(220, 15%, 94%);
+        }
+        
+        .van-popup-label {
+          font-size: 12px;
+          color: hsl(220, 10%, 50%);
+          font-weight: 500;
+        }
+        
+        .van-popup-value {
+          font-size: 12px;
+          color: hsl(220, 15%, 15%);
+          font-weight: 600;
+        }
+        
+        .van-popup-eta {
+          color: hsl(45, 100%, 40%);
+          font-weight: 700;
         }
         
         .van-container {
