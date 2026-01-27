@@ -63,7 +63,7 @@ const BottomSheet = () => {
 
   return (
     <motion.div
-      className="fixed inset-x-0 bottom-0 z-40 bottom-sheet"
+      className="fixed inset-x-0 bottom-0 z-40 bottom-sheet pointer-events-auto"
       initial={{ height: collapsedHeight }}
       animate={animationControls}
       drag="y"

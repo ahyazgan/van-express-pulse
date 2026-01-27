@@ -4,7 +4,7 @@ import { User, HelpCircle, Truck } from "lucide-react";
 const TopBar = () => {
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 z-30 safe-top"
+      className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", damping: 20, delay: 0.2 }}
@@ -12,7 +12,7 @@ const TopBar = () => {
       <div className="flex items-center justify-between px-5 py-3">
         {/* Profile Button */}
         <motion.button
-          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md"
+          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md pointer-events-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -21,7 +21,7 @@ const TopBar = () => {
 
         {/* Logo */}
         <motion.div
-          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-border/60 shadow-md"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.3 }}
@@ -35,7 +35,7 @@ const TopBar = () => {
 
         {/* Help Button */}
         <motion.button
-          className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md"
+          className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md pointer-events-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
