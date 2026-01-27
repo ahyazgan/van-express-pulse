@@ -1,23 +1,17 @@
 import { useState } from "react";
 import { motion, useDragControls, useAnimationControls, PanInfo } from "framer-motion";
-import { Search, Clock, Truck, MessageCircle } from "lucide-react";
+import { Search, Clock, Truck, MessageCircle, Zap } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-
-const quickRoutes = [
-  { from: "İst", to: "Münih" },
-  { from: "İst", to: "Paris" },
-  { from: "İst", to: "Londra" },
-  { from: "İst", to: "Berlin" },
-];
+import QuickRouteCards from "./QuickRouteCards";
 
 const vehicles = [
   {
     id: "express",
     name: "Minivan Express",
     time: "24 saat",
-    icon: Truck,
+    icon: Zap,
     express: true,
     description: "En hızlı teslimat garantisi",
   },
@@ -34,7 +28,7 @@ const vehicles = [
 const BottomSheet = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>("express");
-  const [selectedRoute, setSelectedRoute] = useState<number | null>(null);
+  const [selectedRouteId, setSelectedRouteId] = useState<number | null>(null);
   const [destination, setDestination] = useState("");
   const dragControls = useDragControls();
   const animationControls = useAnimationControls();
@@ -105,24 +99,14 @@ const BottomSheet = () => {
           transition={{ duration: 0.2 }}
           className={isExpanded ? "block" : "hidden"}
         >
-          {/* Quick Routes */}
-          <div className="mb-6">
-            <h3 className="text-sm font-medium text-muted-foreground mb-3">Popüler Rotalar</h3>
-            <div className="flex gap-2 overflow-x-auto pb-2 -mx-1 px-1">
-              {quickRoutes.map((route, index) => (
-                <button
-                  key={index}
-                  onClick={() => {
-                    setSelectedRoute(index);
-                    setDestination(`${route.from} → ${route.to}`);
-                  }}
-                  className={`route-chip ${selectedRoute === index ? "active" : ""}`}
-                >
-                  {route.from} → {route.to}
-                </button>
-              ))}
-            </div>
-          </div>
+          {/* Quick Route Cards with Flags */}
+          <QuickRouteCards
+            selectedId={selectedRouteId}
+            onSelect={(route) => {
+              setSelectedRouteId(route.id);
+              setDestination(`${route.from} → ${route.to}`);
+            }}
+          />
 
           {/* Vehicle Selection */}
           <div className="mb-6">

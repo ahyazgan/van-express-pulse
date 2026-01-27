@@ -58,6 +58,7 @@ export default {
           light: "hsl(var(--charcoal-light))",
           elevated: "hsl(var(--charcoal-elevated))",
         },
+        anthracite: "hsl(var(--anthracite))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
