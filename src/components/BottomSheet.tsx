@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, useDragControls, useAnimationControls, PanInfo } from "framer-motion";
 import { Search, Clock, Truck, MessageCircle, Zap, Euro } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
 import { getShippingPrice } from "@/constants/shippingRates";
+import { destinationEvents } from "@/lib/destinationEvents";
 const vehicles = [
   {
     id: "express",
@@ -34,7 +35,15 @@ const BottomSheet = () => {
   const animationControls = useAnimationControls();
   const { toast } = useToast();
 
-  // Calculate price based on destination
+  // Subscribe to map destination events
+  useEffect(() => {
+    const unsubscribe = destinationEvents.subscribe((dest) => {
+      setDestination(`İstanbul → ${dest}`);
+      setIsExpanded(true);
+      animationControls.start({ height: expandedHeight });
+    });
+    return () => { unsubscribe(); };
+  }, [animationControls]);
   const priceResult = useMemo(() => {
     if (!destination) return null;
     return getShippingPrice(destination);

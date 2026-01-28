@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { SHIPPING_RATES } from "@/constants/shippingRates";
+import { destinationEvents } from "@/lib/destinationEvents";
 
 // Mapbox access token
 mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
@@ -26,6 +28,14 @@ const cities = [
   { id: "ljubljana", coords: [14.5058, 46.0569] as [number, number], label: "Ljubljana", country: "SI", isPrimary: false },
   { id: "bratislava", coords: [17.1077, 48.1486] as [number, number], label: "Bratislava", country: "SK", isPrimary: false },
   { id: "marseille", coords: [5.3698, 43.2965] as [number, number], label: "Marsilya", country: "FR", isPrimary: false },
+  // Additional pricing cities
+  { id: "london", coords: [-0.1276, 51.5074] as [number, number], label: "Londra", country: "UK", isPrimary: true },
+  { id: "stuttgart", coords: [9.1829, 48.7758] as [number, number], label: "Stuttgart", country: "DE", isPrimary: false },
+  { id: "cologne", coords: [6.9603, 50.9375] as [number, number], label: "Köln", country: "DE", isPrimary: false },
+  { id: "hamburg", coords: [9.9937, 53.5511] as [number, number], label: "Hamburg", country: "DE", isPrimary: false },
+  { id: "bucharest", coords: [26.1025, 44.4268] as [number, number], label: "Bükreş", country: "RO", isPrimary: false },
+  { id: "rome", coords: [12.4964, 41.9028] as [number, number], label: "Roma", country: "IT", isPrimary: false },
+  { id: "barcelona", coords: [2.1734, 41.3851] as [number, number], label: "Barcelona", country: "ES", isPrimary: false },
 ];
 
 // 7 Unique logistics routes following European E-highways
@@ -181,6 +191,7 @@ const MapBackground = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]);
+  const priceMarkersRef = useRef<mapboxgl.Marker[]>([]);
   const vanMarkersRef = useRef<mapboxgl.Marker[]>([]);
   const animationFramesRef = useRef<number[]>([]);
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -273,7 +284,41 @@ const MapBackground = () => {
         markersRef.current.push(marker);
       });
 
-      // Create and animate van markers
+      // Create price tag markers for cities with shipping rates
+      cities.forEach((city) => {
+        // Skip Istanbul (origin city)
+        if (city.id === "istanbul") return;
+        
+        // Check if city has a shipping rate
+        const cityLabel = city.label;
+        const rate = SHIPPING_RATES[cityLabel];
+        if (!rate) return;
+        
+        const [minPrice] = rate;
+        
+        const el = document.createElement("div");
+        el.className = "price-tag-marker";
+        el.innerHTML = `
+          <div class="price-tag">
+            <span class="price-tag-text">€${minPrice.toLocaleString('tr-TR')}+</span>
+          </div>
+        `;
+        
+        // Add click handler
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
+          destinationEvents.emit(cityLabel);
+        });
+        
+        const priceMarker = new mapboxgl.Marker({ 
+          element: el,
+          anchor: "bottom"
+        })
+          .setLngLat([city.coords[0], city.coords[1] + 0.6]) // Position slightly above city
+          .addTo(map.current!);
+        
+        priceMarkersRef.current.push(priceMarker);
+      });
       vanRoutes.forEach((route, index) => {
         const el = document.createElement("div");
         el.className = "van-marker";
@@ -373,6 +418,7 @@ const MapBackground = () => {
       
       // Cleanup markers
       markersRef.current.forEach((marker) => marker.remove());
+      priceMarkersRef.current.forEach((marker) => marker.remove());
       vanMarkersRef.current.forEach((marker) => marker.remove());
       
       // Cleanup map
@@ -453,6 +499,37 @@ const MapBackground = () => {
           background: rgba(255, 255, 255, 0.9);
           color: hsl(220, 15%, 15%);
           border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Price Tag Markers */
+        .price-tag-marker {
+          pointer-events: auto;
+          cursor: pointer;
+          z-index: 5;
+        }
+        
+        .price-tag {
+          background: white;
+          color: hsl(220, 50%, 20%);
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 700;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+          border: 2px solid hsl(45, 100%, 50%);
+          transition: all 0.2s ease;
+          white-space: nowrap;
+        }
+        
+        .price-tag:hover {
+          transform: scale(1.1);
+          background: hsl(45, 100%, 50%);
+          color: hsl(220, 15%, 10%);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 4px hsl(45, 100%, 50%, 0.3);
+        }
+        
+        .price-tag-text {
+          display: block;
         }
         
         .van-marker {
