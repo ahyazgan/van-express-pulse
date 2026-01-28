@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, useDragControls, useAnimationControls, PanInfo } from "framer-motion";
-import { Search, Clock, Truck, MessageCircle, Zap } from "lucide-react";
+import { Search, Clock, Truck, MessageCircle, Zap, Euro } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
-
+import { getShippingPrice } from "@/constants/shippingRates";
 const vehicles = [
   {
     id: "express",
@@ -33,6 +33,12 @@ const BottomSheet = () => {
   const dragControls = useDragControls();
   const animationControls = useAnimationControls();
   const { toast } = useToast();
+
+  // Calculate price based on destination
+  const priceResult = useMemo(() => {
+    if (!destination) return null;
+    return getShippingPrice(destination);
+  }, [destination]);
 
   const collapsedHeight = "30%";
   const expandedHeight = "85%";
@@ -138,6 +144,37 @@ const BottomSheet = () => {
               ))}
             </div>
           </div>
+
+          {/* Price Display */}
+          {destination && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4"
+            >
+              {priceResult?.found ? (
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-primary/15 to-primary/5 border border-primary/30">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Euro className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-muted-foreground">Tahmini Fiyat</span>
+                  </div>
+                  <p className="text-2xl font-bold text-foreground">
+                    {priceResult.minPrice?.toLocaleString('tr-TR')}€ - {priceResult.maxPrice?.toLocaleString('tr-TR')}€
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {priceResult.city} için Minivan Express teslimat ücreti
+                  </p>
+                </div>
+              ) : (
+                <div className="p-4 rounded-2xl bg-secondary border border-border">
+                  <p className="text-sm font-medium text-foreground">Özel Fiyat Teklifi Gerekli</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Ekibimiz en kısa sürede sizinle iletişime geçecek.
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          )}
 
           {/* CTA Button */}
           <Button
