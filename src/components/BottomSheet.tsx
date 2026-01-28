@@ -1,10 +1,10 @@
 import { useState, useMemo, useEffect } from "react";
 import { motion, useDragControls, useAnimationControls, PanInfo } from "framer-motion";
-import { Search, Clock, Truck, MessageCircle, Zap, Euro } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { Clock, Truck, MessageCircle, Zap, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
+import CitySearchDropdown from "./CitySearchDropdown";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
 const vehicles = [
@@ -95,15 +95,16 @@ const BottomSheet = () => {
 
       {/* Content */}
       <div className="px-5 pb-24 overflow-y-auto h-full">
-        {/* Search Input */}
-        <div className="relative mb-6">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-          <Input
-            placeholder="Nereye gönderilecek?"
-            className="h-14 pl-12 pr-4 text-base bg-secondary border-0 rounded-2xl placeholder:text-muted-foreground focus-visible:ring-primary"
-            onFocus={handleInputFocus}
+        {/* Search Input with Dropdown */}
+        <div className="mb-6">
+          <CitySearchDropdown
             value={destination}
-            onChange={(e) => setDestination(e.target.value)}
+            onChange={setDestination}
+            onCitySelect={(cityId, cityLabel) => {
+              // Request map to fly to the selected city
+              destinationEvents.flyTo(cityId);
+            }}
+            onFocus={handleInputFocus}
           />
         </div>
 

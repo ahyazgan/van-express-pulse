@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { SHIPPING_RATES } from "@/constants/shippingRates";
@@ -197,7 +197,6 @@ const MapBackground = () => {
   const priceMarkersRef = useRef<{ marker: mapboxgl.Marker; cityId: string }[]>([]);
   const vanMarkersRef = useRef<mapboxgl.Marker[]>([]);
   const animationFramesRef = useRef<number[]>([]);
-  const [mapLoaded, setMapLoaded] = useState(false);
 
   // Update price tag visibility based on zoom level
   const updatePriceTagVisibility = (zoom: number) => {
@@ -215,6 +214,41 @@ const MapBackground = () => {
     });
   };
 
+  // Fly to a city and pulse its price tag
+  const flyToCity = (cityId: string) => {
+    const city = cities.find(c => c.id === cityId);
+    if (!city || !map.current) return;
+
+    // Fly to the city
+    map.current.flyTo({
+      center: city.coords,
+      zoom: 5.5,
+      duration: 1500,
+      essential: true
+    });
+
+    // Find and pulse the price tag
+    const priceMarker = priceMarkersRef.current.find(p => p.cityId === cityId);
+    if (priceMarker) {
+      const element = priceMarker.marker.getElement();
+      element.style.display = "block"; // Ensure it's visible
+      element.classList.add("pulse-attention");
+      
+      // Remove pulse class after animation
+      setTimeout(() => {
+        element.classList.remove("pulse-attention");
+      }, 2000);
+    }
+  };
+
+  // Subscribe to flyTo events from search
+  useEffect(() => {
+    const unsubscribe = destinationEvents.subscribeFlyTo((cityId) => {
+      flyToCity(cityId);
+    });
+    return () => { unsubscribe(); };
+  }, []);
+
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
 
@@ -229,7 +263,6 @@ const MapBackground = () => {
     });
 
     map.current.on("load", () => {
-      setMapLoaded(true);
 
       // Add route line
       if (map.current) {
@@ -573,6 +606,29 @@ const MapBackground = () => {
         .price-tag-text {
           display: block;
           letter-spacing: -0.3px;
+        }
+        
+        /* Pulse attention animation for flyTo */
+        .price-tag-marker.pulse-attention .price-tag {
+          animation: pulse-attention 0.5s ease-out 3;
+          background: hsl(45, 100%, 50%);
+          border-color: hsl(45, 100%, 45%);
+          box-shadow: 0 0 0 0 hsl(45, 100%, 50%, 0.7);
+        }
+        
+        @keyframes pulse-attention {
+          0% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 hsl(45, 100%, 50%, 0.7);
+          }
+          50% {
+            transform: scale(1.2);
+            box-shadow: 0 0 0 12px hsl(45, 100%, 50%, 0);
+          }
+          100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 hsl(45, 100%, 50%, 0);
+          }
         }
         
         .van-marker {
