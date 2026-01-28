@@ -187,14 +187,33 @@ const vanRoutes = [
   },
 ];
 
+// Major hubs visible at all zoom levels
+const MAJOR_HUBS = ["istanbul", "london", "paris", "berlin", "madrid"];
+
 const MapBackground = () => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const markersRef = useRef<mapboxgl.Marker[]>([]);
-  const priceMarkersRef = useRef<mapboxgl.Marker[]>([]);
+  const priceMarkersRef = useRef<{ marker: mapboxgl.Marker; cityId: string }[]>([]);
   const vanMarkersRef = useRef<mapboxgl.Marker[]>([]);
   const animationFramesRef = useRef<number[]>([]);
   const [mapLoaded, setMapLoaded] = useState(false);
+
+  // Update price tag visibility based on zoom level
+  const updatePriceTagVisibility = (zoom: number) => {
+    priceMarkersRef.current.forEach(({ marker, cityId }) => {
+      const element = marker.getElement();
+      const isMajorHub = MAJOR_HUBS.includes(cityId);
+      
+      if (zoom < 4) {
+        // At low zoom, only show major hubs
+        element.style.display = isMajorHub ? "block" : "none";
+      } else {
+        // At higher zoom, show all
+        element.style.display = "block";
+      }
+    });
+  };
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -295,9 +314,14 @@ const MapBackground = () => {
         if (!rate) return;
         
         const [minPrice] = rate;
+        const isMajorHub = MAJOR_HUBS.includes(city.id);
         
         const el = document.createElement("div");
-        el.className = "price-tag-marker";
+        el.className = `price-tag-marker ${isMajorHub ? 'major-hub' : 'secondary-hub'}`;
+        // Initially hide secondary hubs (will be shown on zoom)
+        if (!isMajorHub) {
+          el.style.display = "none";
+        }
         el.innerHTML = `
           <div class="price-tag">
             <span class="price-tag-text">€${minPrice.toLocaleString('tr-TR')}+</span>
@@ -317,8 +341,18 @@ const MapBackground = () => {
           .setLngLat([city.coords[0], city.coords[1] + 0.6]) // Position slightly above city
           .addTo(map.current!);
         
-        priceMarkersRef.current.push(priceMarker);
+        priceMarkersRef.current.push({ marker: priceMarker, cityId: city.id });
       });
+
+      // Add zoom event listener for price tag visibility
+      map.current.on("zoom", () => {
+        if (!map.current) return;
+        const zoom = map.current.getZoom();
+        updatePriceTagVisibility(zoom);
+      });
+
+      // Initial visibility update
+      updatePriceTagVisibility(map.current.getZoom());
       vanRoutes.forEach((route, index) => {
         const el = document.createElement("div");
         el.className = "van-marker";
@@ -418,7 +452,7 @@ const MapBackground = () => {
       
       // Cleanup markers
       markersRef.current.forEach((marker) => marker.remove());
-      priceMarkersRef.current.forEach((marker) => marker.remove());
+      priceMarkersRef.current.forEach(({ marker }) => marker.remove());
       vanMarkersRef.current.forEach((marker) => marker.remove());
       
       // Cleanup map
@@ -501,35 +535,44 @@ const MapBackground = () => {
           border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        /* Price Tag Markers */
+        /* Price Tag Markers - Elegant Pill Design */
         .price-tag-marker {
           pointer-events: auto;
           cursor: pointer;
           z-index: 5;
+          transition: opacity 0.3s ease, transform 0.2s ease;
         }
         
         .price-tag {
-          background: white;
-          color: hsl(220, 50%, 20%);
-          padding: 6px 12px;
-          border-radius: 20px;
-          font-size: 12px;
+          background: rgba(255, 255, 255, 0.95);
+          color: hsl(220, 50%, 25%);
+          padding: 4px 10px;
+          border-radius: 16px;
+          font-size: 11px;
           font-weight: 700;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
-          border: 2px solid hsl(45, 100%, 50%);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+          border: 1.5px solid hsl(220, 15%, 85%);
           transition: all 0.2s ease;
           white-space: nowrap;
+          backdrop-filter: blur(4px);
+        }
+        
+        .price-tag-marker.major-hub .price-tag {
+          border-color: hsl(45, 100%, 50%);
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
         }
         
         .price-tag:hover {
-          transform: scale(1.1);
+          transform: scale(1.08);
           background: hsl(45, 100%, 50%);
           color: hsl(220, 15%, 10%);
-          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 4px hsl(45, 100%, 50%, 0.3);
+          border-color: hsl(45, 100%, 45%);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .price-tag-text {
           display: block;
+          letter-spacing: -0.3px;
         }
         
         .van-marker {
