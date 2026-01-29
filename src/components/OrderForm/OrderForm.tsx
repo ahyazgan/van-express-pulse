@@ -29,6 +29,7 @@ const INITIAL_CONTACT: ContactInfo = {
   fullName: "",
   phone: "",
   email: "",
+  photos: [],
 };
 
 const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormProps) => {
@@ -88,6 +89,7 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
       email: contact.email,
       estimated_min_price: priceResult?.minPrice || 0,
       estimated_max_price: priceResult?.maxPrice || 0,
+      customer_photos: contact.photos,
     });
 
     if (error) {

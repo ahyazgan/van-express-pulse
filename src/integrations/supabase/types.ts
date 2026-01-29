@@ -16,8 +16,10 @@ export type Database = {
     Tables: {
       shipping_requests: {
         Row: {
+          admin_documents: string[] | null
           created_at: string
           customer_name: string
+          customer_photos: string[] | null
           destination: string
           email: string
           estimated_max_price: number
@@ -34,8 +36,10 @@ export type Database = {
           total_weight: number
         }
         Insert: {
+          admin_documents?: string[] | null
           created_at?: string
           customer_name: string
+          customer_photos?: string[] | null
           destination: string
           email: string
           estimated_max_price: number
@@ -52,8 +56,10 @@ export type Database = {
           total_weight: number
         }
         Update: {
+          admin_documents?: string[] | null
           created_at?: string
           customer_name?: string
+          customer_photos?: string[] | null
           destination?: string
           email?: string
           estimated_max_price?: number

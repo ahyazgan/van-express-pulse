@@ -21,6 +21,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Package, CheckCircle, TrendingUp, Truck } from "lucide-react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
+import DocumentUpload from "@/components/admin/DocumentUpload";
+import PhotoGallery from "@/components/admin/PhotoGallery";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -41,6 +43,8 @@ interface ShippingRequest {
   estimated_max_price: number;
   status: OrderStatus;
   notes: string | null;
+  customer_photos: string[];
+  admin_documents: string[];
 }
 
 const STATUS_CONFIG: Record<OrderStatus, { label: string; color: string }> = {
@@ -262,6 +266,8 @@ const AdminDashboard = () => {
                     <TableHead>Güzergah</TableHead>
                     <TableHead>Ağırlık/Hacim</TableHead>
                     <TableHead>Fiyat</TableHead>
+                    <TableHead>Fotoğraflar</TableHead>
+                    <TableHead>Belgeler</TableHead>
                     <TableHead>Durum</TableHead>
                     <TableHead>İşlem</TableHead>
                   </TableRow>
@@ -295,6 +301,20 @@ const AdminDashboard = () => {
                       </TableCell>
                       <TableCell className="whitespace-nowrap font-medium">
                         €{order.estimated_min_price} - €{order.estimated_max_price}
+                      </TableCell>
+                      <TableCell>
+                        <PhotoGallery photos={order.customer_photos || []} />
+                      </TableCell>
+                      <TableCell>
+                        <DocumentUpload
+                          orderId={order.id}
+                          documents={order.admin_documents || []}
+                          onUpdate={(docs) => {
+                            setOrders(orders.map(o => 
+                              o.id === order.id ? { ...o, admin_documents: docs } : o
+                            ));
+                          }}
+                        />
                       </TableCell>
                       <TableCell>
                         <Select
