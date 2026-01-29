@@ -5,6 +5,7 @@ import { ArrowLeft, Mail, Lock, User, Building, Phone, Eye, EyeOff } from "lucid
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
@@ -16,13 +17,21 @@ const passwordSchema = z.string().min(6, "Password must be at least 6 characters
 const AuthPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const { user, signIn, signUp } = useAuth();
   const { toast } = useToast();
 
-  const [mode, setMode] = useState<"login" | "signup">("signup");
+  // Get state from navigation (from BookingChoiceModal)
+  const locationState = location.state as { 
+    from?: string; 
+    rememberMe?: boolean;
+    mode?: "login" | "signup";
+  } | null;
+
+  const [mode, setMode] = useState<"login" | "signup">(locationState?.mode || "signup");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(locationState?.rememberMe ?? true);
   
   // Form state
   const [email, setEmail] = useState("");
@@ -33,7 +42,7 @@ const AuthPage = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   // Get redirect destination from location state
-  const redirectTo = (location.state as { from?: string })?.from || "/";
+  const redirectTo = locationState?.from || "/";
 
   // Redirect if already logged in
   useEffect(() => {
@@ -283,6 +292,22 @@ const AuthPage = () => {
             {errors.password && (
               <p className="text-sm text-destructive">{errors.password}</p>
             )}
+          </div>
+
+          {/* Remember Me Checkbox */}
+          <div className="flex items-center gap-3 py-2">
+            <Checkbox
+              id="rememberMeAuth"
+              checked={rememberMe}
+              onCheckedChange={(checked) => setRememberMe(checked === true)}
+              className="border-primary/50 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+            />
+            <label 
+              htmlFor="rememberMeAuth" 
+              className="text-sm text-muted-foreground cursor-pointer select-none"
+            >
+              {language === "tr" ? "Beni Hatırla (Sürekli aktif kal)" : "Remember Me (Stay logged in)"}
+            </label>
           </div>
 
           <Button

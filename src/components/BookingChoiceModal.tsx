@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { UserCheck, User, History, MapPin, FileText, Check } from "lucide-react";
@@ -8,6 +9,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface BookingChoiceModalProps {
@@ -23,10 +25,17 @@ const BookingChoiceModal = ({
 }: BookingChoiceModalProps) => {
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const [rememberMe, setRememberMe] = useState(true);
 
-  const handleMemberClick = () => {
+  const handleMemberClick = (isLogin: boolean) => {
     onOpenChange(false);
-    navigate("/auth", { state: { from: "/" } });
+    navigate("/auth", { 
+      state: { 
+        from: "/", 
+        rememberMe,
+        mode: isLogin ? "login" : "signup"
+      } 
+    });
   };
 
   const handleGuestClick = () => {
@@ -113,14 +122,42 @@ const BookingChoiceModal = ({
               </div>
             </div>
 
+            {/* Remember Me Checkbox */}
+            <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/20">
+              <Checkbox
+                id="rememberMe"
+                checked={rememberMe}
+                onCheckedChange={(checked) => setRememberMe(checked === true)}
+                className="border-primary/50 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
+              />
+              <label 
+                htmlFor="rememberMe" 
+                className="text-sm text-muted-foreground cursor-pointer select-none"
+              >
+                {language === "tr" ? "Beni Hatırla (Sürekli aktif kal)" : "Remember Me (Stay logged in)"}
+              </label>
+            </div>
+
             {/* CTA Button */}
             <Button
-              onClick={handleMemberClick}
+              onClick={() => handleMemberClick(false)}
               className="w-full h-12 mt-4 btn-primary-glow rounded-xl text-base font-bold gap-2"
             >
               <UserCheck className="w-5 h-5" />
-              {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
+              {language === "tr" ? "Üye Ol ve Devam Et" : "Sign Up & Continue"}
             </Button>
+
+            {/* Login Link */}
+            <p className="text-center text-sm text-muted-foreground mt-3">
+              {language === "tr" ? "Zaten hesabınız var mı?" : "Already have an account?"}{" "}
+              <button
+                type="button"
+                onClick={() => handleMemberClick(true)}
+                className="text-primary font-semibold hover:underline"
+              >
+                {language === "tr" ? "Giriş Yapın" : "Log In"}
+              </button>
+            </p>
           </motion.div>
 
           {/* Guest Option */}
