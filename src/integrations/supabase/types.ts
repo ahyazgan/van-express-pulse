@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      shipping_requests: {
+        Row: {
+          created_at: string
+          customer_name: string
+          destination: string
+          email: string
+          estimated_max_price: number
+          estimated_min_price: number
+          id: string
+          is_stackable: boolean
+          notes: string | null
+          packaging_type: string
+          phone: string
+          product_category: string
+          quantity: number
+          status: Database["public"]["Enums"]["order_status"]
+          total_volume: number
+          total_weight: number
+        }
+        Insert: {
+          created_at?: string
+          customer_name: string
+          destination: string
+          email: string
+          estimated_max_price: number
+          estimated_min_price: number
+          id?: string
+          is_stackable?: boolean
+          notes?: string | null
+          packaging_type: string
+          phone: string
+          product_category: string
+          quantity: number
+          status?: Database["public"]["Enums"]["order_status"]
+          total_volume: number
+          total_weight: number
+        }
+        Update: {
+          created_at?: string
+          customer_name?: string
+          destination?: string
+          email?: string
+          estimated_max_price?: number
+          estimated_min_price?: number
+          id?: string
+          is_stackable?: boolean
+          notes?: string | null
+          packaging_type?: string
+          phone?: string
+          product_category?: string
+          quantity?: number
+          status?: Database["public"]["Enums"]["order_status"]
+          total_volume?: number
+          total_weight?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +79,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      order_status: "new" | "negotiating" | "in_transit" | "delivered"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +206,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      order_status: ["new", "negotiating", "in_transit", "delivered"],
+    },
   },
 } as const
