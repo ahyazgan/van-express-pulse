@@ -15,9 +15,45 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { SHIPPING_RATES } from "@/constants/shippingRates";
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
+
+// City coordinates for map display
+const CITY_COORDS: Record<string, [number, number]> = {
+  "Berlin": [13.4050, 52.5200],
+  "Paris": [2.3522, 48.8566],
+  "London": [-0.1276, 51.5074],
+  "Londra": [-0.1276, 51.5074],
+  "Madrid": [-3.7038, 40.4168],
+  "Amsterdam": [4.9041, 52.3676],
+  "Frankfurt": [8.6821, 50.1109],
+  "Munich": [11.5820, 48.1351],
+  "Münih": [11.5820, 48.1351],
+  "Prague": [14.4378, 50.0755],
+  "Prag": [14.4378, 50.0755],
+  "Milan": [9.1900, 45.4642],
+  "Milano": [9.1900, 45.4642],
+  "Vienna": [16.3738, 48.2082],
+  "Viyana": [16.3738, 48.2082],
+  "Budapest": [19.0402, 47.4979],
+  "Barcelona": [2.1734, 41.3851],
+  "Rome": [12.4964, 41.9028],
+  "Roma": [12.4964, 41.9028],
+  "Sofia": [23.3219, 42.6977],
+  "Sofya": [23.3219, 42.6977],
+  "Bucharest": [26.1025, 44.4268],
+  "Bükreş": [26.1025, 44.4268],
+  "Belgrade": [20.4489, 44.7866],
+  "Belgrad": [20.4489, 44.7866],
+  "Zagreb": [15.9819, 45.8150],
+  "Ljubljana": [14.5058, 46.0569],
+  "Bratislava": [17.1077, 48.1486],
+  "Stuttgart": [9.1829, 48.7758],
+  "Cologne": [6.9603, 50.9375],
+  "Köln": [6.9603, 50.9375],
+  "Hamburg": [9.9937, 53.5511],
+  "Marseille": [5.3698, 43.2965],
+};
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -51,10 +87,18 @@ const TrackingPage = () => {
 
   // Get destination coordinates
   const getDestinationCoords = (destination: string): [number, number] => {
-    const city = SHIPPING_RATES.find(
-      (c) => c.city.toLowerCase() === destination.toLowerCase()
-    );
-    return city?.coords || [10.0, 50.0]; // Default to central Europe
+    // Try exact match
+    if (CITY_COORDS[destination]) {
+      return CITY_COORDS[destination];
+    }
+    // Try case-insensitive match
+    const lowerDest = destination.toLowerCase();
+    for (const [key, coords] of Object.entries(CITY_COORDS)) {
+      if (key.toLowerCase() === lowerDest) {
+        return coords;
+      }
+    }
+    return [10.0, 50.0]; // Default to central Europe
   };
 
   const searchOrder = async () => {
