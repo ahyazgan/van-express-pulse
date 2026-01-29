@@ -1,76 +1,88 @@
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowDown, MapPin, Zap, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
+  const scrollToForm = () => {
+    // Trigger the bottom sheet to expand
+    const bottomSheet = document.querySelector('[class*="bottom-sheet"]');
+    if (bottomSheet) {
+      bottomSheet.scrollIntoView({ behavior: "smooth" });
+    }
+    // Dispatch a custom event to expand the bottom sheet
+    window.dispatchEvent(new CustomEvent("expandBottomSheet"));
+  };
+
+  const trustMarkers = [
+    {
+      icon: MapPin,
+      label: t.hero.trustMarkers.liveTracking,
+    },
+    {
+      icon: Zap,
+      label: t.hero.trustMarkers.expressBorder,
+    },
+    {
+      icon: Headphones,
+      label: t.hero.trustMarkers.proService,
+    },
+  ];
+
   return (
-    <section id="hero" className="min-h-[85vh] flex flex-col justify-between px-4 pt-12 pb-8">
-      {/* Logo & Badge */}
-      <div className="space-y-6">
-        <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-            <Truck className="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <h2 className="text-lg font-bold text-foreground">Minivan Express</h2>
-            <p className="text-xs text-muted-foreground">Uluslararası Lojistik</p>
-          </div>
-        </div>
+    <motion.section
+      className="fixed inset-x-0 top-20 z-20 px-5 pt-4 pointer-events-none"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.5 }}
+    >
+      <div className="max-w-lg mx-auto pointer-events-auto">
+        {/* Glass Card Container */}
+        <div className="glass border border-border/60 rounded-2xl p-5 shadow-lg">
+          {/* Heading */}
+          <h1 className="text-xl sm:text-2xl font-black text-foreground leading-tight mb-3">
+            {t.hero.heading}
+          </h1>
 
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary text-xs font-medium text-muted-foreground">
-          <span className="w-2 h-2 rounded-full bg-success animate-pulse" />
-          Aktif Teslimatlar: 847
-        </div>
-      </div>
+          {/* Subheading */}
+          <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+            {t.hero.subheading}
+          </p>
 
-      {/* Main Content */}
-      <div className="space-y-6 my-8">
-        <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-          <span className="text-foreground">Avrupa'ya</span>
-          <br />
-          <span className="text-gradient-accent">24 Saatte</span>
-          <br />
-          <span className="text-foreground">Express Teslimat</span>
-        </h1>
+          {/* CTA Button */}
+          <Button
+            onClick={scrollToForm}
+            size="lg"
+            className="w-full btn-primary-glow touch-target text-base font-bold rounded-xl h-12 mb-5"
+          >
+            {t.hero.cta}
+            <ArrowDown className="w-5 h-5 ml-2" />
+          </Button>
 
-        <p className="text-lg text-muted-foreground leading-relaxed max-w-md">
-          Uçaktan ucuz, Tırdan hızlı.{" "}
-          <span className="text-foreground font-medium">Minivan taşımacılığı</span>{" "}
-          ile gümrüksüz, güvenli teslimat.
-        </p>
-
-        {/* Stats */}
-        <div className="flex gap-6 pt-4">
-          <div>
-            <p className="text-2xl font-bold text-foreground">15K+</p>
-            <p className="text-xs text-muted-foreground">Teslimat</p>
-          </div>
-          <div className="w-px bg-border" />
-          <div>
-            <p className="text-2xl font-bold text-foreground">98%</p>
-            <p className="text-xs text-muted-foreground">Memnuniyet</p>
-          </div>
-          <div className="w-px bg-border" />
-          <div>
-            <p className="text-2xl font-bold text-foreground">24s</p>
-            <p className="text-xs text-muted-foreground">Teslimat</p>
+          {/* Trust Markers */}
+          <div className="flex items-center justify-between gap-2">
+            {trustMarkers.map((marker, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center gap-1.5 flex-1"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 + index * 0.1 }}
+              >
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <marker.icon className="w-5 h-5 text-primary" />
+                </div>
+                <span className="text-[10px] sm:text-xs font-medium text-muted-foreground text-center leading-tight">
+                  {marker.label}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* CTA at Bottom (Thumb Zone) */}
-      <div className="space-y-3">
-        <Button
-          size="lg"
-          className="w-full btn-primary-glow touch-target text-base font-semibold rounded-xl h-14"
-        >
-          Hemen Fiyat Al
-          <ArrowRight className="w-5 h-5 ml-2" />
-        </Button>
-        <p className="text-center text-xs text-muted-foreground">
-          2 dakikada teklif alın • Taahhüt yok
-        </p>
-      </div>
-    </section>
+    </motion.section>
   );
 };
 
