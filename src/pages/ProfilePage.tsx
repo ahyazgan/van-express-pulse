@@ -1,9 +1,20 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MapPin, Bell, Package, LogOut, LogIn, Building2, Warehouse, User } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
@@ -243,21 +254,49 @@ const ProfilePage = () => {
           </p>
         </motion.div>
 
-        {/* Logout Button */}
+        {/* Logout Button with Confirmation */}
         <motion.div
           className="px-6 py-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <Button
-            onClick={handleLogout}
-            variant="destructive"
-            className="w-full h-14 rounded-2xl text-base font-semibold gap-2"
-          >
-            <LogOut className="w-5 h-5" />
-            {t.profile.logout}
-          </Button>
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button
+                variant="outline"
+                className="w-full h-14 rounded-2xl text-base font-semibold gap-2 border-destructive/50 text-destructive hover:bg-destructive/10 hover:text-destructive"
+              >
+                <LogOut className="w-5 h-5" />
+                {t.profile.logout}
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent className="mx-4 rounded-2xl">
+              <AlertDialogHeader>
+                <AlertDialogTitle>
+                  {language === "tr" ? "Çıkış yapmak istiyor musunuz?" : "Do you want to log out?"}
+                </AlertDialogTitle>
+                <AlertDialogDescription>
+                  {language === "tr" 
+                    ? "Oturumunuz sonlandırılacak ve ana sayfaya yönlendirileceksiniz."
+                    : "Your session will be ended and you will be redirected to the homepage."
+                  }
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter className="gap-2 sm:gap-0">
+                <AlertDialogCancel className="rounded-xl">
+                  {language === "tr" ? "İptal" : "Cancel"}
+                </AlertDialogCancel>
+                <AlertDialogAction
+                  onClick={handleLogout}
+                  className="rounded-xl bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  {t.profile.logout}
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
         </motion.div>
       </div>
 
