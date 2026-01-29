@@ -51,16 +51,6 @@ const BottomSheet = () => {
     return () => { unsubscribe(); };
   }, [animationControls, language]);
 
-  // Listen for expand event from HeroSection CTA
-  useEffect(() => {
-    const handleExpand = () => {
-      setIsExpanded(true);
-      animationControls.start({ height: expandedHeight });
-    };
-    window.addEventListener("expandBottomSheet", handleExpand);
-    return () => window.removeEventListener("expandBottomSheet", handleExpand);
-  }, [animationControls]);
-
   const priceResult = useMemo(() => {
     if (!destination) return null;
     return getShippingPrice(destination);
