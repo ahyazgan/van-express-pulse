@@ -1,15 +1,19 @@
 import { motion } from "framer-motion";
-import { MapPin, Bell, Package, LogOut, Building2, Warehouse } from "lucide-react";
+import { MapPin, Bell, Package, LogOut, LogIn, Building2, Warehouse, User } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const ProfilePage = () => {
+  const navigate = useNavigate();
   const { language, t } = useLanguage();
+  const { user, profile, signOut } = useAuth();
   const [priceNotifications, setPriceNotifications] = useState(true);
   const [trackingNotifications, setTrackingNotifications] = useState(true);
   const { toast } = useToast();
@@ -38,12 +42,59 @@ const ProfilePage = () => {
     },
   ];
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await signOut();
     toast({
       title: t.profile.logoutSuccess,
       description: t.profile.logoutMessage,
     });
+    navigate("/");
   };
+
+  const handleLogin = () => {
+    navigate("/auth", { state: { from: "/profile" } });
+  };
+
+  // Get display name from profile or user email
+  const displayName = profile?.full_name || profile?.company_name || user?.email?.split("@")[0] || "User";
+  const initials = displayName.slice(0, 2).toUpperCase();
+
+  // If user is not logged in, show login prompt
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-background pb-24">
+        <TopBar />
+        <div className="flex flex-col items-center justify-center h-[70vh] px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center"
+          >
+            <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
+              <User className="w-12 h-12 text-muted-foreground" />
+            </div>
+            <h1 className="text-2xl font-bold text-foreground mb-2">
+              {language === "tr" ? "Giriş Yapın" : "Log In"}
+            </h1>
+            <p className="text-muted-foreground mb-6 max-w-xs">
+              {language === "tr" 
+                ? "Profilinizi görüntülemek ve siparişlerinizi takip etmek için giriş yapın."
+                : "Log in to view your profile and track your orders."
+              }
+            </p>
+            <Button
+              onClick={handleLogin}
+              className="h-14 px-8 rounded-2xl btn-primary-glow gap-2"
+            >
+              <LogIn className="w-5 h-5" />
+              {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
+            </Button>
+          </motion.div>
+        </div>
+        <AppNavigation />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-24">
@@ -62,16 +113,19 @@ const ProfilePage = () => {
             <div className="relative mb-4">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-primary/80 p-1">
                 <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                  <span className="text-3xl font-bold text-primary">AY</span>
+                  <span className="text-3xl font-bold text-primary">{initials}</span>
                 </div>
               </div>
-              <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-success rounded-full flex items-center justify-center border-4 border-background">
+              <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center border-4 border-background">
                 <div className="w-3 h-3 bg-background rounded-full" />
               </div>
             </div>
 
             {/* Name & Badge */}
-            <h1 className="text-2xl font-bold text-foreground mb-2">Ahmet Yılmaz</h1>
+            <h1 className="text-2xl font-bold text-foreground mb-1">{displayName}</h1>
+            {profile?.company_name && profile.full_name && (
+              <p className="text-sm text-muted-foreground mb-2">{profile.company_name}</p>
+            )}
             <div className="px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30">
               <span className="text-sm font-semibold text-primary">{t.profile.corporateMember}</span>
             </div>
@@ -88,17 +142,17 @@ const ProfilePage = () => {
           <div className="grid grid-cols-3 gap-3">
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
               <Package className="w-6 h-6 text-primary mx-auto mb-2" />
-              <p className="text-2xl font-bold text-foreground">47</p>
+              <p className="text-2xl font-bold text-foreground">0</p>
               <p className="text-xs text-muted-foreground">{t.profile.shipments}</p>
             </div>
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
               <MapPin className="w-6 h-6 text-accent mx-auto mb-2" />
-              <p className="text-2xl font-bold text-foreground">12</p>
+              <p className="text-2xl font-bold text-foreground">0</p>
               <p className="text-xs text-muted-foreground">{t.profile.countries}</p>
             </div>
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
-              <Bell className="w-6 h-6 text-success mx-auto mb-2" />
-              <p className="text-2xl font-bold text-foreground">%98</p>
+              <Bell className="w-6 h-6 text-green-500 mx-auto mb-2" />
+              <p className="text-2xl font-bold text-foreground">-</p>
               <p className="text-xs text-muted-foreground">{t.profile.onTime}</p>
             </div>
           </div>
@@ -175,6 +229,18 @@ const ProfilePage = () => {
               />
             </div>
           </div>
+        </motion.div>
+
+        {/* Email Info */}
+        <motion.div
+          className="px-6 py-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+        >
+          <p className="text-center text-sm text-muted-foreground">
+            {user.email}
+          </p>
         </motion.div>
 
         {/* Logout Button */}
