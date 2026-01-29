@@ -79,27 +79,63 @@ const ProfilePage = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center"
+            className="text-center max-w-sm"
           >
-            <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
-              <User className="w-12 h-12 text-muted-foreground" />
-            </div>
+            {/* Animated Icon */}
+            <motion.div 
+              className="w-28 h-28 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-2 border-primary/30 flex items-center justify-center mx-auto mb-6"
+              animate={{ 
+                scale: [1, 1.05, 1],
+                boxShadow: [
+                  "0 0 0 0 hsl(45 100% 50% / 0)",
+                  "0 0 30px 10px hsl(45 100% 50% / 0.2)",
+                  "0 0 0 0 hsl(45 100% 50% / 0)"
+                ]
+              }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <User className="w-14 h-14 text-primary" />
+            </motion.div>
+
             <h1 className="text-2xl font-bold text-foreground mb-2">
-              {language === "tr" ? "Giriş Yapın" : "Log In"}
+              {language === "tr" ? "Hoş Geldiniz" : "Welcome"}
             </h1>
-            <p className="text-muted-foreground mb-6 max-w-xs">
+            <p className="text-muted-foreground mb-8 leading-relaxed">
               {language === "tr" 
-                ? "Profilinizi görüntülemek ve siparişlerinizi takip etmek için giriş yapın."
-                : "Log in to view your profile and track your orders."
+                ? "Giriş yaparak gönderilerinizi takip edin, fatura arşivinize ulaşın ve %5 üyelik indirimi kazanın."
+                : "Log in to track your shipments, access your invoice archive, and get 5% member discount."
               }
             </p>
-            <Button
-              onClick={handleLogin}
-              className="h-14 px-8 rounded-2xl btn-primary-glow gap-2"
+
+            {/* Primary Login Button */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <LogIn className="w-5 h-5" />
-              {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
-            </Button>
+              <Button
+                onClick={handleLogin}
+                className="w-full h-14 rounded-2xl btn-primary-glow gap-3 text-base font-bold"
+              >
+                <LogIn className="w-5 h-5" />
+                {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
+              </Button>
+            </motion.div>
+
+            {/* Benefits hint */}
+            <div className="mt-6 flex items-center justify-center gap-4 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {language === "tr" ? "%5 İndirim" : "5% Off"}
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {language === "tr" ? "Canlı Takip" : "Live Tracking"}
+              </span>
+              <span className="flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                {language === "tr" ? "Hızlı Sipariş" : "Quick Order"}
+              </span>
+            </div>
           </motion.div>
         </div>
         <AppNavigation />
