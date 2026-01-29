@@ -3,32 +3,33 @@ import { Search, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { SHIPPING_RATES } from "@/constants/shippingRates";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Unique city list with Turkish names preferred
 const SEARCHABLE_CITIES = [
-  { id: "berlin", label: "Berlin", country: "Almanya", flag: "🇩🇪" },
-  { id: "munich", label: "Münih", country: "Almanya", flag: "🇩🇪" },
-  { id: "frankfurt", label: "Frankfurt", country: "Almanya", flag: "🇩🇪" },
-  { id: "hamburg", label: "Hamburg", country: "Almanya", flag: "🇩🇪" },
-  { id: "cologne", label: "Köln", country: "Almanya", flag: "🇩🇪" },
-  { id: "stuttgart", label: "Stuttgart", country: "Almanya", flag: "🇩🇪" },
-  { id: "paris", label: "Paris", country: "Fransa", flag: "🇫🇷" },
-  { id: "marseille", label: "Marsilya", country: "Fransa", flag: "🇫🇷" },
-  { id: "amsterdam", label: "Amsterdam", country: "Hollanda", flag: "🇳🇱" },
-  { id: "london", label: "Londra", country: "İngiltere", flag: "🇬🇧" },
-  { id: "milan", label: "Milano", country: "İtalya", flag: "🇮🇹" },
-  { id: "rome", label: "Roma", country: "İtalya", flag: "🇮🇹" },
-  { id: "vienna", label: "Viyana", country: "Avusturya", flag: "🇦🇹" },
-  { id: "prague", label: "Prag", country: "Çekya", flag: "🇨🇿" },
-  { id: "budapest", label: "Budapeşte", country: "Macaristan", flag: "🇭🇺" },
-  { id: "madrid", label: "Madrid", country: "İspanya", flag: "🇪🇸" },
-  { id: "barcelona", label: "Barcelona", country: "İspanya", flag: "🇪🇸" },
-  { id: "bucharest", label: "Bükreş", country: "Romanya", flag: "🇷🇴" },
-  { id: "sofia", label: "Sofya", country: "Bulgaristan", flag: "🇧🇬" },
-  { id: "belgrade", label: "Belgrad", country: "Sırbistan", flag: "🇷🇸" },
-  { id: "zagreb", label: "Zagreb", country: "Hırvatistan", flag: "🇭🇷" },
-  { id: "ljubljana", label: "Ljubljana", country: "Slovenya", flag: "🇸🇮" },
-  { id: "bratislava", label: "Bratislava", country: "Slovakya", flag: "🇸🇰" },
+  { id: "berlin", label: "Berlin", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "munich", label: { tr: "Münih", en: "Munich" }, country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "frankfurt", label: "Frankfurt", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "hamburg", label: "Hamburg", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "cologne", label: { tr: "Köln", en: "Cologne" }, country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "stuttgart", label: "Stuttgart", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
+  { id: "paris", label: "Paris", country: { tr: "Fransa", en: "France" }, flag: "🇫🇷" },
+  { id: "marseille", label: { tr: "Marsilya", en: "Marseille" }, country: { tr: "Fransa", en: "France" }, flag: "🇫🇷" },
+  { id: "amsterdam", label: "Amsterdam", country: { tr: "Hollanda", en: "Netherlands" }, flag: "🇳🇱" },
+  { id: "london", label: { tr: "Londra", en: "London" }, country: { tr: "İngiltere", en: "UK" }, flag: "🇬🇧" },
+  { id: "milan", label: { tr: "Milano", en: "Milan" }, country: { tr: "İtalya", en: "Italy" }, flag: "🇮🇹" },
+  { id: "rome", label: { tr: "Roma", en: "Rome" }, country: { tr: "İtalya", en: "Italy" }, flag: "🇮🇹" },
+  { id: "vienna", label: { tr: "Viyana", en: "Vienna" }, country: { tr: "Avusturya", en: "Austria" }, flag: "🇦🇹" },
+  { id: "prague", label: { tr: "Prag", en: "Prague" }, country: { tr: "Çekya", en: "Czechia" }, flag: "🇨🇿" },
+  { id: "budapest", label: { tr: "Budapeşte", en: "Budapest" }, country: { tr: "Macaristan", en: "Hungary" }, flag: "🇭🇺" },
+  { id: "madrid", label: "Madrid", country: { tr: "İspanya", en: "Spain" }, flag: "🇪🇸" },
+  { id: "barcelona", label: "Barcelona", country: { tr: "İspanya", en: "Spain" }, flag: "🇪🇸" },
+  { id: "bucharest", label: { tr: "Bükreş", en: "Bucharest" }, country: { tr: "Romanya", en: "Romania" }, flag: "🇷🇴" },
+  { id: "sofia", label: { tr: "Sofya", en: "Sofia" }, country: { tr: "Bulgaristan", en: "Bulgaria" }, flag: "🇧🇬" },
+  { id: "belgrade", label: { tr: "Belgrad", en: "Belgrade" }, country: { tr: "Sırbistan", en: "Serbia" }, flag: "🇷🇸" },
+  { id: "zagreb", label: "Zagreb", country: { tr: "Hırvatistan", en: "Croatia" }, flag: "🇭🇷" },
+  { id: "ljubljana", label: "Ljubljana", country: { tr: "Slovenya", en: "Slovenia" }, flag: "🇸🇮" },
+  { id: "bratislava", label: "Bratislava", country: { tr: "Slovakya", en: "Slovakia" }, flag: "🇸🇰" },
 ];
 
 interface CitySearchDropdownProps {
@@ -39,16 +40,27 @@ interface CitySearchDropdownProps {
 }
 
 const CitySearchDropdown = ({ value, onChange, onCitySelect, onFocus }: CitySearchDropdownProps) => {
+  const { language, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const getLabel = (label: string | { tr: string; en: string }) => {
+    return typeof label === "string" ? label : label[language];
+  };
+
+  const getCountry = (country: { tr: string; en: string }) => {
+    return country[language];
+  };
+
   // Filter cities based on search
   const filteredCities = SEARCHABLE_CITIES.filter(city => {
     const query = searchQuery.toLowerCase();
+    const label = getLabel(city.label);
+    const country = getCountry(city.country);
     return (
-      city.label.toLowerCase().includes(query) ||
-      city.country.toLowerCase().includes(query) ||
+      label.toLowerCase().includes(query) ||
+      country.toLowerCase().includes(query) ||
       city.id.toLowerCase().includes(query)
     );
   });
@@ -72,13 +84,13 @@ const CitySearchDropdown = ({ value, onChange, onCitySelect, onFocus }: CitySear
   };
 
   const handleCityClick = (city: typeof SEARCHABLE_CITIES[0]) => {
-    const rate = SHIPPING_RATES[city.label];
-    const minPrice = rate ? rate[0] : null;
+    const label = getLabel(city.label);
+    const prefix = language === "tr" ? "İstanbul" : "Istanbul";
     
-    onChange(`İstanbul → ${city.label}`);
+    onChange(`${prefix} → ${label}`);
     setSearchQuery("");
     setIsOpen(false);
-    onCitySelect(city.id, city.label);
+    onCitySelect(city.id, label);
   };
 
   const handleFocus = () => {
@@ -90,7 +102,7 @@ const CitySearchDropdown = ({ value, onChange, onCitySelect, onFocus }: CitySear
     <div ref={containerRef} className="relative">
       <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground z-10" />
       <Input
-        placeholder="Nereye gönderilecek?"
+        placeholder={t.home.whereToShip}
         className="h-14 pl-12 pr-4 text-base bg-secondary border-0 rounded-2xl placeholder:text-muted-foreground focus-visible:ring-primary"
         value={value.includes("→") ? value : searchQuery}
         onChange={handleInputChange}
@@ -108,10 +120,13 @@ const CitySearchDropdown = ({ value, onChange, onCitySelect, onFocus }: CitySear
           >
             <div className="p-2">
               <p className="px-3 py-2 text-xs font-medium text-muted-foreground">
-                Popüler Destinasyonlar
+                {t.home.popularRoutes}
               </p>
               {filteredCities.map((city) => {
-                const rate = SHIPPING_RATES[city.label];
+                const label = getLabel(city.label);
+                // Use Turkish label for price lookup since rates are indexed by Turkish names
+                const trLabel = typeof city.label === "string" ? city.label : city.label.tr;
+                const rate = SHIPPING_RATES[trLabel];
                 const minPrice = rate ? rate[0] : null;
                 
                 return (
@@ -125,15 +140,17 @@ const CitySearchDropdown = ({ value, onChange, onCitySelect, onFocus }: CitySear
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-foreground">{city.label}</span>
+                        <span className="font-semibold text-foreground">{label}</span>
                         <MapPin className="w-3 h-3 text-muted-foreground" />
                       </div>
-                      <p className="text-sm text-muted-foreground">{city.country}</p>
+                      <p className="text-sm text-muted-foreground">{getCountry(city.country)}</p>
                     </div>
                     {minPrice && (
                       <div className="text-right">
-                        <p className="text-sm font-bold text-primary">€{minPrice.toLocaleString('tr-TR')}+</p>
-                        <p className="text-xs text-muted-foreground">başlayan</p>
+                        <p className="text-sm font-bold text-primary">€{minPrice.toLocaleString(language === "tr" ? "tr-TR" : "en-US")}+</p>
+                        <p className="text-xs text-muted-foreground">
+                          {language === "tr" ? "başlayan" : "from"}
+                        </p>
                       </div>
                     )}
                   </button>

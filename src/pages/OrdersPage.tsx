@@ -6,6 +6,7 @@ import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -20,16 +21,17 @@ interface ShippingRequest {
   estimated_max_price: number;
 }
 
-const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {
-  new: { label: "Yeni", icon: <Clock className="w-4 h-4" />, color: "bg-blue-500" },
-  negotiating: { label: "Görüşmede", icon: <Package className="w-4 h-4" />, color: "bg-amber-500" },
-  in_transit: { label: "Yolda", icon: <Truck className="w-4 h-4" />, color: "bg-primary" },
-  delivered: { label: "Teslim Edildi", icon: <CheckCircle2 className="w-4 h-4" />, color: "bg-success" },
-};
-
 const OrdersPage = () => {
+  const { language, t } = useLanguage();
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {
+    new: { label: t.orders.status.new, icon: <Clock className="w-4 h-4" />, color: "bg-blue-500" },
+    negotiating: { label: t.orders.status.negotiating, icon: <Package className="w-4 h-4" />, color: "bg-amber-500" },
+    in_transit: { label: t.orders.status.in_transit, icon: <Truck className="w-4 h-4" />, color: "bg-primary" },
+    delivered: { label: t.orders.status.delivered, icon: <CheckCircle2 className="w-4 h-4" />, color: "bg-success" },
+  };
 
   useEffect(() => {
     fetchOrders();
@@ -68,12 +70,14 @@ const OrdersPage = () => {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("tr-TR", {
+    return new Date(dateString).toLocaleDateString(language === "tr" ? "tr-TR" : "en-US", {
       day: "numeric",
       month: "short",
       year: "numeric",
     });
   };
+
+  const origin = language === "tr" ? "İstanbul" : "Istanbul";
 
   return (
     <div className="min-h-screen bg-background pb-24">
@@ -85,9 +89,9 @@ const OrdersPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-6"
         >
-          <h1 className="text-2xl font-bold text-foreground">Gönderilerim</h1>
+          <h1 className="text-2xl font-bold text-foreground">{t.orders.title}</h1>
           <p className="text-muted-foreground text-sm mt-1">
-            Tüm kargo taleplerinizi buradan takip edin
+            {t.orders.subtitle}
           </p>
         </motion.div>
 
@@ -107,10 +111,10 @@ const OrdersPage = () => {
               <Package className="w-10 h-10 text-muted-foreground" />
             </div>
             <h2 className="text-lg font-semibold text-foreground mb-2">
-              Henüz gönderiniz yok
+              {t.orders.noOrders}
             </h2>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Ana sayfadan yeni bir kargo talebi oluşturarak başlayabilirsiniz.
+              {t.orders.noOrdersDesc}
             </p>
           </motion.div>
         ) : (
@@ -132,7 +136,7 @@ const OrdersPage = () => {
                       </div>
                       <div>
                         <h3 className="font-semibold text-foreground">
-                          İstanbul → {order.destination}
+                          {origin} → {order.destination}
                         </h3>
                         <p className="text-sm text-muted-foreground">
                           {order.product_category} • {order.total_weight} kg
@@ -150,7 +154,7 @@ const OrdersPage = () => {
 
                   <div className="flex items-center justify-between pt-3 border-t border-border">
                     <div>
-                      <p className="text-xs text-muted-foreground">Sipariş ID</p>
+                      <p className="text-xs text-muted-foreground">{t.orders.orderId}</p>
                       <p className="text-sm font-mono text-foreground">
                         {order.id.slice(0, 8).toUpperCase()}
                       </p>

@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import { Map, Package, Search, User } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
-
-const navItems = [
-  { id: "explore", icon: Map, label: "Keşfet", route: "/" },
-  { id: "orders", icon: Package, label: "Gönderilerim", route: "/orders" },
-  { id: "track", icon: Search, label: "Canlı Takip", route: "/track" },
-  { id: "profile", icon: User, label: "Profil", route: "/profile" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AppNavigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const navItems = [
+    { id: "explore", icon: Map, label: t.nav.explore, route: "/" },
+    { id: "orders", icon: Package, label: t.nav.shipments, route: "/orders" },
+    { id: "track", icon: Search, label: t.nav.liveTracking, route: "/track" },
+    { id: "profile", icon: User, label: t.nav.profile, route: "/profile" },
+  ];
 
   const getActiveTab = () => {
     const currentPath = location.pathname;
