@@ -17,6 +17,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
 
@@ -70,22 +71,23 @@ interface ShippingRequest {
   estimated_max_price: number;
 }
 
-const TRACKING_STAGES: { key: OrderStatus; label: string; icon: typeof Package }[] = [
-  { key: "new", label: "Alındı", icon: Package },
-  { key: "negotiating", label: "Gümrükte", icon: FileCheck },
-  { key: "in_transit", label: "Yolda", icon: Truck },
-  { key: "delivered", label: "Teslim Edildi", icon: CheckCircle2 },
-];
-
 const ISTANBUL_COORDS: [number, number] = [28.9784, 41.0082];
 
 const TrackingPage = () => {
+  const { language, t } = useLanguage();
   const [orderId, setOrderId] = useState("");
   const [order, setOrder] = useState<ShippingRequest | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
+
+  const TRACKING_STAGES: { key: OrderStatus; label: string; icon: typeof Package }[] = [
+    { key: "new", label: t.tracking.stages.new, icon: Package },
+    { key: "negotiating", label: t.tracking.stages.negotiating, icon: FileCheck },
+    { key: "in_transit", label: t.tracking.stages.in_transit, icon: Truck },
+    { key: "delivered", label: t.tracking.stages.delivered, icon: CheckCircle2 },
+  ];
 
   // Get destination coordinates
   const getDestinationCoords = (destination: string): [number, number] => {
@@ -105,7 +107,7 @@ const TrackingPage = () => {
 
   const searchOrder = async () => {
     if (!orderId.trim()) {
-      setError("Lütfen sipariş numarası girin");
+      setError(t.tracking.enterOrderId);
       return;
     }
 
@@ -119,10 +121,10 @@ const TrackingPage = () => {
       .maybeSingle();
 
     if (fetchError) {
-      setError("Bir hata oluştu. Lütfen tekrar deneyin.");
+      setError(t.tracking.errorOccurred);
       console.error(fetchError);
     } else if (!data) {
-      setError("Sipariş bulunamadı. Lütfen numarayı kontrol edin.");
+      setError(t.tracking.orderNotFound);
     } else {
       setOrder(data);
     }
@@ -203,13 +205,13 @@ const TrackingPage = () => {
       // Add Istanbul marker
       new mapboxgl.Marker({ color: "#D40511" })
         .setLngLat(ISTANBUL_COORDS)
-        .setPopup(new mapboxgl.Popup().setHTML("<strong>İstanbul</strong><br/>Çıkış Noktası"))
+        .setPopup(new mapboxgl.Popup().setHTML(`<strong>${t.tracking.origin}</strong><br/>${language === "tr" ? "Çıkış Noktası" : "Origin"}`))
         .addTo(map.current);
 
       // Add destination marker
       new mapboxgl.Marker({ color: "#FFCC00" })
         .setLngLat(destCoords)
-        .setPopup(new mapboxgl.Popup().setHTML(`<strong>${order.destination}</strong><br/>Varış Noktası`))
+        .setPopup(new mapboxgl.Popup().setHTML(`<strong>${order.destination}</strong><br/>${t.tracking.destination}`))
         .addTo(map.current);
     });
 
@@ -217,7 +219,7 @@ const TrackingPage = () => {
       map.current?.remove();
       map.current = null;
     };
-  }, [order]);
+  }, [order, language, t.tracking.origin, t.tracking.destination]);
 
   const currentStageIndex = TRACKING_STAGES.findIndex((s) => s.key === order?.status);
 
@@ -231,20 +233,20 @@ const TrackingPage = () => {
           <CardHeader className="pb-4">
             <CardTitle className="text-xl flex items-center gap-2">
               <Search className="w-5 h-5 text-primary" />
-              Gönderinizi Takip Edin
+              {t.tracking.searchTitle}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex gap-3">
               <Input
-                placeholder="Sipariş numaranızı girin..."
+                placeholder={t.tracking.searchPlaceholder}
                 value={orderId}
                 onChange={(e) => setOrderId(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && searchOrder()}
                 className="flex-1"
               />
               <Button onClick={searchOrder} disabled={loading} className="btn-primary-glow">
-                {loading ? "Aranıyor..." : "Ara"}
+                {loading ? t.tracking.searching : t.tracking.search}
               </Button>
             </div>
             {error && (
@@ -273,7 +275,7 @@ const TrackingPage = () => {
                   <div className="flex items-center justify-between text-sm">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-destructive" />
-                      <span className="font-medium">İstanbul</span>
+                      <span className="font-medium">{t.tracking.origin}</span>
                     </div>
                     <ArrowRight className="w-4 h-4 text-muted-foreground" />
                     <div className="flex items-center gap-2">
@@ -287,7 +289,7 @@ const TrackingPage = () => {
               {/* Progress Bar */}
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Gönderi Durumu</CardTitle>
+                  <CardTitle className="text-lg">{t.tracking.shipmentStatus}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="relative">
@@ -344,19 +346,19 @@ const TrackingPage = () => {
               {/* Order Details */}
               <Card>
                 <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Sipariş Bilgileri</CardTitle>
+                  <CardTitle className="text-lg">{t.tracking.orderInfo}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Sipariş No</span>
+                    <span className="text-muted-foreground">{t.tracking.orderNo}</span>
                     <span className="font-mono text-xs">{order.id.slice(0, 8)}...</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Müşteri</span>
+                    <span className="text-muted-foreground">{t.tracking.customer}</span>
                     <span className="font-medium">{order.customer_name}</span>
                   </div>
                   <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Tahmini Fiyat</span>
+                    <span className="text-muted-foreground">{t.tracking.estimatedPrice}</span>
                     <span className="font-medium text-primary">
                       €{order.estimated_min_price} - €{order.estimated_max_price}
                     </span>

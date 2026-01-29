@@ -6,40 +6,42 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
-
-const savedAddresses = [
-  {
-    id: 1,
-    name: "İstanbul Depo",
-    address: "Esenyurt, İstanbul, Türkiye",
-    icon: Warehouse,
-    type: "Çıkış Noktası",
-  },
-  {
-    id: 2,
-    name: "Berlin Office",
-    address: "Kreuzberg, Berlin, Germany",
-    icon: Building2,
-    type: "Varış Noktası",
-  },
-  {
-    id: 3,
-    name: "Münih Depo",
-    address: "Schwabing, München, Germany",
-    icon: Warehouse,
-    type: "Varış Noktası",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ProfilePage = () => {
+  const { language, t } = useLanguage();
   const [priceNotifications, setPriceNotifications] = useState(true);
   const [trackingNotifications, setTrackingNotifications] = useState(true);
   const { toast } = useToast();
 
+  const savedAddresses = [
+    {
+      id: 1,
+      name: language === "tr" ? "İstanbul Depo" : "Istanbul Warehouse",
+      address: "Esenyurt, İstanbul, Türkiye",
+      icon: Warehouse,
+      type: t.profile.origin,
+    },
+    {
+      id: 2,
+      name: "Berlin Office",
+      address: "Kreuzberg, Berlin, Germany",
+      icon: Building2,
+      type: t.profile.destination,
+    },
+    {
+      id: 3,
+      name: language === "tr" ? "Münih Depo" : "Munich Warehouse",
+      address: "Schwabing, München, Germany",
+      icon: Warehouse,
+      type: t.profile.destination,
+    },
+  ];
+
   const handleLogout = () => {
     toast({
-      title: "Çıkış Yapıldı",
-      description: "Güvenli bir şekilde çıkış yaptınız.",
+      title: t.profile.logoutSuccess,
+      description: t.profile.logoutMessage,
     });
   };
 
@@ -71,7 +73,7 @@ const ProfilePage = () => {
             {/* Name & Badge */}
             <h1 className="text-2xl font-bold text-foreground mb-2">Ahmet Yılmaz</h1>
             <div className="px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30">
-              <span className="text-sm font-semibold text-primary">Kurumsal Üye</span>
+              <span className="text-sm font-semibold text-primary">{t.profile.corporateMember}</span>
             </div>
           </motion.div>
         </div>
@@ -87,17 +89,17 @@ const ProfilePage = () => {
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
               <Package className="w-6 h-6 text-primary mx-auto mb-2" />
               <p className="text-2xl font-bold text-foreground">47</p>
-              <p className="text-xs text-muted-foreground">Gönderi</p>
+              <p className="text-xs text-muted-foreground">{t.profile.shipments}</p>
             </div>
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
               <MapPin className="w-6 h-6 text-accent mx-auto mb-2" />
               <p className="text-2xl font-bold text-foreground">12</p>
-              <p className="text-xs text-muted-foreground">Ülke</p>
+              <p className="text-xs text-muted-foreground">{t.profile.countries}</p>
             </div>
             <div className="bg-card rounded-2xl p-4 border border-border text-center">
               <Bell className="w-6 h-6 text-success mx-auto mb-2" />
               <p className="text-2xl font-bold text-foreground">%98</p>
-              <p className="text-xs text-muted-foreground">Zamanında</p>
+              <p className="text-xs text-muted-foreground">{t.profile.onTime}</p>
             </div>
           </div>
         </motion.div>
@@ -109,7 +111,7 @@ const ProfilePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h2 className="text-lg font-bold text-foreground mb-3">Kayıtlı Adresler</h2>
+          <h2 className="text-lg font-bold text-foreground mb-3">{t.profile.savedAddresses}</h2>
           <div className="space-y-3">
             {savedAddresses.map((address) => (
               <motion.div
@@ -140,7 +142,7 @@ const ProfilePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <h2 className="text-lg font-bold text-foreground mb-3">Bildirim Ayarları</h2>
+          <h2 className="text-lg font-bold text-foreground mb-3">{t.profile.notificationSettings}</h2>
           <div className="bg-card rounded-2xl border border-border overflow-hidden">
             <div className="p-4 flex items-center justify-between border-b border-border">
               <div className="flex items-center gap-3">
@@ -148,8 +150,8 @@ const ProfilePage = () => {
                   <Bell className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Fiyat Bildirimleri</p>
-                  <p className="text-sm text-muted-foreground">Özel kampanya ve indirimler</p>
+                  <p className="font-semibold text-foreground">{t.profile.priceNotifications}</p>
+                  <p className="text-sm text-muted-foreground">{t.profile.priceNotificationsDesc}</p>
                 </div>
               </div>
               <Switch
@@ -163,8 +165,8 @@ const ProfilePage = () => {
                   <Package className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Kargo Takip</p>
-                  <p className="text-sm text-muted-foreground">Gönderi durum güncellemeleri</p>
+                  <p className="font-semibold text-foreground">{t.profile.trackingNotifications}</p>
+                  <p className="text-sm text-muted-foreground">{t.profile.trackingNotificationsDesc}</p>
                 </div>
               </div>
               <Switch
@@ -188,7 +190,7 @@ const ProfilePage = () => {
             className="w-full h-14 rounded-2xl text-base font-semibold gap-2"
           >
             <LogOut className="w-5 h-5" />
-            Çıkış Yap
+            {t.profile.logout}
           </Button>
         </motion.div>
       </div>

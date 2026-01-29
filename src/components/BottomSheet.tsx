@@ -8,31 +8,12 @@ import CitySearchDropdown from "./CitySearchDropdown";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
 import { OrderForm, OrderData } from "./OrderForm";
-
-const vehicles = [
-  {
-    id: "express",
-    name: "Minivan Express",
-    time: "24 saat",
-    icon: Zap,
-    express: true,
-    description: "En hızlı teslimat garantisi",
-  },
-  {
-    id: "standard",
-    name: "Standart Van",
-    time: "48 saat",
-    icon: Truck,
-    express: false,
-    description: "Ekonomik kargo çözümü",
-  },
-];
-
-type ViewMode = "browse" | "order";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const BottomSheet = () => {
+  const { language, t } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>("browse");
+  const [viewMode, setViewMode] = useState<"browse" | "order">("browse");
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>("express");
   const [selectedRouteId, setSelectedRouteId] = useState<number | null>(null);
   const [destination, setDestination] = useState("");
@@ -40,15 +21,35 @@ const BottomSheet = () => {
   const animationControls = useAnimationControls();
   const { toast } = useToast();
 
+  const vehicles = [
+    {
+      id: "express",
+      name: "Minivan Express",
+      time: language === "tr" ? "24 saat" : "24 hours",
+      icon: Zap,
+      express: true,
+      description: language === "tr" ? "En hızlı teslimat garantisi" : "Fastest delivery guarantee",
+    },
+    {
+      id: "standard",
+      name: language === "tr" ? "Standart Van" : "Standard Van",
+      time: language === "tr" ? "48 saat" : "48 hours",
+      icon: Truck,
+      express: false,
+      description: language === "tr" ? "Ekonomik kargo çözümü" : "Economical shipping solution",
+    },
+  ];
+
   // Subscribe to map destination events
   useEffect(() => {
     const unsubscribe = destinationEvents.subscribe((dest) => {
-      setDestination(`İstanbul → ${dest}`);
+      const prefix = language === "tr" ? "İstanbul → " : "Istanbul → ";
+      setDestination(`${prefix}${dest}`);
       setIsExpanded(true);
       animationControls.start({ height: expandedHeight });
     });
     return () => { unsubscribe(); };
-  }, [animationControls]);
+  }, [animationControls, language]);
 
   const priceResult = useMemo(() => {
     if (!destination) return null;
@@ -80,8 +81,10 @@ const BottomSheet = () => {
   const handleStartOrder = () => {
     if (!destination) {
       toast({
-        title: "Hedef seçin",
-        description: "Lütfen önce gönderi yapılacak şehri seçin.",
+        title: language === "tr" ? "Hedef seçin" : "Select destination",
+        description: language === "tr" 
+          ? "Lütfen önce gönderi yapılacak şehri seçin." 
+          : "Please select the destination city first.",
         variant: "destructive",
       });
       return;
@@ -92,8 +95,10 @@ const BottomSheet = () => {
   const handleOrderSuccess = (data: OrderData) => {
     console.log("Order submitted:", data);
     toast({
-      title: "Talep alındı!",
-      description: "Yazgan Nakliyat en kısa sürede sizinle iletişime geçecek.",
+      title: language === "tr" ? "Talep alındı!" : "Request received!",
+      description: language === "tr" 
+        ? "Yazgan Nakliyat en kısa sürede sizinle iletişime geçecek."
+        : "Yazgan Nakliyat will contact you shortly.",
     });
   };
 
@@ -128,7 +133,6 @@ const BottomSheet = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, x: -20 }}
             >
-              {/* Search Input with Dropdown */}
               <div className="mb-6">
                 <CitySearchDropdown
                   value={destination}
@@ -159,7 +163,9 @@ const BottomSheet = () => {
 
                 {/* Vehicle Selection */}
                 <div className="mb-6">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-3">Araç Seçimi</h3>
+                  <h3 className="text-sm font-medium text-muted-foreground mb-3">
+                    {language === "tr" ? "Araç Seçimi" : "Vehicle Selection"}
+                  </h3>
                   <div className="space-y-3">
                     {vehicles.map((vehicle) => (
                       <button
@@ -195,7 +201,7 @@ const BottomSheet = () => {
                   className="w-full h-14 btn-primary-glow rounded-2xl text-base gap-2"
                 >
                   <FileText className="w-5 h-5" />
-                  Detaylı Teklif Al
+                  {t.home.getQuote}
                 </Button>
               </motion.div>
 
@@ -206,7 +212,7 @@ const BottomSheet = () => {
                   animate={{ opacity: 1 }}
                   className="text-center text-sm text-muted-foreground mt-2"
                 >
-                  Yukarı kaydırarak devam edin
+                  {language === "tr" ? "Yukarı kaydırarak devam edin" : "Swipe up to continue"}
                 </motion.p>
               )}
             </motion.div>
@@ -219,7 +225,9 @@ const BottomSheet = () => {
             >
               {/* Destination Header */}
               <div className="mb-4 p-3 rounded-xl bg-secondary/50 border border-border/50">
-                <p className="text-xs text-muted-foreground">Gönderim Rotası</p>
+                <p className="text-xs text-muted-foreground">
+                  {language === "tr" ? "Gönderim Rotası" : "Shipping Route"}
+                </p>
                 <p className="font-semibold text-foreground">{destination}</p>
               </div>
 

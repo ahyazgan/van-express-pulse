@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { User, HelpCircle, Truck } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TopBar = () => {
+  const { language, setLanguage, t } = useLanguage();
+
+  const toggleLanguage = () => {
+    setLanguage(language === "tr" ? "en" : "tr");
+  };
+
   return (
     <motion.div
       className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none"
@@ -33,15 +40,31 @@ const TopBar = () => {
           <span className="text-xs font-bold text-accent">EXPRESS</span>
         </motion.div>
 
-        {/* Help Button */}
-        <motion.button
-          className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md pointer-events-auto"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <HelpCircle className="w-4 h-4 text-foreground" />
-          <span className="text-sm font-bold text-foreground">Yardım</span>
-        </motion.button>
+        {/* Language Toggle & Help */}
+        <div className="flex items-center gap-2 pointer-events-auto">
+          {/* Language Toggle */}
+          <motion.button
+            onClick={toggleLanguage}
+            className="px-3 py-2 rounded-full glass border border-border/60 flex items-center gap-1.5 shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="text-lg">{language === "tr" ? "🇹🇷" : "🇬🇧"}</span>
+            <span className="text-xs font-bold text-foreground uppercase">{language}</span>
+          </motion.button>
+
+          {/* Help Button */}
+          <motion.button
+            className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <HelpCircle className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-bold text-foreground hidden sm:inline">
+              {language === "tr" ? "Yardım" : "Help"}
+            </span>
+          </motion.button>
+        </div>
       </div>
     </motion.div>
   );
