@@ -5,15 +5,19 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
 import CitySearchDropdown from "./CitySearchDropdown";
+import BookingChoiceModal from "./BookingChoiceModal";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
 import { OrderForm, OrderData } from "./OrderForm";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
 
 const BottomSheet = () => {
   const { language, t } = useLanguage();
+  const { user, profile } = useAuth();
   const [isExpanded, setIsExpanded] = useState(false);
   const [viewMode, setViewMode] = useState<"browse" | "order">("browse");
+  const [showChoiceModal, setShowChoiceModal] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>("express");
   const [selectedRouteId, setSelectedRouteId] = useState<number | null>(null);
   const [destination, setDestination] = useState("");
@@ -89,6 +93,17 @@ const BottomSheet = () => {
       });
       return;
     }
+    
+    // If user is logged in, go directly to order form
+    // Otherwise, show the choice modal
+    if (user) {
+      setViewMode("order");
+    } else {
+      setShowChoiceModal(true);
+    }
+  };
+
+  const handleGuestContinue = () => {
     setViewMode("order");
   };
 
@@ -237,11 +252,24 @@ const BottomSheet = () => {
                 priceResult={priceResult}
                 onSuccess={handleOrderSuccess}
                 onCancel={handleCancelOrder}
+                prefillData={profile ? {
+                  fullName: profile.full_name || profile.company_name || "",
+                  phone: profile.phone || "",
+                  email: profile.email || "",
+                } : undefined}
+                isAuthenticated={!!user}
               />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
+
+      {/* Booking Choice Modal */}
+      <BookingChoiceModal
+        open={showChoiceModal}
+        onOpenChange={setShowChoiceModal}
+        onGuestContinue={handleGuestContinue}
+      />
     </motion.div>
   );
 };

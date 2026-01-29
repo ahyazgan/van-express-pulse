@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          company_name: string | null
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company_name?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company_name?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       shipping_requests: {
         Row: {
           admin_documents: string[] | null
@@ -34,6 +67,7 @@ export type Database = {
           status: Database["public"]["Enums"]["order_status"]
           total_volume: number
           total_weight: number
+          user_id: string | null
         }
         Insert: {
           admin_documents?: string[] | null
@@ -54,6 +88,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["order_status"]
           total_volume: number
           total_weight: number
+          user_id?: string | null
         }
         Update: {
           admin_documents?: string[] | null
@@ -74,6 +109,7 @@ export type Database = {
           status?: Database["public"]["Enums"]["order_status"]
           total_volume?: number
           total_weight?: number
+          user_id?: string | null
         }
         Relationships: []
       }

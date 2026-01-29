@@ -168,6 +168,40 @@ export const translations = {
       error: "Hata",
       success: "Başarılı",
     },
+
+    // Auth
+    auth: {
+      login: "Giriş Yap",
+      signup: "Üye Ol",
+      email: "E-posta",
+      password: "Şifre",
+      fullName: "Ad Soyad",
+      companyName: "Firma Adı",
+      phone: "Telefon",
+      loginError: "Giriş Hatası",
+      signupError: "Kayıt Hatası",
+      invalidCredentials: "E-posta veya şifre hatalı",
+      emailExists: "Bu e-posta zaten kayıtlı",
+      welcome: "Hoş Geldiniz!",
+      loginSuccess: "Başarıyla giriş yaptınız.",
+      signupSuccess: "Hesabınız oluşturuldu. %5 indiriminiz aktif!",
+      noAccount: "Hesabınız yok mu?",
+      hasAccount: "Zaten üye misiniz?",
+      memberBenefits: "Üyelere Özel: Tüm gönderilerde %5 indirim + Canlı Takip",
+    },
+
+    // Booking Choice
+    bookingChoice: {
+      title: "Nasıl devam etmek istersiniz?",
+      memberOption: "Üye Ol / Giriş Yap",
+      memberDescription: "Bilgileriniz kaydedilsin, sonraki gönderilerinizde %5 indirim kazanın ve yükünüzü canlı takip edin.",
+      guestOption: "Misafir Olarak Devam Et",
+      guestDescription: "Üye olmadan hızlıca talep oluşturun. (Sadece bu sipariş için geçerlidir)",
+      recommended: "ÖNERİLEN",
+      discount: "İndirim",
+      liveTracking: "Canlı Takip",
+      quickForm: "Hızlı Form",
+    },
   },
 
   en: {
@@ -336,6 +370,40 @@ export const translations = {
       loading: "Loading...",
       error: "Error",
       success: "Success",
+    },
+
+    // Auth
+    auth: {
+      login: "Log In",
+      signup: "Sign Up",
+      email: "Email",
+      password: "Password",
+      fullName: "Full Name",
+      companyName: "Company Name",
+      phone: "Phone",
+      loginError: "Login Error",
+      signupError: "Registration Error",
+      invalidCredentials: "Invalid email or password",
+      emailExists: "This email is already registered",
+      welcome: "Welcome!",
+      loginSuccess: "You have successfully logged in.",
+      signupSuccess: "Your account has been created. 5% discount activated!",
+      noAccount: "Don't have an account?",
+      hasAccount: "Already have an account?",
+      memberBenefits: "Members Only: 5% off all shipments + Live Tracking",
+    },
+
+    // Booking Choice
+    bookingChoice: {
+      title: "How would you like to continue?",
+      memberOption: "Sign Up / Log In",
+      memberDescription: "Save your info, get 5% off future shipments, and track your cargo live.",
+      guestOption: "Continue as Guest",
+      guestDescription: "Create a quick request without signing up. (Valid for this order only)",
+      recommended: "RECOMMENDED",
+      discount: "Off",
+      liveTracking: "Live Tracking",
+      quickForm: "Quick Form",
     },
   },
 } as const;

@@ -1,21 +1,31 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, Send, Euro } from "lucide-react";
+import { ArrowLeft, ArrowRight, Send, Euro, BadgePercent } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PriceResult } from "@/constants/shippingRates";
 import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 import ProductStep from "./ProductStep";
 import ContactStep from "./ContactStep";
 import SuccessScreen from "./SuccessScreen";
 import { ProductInfo, ContactInfo, OrderData } from "./types";
+import { Database } from "@/integrations/supabase/types";
+
+interface PrefillData {
+  fullName: string;
+  phone: string;
+  email: string;
+}
 
 interface OrderFormProps {
   destination: string;
   priceResult: PriceResult | null;
   onSuccess: (data: OrderData) => void;
   onCancel: () => void;
+  prefillData?: PrefillData;
+  isAuthenticated?: boolean;
 }
-
 const INITIAL_PRODUCT: ProductInfo = {
   category: "",
   packagingType: "",
@@ -25,18 +35,37 @@ const INITIAL_PRODUCT: ProductInfo = {
   isStackable: false,
 };
 
-const INITIAL_CONTACT: ContactInfo = {
-  fullName: "",
-  phone: "",
-  email: "",
-  photos: [],
-};
-
-const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormProps) => {
+const OrderForm = ({ 
+  destination, 
+  priceResult, 
+  onSuccess, 
+  onCancel,
+  prefillData,
+  isAuthenticated = false,
+}: OrderFormProps) => {
+  const { user } = useAuth();
+  const { language, t } = useLanguage();
   const [step, setStep] = useState(1);
   const [product, setProduct] = useState<ProductInfo>(INITIAL_PRODUCT);
-  const [contact, setContact] = useState<ContactInfo>(INITIAL_CONTACT);
+  const [contact, setContact] = useState<ContactInfo>({
+    fullName: prefillData?.fullName || "",
+    phone: prefillData?.phone || "",
+    email: prefillData?.email || "",
+    photos: [],
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  // Update contact when prefillData changes (e.g., after login)
+  useEffect(() => {
+    if (prefillData) {
+      setContact(prev => ({
+        ...prev,
+        fullName: prefillData.fullName || prev.fullName,
+        phone: prefillData.phone || prev.phone,
+        email: prefillData.email || prev.email,
+      }));
+    }
+  }, [prefillData]);
 
   // Validation
   const isProductValid = useMemo(() => {
@@ -75,8 +104,10 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
       },
     };
 
-    // Save to database
-    const { error } = await supabase.from("shipping_requests").insert({
+    // Save to database - include user_id if authenticated
+    type ShippingInsert = Database["public"]["Tables"]["shipping_requests"]["Insert"];
+    
+    const insertData: ShippingInsert = {
       destination,
       product_category: product.category,
       packaging_type: product.packagingType,
@@ -90,7 +121,10 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
       estimated_min_price: priceResult?.minPrice || 0,
       estimated_max_price: priceResult?.maxPrice || 0,
       customer_photos: contact.photos,
-    });
+      user_id: user?.id || null,
+    };
+
+    const { error } = await supabase.from("shipping_requests").insert(insertData);
 
     if (error) {
       console.error("Error saving order:", error);
@@ -104,7 +138,12 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
     setSubmitted(false);
     setStep(1);
     setProduct(INITIAL_PRODUCT);
-    setContact(INITIAL_CONTACT);
+    setContact({
+      fullName: prefillData?.fullName || "",
+      phone: prefillData?.phone || "",
+      email: prefillData?.email || "",
+      photos: [],
+    });
     onCancel();
   };
 
@@ -114,6 +153,20 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
 
   return (
     <div className="space-y-4">
+      {/* Member Discount Badge */}
+      {isAuthenticated && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/10 border border-green-500/30"
+        >
+          <BadgePercent className="w-4 h-4 text-green-600" />
+          <span className="text-sm font-medium text-green-700">
+            {language === "tr" ? "Üye indirimi aktif: %5" : "Member discount active: 5%"}
+          </span>
+        </motion.div>
+      )}
+
       {/* Step Indicator */}
       <div className="flex items-center gap-2 mb-6">
         <div
@@ -148,7 +201,7 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
             <div className="flex items-center gap-2">
               <Euro className="w-5 h-5 text-primary" />
               <span className="text-sm font-medium text-muted-foreground">
-                Tahmini Fiyat
+                {t.orderForm.estimatedPrice}
               </span>
             </div>
             <p className="text-lg font-bold text-foreground">
@@ -168,14 +221,14 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
               onClick={onCancel}
               className="flex-1 h-12 rounded-xl border-border/50"
             >
-              İptal
+              {t.common.cancel}
             </Button>
             <Button
               onClick={() => setStep(2)}
               disabled={!isProductValid}
               className="flex-1 h-12 rounded-xl btn-primary-glow gap-2"
             >
-              Devam
+              {t.orderForm.continue}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </>
@@ -194,7 +247,7 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
               className="flex-1 h-12 rounded-xl btn-primary-glow gap-2"
             >
               <Send className="w-4 h-4" />
-              Talep Gönder
+              {t.orderForm.sendRequest}
             </Button>
           </>
         )}
