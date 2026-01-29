@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Package, Clock, CheckCircle2, Truck, MapPin } from "lucide-react";
+import { Package, Clock, CheckCircle2, Truck, MapPin, LogIn } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
+import BookingChoiceModal from "@/components/BookingChoiceModal";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -23,8 +26,10 @@ interface ShippingRequest {
 
 const OrdersPage = () => {
   const { language, t } = useLanguage();
+  const { user, loading: authLoading } = useAuth();
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
+  const [showAuthModal, setShowAuthModal] = useState(false);
 
   const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {
     new: { label: t.orders.status.new, icon: <Clock className="w-4 h-4" />, color: "bg-blue-500" },
@@ -34,6 +39,11 @@ const OrdersPage = () => {
   };
 
   useEffect(() => {
+    if (!user) {
+      setLoading(false);
+      return;
+    }
+
     fetchOrders();
 
     // Subscribe to realtime updates
@@ -45,6 +55,7 @@ const OrdersPage = () => {
           event: "*",
           schema: "public",
           table: "shipping_requests",
+          filter: `user_id=eq.${user.id}`,
         },
         () => {
           fetchOrders();
@@ -55,12 +66,15 @@ const OrdersPage = () => {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, []);
+  }, [user]);
 
   const fetchOrders = async () => {
+    if (!user) return;
+    
     const { data, error } = await supabase
       .from("shipping_requests")
       .select("*")
+      .eq("user_id", user.id)
       .order("created_at", { ascending: false });
 
     if (!error && data) {
@@ -95,12 +109,37 @@ const OrdersPage = () => {
           </p>
         </motion.div>
 
-        {loading ? (
+        {authLoading || loading ? (
           <div className="space-y-4">
             {[1, 2, 3].map((i) => (
               <Skeleton key={i} className="h-32 w-full rounded-2xl" />
             ))}
           </div>
+        ) : !user ? (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="flex flex-col items-center justify-center py-16 text-center"
+          >
+            <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <LogIn className="w-10 h-10 text-primary" />
+            </div>
+            <h2 className="text-lg font-semibold text-foreground mb-2">
+              {language === "tr" ? "Giriş Yapmanız Gerekiyor" : "Login Required"}
+            </h2>
+            <p className="text-muted-foreground text-sm max-w-xs mb-6">
+              {language === "tr" 
+                ? "Gönderilerinizi görmek için lütfen giriş yapın veya üye olun."
+                : "Please log in or sign up to view your shipments."
+              }
+            </p>
+            <Button 
+              onClick={() => setShowAuthModal(true)}
+              className="btn-primary-glow rounded-xl px-8"
+            >
+              {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
+            </Button>
+          </motion.div>
         ) : orders.length === 0 ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -176,6 +215,12 @@ const OrdersPage = () => {
       </div>
 
       <AppNavigation />
+
+      <BookingChoiceModal
+        open={showAuthModal}
+        onOpenChange={setShowAuthModal}
+        onGuestContinue={() => setShowAuthModal(false)}
+      />
     </div>
   );
 };
