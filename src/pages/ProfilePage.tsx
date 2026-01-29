@@ -108,10 +108,10 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       <TopBar />
 
-      <div className="h-full overflow-y-auto">
+      <div className="flex-1 overflow-y-auto pb-24">
         {/* Header */}
         <div className="bg-gradient-to-b from-primary/10 to-background pt-20 pb-8 px-6">
           <motion.div
@@ -300,7 +300,9 @@ const ProfilePage = () => {
         </motion.div>
       </div>
 
-      <AppNavigation />
+      <div className="flex-shrink-0">
+        <AppNavigation />
+      </div>
     </div>
   );
 };
