@@ -100,35 +100,33 @@ const ProductStep = ({ data, onChange }: ProductStepProps) => {
         <div className="space-y-2">
           <Label className="text-sm text-muted-foreground flex items-center gap-2">
             <Scale className="w-4 h-4" />
-            Ağırlık (kg)
+            Ağırlık (kg) <span className="text-xs">(opsiyonel)</span>
           </Label>
           <Input
             type="number"
-            min={1}
-            max={1200}
+            min={0}
             value={data.totalWeight || ""}
             onChange={(e) =>
-              updateField("totalWeight", Math.min(1200, parseInt(e.target.value) || 0))
+              updateField("totalWeight", parseInt(e.target.value) || 0)
             }
-            placeholder="Max 1200kg"
+            placeholder="Ağırlık girin"
             className="h-12 rounded-xl bg-secondary/50 border-border/50"
           />
         </div>
         <div className="space-y-2">
           <Label className="text-sm text-muted-foreground flex items-center gap-2">
             <Layers className="w-4 h-4" />
-            Hacim (m³)
+            Hacim (m³) <span className="text-xs">(opsiyonel)</span>
           </Label>
           <Input
             type="number"
-            min={0.1}
-            max={12}
+            min={0}
             step={0.1}
             value={data.totalVolume || ""}
             onChange={(e) =>
-              updateField("totalVolume", Math.min(12, parseFloat(e.target.value) || 0))
+              updateField("totalVolume", parseFloat(e.target.value) || 0)
             }
-            placeholder="Max 12m³"
+            placeholder="Hacim girin"
             className="h-12 rounded-xl bg-secondary/50 border-border/50"
           />
         </div>

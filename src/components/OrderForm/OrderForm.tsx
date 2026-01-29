@@ -72,9 +72,8 @@ const OrderForm = ({
     return (
       product.category !== "" &&
       product.packagingType !== "" &&
-      product.quantity > 0 &&
-      product.totalWeight > 0 &&
-      product.totalVolume > 0
+      product.quantity > 0
+      // Weight and volume are now optional
     );
   }, [product]);
 
