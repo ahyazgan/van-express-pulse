@@ -11,6 +11,7 @@ export interface ContactInfo {
   fullName: string;
   phone: string;
   email: string;
+  photos: string[];
 }
 
 export interface OrderData {

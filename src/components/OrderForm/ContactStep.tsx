@@ -3,6 +3,8 @@ import { User, Phone, Mail } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { ContactInfo } from "./types";
+import PhotoUpload from "./PhotoUpload";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactStepProps {
   data: ContactInfo;
@@ -10,11 +12,23 @@ interface ContactStepProps {
 }
 
 const ContactStep = ({ data, onChange }: ContactStepProps) => {
+  const { language } = useLanguage();
+  
   const updateField = <K extends keyof ContactInfo>(
     field: K,
     value: ContactInfo[K]
   ) => {
     onChange({ ...data, [field]: value });
+  };
+
+  const texts = {
+    title: language === "tr" ? "İletişim Bilgileri" : "Contact Information",
+    fullName: language === "tr" ? "Ad Soyad / Firma Adı" : "Full Name / Company",
+    phone: language === "tr" ? "Telefon Numarası" : "Phone Number",
+    email: language === "tr" ? "E-posta Adresi" : "Email Address",
+    privacy: language === "tr" 
+      ? "🔒 Bilgileriniz güvenle saklanır ve sadece gönderi takibi için kullanılır."
+      : "🔒 Your information is securely stored and used only for shipment tracking.",
   };
 
   return (
@@ -28,14 +42,14 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
           <User className="w-4 h-4 text-primary" />
         </div>
-        <h3 className="font-semibold text-foreground">İletişim Bilgileri</h3>
+        <h3 className="font-semibold text-foreground">{texts.title}</h3>
       </div>
 
       {/* Full Name */}
       <div className="space-y-2">
         <Label className="text-sm text-muted-foreground flex items-center gap-2">
           <User className="w-4 h-4" />
-          Ad Soyad / Firma Adı
+          {texts.fullName}
         </Label>
         <Input
           type="text"
@@ -50,7 +64,7 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
       <div className="space-y-2">
         <Label className="text-sm text-muted-foreground flex items-center gap-2">
           <Phone className="w-4 h-4" />
-          Telefon Numarası
+          {texts.phone}
         </Label>
         <Input
           type="tel"
@@ -65,7 +79,7 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
       <div className="space-y-2">
         <Label className="text-sm text-muted-foreground flex items-center gap-2">
           <Mail className="w-4 h-4" />
-          E-posta Adresi
+          {texts.email}
         </Label>
         <Input
           type="email"
@@ -76,9 +90,18 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
         />
       </div>
 
+      {/* Photo Upload */}
+      <div className="pt-2">
+        <PhotoUpload
+          photos={data.photos}
+          onChange={(photos) => updateField("photos", photos)}
+          maxPhotos={3}
+        />
+      </div>
+
       <div className="p-3 rounded-xl bg-primary/5 border border-primary/20">
         <p className="text-xs text-muted-foreground">
-          🔒 Bilgileriniz güvenle saklanır ve sadece gönderi takibi için kullanılır.
+          {texts.privacy}
         </p>
       </div>
     </motion.div>
