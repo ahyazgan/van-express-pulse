@@ -36,8 +36,8 @@ const TopBar = () => {
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
             <Truck className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="font-black text-foreground tracking-tight">MINIVAN</span>
-          <span className="text-xs font-bold text-accent">EXPRESS</span>
+          <span className="font-black text-foreground tracking-tight">Route</span>
+          <span className="text-xs font-bold text-accent">EU</span>
         </motion.div>
 
         {/* Language Toggle & Help */}

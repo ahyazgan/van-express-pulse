@@ -12,8 +12,20 @@ export const translations = {
 
     // TopBar
     topBar: {
-      brandName: "Yazgan Nakliyat",
-      tagline: "Türkiye - Avrupa Parsiyel Taşımacılık",
+      brandName: "RouteEU",
+      tagline: "Türkiye - Avrupa Ekspres Taşımacılık",
+    },
+
+    // Hero Section
+    hero: {
+      heading: "RouteEU: Avrupa'nın Ekspres Minivan Hattı",
+      subheading: "Türkiye'den tüm Avrupa'ya en hızlı, güvenli ve şeffaf ekspres taşımacılık çözümleri. Sınırları sizin için hızla aşıyoruz.",
+      cta: "Hemen Fiyat Al",
+      trustMarkers: {
+        liveTracking: "7/24 Canlı Takip",
+        expressBorder: "Ekspres Sınır Geçişi",
+        proService: "Profesyonel Servis",
+      },
     },
 
     // Bottom Sheet / Home
@@ -82,7 +94,7 @@ export const translations = {
     // Success Screen
     success: {
       title: "Talebiniz Alındı!",
-      message: "Yazgan Nakliyat 15 dk içinde size dönecektir.",
+      message: "RouteEU 15 dk içinde size dönecektir.",
       trackOrder: "Siparişi Takip Et",
       newRequest: "Yeni Talep",
       orderId: "Sipariş No",
@@ -169,8 +181,20 @@ export const translations = {
 
     // TopBar
     topBar: {
-      brandName: "Yazgan Nakliyat",
-      tagline: "Turkey - Europe LTL Shipping",
+      brandName: "RouteEU",
+      tagline: "Turkey - Europe Express Shipping",
+    },
+
+    // Hero Section
+    hero: {
+      heading: "RouteEU: Europe's Express Minivan Line",
+      subheading: "The fastest, safest, and most transparent express shipping solutions from Turkey to all of Europe. We cross borders swiftly for you.",
+      cta: "Get a Quote Now",
+      trustMarkers: {
+        liveTracking: "24/7 Live Tracking",
+        expressBorder: "Express Border Crossing",
+        proService: "Professional Service",
+      },
     },
 
     // Bottom Sheet / Home
@@ -239,7 +263,7 @@ export const translations = {
     // Success Screen
     success: {
       title: "Request Received!",
-      message: "Yazgan Nakliyat will contact you within 15 minutes.",
+      message: "RouteEU will contact you within 15 minutes.",
       trackOrder: "Track Order",
       newRequest: "New Request",
       orderId: "Order ID",
