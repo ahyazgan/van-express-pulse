@@ -15,6 +15,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import AppNavigation from "@/components/AppNavigation";
+import TopBar from "@/components/TopBar";
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
 
@@ -220,21 +222,10 @@ const TrackingPage = () => {
   const currentStageIndex = TRACKING_STAGES.findIndex((s) => s.key === order?.status);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/95 backdrop-blur-xl sticky top-0 z-50">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-            <Truck className="w-5 h-5 text-primary" />
-          </div>
-          <div>
-            <h1 className="text-lg font-bold text-foreground">Yazgan Nakliyat</h1>
-            <p className="text-xs text-muted-foreground">Gönderi Takibi</p>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-background pb-24">
+      <TopBar />
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <main className="max-w-4xl mx-auto px-4 pt-20 pb-8">
         {/* Search Section */}
         <Card className="mb-8">
           <CardHeader className="pb-4">
@@ -376,6 +367,8 @@ const TrackingPage = () => {
           )}
         </AnimatePresence>
       </main>
+
+      <AppNavigation />
     </div>
   );
 };
