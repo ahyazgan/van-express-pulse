@@ -1,19 +1,26 @@
 import { motion } from "framer-motion";
-import { Compass, Package, Wallet, User } from "lucide-react";
+import { Map, Package, Search, User } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
-  { id: "explore", icon: Compass, label: "Keşfet" },
-  { id: "shipments", icon: Package, label: "Gönderilerim" },
-  { id: "wallet", icon: Wallet, label: "Cüzdan" },
-  { id: "profile", icon: User, label: "Profil" },
+  { id: "explore", icon: Map, label: "Keşfet", route: "/" },
+  { id: "orders", icon: Package, label: "Gönderilerim", route: "/orders" },
+  { id: "track", icon: Search, label: "Canlı Takip", route: "/track" },
+  { id: "profile", icon: User, label: "Profil", route: "/profile" },
 ];
 
-interface AppNavigationProps {
-  activeTab: string;
-  onTabChange: (tabId: string) => void;
-}
+const AppNavigation = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-const AppNavigation = ({ activeTab, onTabChange }: AppNavigationProps) => {
+  const getActiveTab = () => {
+    const currentPath = location.pathname;
+    const item = navItems.find((item) => item.route === currentPath);
+    return item?.id || "explore";
+  };
+
+  const activeTab = getActiveTab();
+
   return (
     <motion.nav
       className="fixed bottom-0 left-0 right-0 z-50 safe-bottom pointer-events-none"
@@ -26,7 +33,7 @@ const AppNavigation = ({ activeTab, onTabChange }: AppNavigationProps) => {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => onTabChange(item.id)}
+              onClick={() => navigate(item.route)}
               className={`bottom-nav-item relative ${activeTab === item.id ? "active" : ""}`}
             >
               {activeTab === item.id && (

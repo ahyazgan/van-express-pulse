@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { MapPin, Bell, Package, ChevronRight, LogOut, Building2, Warehouse } from "lucide-react";
+import { MapPin, Bell, Package, LogOut, Building2, Warehouse } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import AppNavigation from "@/components/AppNavigation";
+import TopBar from "@/components/TopBar";
 
 const savedAddresses = [
   {
@@ -29,11 +31,7 @@ const savedAddresses = [
   },
 ];
 
-interface ProfilePageProps {
-  onClose: () => void;
-}
-
-const ProfilePage = ({ onClose }: ProfilePageProps) => {
+const ProfilePage = () => {
   const [priceNotifications, setPriceNotifications] = useState(true);
   const [trackingNotifications, setTrackingNotifications] = useState(true);
   const { toast } = useToast();
@@ -43,28 +41,15 @@ const ProfilePage = ({ onClose }: ProfilePageProps) => {
       title: "Çıkış Yapıldı",
       description: "Güvenli bir şekilde çıkış yaptınız.",
     });
-    onClose();
   };
 
   return (
-    <motion.div
-      className="fixed inset-0 z-50 bg-background"
-      initial={{ opacity: 0, y: "100%" }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: "100%" }}
-      transition={{ type: "spring", damping: 25, stiffness: 200 }}
-    >
-      <div className="h-full overflow-y-auto pb-24">
-        {/* Header */}
-        <div className="bg-gradient-to-b from-primary/10 to-background pt-12 pb-8 px-6">
-          <motion.button
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full bg-card/80 backdrop-blur-sm border border-border"
-            whileTap={{ scale: 0.95 }}
-          >
-            <ChevronRight className="w-5 h-5 text-foreground rotate-90" />
-          </motion.button>
+    <div className="min-h-screen bg-background pb-24">
+      <TopBar />
 
+      <div className="h-full overflow-y-auto">
+        {/* Header */}
+        <div className="bg-gradient-to-b from-primary/10 to-background pt-20 pb-8 px-6">
           <motion.div
             className="flex flex-col items-center"
             initial={{ opacity: 0, y: 20 }}
@@ -207,7 +192,9 @@ const ProfilePage = ({ onClose }: ProfilePageProps) => {
           </Button>
         </motion.div>
       </div>
-    </motion.div>
+
+      <AppNavigation />
+    </div>
   );
 };
 
