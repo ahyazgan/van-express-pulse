@@ -90,15 +90,6 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
         />
       </div>
 
-      {/* Photo Upload */}
-      <div className="pt-2">
-        <PhotoUpload
-          photos={data.photos}
-          onChange={(photos) => updateField("photos", photos)}
-          maxPhotos={3}
-        />
-      </div>
-
       <div className="p-3 rounded-xl bg-primary/5 border border-primary/20">
         <p className="text-xs text-muted-foreground">
           {texts.privacy}
