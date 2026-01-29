@@ -4,7 +4,7 @@ import { Clock, Truck, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
-import CitySearchDropdown from "./CitySearchDropdown";
+import RouteSearchInputs from "./RouteSearchInputs";
 import BookingChoiceModal from "./BookingChoiceModal";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
@@ -20,6 +20,7 @@ const BottomSheet = () => {
   const [showChoiceModal, setShowChoiceModal] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>("express");
   const [selectedRouteId, setSelectedRouteId] = useState<number | null>(null);
+  const [origin, setOrigin] = useState(language === "tr" ? "İstanbul" : "Istanbul");
   const [destination, setDestination] = useState("");
   const dragControls = useDragControls();
   const animationControls = useAnimationControls();
@@ -47,13 +48,12 @@ const BottomSheet = () => {
   // Subscribe to map destination events
   useEffect(() => {
     const unsubscribe = destinationEvents.subscribe((dest) => {
-      const prefix = language === "tr" ? "İstanbul → " : "Istanbul → ";
-      setDestination(`${prefix}${dest}`);
+      setDestination(dest);
       setIsExpanded(true);
       animationControls.start({ height: expandedHeight });
     });
     return () => { unsubscribe(); };
-  }, [animationControls, language]);
+  }, [animationControls]);
 
   const priceResult = useMemo(() => {
     if (!destination) return null;
@@ -148,13 +148,13 @@ const BottomSheet = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, x: -20 }}
             >
-              <div className="mb-6">
-                <CitySearchDropdown
-                  value={destination}
-                  onChange={setDestination}
-                  onCitySelect={(cityId) => {
-                    destinationEvents.flyTo(cityId);
-                  }}
+              {/* Route Search Inputs */}
+              <div className="mb-5">
+                <RouteSearchInputs
+                  origin={origin}
+                  destination={destination}
+                  onOriginChange={setOrigin}
+                  onDestinationChange={setDestination}
                   onFocus={handleInputFocus}
                 />
               </div>
@@ -166,70 +166,65 @@ const BottomSheet = () => {
                 transition={{ duration: 0.2 }}
                 className={isExpanded ? "block" : "hidden"}
               >
-                {/* Quick Route Cards */}
-                <QuickRouteCards
-                  selectedId={selectedRouteId}
-                  onSelect={(route) => {
-                    setSelectedRouteId(route.id);
-                    setDestination(`${route.from} → ${route.to}`);
-                    destinationEvents.flyTo(route.to);
-                  }}
-                />
-
-                {/* Vehicle Selection */}
-                <div className="mb-6">
-                  <h3 className="text-sm font-medium text-muted-foreground mb-3">
+                {/* Vehicle Selection - Compact */}
+                <div className="mb-4">
+                  <h3 className="text-xs font-medium text-muted-foreground mb-2">
                     {language === "tr" ? "Araç Seçimi" : "Vehicle Selection"}
                   </h3>
-                  <div className="space-y-3">
+                  <div className="flex gap-2">
                     {vehicles.map((vehicle) => (
                       <button
                         key={vehicle.id}
                         onClick={() => setSelectedVehicle(vehicle.id)}
-                        className={`vehicle-card w-full flex items-center gap-4 text-left ${
-                          selectedVehicle === vehicle.id ? "selected" : ""
+                        className={`relative flex-1 p-3 rounded-xl border transition-all duration-200 text-left ${
+                          selectedVehicle === vehicle.id 
+                            ? "border-accent bg-accent/10" 
+                            : "border-border/30 bg-secondary/40 hover:border-border/50"
                         }`}
                       >
-                        <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20">
-                          <vehicle.icon className="w-7 h-7 text-primary" />
+                        <div className="flex items-center gap-2 mb-1">
+                          <vehicle.icon className={`w-4 h-4 ${selectedVehicle === vehicle.id ? "text-accent" : "text-primary"}`} />
+                          <span className="text-xs font-semibold text-foreground">{vehicle.name}</span>
+                          {vehicle.express && <span className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-accent text-accent-foreground">EXPRESS</span>}
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-bold text-foreground">{vehicle.name}</span>
-                            {vehicle.express && <span className="express-tag">EXPRESS</span>}
-                          </div>
-                          <p className="text-sm text-muted-foreground">{vehicle.description}</p>
+                        <div className="flex items-center gap-1 text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          <span className="text-[10px] font-medium">{vehicle.time}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-muted-foreground">
-                          <Clock className="w-4 h-4" />
-                          <span className="text-sm font-bold">{vehicle.time}</span>
-                        </div>
+                        {/* Selected indicator */}
+                        {selectedVehicle === vehicle.id && (
+                          <motion.div
+                            className="absolute inset-0 rounded-xl border-2 border-accent/60 pointer-events-none"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                          />
+                        )}
                       </button>
                     ))}
                   </div>
                 </div>
 
+                {/* Quick Route Cards */}
+                <QuickRouteCards
+                  selectedId={selectedRouteId}
+                  onSelect={(route) => {
+                    setSelectedRouteId(route.id);
+                    setOrigin(route.from);
+                    setDestination(route.to);
+                    destinationEvents.flyTo(route.to);
+                  }}
+                />
+
                 {/* CTA Button */}
                 <Button
                   onClick={handleStartOrder}
                   disabled={!destination}
-                  className="w-full h-14 btn-primary-glow rounded-2xl text-base gap-2"
+                  className="w-full h-12 btn-primary-glow rounded-xl text-sm gap-2"
                 >
-                  <FileText className="w-5 h-5" />
+                  <FileText className="w-4 h-4" />
                   {t.home.getQuote}
                 </Button>
               </motion.div>
-
-              {/* Collapsed hint */}
-              {!isExpanded && (
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center text-sm text-muted-foreground mt-2"
-                >
-                  {language === "tr" ? "Yukarı kaydırarak devam edin" : "Swipe up to continue"}
-                </motion.p>
-              )}
             </motion.div>
           ) : (
             <motion.div
@@ -243,12 +238,12 @@ const BottomSheet = () => {
                 <p className="text-xs text-muted-foreground">
                   {language === "tr" ? "Gönderim Rotası" : "Shipping Route"}
                 </p>
-                <p className="font-semibold text-foreground">{destination}</p>
+                <p className="font-semibold text-foreground">{origin} → {destination}</p>
               </div>
 
               {/* Order Form */}
               <OrderForm
-                destination={destination}
+                destination={`${origin} → ${destination}`}
                 priceResult={priceResult}
                 onSuccess={handleOrderSuccess}
                 onCancel={handleCancelOrder}
