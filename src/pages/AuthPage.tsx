@@ -130,9 +130,9 @@ const AuthPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="h-screen bg-background flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="sticky top-0 z-10 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="flex-shrink-0 bg-background/80 backdrop-blur-xl border-b border-border/50 z-10">
         <div className="flex items-center gap-4 px-4 py-4">
           <Button
             variant="ghost"
@@ -151,7 +151,8 @@ const AuthPage = () => {
         </div>
       </div>
 
-      <div className="px-5 py-8 max-w-md mx-auto">
+      <div className="flex-1 overflow-y-auto px-5 py-8 pb-12">
+        <div className="max-w-md mx-auto">
         {/* Logo/Brand */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -346,6 +347,7 @@ const AuthPage = () => {
               }
             </button>
           </p>
+        </div>
         </div>
       </div>
     </div>
