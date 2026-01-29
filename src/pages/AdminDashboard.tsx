@@ -18,11 +18,15 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageCircle, Package, CheckCircle, TrendingUp, Truck } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { MessageCircle, Package, CheckCircle, TrendingUp, Truck, Lock, AlertCircle } from "lucide-react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
+import { motion } from "framer-motion";
 import DocumentUpload from "@/components/admin/DocumentUpload";
 import PhotoGallery from "@/components/admin/PhotoGallery";
+
+const ADMIN_PIN = "227742";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -63,13 +67,18 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const AdminDashboard = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [pin, setPin] = useState("");
+  const [pinError, setPinError] = useState(false);
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"current" | "completed" | "revenue">("current");
 
   useEffect(() => {
-    fetchOrders();
-  }, []);
+    if (isAuthorized) {
+      fetchOrders();
+    }
+  }, [isAuthorized]);
 
   const fetchOrders = async () => {
     const { data, error } = await supabase
@@ -122,8 +131,87 @@ const AdminDashboard = () => {
     0
   );
 
+  const handlePinSubmit = () => {
+    if (pin === ADMIN_PIN) {
+      setIsAuthorized(true);
+      setPinError(false);
+    } else {
+      setPinError(true);
+      setPin("");
+    }
+  };
+
+  const handlePinKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handlePinSubmit();
+    }
+  };
+
   const displayOrders = activeTab === "current" ? currentOrders : 
                         activeTab === "completed" ? completedOrders : orders;
+
+  // PIN Protection Screen
+  if (!isAuthorized) {
+    return (
+      <div className="min-h-screen bg-[#0f172a] flex items-center justify-center p-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-sm"
+        >
+          <div className="text-center mb-8">
+            <div className="w-20 h-20 rounded-2xl bg-[#1e3a5f] mx-auto flex items-center justify-center mb-4">
+              <Lock className="w-10 h-10 text-[#3b82f6]" />
+            </div>
+            <h1 className="text-2xl font-bold text-white mb-2">Yönetim Paneli</h1>
+            <p className="text-[#94a3b8]">Devam etmek için PIN kodunu girin</p>
+          </div>
+
+          <div className="space-y-4">
+            <div>
+              <Input
+                type="password"
+                inputMode="numeric"
+                pattern="[0-9]*"
+                maxLength={6}
+                value={pin}
+                onChange={(e) => {
+                  const value = e.target.value.replace(/\D/g, "");
+                  setPin(value);
+                  setPinError(false);
+                }}
+                onKeyDown={handlePinKeyDown}
+                placeholder="6 haneli PIN"
+                className="h-14 text-center text-2xl tracking-[0.5em] bg-[#1e293b] border-[#334155] text-white placeholder:text-[#475569] rounded-xl focus:border-[#3b82f6] focus:ring-[#3b82f6]"
+              />
+              {pinError && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 mt-3 text-red-400 justify-center"
+                >
+                  <AlertCircle className="w-4 h-4" />
+                  <span className="text-sm">Hatalı Şifre</span>
+                </motion.div>
+              )}
+            </div>
+
+            <Button 
+              onClick={handlePinSubmit}
+              disabled={pin.length !== 6}
+              className="w-full h-12 bg-[#3b82f6] hover:bg-[#2563eb] text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Giriş
+            </Button>
+          </div>
+
+          <p className="text-center text-[#475569] text-xs mt-8">
+            Yazgan Nakliyat © 2025
+          </p>
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex">
