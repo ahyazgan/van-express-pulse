@@ -139,7 +139,7 @@ const BottomSheet = () => {
       </div>
 
       {/* Content */}
-      <div className="px-5 pb-20 overflow-y-auto h-full">
+      <div className="px-5 pb-28 sm:pb-20 overflow-y-auto h-full">
         <AnimatePresence mode="wait">
           {viewMode === "browse" ? (
             <motion.div
