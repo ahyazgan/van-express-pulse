@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PriceResult } from "@/constants/shippingRates";
+import { supabase } from "@/integrations/supabase/client";
 import ProductStep from "./ProductStep";
 import ContactStep from "./ContactStep";
 import SuccessScreen from "./SuccessScreen";
@@ -60,7 +61,7 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
 
   const canSubmit = isProductValid && isContactValid;
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!canSubmit) return;
 
     const orderData: OrderData = {
@@ -73,8 +74,26 @@ const OrderForm = ({ destination, priceResult, onSuccess, onCancel }: OrderFormP
       },
     };
 
-    // Log order for now (would send to backend)
-    console.log("Order submitted:", orderData);
+    // Save to database
+    const { error } = await supabase.from("shipping_requests").insert({
+      destination,
+      product_category: product.category,
+      packaging_type: product.packagingType,
+      quantity: product.quantity,
+      total_weight: product.totalWeight,
+      total_volume: product.totalVolume,
+      is_stackable: product.isStackable,
+      customer_name: contact.fullName,
+      phone: contact.phone,
+      email: contact.email,
+      estimated_min_price: priceResult?.minPrice || 0,
+      estimated_max_price: priceResult?.maxPrice || 0,
+    });
+
+    if (error) {
+      console.error("Error saving order:", error);
+    }
+
     setSubmitted(true);
     onSuccess(orderData);
   };
