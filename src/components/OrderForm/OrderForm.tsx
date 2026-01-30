@@ -166,68 +166,70 @@ const OrderForm = ({
   }
 
   return (
-    <div className="space-y-4">
-      {/* Member Discount Badge */}
-      {isAuthenticated && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/10 border border-green-500/30"
-        >
-          <BadgePercent className="w-4 h-4 text-green-600" />
-          <span className="text-sm font-medium text-green-700">
-            {language === "tr" ? "Üye indirimi aktif: %5" : "Member discount active: 5%"}
-          </span>
-        </motion.div>
-      )}
+    <div className="flex flex-col">
+      <div className="space-y-4 pb-4">
+        {/* Member Discount Badge */}
+        {isAuthenticated && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/10 border border-green-500/30"
+          >
+            <BadgePercent className="w-4 h-4 text-green-600" />
+            <span className="text-sm font-medium text-green-700">
+              {language === "tr" ? "Üye indirimi aktif: %5" : "Member discount active: 5%"}
+            </span>
+          </motion.div>
+        )}
 
-      {/* Step Indicator */}
-      <div className="flex items-center gap-2 mb-6">
-        <div
-          className={`flex-1 h-1 rounded-full transition-colors ${
-            step >= 1 ? "bg-primary" : "bg-border"
-          }`}
-        />
-        <div
-          className={`flex-1 h-1 rounded-full transition-colors ${
-            step >= 2 ? "bg-primary" : "bg-border"
-          }`}
-        />
+        {/* Step Indicator */}
+        <div className="flex items-center gap-2 mb-6">
+          <div
+            className={`flex-1 h-1 rounded-full transition-colors ${
+              step >= 1 ? "bg-primary" : "bg-border"
+            }`}
+          />
+          <div
+            className={`flex-1 h-1 rounded-full transition-colors ${
+              step >= 2 ? "bg-primary" : "bg-border"
+            }`}
+          />
+        </div>
+
+        {/* Form Steps */}
+        <AnimatePresence mode="wait">
+          {step === 1 && (
+            <ProductStep key="product" data={product} onChange={setProduct} />
+          )}
+          {step === 2 && (
+            <ContactStep key="contact" data={contact} onChange={setContact} />
+          )}
+        </AnimatePresence>
+
+        {/* Price Summary */}
+        {priceResult?.found && (
+          <motion.div
+            layout
+            className="p-4 rounded-2xl bg-gradient-to-r from-primary/15 to-primary/5 border border-primary/30"
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Euro className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium text-muted-foreground">
+                  {t.orderForm.estimatedPrice}
+                </span>
+              </div>
+              <p className="text-lg font-bold text-foreground">
+                {priceResult.minPrice?.toLocaleString("tr-TR")}€ -{" "}
+                {priceResult.maxPrice?.toLocaleString("tr-TR")}€
+              </p>
+            </div>
+          </motion.div>
+        )}
       </div>
 
-      {/* Form Steps */}
-      <AnimatePresence mode="wait">
-        {step === 1 && (
-          <ProductStep key="product" data={product} onChange={setProduct} />
-        )}
-        {step === 2 && (
-          <ContactStep key="contact" data={contact} onChange={setContact} />
-        )}
-      </AnimatePresence>
-
-      {/* Price Summary */}
-      {priceResult?.found && (
-        <motion.div
-          layout
-          className="p-4 rounded-2xl bg-gradient-to-r from-primary/15 to-primary/5 border border-primary/30"
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Euro className="w-5 h-5 text-primary" />
-              <span className="text-sm font-medium text-muted-foreground">
-                {t.orderForm.estimatedPrice}
-              </span>
-            </div>
-            <p className="text-lg font-bold text-foreground">
-              {priceResult.minPrice?.toLocaleString("tr-TR")}€ -{" "}
-              {priceResult.maxPrice?.toLocaleString("tr-TR")}€
-            </p>
-          </div>
-        </motion.div>
-      )}
-
-      {/* Navigation Buttons */}
-      <div className="flex gap-3 pt-2">
+      {/* Navigation Buttons - Positioned properly */}
+      <div className="flex gap-3 pt-2 pb-2">
         {step === 1 ? (
           <>
             <Button
