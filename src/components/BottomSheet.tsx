@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards from "./QuickRouteCards";
 import RouteSearchInputs from "./RouteSearchInputs";
 import BookingChoiceModal from "./BookingChoiceModal";
+import QuoteSummaryModal from "./QuoteSummaryModal";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
 import { OrderForm, OrderData } from "./OrderForm";
@@ -18,6 +19,7 @@ const BottomSheet = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [viewMode, setViewMode] = useState<"browse" | "order">("browse");
   const [showChoiceModal, setShowChoiceModal] = useState(false);
+  const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState<string | null>("express");
   const [selectedRouteId, setSelectedRouteId] = useState<number | null>(null);
   const [origin, setOrigin] = useState(language === "tr" ? "İstanbul" : "Istanbul");
@@ -93,6 +95,13 @@ const BottomSheet = () => {
       });
       return;
     }
+    
+    // Show quote summary modal first
+    setShowQuoteModal(true);
+  };
+
+  const handleProceedFromQuote = () => {
+    setShowQuoteModal(false);
     
     // If user is logged in, go directly to order form
     // Otherwise, show the choice modal
@@ -263,6 +272,16 @@ const BottomSheet = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Quote Summary Modal */}
+      <QuoteSummaryModal
+        open={showQuoteModal}
+        onOpenChange={setShowQuoteModal}
+        origin={origin}
+        destination={destination}
+        priceResult={priceResult}
+        onProceed={handleProceedFromQuote}
+      />
 
       {/* Booking Choice Modal */}
       <BookingChoiceModal
