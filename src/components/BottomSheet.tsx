@@ -148,7 +148,7 @@ const BottomSheet = () => {
       </div>
 
       {/* Content */}
-      <div className={`px-5 overflow-y-auto h-full ${viewMode === "browse" ? "pb-32 sm:pb-20" : "pb-36 sm:pb-20"}`}>
+      <div className={`px-5 overflow-y-auto h-full ${viewMode === "browse" ? "pb-32 sm:pb-24" : "pb-36 sm:pb-28"}`}>
         <AnimatePresence mode="wait">
           {viewMode === "browse" ? (
             <motion.div
