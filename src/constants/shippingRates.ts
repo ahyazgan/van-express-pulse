@@ -2,7 +2,7 @@
 // Format: [minPrice, maxPrice]
 
 export const SHIPPING_RATES: Record<string, [number, number]> = {
-  // Germany
+  // Germany (Almanya)
   "Munich": [2050, 2350],
   "Münih": [2050, 2350],
   "Stuttgart": [2100, 2500],
@@ -12,58 +12,61 @@ export const SHIPPING_RATES: Record<string, [number, number]> = {
   "Berlin": [2350, 2700],
   "Hamburg": [2500, 2800],
   
-  // Austria
+  // Austria (Avusturya)
   "Vienna": [1950, 2250],
   "Viyana": [1950, 2250],
+  "Graz": [2000, 2300],
+  "Salzburg": [2000, 2300],
   
-  // Netherlands
+  // Netherlands (Hollanda)
   "Amsterdam": [2450, 2950],
+  "Rotterdam": [2450, 2900],
+  "Eindhoven": [2400, 2800],
   
-  // France
+  // Belgium (Belçika)
+  "Brussels": [2400, 2900],
+  "Brüksel": [2400, 2900],
+  "Antwerp": [2450, 2950],
+  "Anvers": [2450, 2950],
+  
+  // France (Fransa)
   "Paris": [2650, 3250],
-  "Marseille": [2500, 3000],
+  "Strasbourg": [2400, 2700],
+  "Strazburg": [2400, 2700],
+  "Lyon": [2550, 3100],
   
-  // UK
+  // Poland (Polonya)
+  "Warsaw": [2000, 2400],
+  "Varşova": [2000, 2400],
+  "Krakow": [1950, 2250],
+  "Kraków": [1950, 2250],
+  "Poznan": [2150, 2500],
+  "Poznań": [2150, 2500],
+  
+  // Czech Republic (Çekya)
+  "Prague": [2050, 2350],
+  "Prag": [2050, 2350],
+  "Brno": [2000, 2250],
+  
+  // UK (İngiltere)
   "London": [3500, 4300],
   "Londra": [3500, 4300],
+  "Manchester": [3850, 4600],
   
-  // Italy
+  // Italy (İtalya)
   "Milan": [2400, 2800],
   "Milano": [2400, 2800],
-  "Rome": [2600, 3100],
-  "Roma": [2600, 3100],
+  "Verona": [2250, 2700],
   
-  // Romania
+  // Switzerland (İsviçre)
+  "Zurich": [2500, 2950],
+  "Zürich": [2500, 2950],
+  "Zürih": [2500, 2950],
+  "Basel": [2550, 3000],
+  
+  // Romania (Romanya)
   "Bucharest": [1150, 1500],
   "Bükreş": [1150, 1500],
-  
-  // Czech Republic
-  "Prague": [2100, 2450],
-  "Prag": [2100, 2450],
-  
-  // Hungary
-  "Budapest": [1650, 2000],
-  
-  // Serbia
-  "Belgrade": [1200, 1550],
-  "Belgrad": [1200, 1550],
-  
-  // Bulgaria
-  "Sofia": [950, 1250],
-  "Sofya": [950, 1250],
-  
-  // Slovenia
-  "Ljubljana": [2050, 2400],
-  
-  // Croatia
-  "Zagreb": [1850, 2200],
-  
-  // Slovakia
-  "Bratislava": [1900, 2250],
-  
-  // Spain
-  "Madrid": [3200, 3900],
-  "Barcelona": [3000, 3650],
 };
 
 export interface PriceResult {
