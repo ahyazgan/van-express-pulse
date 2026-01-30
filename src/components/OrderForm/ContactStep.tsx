@@ -55,7 +55,7 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
           type="text"
           value={data.fullName}
           onChange={(e) => updateField("fullName", e.target.value)}
-          placeholder="Yazgan Nakliyat A.Ş."
+          placeholder=""
           className="h-12 rounded-xl bg-secondary/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary/20"
         />
       </div>
