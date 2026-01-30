@@ -183,7 +183,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email
     const emailResponse = await resend.emails.send({
       from: "RouteEU <onboarding@resend.dev>",
-      to: ["ahyazgab@mail.com"],
+      to: ["ahyazgab@gmail.com"],
       subject: "🔔 Yeni Sipariş Geldi! - RouteEU",
       html: emailHtml,
     });

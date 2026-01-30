@@ -123,11 +123,25 @@ const OrderForm = ({
       user_id: user?.id || null,
     };
 
-    const { error } = await supabase.from("shipping_requests").insert(insertData);
+    const { data, error } = await supabase.from("shipping_requests").insert(insertData).select().single();
 
     if (error) {
       console.error("Error saving order:", error);
       return;
+    }
+
+    // Trigger email notification via edge function
+    if (data) {
+      supabase.functions.invoke("notify-new-order", {
+        body: {
+          type: "INSERT",
+          table: "shipping_requests",
+          schema: "public",
+          record: data,
+        },
+      }).catch((err) => {
+        console.error("Failed to send notification:", err);
+      });
     }
 
     setSubmitted(true);
