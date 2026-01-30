@@ -155,6 +155,11 @@ const BottomSheet = () => {
                   destination={destination}
                   onOriginChange={setOrigin}
                   onDestinationChange={setDestination}
+                  onSwap={() => {
+                    const temp = origin;
+                    setOrigin(destination);
+                    setDestination(temp);
+                  }}
                   onFocus={handleInputFocus}
                 />
               </div>
