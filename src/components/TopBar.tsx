@@ -12,7 +12,7 @@ const TopBar = () => {
   const toggleLanguage = () => {
     setLanguage(language === "tr" ? "en" : "tr");
   };
-  return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none" initial={{
+  return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none flex justify-center" initial={{
     y: -50,
     opacity: 0
   }} animate={{
@@ -23,7 +23,7 @@ const TopBar = () => {
     damping: 20,
     delay: 0.2
   }}>
-      <div className="flex items-center justify-between px-5 py-3">
+      <div className="flex items-center justify-between px-5 py-3 w-full max-w-md mx-auto">
         {/* Profile Button */}
         <motion.button className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md pointer-events-auto" whileHover={{
         scale: 1.05
