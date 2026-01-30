@@ -5,7 +5,7 @@ const RouteEULogo = () => {
     <img
       src={logoSvg}
       alt="RouteEU Express"
-      style={{ width: '240px', height: '64px' }}
+      style={{ width: '180px', height: '48px' }}
       className="flex-shrink-0"
     />
   );
