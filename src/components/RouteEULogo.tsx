@@ -5,7 +5,9 @@ const RouteEULogo = () => {
     <img
       src={logoSvg}
       alt="RouteEU Express"
-      className="h-12 w-auto flex-shrink-0"
+      width={180}
+      height={48}
+      className="flex-shrink-0"
     />
   );
 };
