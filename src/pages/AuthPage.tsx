@@ -28,7 +28,7 @@ const AuthPage = () => {
     mode?: "login" | "signup";
   } | null;
 
-  const [mode, setMode] = useState<"login" | "signup">(locationState?.mode || "signup");
+  const [mode] = useState<"login" | "signup">(locationState?.mode || "signup");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(locationState?.rememberMe ?? true);
@@ -325,29 +325,6 @@ const AuthPage = () => {
           </Button>
         </motion.form>
 
-        {/* Toggle Mode */}
-        <div className="mt-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            {mode === "login" 
-              ? (language === "tr" ? "Hesabınız yok mu?" : "Don't have an account?")
-              : (language === "tr" ? "Zaten üye misiniz?" : "Already have an account?")
-            }
-            {" "}
-            <button
-              type="button"
-              onClick={() => {
-                setMode(mode === "login" ? "signup" : "login");
-                setErrors({});
-              }}
-              className="text-primary font-medium hover:underline"
-            >
-              {mode === "login" 
-                ? (language === "tr" ? "Üye Ol" : "Sign Up")
-                : (language === "tr" ? "Giriş Yap" : "Log In")
-              }
-            </button>
-          </p>
-        </div>
         </div>
       </div>
     </div>
