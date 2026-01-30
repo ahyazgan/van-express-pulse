@@ -132,16 +132,21 @@ const AuthPage = () => {
   return (
     <div className="h-screen bg-background flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="flex-shrink-0 bg-background/80 backdrop-blur-xl border-b border-border/50 z-10">
+      <div className="flex-shrink-0 bg-background/80 backdrop-blur-xl border-b border-border/50 z-10 safe-top">
         <div className="flex items-center gap-4 px-4 py-4">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => navigate(-1)}
-            className="rounded-full"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <ArrowLeft className="w-5 h-5" />
-          </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => navigate(-1)}
+              className="rounded-full w-10 h-10 border-border/60 bg-background/50 backdrop-blur-sm shadow-sm"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </Button>
+          </motion.div>
           <h1 className="text-lg font-bold">
             {mode === "login" 
               ? (language === "tr" ? "Giriş Yap" : "Log In")
