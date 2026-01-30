@@ -57,14 +57,14 @@ const BookingChoiceModal = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg mx-4 rounded-3xl p-0 overflow-hidden border-border/50 bg-background/95 backdrop-blur-xl">
-        <DialogHeader className="px-6 pt-6 pb-4">
+      <DialogContent className="sm:max-w-lg mx-4 rounded-3xl p-0 overflow-hidden border-border/50 bg-background/95 backdrop-blur-xl flex flex-col">
+        <DialogHeader className="px-6 pt-6 pb-2">
           <DialogTitle className="text-xl font-bold text-center text-foreground">
             {language === "tr" ? "Nasıl Devam Etmek İstersiniz?" : "How Would You Like to Continue?"}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="px-6 pb-6 space-y-4">
+        <div className="px-6 pb-10 space-y-4 flex-1 flex flex-col justify-center">
           {/* Member Option */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -138,26 +138,27 @@ const BookingChoiceModal = ({
               </label>
             </div>
 
-            {/* CTA Button */}
-            <Button
-              onClick={() => handleMemberClick(false)}
-              className="w-full h-12 mt-4 btn-primary-glow rounded-xl text-base font-bold gap-2"
-            >
-              <UserCheck className="w-5 h-5" />
-              {language === "tr" ? "Üye Ol ve Devam Et" : "Sign Up & Continue"}
-            </Button>
-
-            {/* Login Link */}
-            <p className="text-center text-sm text-muted-foreground mt-3">
-              {language === "tr" ? "Zaten hesabınız var mı?" : "Already have an account?"}{" "}
-              <button
-                type="button"
-                onClick={() => handleMemberClick(true)}
-                className="text-primary font-semibold hover:underline"
+            {/* Two Distinct CTA Buttons */}
+            <div className="mt-4 space-y-3">
+              {/* Sign Up Button - Yellow bg */}
+              <Button
+                onClick={() => handleMemberClick(false)}
+                className="w-full h-12 btn-primary-glow rounded-xl text-base font-bold gap-2"
               >
-                {language === "tr" ? "Giriş Yapın" : "Log In"}
-              </button>
-            </p>
+                <UserCheck className="w-5 h-5" />
+                {language === "tr" ? "Üye Ol" : "Sign Up"}
+              </Button>
+
+              {/* Login Button - Navy border/text */}
+              <Button
+                onClick={() => handleMemberClick(true)}
+                variant="outline"
+                className="w-full h-12 rounded-xl text-base font-bold gap-2 border-2 border-foreground text-foreground hover:bg-foreground/5"
+              >
+                <User className="w-5 h-5" />
+                {language === "tr" ? "Giriş Yap" : "Log In"}
+              </Button>
+            </div>
           </motion.div>
 
           {/* Guest Option */}
