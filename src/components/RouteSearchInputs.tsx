@@ -1,4 +1,4 @@
-import { MapPin, Navigation } from "lucide-react";
+import { MapPin, Navigation, ArrowUpDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -7,6 +7,7 @@ interface RouteSearchInputsProps {
   destination: string;
   onOriginChange: (value: string) => void;
   onDestinationChange: (value: string) => void;
+  onSwap?: () => void;
   onFocus?: () => void;
 }
 
@@ -15,16 +16,29 @@ const RouteSearchInputs = ({
   destination,
   onOriginChange,
   onDestinationChange,
+  onSwap,
   onFocus,
 }: RouteSearchInputsProps) => {
   const { language } = useLanguage();
 
   return (
     <div className="relative flex items-stretch gap-3">
-      {/* Vertical Route Line */}
+      {/* Vertical Route Line with Swap Button */}
       <div className="flex flex-col items-center py-3 px-1">
         <div className="w-3 h-3 rounded-full bg-primary border-2 border-primary-foreground shadow-sm" />
-        <div className="flex-1 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-accent my-1 min-h-[24px]" />
+        <div className="relative flex-1 flex flex-col items-center my-1 min-h-[24px]">
+          <div className="absolute inset-0 w-0.5 left-1/2 -translate-x-1/2 bg-gradient-to-b from-primary via-primary/50 to-accent" />
+          {onSwap && (
+            <button
+              type="button"
+              onClick={onSwap}
+              className="relative z-10 w-6 h-6 rounded-full bg-secondary border border-border/50 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+              aria-label={language === "tr" ? "Rotayı değiştir" : "Swap route"}
+            >
+              <ArrowUpDown className="w-3 h-3 text-muted-foreground" />
+            </button>
+          )}
+        </div>
         <div className="w-3 h-3 rounded-full bg-accent border-2 border-accent-foreground shadow-sm" />
       </div>
 
