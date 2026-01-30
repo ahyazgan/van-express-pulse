@@ -127,6 +127,7 @@ const OrderForm = ({
 
     if (error) {
       console.error("Error saving order:", error);
+      return;
     }
 
     setSubmitted(true);
