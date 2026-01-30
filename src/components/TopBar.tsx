@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { User, HelpCircle, Truck } from "lucide-react";
+import { User, HelpCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import RouteEULogo from "./RouteEULogo";
+
 const TopBar = () => {
   const {
     language,
@@ -32,18 +34,14 @@ const TopBar = () => {
         </motion.button>
 
         {/* Logo */}
-        <motion.div className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto" initial={{
+        <motion.div className="flex items-center px-3 py-1.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto" initial={{
         scale: 0.9
       }} animate={{
         scale: 1
       }} transition={{
         delay: 0.3
       }}>
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-sm">
-            <Truck className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <span className="font-black text-foreground tracking-tight">RouteEU</span>
-          <span className="text-xs font-bold text-accent">EKPRESS</span>
+          <RouteEULogo />
         </motion.div>
 
         {/* Language Toggle & Help */}
