@@ -6,16 +6,21 @@ interface QuickRoute {
   fromFlag: string;
   to: string;
   toFlag: string;
+  toCountryCode: string;
   time: string;
   popular?: boolean;
 }
 
+// FlagCDN URLs for reliable cross-platform flag display
+const getFlagUrl = (countryCode: string) => 
+  `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`;
+
 const routes: QuickRoute[] = [
-  { id: 1, from: "İstanbul", fromFlag: "🇹🇷", to: "Berlin", toFlag: "🇩🇪", time: "24 saat", popular: true },
-  { id: 2, from: "İstanbul", fromFlag: "🇹🇷", to: "Paris", toFlag: "🇫🇷", time: "28 saat" },
-  { id: 3, from: "İstanbul", fromFlag: "🇹🇷", to: "Amsterdam", toFlag: "🇳🇱", time: "32 saat" },
-  { id: 4, from: "İstanbul", fromFlag: "🇹🇷", to: "Londra", toFlag: "🇬🇧", time: "36 saat" },
-  { id: 5, from: "İstanbul", fromFlag: "🇹🇷", to: "Milano", toFlag: "🇮🇹", time: "22 saat" },
+  { id: 1, from: "İstanbul", fromFlag: "🇹🇷", to: "Berlin", toFlag: "🇩🇪", toCountryCode: "de", time: "24 saat", popular: true },
+  { id: 2, from: "İstanbul", fromFlag: "🇹🇷", to: "Paris", toFlag: "🇫🇷", toCountryCode: "fr", time: "28 saat" },
+  { id: 3, from: "İstanbul", fromFlag: "🇹🇷", to: "Amsterdam", toFlag: "🇳🇱", toCountryCode: "nl", time: "32 saat" },
+  { id: 4, from: "İstanbul", fromFlag: "🇹🇷", to: "Londra", toFlag: "🇬🇧", toCountryCode: "gb", time: "36 saat" },
+  { id: 5, from: "İstanbul", fromFlag: "🇹🇷", to: "Milano", toFlag: "🇮🇹", toCountryCode: "it", time: "22 saat" },
 ];
 
 interface QuickRouteCardsProps {
@@ -59,9 +64,14 @@ const QuickRouteCards = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
               </svg>
             </div>
             
-            {/* Route Info - Flag inline with destination */}
-            <p className="text-[10px] font-medium text-foreground truncate">
-              {route.toFlag} {route.to}
+            {/* Route Info - Image flag with destination */}
+            <p className="text-[10px] font-medium text-foreground truncate flex items-center gap-1">
+              <img 
+                src={getFlagUrl(route.toCountryCode)} 
+                alt={route.toCountryCode.toUpperCase()}
+                className="h-4 w-4 rounded-full object-cover"
+              />
+              {route.to}
             </p>
             <p className={`text-[9px] ${selectedId === route.id ? "text-accent" : "text-muted-foreground"}`}>
               {route.time}
