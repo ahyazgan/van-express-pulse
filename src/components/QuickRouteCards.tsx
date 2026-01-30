@@ -45,13 +45,8 @@ const QuickRouteCards = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
             transition={{ delay: index * 0.05 }}
             whileTap={{ scale: 0.97 }}
           >
-            {/* Destination Country Flag - Top Right */}
-            <span className="absolute top-1.5 right-1.5 text-base opacity-80">
-              {route.toFlag}
-            </span>
-
             {route.popular && (
-              <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-[8px] font-bold px-1.5 py-0.5 rounded-full">
+              <span className="absolute -top-1.5 -right-0.5 bg-accent text-accent-foreground text-[8px] font-bold px-1.5 py-0.5 rounded-full">
                 TOP
               </span>
             )}
@@ -64,9 +59,9 @@ const QuickRouteCards = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
               </svg>
             </div>
             
-            {/* Route Info */}
+            {/* Route Info - Flag inline with destination */}
             <p className="text-[10px] font-medium text-foreground truncate">
-              {route.to}
+              {route.toFlag} {route.to}
             </p>
             <p className={`text-[9px] ${selectedId === route.id ? "text-accent" : "text-muted-foreground"}`}>
               {route.time}
