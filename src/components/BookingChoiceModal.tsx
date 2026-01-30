@@ -57,14 +57,14 @@ const BookingChoiceModal = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-lg mx-4 rounded-3xl p-0 overflow-hidden border-border/50 bg-background/95 backdrop-blur-xl flex flex-col">
-        <DialogHeader className="px-6 pt-6 pb-2">
+      <DialogContent className="sm:max-w-lg mx-4 rounded-3xl p-0 overflow-hidden border-border/50 bg-background/95 backdrop-blur-xl flex flex-col max-h-[90vh]">
+        <DialogHeader className="px-6 pt-6 pb-2 flex-shrink-0">
           <DialogTitle className="text-xl font-bold text-center text-foreground">
             {language === "tr" ? "Nasıl Devam Etmek İstersiniz?" : "How Would You Like to Continue?"}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="px-6 pb-10 space-y-4 flex-1 flex flex-col justify-center">
+        <div className="px-6 pb-6 space-y-4 overflow-y-auto flex-1" style={{ paddingBottom: 'max(24px, env(safe-area-inset-bottom))' }}>
           {/* Member Option */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
