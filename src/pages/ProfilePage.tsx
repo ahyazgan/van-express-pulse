@@ -63,7 +63,11 @@ const ProfilePage = () => {
   };
 
   const handleLogin = () => {
-    navigate("/auth", { state: { from: "/profile" } });
+    navigate("/auth", { state: { from: "/profile", mode: "login" } });
+  };
+
+  const handleSignup = () => {
+    navigate("/auth", { state: { from: "/profile", mode: "signup" } });
   };
 
   // Get display name from profile or user email
@@ -107,19 +111,37 @@ const ProfilePage = () => {
               }
             </p>
 
-            {/* Primary Login Button */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button
-                onClick={handleLogin}
-                className="w-full h-14 rounded-2xl btn-primary-glow gap-3 text-base font-bold"
+            {/* Separate Login and Signup Buttons */}
+            <div className="flex flex-col gap-4 w-full">
+              {/* Login Button - Navy Border */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <LogIn className="w-5 h-5" />
-                {language === "tr" ? "Giriş Yap / Üye Ol" : "Log In / Sign Up"}
-              </Button>
-            </motion.div>
+                <Button
+                  onClick={handleLogin}
+                  variant="outline"
+                  className="w-full h-14 rounded-2xl gap-3 text-base font-bold border-2 border-foreground text-foreground bg-transparent hover:bg-foreground/5"
+                >
+                  <LogIn className="w-5 h-5" />
+                  {language === "tr" ? "Giriş Yap" : "Log In"}
+                </Button>
+              </motion.div>
+
+              {/* Signup Button - Yellow Background */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Button
+                  onClick={handleSignup}
+                  className="w-full h-14 rounded-2xl gap-3 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg"
+                >
+                  <User className="w-5 h-5" />
+                  {language === "tr" ? "Üye Ol" : "Sign Up"}
+                </Button>
+              </motion.div>
+            </div>
 
             {/* Benefits hint */}
             <div className="mt-6 flex items-center justify-center gap-4 text-xs text-muted-foreground">
