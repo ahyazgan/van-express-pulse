@@ -180,6 +180,16 @@ const BottomSheet = () => {
                 transition={{ duration: 0.2 }}
                 className={isExpanded ? "block" : "hidden"}
               >
+                {/* Delivery Badge */}
+                <div className="mb-4 flex justify-center">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30">
+                    <Zap className="w-4 h-4 text-success" />
+                    <span className="text-sm font-bold text-success">
+                      {language === "tr" ? "24-48 Saatte Teslimat" : "24-48 Hours Delivery"}
+                    </span>
+                  </div>
+                </div>
+
                 {/* Vehicle Selection - Compact */}
                 <div className="mb-4">
                   <h3 className="text-xs font-medium text-muted-foreground mb-2">

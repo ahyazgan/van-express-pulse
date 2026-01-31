@@ -18,7 +18,7 @@ export const translations = {
 
     // Hero Section
     hero: {
-      heading: "RouteEU: Avrupa'nın Ekspres Panelvan Hattı",
+      heading: "RouteEU Express - Avrupa'nın En Hızlı Panelvan Ağı",
       subheading: "Türkiye'den tüm Avrupa'ya en hızlı, güvenli ve şeffaf ekspres taşımacılık çözümleri. Sınırları sizin için hızla aşıyoruz.",
       cta: "Hemen Fiyat Al",
       trustMarkers: {
@@ -221,7 +221,7 @@ export const translations = {
 
     // Hero Section
     hero: {
-      heading: "RouteEU: Europe's Express Panelvan Line",
+      heading: "RouteEU Express - Europe's Fastest Panelvan Network",
       subheading: "The fastest, safest, and most transparent express shipping solutions from Turkey to all of Europe. We cross borders swiftly for you.",
       cta: "Get a Quote Now",
       trustMarkers: {

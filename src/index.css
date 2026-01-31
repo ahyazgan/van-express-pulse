@@ -107,20 +107,32 @@
 }
 
 @layer components {
-  /* Primary CTA Button with glow */
+  /* Primary CTA Button with glow and pulse animation */
   .btn-primary-glow {
     @apply bg-primary text-primary-foreground font-bold;
     box-shadow: var(--shadow-glow-yellow);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: cta-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes cta-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px -4px hsl(45 100% 50% / 0.5);
+    }
+    50% {
+      box-shadow: 0 0 40px -4px hsl(45 100% 50% / 0.8);
+    }
   }
 
   .btn-primary-glow:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 0 60px -5px hsl(45 100% 50% / 0.7);
+    animation: none;
   }
 
   .btn-primary-glow:active {
     transform: translateY(0) scale(0.98);
+    animation: none;
   }
 
   /* Glassmorphism Bottom Sheet - Light Theme */
