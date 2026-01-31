@@ -276,7 +276,6 @@ const BottomSheet = () => {
                   phone: profile.phone || "",
                   email: profile.email || "",
                 } : undefined}
-                isAuthenticated={!!user}
               />
             </motion.div>
           )}

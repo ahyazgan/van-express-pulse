@@ -144,8 +144,8 @@ const AuthPage = () => {
           toast({
             title: language === "tr" ? "Kayıt Başarılı!" : "Registration Successful!",
             description: language === "tr" 
-              ? "Hesabınız oluşturuldu. %5 indiriminiz aktif!" 
-              : "Your account has been created. 5% discount activated!",
+              ? "Hesabınız oluşturuldu." 
+              : "Your account has been created.",
           });
           navigate(redirectTo, { replace: true });
         }
@@ -238,22 +238,6 @@ const AuthPage = () => {
             }
           </p>
         </motion.div>
-
-        {/* Member Benefits */}
-        {mode === "signup" && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 rounded-2xl bg-primary/10 border border-primary/20"
-          >
-            <p className="text-sm font-medium text-primary">
-              {language === "tr" 
-                ? "🎉 Üyelere Özel: Tüm gönderilerde %5 indirim + Canlı Takip" 
-                : "🎉 Members Only: 5% off all shipments + Live Tracking"
-              }
-            </p>
-          </motion.div>
-        )}
 
         {/* Form */}
         {mode !== "reset" && (

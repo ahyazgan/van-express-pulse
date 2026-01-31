@@ -83,8 +83,8 @@ const ProfilePage = () => {
             </h1>
             <p className="text-muted-foreground mb-8 leading-relaxed">
               {language === "tr" 
-                ? "Giriş yaparak gönderilerinizi takip edin, fatura arşivinize ulaşın ve %5 üyelik indirimi kazanın."
-                : "Log in to track your shipments, access your invoice archive, and get 5% member discount."
+                ? "Giriş yaparak gönderilerinizi takip edin ve fatura arşivinize ulaşın."
+                : "Log in to track your shipments and access your invoice archive."
               }
             </p>
 
@@ -122,10 +122,6 @@ const ProfilePage = () => {
 
             {/* Benefits hint */}
             <div className="mt-6 flex items-center justify-center gap-4 text-xs text-muted-foreground">
-              <span className="flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                {language === "tr" ? "%5 İndirim" : "5% Off"}
-              </span>
               <span className="flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                 {language === "tr" ? "Canlı Takip" : "Live Tracking"}
