@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/contexts/AuthContext";
 import { 
   Table, 
   TableBody, 
@@ -18,12 +17,17 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageCircle, Package, CheckCircle, TrendingUp, Truck, LogOut } from "lucide-react";
+import { MessageCircle, Package, CheckCircle, TrendingUp, Truck, Lock } from "lucide-react";
 import { format } from "date-fns";
 import { tr } from "date-fns/locale";
 import DocumentUpload from "@/components/admin/DocumentUpload";
 import PhotoGallery from "@/components/admin/PhotoGallery";
+
+// ⚠️ TEMPORARY: PIN-based access for internal testing only
+// TODO: Restore proper authentication before production deployment
+const ADMIN_PIN = "227742";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -64,10 +68,24 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const AdminDashboard = () => {
-  const { user, signOut } = useAuth();
+  // ⚠️ TEMPORARY: PIN lock for internal testing
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [pinInput, setPinInput] = useState("");
+  const [pinError, setPinError] = useState(false);
+
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"current" | "completed" | "revenue">("current");
+
+  const handlePinSubmit = () => {
+    if (pinInput === ADMIN_PIN) {
+      setIsUnlocked(true);
+      setPinError(false);
+    } else {
+      setPinError(true);
+      setPinInput("");
+    }
+  };
 
   useEffect(() => {
     fetchOrders();
@@ -116,10 +134,6 @@ const AdminDashboard = () => {
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
   };
 
-  const handleLogout = async () => {
-    await signOut();
-  };
-
   const currentOrders = orders.filter(o => o.status !== "delivered");
   const completedOrders = orders.filter(o => o.status === "delivered");
   
@@ -130,6 +144,46 @@ const AdminDashboard = () => {
 
   const displayOrders = activeTab === "current" ? currentOrders : 
                         activeTab === "completed" ? completedOrders : orders;
+
+  // ⚠️ TEMPORARY: PIN lock screen for internal testing
+  if (!isUnlocked) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="w-full max-w-sm">
+          <CardHeader className="text-center">
+            <div className="mx-auto w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+              <Lock className="w-6 h-6 text-primary" />
+            </div>
+            <CardTitle>Yönetim Paneli</CardTitle>
+            <p className="text-sm text-muted-foreground mt-2">
+              Erişim için PIN kodunu girin
+            </p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Input
+              type="password"
+              placeholder="PIN Kodu"
+              value={pinInput}
+              onChange={(e) => {
+                setPinInput(e.target.value);
+                setPinError(false);
+              }}
+              onKeyDown={(e) => e.key === "Enter" && handlePinSubmit()}
+              className={pinError ? "border-destructive" : ""}
+            />
+            {pinError && (
+              <p className="text-sm text-destructive text-center">
+                Hatalı PIN kodu
+              </p>
+            )}
+            <Button onClick={handlePinSubmit} className="w-full">
+              Giriş Yap
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex">
@@ -184,27 +238,16 @@ const AdminDashboard = () => {
           </button>
         </nav>
 
-        <div className="pt-6 border-t border-border space-y-4">
+        <div className="pt-6 border-t border-border">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
               <Truck className="w-5 h-5 text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-foreground truncate">
-                {user?.email || "Admin"}
-              </p>
+              <p className="text-sm font-medium text-foreground">Admin</p>
               <p className="text-xs text-muted-foreground">Yönetici</p>
             </div>
           </div>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="w-full gap-2"
-            onClick={handleLogout}
-          >
-            <LogOut className="w-4 h-4" />
-            Çıkış Yap
-          </Button>
         </div>
       </aside>
 
