@@ -18,6 +18,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
 import { useLanguage } from "@/contexts/LanguageContext";
+import usePageMeta from "@/hooks/usePageMeta";
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
 
@@ -81,6 +82,11 @@ const TrackingPage = () => {
   const [error, setError] = useState("");
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
+
+  usePageMeta({
+    title: "RouteEU - Gerçek Zamanlı Yük Takibi",
+    description: "Gönderinizi canlı olarak takip edin. RouteEU Express ile yükünüzün nerede olduğunu anında görün."
+  });
 
   const TRACKING_STAGES: { key: OrderStatus; label: string; icon: typeof Package }[] = [
     { key: "new", label: t.tracking.stages.new, icon: Package },

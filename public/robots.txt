@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /admin-yazgan
+
+Sitemap: https://van-express-pulse.lovable.app/sitemap.xml

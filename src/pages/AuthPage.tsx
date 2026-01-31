@@ -10,6 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useToast } from "@/hooks/use-toast";
+import usePageMeta from "@/hooks/usePageMeta";
 import { z } from "zod";
 
 const emailSchema = z.string().email();
@@ -21,6 +22,11 @@ const AuthPage = () => {
   const { language } = useLanguage();
   const { user, signIn, signUp } = useAuth();
   const { toast } = useToast();
+
+  usePageMeta({
+    title: "RouteEU - Kullanıcı Girişi",
+    description: "RouteEU Express hesabınıza giriş yapın veya yeni hesap oluşturun."
+  });
 
   // Get state from navigation (from BookingChoiceModal)
   const locationState = location.state as { 

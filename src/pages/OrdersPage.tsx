@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import BookingChoiceModal from "@/components/BookingChoiceModal";
+import usePageMeta from "@/hooks/usePageMeta";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -30,6 +31,11 @@ const OrdersPage = () => {
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [showAuthModal, setShowAuthModal] = useState(false);
+
+  usePageMeta({
+    title: "RouteEU - Ekspres Lojistik Fiyat Hesaplama",
+    description: "Türkiye'den Avrupa'ya gönderim için hızlı fiyat teklifi alın. Anında hesaplama, güvenli teslimat."
+  });
 
   const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {
     new: { label: t.orders.status.new, icon: <Clock className="w-4 h-4" />, color: "bg-blue-500" },
