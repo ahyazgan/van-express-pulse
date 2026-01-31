@@ -106,13 +106,12 @@ const ResetPasswordPage = () => {
         toast({
           title: language === "tr" ? "Şifre Güncellendi!" : "Password Updated!",
           description: language === "tr" 
-            ? "Şifreniz başarıyla değiştirildi. Giriş yapabilirsiniz." 
-            : "Your password has been successfully changed. You can now log in.",
+            ? "Şifreniz güncellendi, yönlendiriliyorsunuz..." 
+            : "Your password has been updated, redirecting...",
         });
         
-        // Sign out and redirect to login
-        await supabase.auth.signOut();
-        navigate("/auth", { replace: true });
+        // Session is maintained after updateUser, redirect directly to profile
+        navigate("/profile", { replace: true });
       }
     } finally {
       setLoading(false);
