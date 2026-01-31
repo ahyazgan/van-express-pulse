@@ -22,7 +22,7 @@ export const usePageMeta = ({ title, description }: PageMetaOptions) => {
     
     // Cleanup - restore default title on unmount
     return () => {
-      document.title = `${BASE_TITLE} - Profesyonel Minivan ve Hızlı Lojistik Çözümleri`;
+      document.title = `${BASE_TITLE} - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri`;
     };
   }, [title, description]);
 };
