@@ -105,10 +105,17 @@ const OrderForm = ({
     const { data: sessionData } = await supabase.auth.getSession();
     const currentUserId = sessionData?.session?.user?.id || null;
 
+    // NOTE: Guests are not allowed to SELECT shipping_requests (by design).
+    // If we use `.select()` on insert, Postgres applies SELECT RLS to the RETURNING rows,
+    // and the insert can fail even though the INSERT policy allows it.
+    const clientGeneratedId = crypto.randomUUID();
+    const clientCreatedAt = new Date().toISOString();
+
     // Save to database - include user_id if authenticated
     type ShippingInsert = Database["public"]["Tables"]["shipping_requests"]["Insert"];
     
     const insertData: ShippingInsert = {
+      id: clientGeneratedId,
       destination,
       product_category: product.category,
       packaging_type: product.packagingType,
@@ -125,7 +132,11 @@ const OrderForm = ({
       user_id: currentUserId,
     };
 
-    const { data, error } = await supabase.from("shipping_requests").insert(insertData).select().single();
+    const insertQuery = supabase.from("shipping_requests").insert(insertData);
+
+    const { data, error } = currentUserId
+      ? await insertQuery.select().single()
+      : await insertQuery;
 
     if (error) {
       console.error("Error saving order:", error);
@@ -133,18 +144,39 @@ const OrderForm = ({
     }
 
     // Trigger email notification via edge function
-    if (data) {
-      supabase.functions.invoke("notify-new-order", {
+    // - authenticated: use returned row
+    // - guest: use client-side payload (no RETURNING to avoid SELECT RLS)
+    const recordForNotify =
+      data ??
+      ({
+        id: clientGeneratedId,
+        destination,
+        customer_name: contact.fullName,
+        email: contact.email,
+        phone: contact.phone,
+        product_category: product.category,
+        packaging_type: product.packagingType,
+        quantity: product.quantity,
+        total_weight: product.totalWeight,
+        total_volume: product.totalVolume,
+        estimated_min_price: priceResult?.minPrice || 0,
+        estimated_max_price: priceResult?.maxPrice || 0,
+        user_id: currentUserId,
+        created_at: clientCreatedAt,
+      } as const);
+
+    supabase.functions
+      .invoke("notify-new-order", {
         body: {
           type: "INSERT",
           table: "shipping_requests",
           schema: "public",
-          record: data,
+          record: recordForNotify,
         },
-      }).catch((err) => {
+      })
+      .catch((err) => {
         console.error("Failed to send notification:", err);
       });
-    }
 
     onSuccess(orderData);
     navigate("/success");
