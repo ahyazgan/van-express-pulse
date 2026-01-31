@@ -5,7 +5,6 @@ import { ArrowLeft, ArrowRight, Send, Euro, BadgePercent } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PriceResult } from "@/constants/shippingRates";
 import { supabase } from "@/integrations/supabase/client";
-import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProductStep from "./ProductStep";
 import ContactStep from "./ContactStep";
@@ -44,7 +43,6 @@ const OrderForm = ({
   isAuthenticated = false,
 }: OrderFormProps) => {
   const navigate = useNavigate();
-  const { user } = useAuth();
   const { language, t } = useLanguage();
   const [step, setStep] = useState(1);
   const [product, setProduct] = useState<ProductInfo>(INITIAL_PRODUCT);
@@ -103,6 +101,10 @@ const OrderForm = ({
       },
     };
 
+    // Get current session directly from Supabase for accurate auth state
+    const { data: sessionData } = await supabase.auth.getSession();
+    const currentUserId = sessionData?.session?.user?.id || null;
+
     // Save to database - include user_id if authenticated
     type ShippingInsert = Database["public"]["Tables"]["shipping_requests"]["Insert"];
     
@@ -120,7 +122,7 @@ const OrderForm = ({
       estimated_min_price: priceResult?.minPrice || 0,
       estimated_max_price: priceResult?.maxPrice || 0,
       customer_photos: contact.photos,
-      user_id: user?.id || null,
+      user_id: currentUserId,
     };
 
     const { data, error } = await supabase.from("shipping_requests").insert(insertData).select().single();
