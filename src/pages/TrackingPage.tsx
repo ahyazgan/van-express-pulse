@@ -20,7 +20,7 @@ import TopBar from "@/components/TopBar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import usePageMeta from "@/hooks/usePageMeta";
 
-mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
+mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21sMm1pNXU3MGtnbjNmc2Rid2xyeDNvMyJ9.ih9ACC_-1VMtLJi7IesWjA";
 
 // City coordinates for map display
 const CITY_COORDS: Record<string, [number, number]> = {
