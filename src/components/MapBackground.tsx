@@ -5,7 +5,7 @@ import { SHIPPING_RATES } from "@/constants/shippingRates";
 import { destinationEvents } from "@/lib/destinationEvents";
 
 // Mapbox access token
-mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21reDdocm5lMDVlZjNmczdkczhmaHFmZyJ9.xUutc-BMX33es9ECgpdtUg";
+mapboxgl.accessToken = "pk.eyJ1IjoiYWh5YXpnYW4iLCJhIjoiY21sMm1pNXU3MGtnbjNmc2Rid2xyeDNvMyJ9.ih9ACC_-1VMtLJi7IesWjA";
 
 // City coordinates [lng, lat]
 const cities = [
