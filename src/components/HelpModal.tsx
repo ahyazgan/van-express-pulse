@@ -25,22 +25,46 @@ const HelpModal = ({ open, onOpenChange }: HelpModalProps) => {
 
   const faqs = [
     {
-      question: language === "tr" ? "Fiyatlar nasıl belirleniyor?" : "How are prices determined?",
+      question: language === "tr" ? "Fiyatlandırma nasıl yapılıyor?" : "How is pricing calculated?",
       answer: language === "tr" 
-        ? "Mesafe, ölçü ve ağırlığa göre otomatik hesaplanır." 
-        : "Calculated automatically based on distance, dimensions, and weight.",
+        ? "Navlun ücretleri; yükün en, boy, yükseklik (dese) bilgilerine, toplam ağırlığına ve varış noktasının km mesafesine göre güncel yakıt maliyetleri dahilinde hesaplanır." 
+        : "Freight charges are calculated based on cargo dimensions (width, length, height), total weight, and destination distance, including current fuel costs.",
     },
     {
-      question: language === "tr" ? "Teslimat süresi?" : "Delivery time?",
+      question: language === "tr" ? "Minivan Express teslimat hızı nedir?" : "What is Minivan Express delivery speed?",
       answer: language === "tr" 
-        ? "Express ile 24-48 saat, Standart ile 3-5 gün." 
-        : "24-48 hours with Express, 3-5 days with Standard.",
+        ? "Minivan araçlarımız ile Türkiye-Avrupa arası teslimat süresi, sınır kapılarındaki yoğunluğa bağlı olarak ortalama 24-48 saattir." 
+        : "With our minivan vehicles, Turkey-Europe delivery time is 24-48 hours on average, depending on border crossing congestion.",
     },
     {
-      question: language === "tr" ? "Sigorta?" : "Insurance?",
+      question: language === "tr" ? "Hangi evraklar gerekli?" : "What documents are required?",
       answer: language === "tr" 
-        ? "Tüm yükler CMR sigortası kapsamındadır." 
-        : "All shipments are covered by CMR insurance.",
+        ? "Şahsi gönderiler için kimlik/pasaport fotokopisi ve eşya listesi; ticari gönderiler için ise Proforma Fatura ve Çeki Listesi (Packing List) yeterlidir." 
+        : "For personal shipments: ID/passport copy and item list. For commercial shipments: Proforma Invoice and Packing List are sufficient.",
+    },
+    {
+      question: language === "tr" ? "CMR Sigortası nedir?" : "What is CMR Insurance?",
+      answer: language === "tr" 
+        ? "Taşınan tüm yükler, uluslararası karayolu taşıma kanunları gereği CMR sigortası güvencesi altındadır." 
+        : "All transported cargo is covered by CMR insurance under international road transport regulations.",
+    },
+    {
+      question: language === "tr" ? "Ödeme şartları nelerdir?" : "What are the payment terms?",
+      answer: language === "tr" 
+        ? "Ödemeler, yükleme anında veya varış öncesinde banka havalesi/EFT yoluyla tahsil edilmektedir." 
+        : "Payments are collected at the time of loading or before arrival via bank transfer/EFT.",
+    },
+    {
+      question: language === "tr" ? "Gümrük işlemlerini siz mi yapıyorsunuz?" : "Do you handle customs procedures?",
+      answer: language === "tr" 
+        ? "İhracat gümrük işlemlerinde danışmanlık sağlıyoruz. Müşterilerimizin sadece proforma fatura hazırlaması yeterlidir, gerisini operasyon ekibimiz yönetir." 
+        : "We provide consulting for export customs procedures. Customers only need to prepare the proforma invoice; our operations team handles the rest.",
+    },
+    {
+      question: language === "tr" ? "Hacimli yükler için kapasite nedir?" : "What is the capacity for bulky cargo?",
+      answer: language === "tr" 
+        ? "Minivan araçlarımız maksimum 1.300 kg kapasitelidir. Hacimli ama hafif yükleriniz için özel hacim hesabı yapılmaktadır." 
+        : "Our minivan vehicles have a maximum capacity of 1,300 kg. Special volume calculations are made for bulky but lightweight cargo.",
     },
   ];
 
