@@ -87,23 +87,32 @@ const AdminDashboard = () => {
     }
   };
 
-  useEffect(() => {
-    fetchOrders();
-  }, []);
-
   const fetchOrders = async () => {
-    const { data, error } = await supabase
-      .from("shipping_requests")
-      .select("*")
-      .order("created_at", { ascending: false });
-
-    if (error) {
+    if (!isUnlocked) return;
+    
+    try {
+      const response = await supabase.functions.invoke("admin-fetch-orders", {
+        body: { pin: ADMIN_PIN },
+      });
+      
+      if (response.error) {
+        console.error("Error fetching orders:", response.error);
+        return;
+      }
+      
+      setOrders(response.data?.orders || []);
+    } catch (error) {
       console.error("Error fetching orders:", error);
-    } else {
-      setOrders(data || []);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+
+  useEffect(() => {
+    if (isUnlocked) {
+      fetchOrders();
+    }
+  }, [isUnlocked]);
 
   const updateStatus = async (id: string, newStatus: OrderStatus) => {
     const { error } = await supabase
