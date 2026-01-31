@@ -369,9 +369,9 @@ const MapBackground = () => {
         
         const priceMarker = new mapboxgl.Marker({ 
           element: el,
-          anchor: "bottom"
+          anchor: "center"
         })
-          .setLngLat([city.coords[0], city.coords[1] + 0.15]) // Position snugly above city
+          .setLngLat(city.coords) // Position directly on city
           .addTo(map.current!);
         
         priceMarkersRef.current.push({ marker: priceMarker, cityId: city.id });
