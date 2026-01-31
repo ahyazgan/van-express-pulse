@@ -31,7 +31,7 @@ const BottomSheet = () => {
   const vehicles = [
     {
       id: "express",
-      name: "Minivan Express",
+      name: "Panelvan Express",
       time: language === "tr" ? "24 saat" : "24 hours",
       icon: Zap,
       express: true,

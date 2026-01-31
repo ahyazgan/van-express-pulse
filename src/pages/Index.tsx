@@ -6,8 +6,8 @@ import usePageMeta from "@/hooks/usePageMeta";
 
 const Index = () => {
   usePageMeta({
-    title: "RouteEU Express - Profesyonel Minivan ve Hızlı Lojistik Çözümleri",
-    description: "Türkiye ve Avrupa arası ekspres minivan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin."
+    title: "RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri",
+    description: "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin."
   });
 
   return (

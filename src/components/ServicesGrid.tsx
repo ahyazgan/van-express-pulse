@@ -12,7 +12,7 @@ const ServicesGrid = () => {
 
       {/* Bento Grid */}
       <div className="grid grid-cols-2 gap-3">
-        {/* Large Box - Minivan Express */}
+        {/* Large Box - Panelvan Express */}
         <div className="col-span-2 bento-box h-44 bg-gradient-to-br from-primary/20 to-primary/5 relative overflow-hidden group">
           <div className="absolute -right-8 -bottom-8 w-32 h-32 rounded-full bg-primary/10 group-hover:scale-110 transition-transform duration-500" />
           <div className="relative z-10">
@@ -20,7 +20,7 @@ const ServicesGrid = () => {
               <Truck className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-1">
-              Minivan Express
+              Panelvan Express
             </h3>
             <p className="text-sm text-muted-foreground">
               24-48 saat içinde Avrupa'nın her noktasına güvenli teslimat

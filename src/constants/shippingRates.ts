@@ -1,4 +1,4 @@
-// City-based shipping rates for Minivan Express (EUR)
+// City-based shipping rates for Panelvan Express (EUR)
 // Format: [minPrice, maxPrice]
 
 export const SHIPPING_RATES: Record<string, [number, number]> = {
