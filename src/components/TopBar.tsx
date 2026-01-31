@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { User, HelpCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import RouteEULogo from "./RouteEULogo";
+import HelpModal from "./HelpModal";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [helpOpen, setHelpOpen] = useState(false);
   const {
     language,
     setLanguage,
@@ -71,11 +74,12 @@ const TopBar = () => {
           </motion.button>
 
           {/* Help Button */}
-          <motion.button className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md" whileHover={{
-          scale: 1.05
-        }} whileTap={{
-          scale: 0.95
-        }}>
+          <motion.button 
+            onClick={() => setHelpOpen(true)}
+            className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md" 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
+          >
             <HelpCircle className="w-4 h-4 text-foreground" />
             <span className="text-sm font-bold text-foreground hidden sm:inline">
               {language === "tr" ? "Yardım" : "Help"}
@@ -83,6 +87,8 @@ const TopBar = () => {
           </motion.button>
         </div>
       </div>
+
+      <HelpModal open={helpOpen} onOpenChange={setHelpOpen} />
     </motion.div>;
 };
 export default TopBar;
