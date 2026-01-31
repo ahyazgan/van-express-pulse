@@ -20,7 +20,6 @@ const routes: QuickRoute[] = [
   { id: 2, from: "İstanbul", fromFlag: "🇹🇷", to: "Paris", toFlag: "🇫🇷", toCountryCode: "fr", time: "28 saat" },
   { id: 3, from: "İstanbul", fromFlag: "🇹🇷", to: "Amsterdam", toFlag: "🇳🇱", toCountryCode: "nl", time: "32 saat" },
   { id: 4, from: "İstanbul", fromFlag: "🇹🇷", to: "Londra", toFlag: "🇬🇧", toCountryCode: "gb", time: "36 saat" },
-  { id: 5, from: "İstanbul", fromFlag: "🇹🇷", to: "Milano", toFlag: "🇮🇹", toCountryCode: "it", time: "22 saat" },
 ];
 
 interface QuickRouteCardsProps {
