@@ -367,12 +367,10 @@ const MapBackground = () => {
           destinationEvents.emit(cityLabel);
         });
         
-        // Keep marker exactly on the city's coordinates and only offset visually (in pixels).
-        // Using a lat offset (degrees) breaks alignment at different zoom levels.
         const priceMarker = new mapboxgl.Marker({
           element: el,
           anchor: "bottom",
-          offset: [0, -18],
+          offset: [0, -8],
         })
           .setLngLat(city.coords)
           .addTo(map.current!);
