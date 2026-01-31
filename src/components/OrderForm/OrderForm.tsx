@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight, Send, Euro, BadgePercent } from "lucide-react";
+import { ArrowLeft, ArrowRight, Send, Euro } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PriceResult } from "@/constants/shippingRates";
 import { supabase } from "@/integrations/supabase/client";
@@ -23,7 +23,6 @@ interface OrderFormProps {
   onSuccess: (data: OrderData) => void;
   onCancel: () => void;
   prefillData?: PrefillData;
-  isAuthenticated?: boolean;
 }
 const INITIAL_PRODUCT: ProductInfo = {
   category: "",
@@ -40,10 +39,9 @@ const OrderForm = ({
   onSuccess, 
   onCancel,
   prefillData,
-  isAuthenticated = false,
 }: OrderFormProps) => {
   const navigate = useNavigate();
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [step, setStep] = useState(1);
   const [product, setProduct] = useState<ProductInfo>(INITIAL_PRODUCT);
   const [contact, setContact] = useState<ContactInfo>({
@@ -185,20 +183,6 @@ const OrderForm = ({
   return (
     <div className="flex flex-col">
       <div className="space-y-4 pb-4">
-        {/* Member Discount Badge */}
-        {isAuthenticated && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-2 px-3 py-2 rounded-xl bg-green-500/10 border border-green-500/30"
-          >
-            <BadgePercent className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-700">
-              {language === "tr" ? "Üye indirimi aktif: %5" : "Member discount active: 5%"}
-            </span>
-          </motion.div>
-        )}
-
         {/* Step Indicator */}
         <div className="flex items-center gap-2 mb-6">
           <div
