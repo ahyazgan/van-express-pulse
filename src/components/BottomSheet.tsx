@@ -36,7 +36,6 @@ const BottomSheet = () => {
       icon: Zap,
       express: true,
       description: language === "tr" ? "En hızlı teslimat garantisi" : "Fastest delivery guarantee",
-      priceLabel: language === "tr" ? "€2.050'den" : "from €2,050",
     },
     {
       id: "standard",
@@ -45,7 +44,6 @@ const BottomSheet = () => {
       icon: Truck,
       express: false,
       description: language === "tr" ? "Ekonomik kargo çözümü" : "Economical shipping solution",
-      priceLabel: language === "tr" ? "€1.850'den" : "from €1,850",
     },
   ];
 
@@ -208,21 +206,14 @@ const BottomSheet = () => {
                             : "border-border/30 bg-secondary/40 hover:border-border/50"
                         }`}
                       >
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="flex items-center gap-2">
-                            <vehicle.icon className={`w-4 h-4 ${selectedVehicle === vehicle.id ? "text-accent" : "text-primary"}`} />
-                            <span className="text-xs font-semibold text-foreground">{vehicle.name}</span>
-                            {vehicle.express && <span className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-accent text-accent-foreground">EXPRESS</span>}
-                          </div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <vehicle.icon className={`w-4 h-4 ${selectedVehicle === vehicle.id ? "text-accent" : "text-primary"}`} />
+                          <span className="text-xs font-semibold text-foreground">{vehicle.name}</span>
+                          {vehicle.express && <span className="text-[8px] font-bold px-1.5 py-0.5 rounded bg-accent text-accent-foreground">EXPRESS</span>}
                         </div>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-1 text-muted-foreground">
-                            <Clock className="w-3 h-3" />
-                            <span className="text-[10px] font-medium">{vehicle.time}</span>
-                          </div>
-                          <span className={`text-[10px] font-bold ${selectedVehicle === vehicle.id ? "text-accent" : "text-primary"}`}>
-                            {vehicle.priceLabel}
-                          </span>
+                        <div className="flex items-center gap-1 text-muted-foreground">
+                          <Clock className="w-3 h-3" />
+                          <span className="text-[10px] font-medium">{vehicle.time}</span>
                         </div>
                         {/* Selected indicator */}
                         {selectedVehicle === vehicle.id && (
