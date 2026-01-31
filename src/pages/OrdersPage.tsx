@@ -33,8 +33,8 @@ const OrdersPage = () => {
   const [showAuthModal, setShowAuthModal] = useState(false);
 
   usePageMeta({
-    title: "RouteEU - Ekspres Lojistik Fiyat Hesaplama",
-    description: "Türkiye'den Avrupa'ya gönderim için hızlı fiyat teklifi alın. Anında hesaplama, güvenli teslimat."
+    title: "RouteEU - Panelvan Lojistik Fiyat Hesaplama",
+    description: "Türkiye'den Avrupa'ya panelvan gönderim için hızlı fiyat teklifi alın. Anında hesaplama, güvenli teslimat."
   });
 
   const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {
