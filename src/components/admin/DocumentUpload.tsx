@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { Upload, FileText, X, Download, Eye } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Upload, FileText, X, Download, Eye, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 import {
@@ -16,10 +16,59 @@ interface DocumentUploadProps {
   onUpdate: (documents: string[]) => void;
 }
 
+// Extract file path from public URL or return as-is if it's already a path
+const extractFilePath = (url: string): string => {
+  // If it's already a path (not a full URL), return as-is
+  if (!url.startsWith("http")) return url;
+  
+  // Extract path from public URL: .../storage/v1/object/public/shipment-files/admin/...
+  const match = url.match(/\/storage\/v1\/object\/public\/shipment-files\/(.+)$/);
+  if (match) return match[1];
+  
+  // Try alternate pattern: bucket name in path
+  const altMatch = url.match(/shipment-files\/(.+)$/);
+  if (altMatch) return altMatch[1];
+  
+  return url;
+};
+
 const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) => {
   const [uploading, setUploading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [signedUrls, setSignedUrls] = useState<Record<string, string>>({});
+  const [loadingUrls, setLoadingUrls] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Generate signed URLs when dialog opens
+  useEffect(() => {
+    if (!isOpen || documents.length === 0) return;
+
+    const generateSignedUrls = async () => {
+      setLoadingUrls(true);
+      try {
+        const urlMap: Record<string, string> = {};
+        await Promise.all(
+          documents.map(async (doc) => {
+            const filePath = extractFilePath(doc);
+            const { data, error } = await supabase.storage
+              .from("shipment-files")
+              .createSignedUrl(filePath, 3600); // 1 hour expiry
+            
+            if (!error && data) {
+              urlMap[doc] = data.signedUrl;
+            }
+          })
+        );
+        setSignedUrls(urlMap);
+      } catch (error) {
+        console.error("Error generating signed URLs:", error);
+      } finally {
+        setLoadingUrls(false);
+      }
+    };
+
+    generateSignedUrls();
+  }, [isOpen, documents]);
 
   const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -40,7 +89,6 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
           throw new Error("File size must be less than 10MB");
         }
 
-        const fileExt = file.name.split(".").pop();
         const fileName = `admin/${orderId}/${Date.now()}-${file.name}`;
 
         const { error: uploadError } = await supabase.storage
@@ -49,15 +97,12 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
 
         if (uploadError) throw uploadError;
 
-        const { data: { publicUrl } } = supabase.storage
-          .from("shipment-files")
-          .getPublicUrl(fileName);
-
-        return publicUrl;
+        // Store the file path instead of public URL (we'll generate signed URLs when viewing)
+        return fileName;
       });
 
-      const newUrls = await Promise.all(uploadPromises);
-      const updatedDocs = [...documents, ...newUrls];
+      const newPaths = await Promise.all(uploadPromises);
+      const updatedDocs = [...documents, ...newPaths];
       
       // Update in database
       const { error } = await supabase
@@ -79,6 +124,14 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
   };
 
   const removeDocument = async (index: number) => {
+    const docToRemove = documents[index];
+    const filePath = extractFilePath(docToRemove);
+    
+    // Try to delete from storage
+    await supabase.storage
+      .from("shipment-files")
+      .remove([filePath]);
+    
     const updatedDocs = documents.filter((_, i) => i !== index);
     
     const { error } = await supabase
@@ -92,11 +145,22 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
   };
 
   const getFileName = (url: string) => {
-    const parts = url.split("/");
-    return parts[parts.length - 1].split("-").slice(1).join("-") || "document";
+    const filePath = extractFilePath(url);
+    const parts = filePath.split("/");
+    const fileName = parts[parts.length - 1];
+    // Remove timestamp prefix if present
+    const nameWithoutTimestamp = fileName.replace(/^\d+-/, "");
+    return nameWithoutTimestamp || "document";
   };
 
-  const isPdf = (url: string) => url.toLowerCase().endsWith(".pdf");
+  const isPdf = (url: string) => {
+    const filePath = extractFilePath(url);
+    return filePath.toLowerCase().endsWith(".pdf");
+  };
+
+  const getSignedUrl = (originalUrl: string) => {
+    return signedUrls[originalUrl] || originalUrl;
+  };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -117,12 +181,19 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
         </DialogHeader>
 
         <div className="space-y-4">
+          {/* Loading State */}
+          {loadingUrls && documents.length > 0 && (
+            <div className="flex items-center justify-center py-4">
+              <Loader2 className="w-6 h-6 animate-spin text-primary" />
+            </div>
+          )}
+
           {/* Uploaded Documents */}
-          {documents.length > 0 && (
+          {!loadingUrls && documents.length > 0 && (
             <div className="space-y-2">
               {documents.map((url, index) => (
                 <div
-                  key={url}
+                  key={index}
                   className="flex items-center gap-3 p-3 rounded-lg bg-secondary/50 border border-border/50"
                 >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -138,7 +209,7 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
                   </div>
                   <div className="flex items-center gap-1">
                     <a
-                      href={url}
+                      href={getSignedUrl(url)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 hover:bg-muted rounded-lg transition-colors"
@@ -146,8 +217,8 @@ const DocumentUpload = ({ orderId, documents, onUpdate }: DocumentUploadProps) =
                       <Eye className="w-4 h-4 text-muted-foreground" />
                     </a>
                     <a
-                      href={url}
-                      download
+                      href={getSignedUrl(url)}
+                      download={getFileName(url)}
                       className="p-2 hover:bg-muted rounded-lg transition-colors"
                     >
                       <Download className="w-4 h-4 text-muted-foreground" />

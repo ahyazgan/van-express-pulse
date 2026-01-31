@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Camera, X, Upload, ImageIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Camera, X, ImageIcon } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -14,6 +13,7 @@ interface PhotoUploadProps {
 const PhotoUpload = ({ photos, onChange, maxPhotos = 3 }: PhotoUploadProps) => {
   const { language } = useLanguage();
   const [uploading, setUploading] = useState(false);
+  const [localPreviews, setLocalPreviews] = useState<Record<string, string>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileSelect = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,15 +46,16 @@ const PhotoUpload = ({ photos, onChange, maxPhotos = 3 }: PhotoUploadProps) => {
 
         if (uploadError) throw uploadError;
 
-        const { data: { publicUrl } } = supabase.storage
-          .from("shipment-files")
-          .getPublicUrl(fileName);
+        // Create local preview URL for display
+        const previewUrl = URL.createObjectURL(file);
+        setLocalPreviews(prev => ({ ...prev, [fileName]: previewUrl }));
 
-        return publicUrl;
+        // Return the file path (not public URL) - this will be stored in DB
+        return fileName;
       });
 
-      const newUrls = await Promise.all(uploadPromises);
-      onChange([...photos, ...newUrls]);
+      const newPaths = await Promise.all(uploadPromises);
+      onChange([...photos, ...newPaths]);
     } catch (error) {
       console.error("Upload error:", error);
     } finally {
@@ -66,7 +67,32 @@ const PhotoUpload = ({ photos, onChange, maxPhotos = 3 }: PhotoUploadProps) => {
   };
 
   const removePhoto = (index: number) => {
+    const photoToRemove = photos[index];
+    // Clean up local preview if exists
+    if (localPreviews[photoToRemove]) {
+      URL.revokeObjectURL(localPreviews[photoToRemove]);
+      setLocalPreviews(prev => {
+        const newPreviews = { ...prev };
+        delete newPreviews[photoToRemove];
+        return newPreviews;
+      });
+    }
     onChange(photos.filter((_, i) => i !== index));
+  };
+
+  // Get display URL - use local preview if available, otherwise use a placeholder
+  const getDisplayUrl = (photo: string) => {
+    // If we have a local preview (just uploaded), use it
+    if (localPreviews[photo]) {
+      return localPreviews[photo];
+    }
+    // If it's already a full URL (legacy data), use it
+    if (photo.startsWith("http")) {
+      return photo;
+    }
+    // For stored file paths without local preview, show a placeholder
+    // (This shouldn't happen often as users just uploaded the file)
+    return `/placeholder.svg`;
   };
 
   const texts = {
@@ -96,16 +122,16 @@ const PhotoUpload = ({ photos, onChange, maxPhotos = 3 }: PhotoUploadProps) => {
       {/* Photo Grid */}
       <div className="grid grid-cols-3 gap-2">
         <AnimatePresence mode="popLayout">
-          {photos.map((url, index) => (
+          {photos.map((photo, index) => (
             <motion.div
-              key={url}
+              key={photo}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               className="relative aspect-square rounded-xl overflow-hidden bg-secondary"
             >
               <img
-                src={url}
+                src={getDisplayUrl(photo)}
                 alt={`Cargo ${index + 1}`}
                 className="w-full h-full object-cover"
               />
