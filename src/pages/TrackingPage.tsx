@@ -84,8 +84,8 @@ const TrackingPage = () => {
   const map = useRef<mapboxgl.Map | null>(null);
 
   usePageMeta({
-    title: "RouteEU - Gerçek Zamanlı Yük Takibi",
-    description: "Gönderinizi canlı olarak takip edin. RouteEU Express ile yükünüzün nerede olduğunu anında görün."
+    title: "RouteEU - Gerçek Zamanlı Panelvan Takibi",
+    description: "Panelvan gönderinizi canlı olarak takip edin. RouteEU Express ile yükünüzün nerede olduğunu anında görün."
   });
 
   const TRACKING_STAGES: { key: OrderStatus; label: string; icon: typeof Package }[] = [
