@@ -59,7 +59,7 @@ const AuthPage = () => {
     
     // If recovery parameters are present, redirect to reset-password page with the hash
     if (type === "recovery" && accessToken) {
-      navigate(`/reset-password${window.location.hash}`, { replace: true });
+      navigate(`/auth/reset-password${window.location.hash}`, { replace: true });
       return;
     }
   }, [navigate]);
@@ -169,7 +169,7 @@ const AuthPage = () => {
 
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/reset-password`,
+        redirectTo: `${window.location.origin}/auth/reset-password`,
       });
 
       if (error) {

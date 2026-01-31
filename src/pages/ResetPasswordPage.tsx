@@ -112,7 +112,7 @@ const ResetPasswordPage = () => {
         
         // Sign out and redirect to login
         await supabase.auth.signOut();
-        navigate("/auth", { state: { mode: "login" }, replace: true });
+        navigate("/auth", { replace: true });
       }
     } finally {
       setLoading(false);
