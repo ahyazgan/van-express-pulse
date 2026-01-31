@@ -39,22 +39,10 @@ const SuccessScreen = ({ onClose }: SuccessScreenProps) => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="text-muted-foreground mb-6 px-4"
+        className="text-muted-foreground mb-8 px-4"
       >
-        <span className="font-semibold text-foreground">Yazgan Nakliyat</span>{" "}
-        15 dk içinde size dönecektir.
+        Talebiniz başarıyla alınmıştır. Ekibimiz en kısa sürede sizinle iletişime geçecektir.
       </motion.p>
-
-      {/* Timeline indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-8"
-      >
-        <Clock className="w-4 h-4" />
-        <span className="text-sm font-medium">~15 dakika</span>
-      </motion.div>
 
       {/* Actions */}
       <motion.div
