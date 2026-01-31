@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send, Euro, BadgePercent } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,7 +9,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProductStep from "./ProductStep";
 import ContactStep from "./ContactStep";
-import SuccessScreen from "./SuccessScreen";
 import { ProductInfo, ContactInfo, OrderData } from "./types";
 import { Database } from "@/integrations/supabase/types";
 
@@ -43,6 +43,7 @@ const OrderForm = ({
   prefillData,
   isAuthenticated = false,
 }: OrderFormProps) => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { language, t } = useLanguage();
   const [step, setStep] = useState(1);
@@ -53,7 +54,6 @@ const OrderForm = ({
     email: prefillData?.email || "",
     photos: [],
   });
-  const [submitted, setSubmitted] = useState(false);
 
   // Update contact when prefillData changes (e.g., after login)
   useEffect(() => {
@@ -144,26 +144,9 @@ const OrderForm = ({
       });
     }
 
-    setSubmitted(true);
     onSuccess(orderData);
+    navigate("/success");
   };
-
-  const handleClose = () => {
-    setSubmitted(false);
-    setStep(1);
-    setProduct(INITIAL_PRODUCT);
-    setContact({
-      fullName: prefillData?.fullName || "",
-      phone: prefillData?.phone || "",
-      email: prefillData?.email || "",
-      photos: [],
-    });
-    onCancel();
-  };
-
-  if (submitted) {
-    return <SuccessScreen onClose={handleClose} />;
-  }
 
   return (
     <div className="flex flex-col">
