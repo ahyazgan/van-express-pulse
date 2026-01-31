@@ -2,7 +2,6 @@ import TopBar from "@/components/TopBar";
 import MapBackground from "@/components/MapBackground";
 import BottomSheet from "@/components/BottomSheet";
 import AppNavigation from "@/components/AppNavigation";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import usePageMeta from "@/hooks/usePageMeta";
 
 const Index = () => {
@@ -16,7 +15,6 @@ const Index = () => {
       <MapBackground />
       <TopBar />
       <BottomSheet />
-      <FloatingWhatsApp />
       <AppNavigation />
     </div>
   );
