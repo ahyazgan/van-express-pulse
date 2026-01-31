@@ -257,7 +257,7 @@ const MapBackground = () => {
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
       center: [15.0, 45.0],
-      zoom: 3.5,
+      zoom: 4.2,
       interactive: true, // Enable map interactions (drag, zoom)
       attributionControl: false,
     });
