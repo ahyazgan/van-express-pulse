@@ -195,9 +195,9 @@ const AdminDashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="h-screen bg-background flex overflow-hidden">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-border bg-card p-6 flex flex-col">
+      <aside className="w-64 border-r border-border bg-card p-6 flex flex-col flex-shrink-0">
         <div className="mb-8">
           <h1 className="text-xl font-bold text-foreground">Yazgan Nakliyat</h1>
           <p className="text-sm text-muted-foreground">Yönetim Paneli</p>
@@ -261,7 +261,7 @@ const AdminDashboard = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 overflow-auto">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-foreground">
             {activeTab === "current" && "Aktif Siparişler"}
@@ -345,7 +345,12 @@ const AdminDashboard = () => {
                   {displayOrders.map((order) => (
                     <TableRow key={order.id}>
                       <TableCell className="whitespace-nowrap">
-                        {format(new Date(order.created_at), "dd MMM yyyy", { locale: tr })}
+                        <div className="text-sm">
+                          <p>{format(new Date(order.created_at), "dd MMM yyyy", { locale: tr })}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {format(new Date(order.created_at), "HH:mm", { locale: tr })}
+                          </p>
+                        </div>
                       </TableCell>
                       <TableCell>
                         <div>
