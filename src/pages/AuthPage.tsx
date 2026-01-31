@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
+import { supabase } from "@/integrations/supabase/client";
 import { ArrowLeft, Mail, Lock, User, Building, Phone, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,7 +29,7 @@ const AuthPage = () => {
     mode?: "login" | "signup";
   } | null;
 
-  const [mode] = useState<"login" | "signup">(locationState?.mode || "signup");
+  const [mode, setMode] = useState<"login" | "signup" | "reset">(locationState?.mode || "signup");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(locationState?.rememberMe ?? true);
@@ -99,7 +100,7 @@ const AuthPage = () => {
           });
           navigate(redirectTo, { replace: true });
         }
-      } else {
+      } else if (mode === "signup") {
         const { error } = await signUp(email, password, {
           full_name: fullName,
           company_name: companyName || null,
@@ -129,6 +130,44 @@ const AuthPage = () => {
     }
   };
 
+  const handlePasswordReset = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      emailSchema.parse(email);
+    } catch {
+      setErrors({ email: language === "tr" ? "Geçerli bir e-posta girin" : "Enter a valid email" });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth`,
+      });
+
+      if (error) {
+        toast({
+          title: language === "tr" ? "Hata" : "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: language === "tr" ? "E-posta Gönderildi!" : "Email Sent!",
+          description: language === "tr" 
+            ? "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi." 
+            : "Password reset link has been sent to your email.",
+        });
+        setMode("login");
+        setEmail("");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="h-screen bg-background flex flex-col overflow-hidden">
       {/* Header */}
@@ -150,7 +189,9 @@ const AuthPage = () => {
           <h1 className="text-lg font-bold">
             {mode === "login" 
               ? (language === "tr" ? "Giriş Yap" : "Log In")
-              : (language === "tr" ? "Üye Ol" : "Sign Up")
+              : mode === "signup"
+                ? (language === "tr" ? "Üye Ol" : "Sign Up")
+                : (language === "tr" ? "Şifre Sıfırla" : "Reset Password")
             }
           </h1>
         </div>
@@ -190,6 +231,7 @@ const AuthPage = () => {
         )}
 
         {/* Form */}
+        {mode !== "reset" && (
         <motion.form
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -328,7 +370,85 @@ const AuthPage = () => {
                 : (language === "tr" ? "Üye Ol" : "Sign Up")
             }
           </Button>
+
+          {mode === "login" && (
+            <div className="text-center pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode("reset");
+                  setErrors({});
+                }}
+                className="text-sm text-muted-foreground hover:text-primary hover:underline transition-colors"
+              >
+                {language === "tr" ? "Şifremi Unuttum" : "Forgot Password"}
+              </button>
+            </div>
+          )}
         </motion.form>
+        )}
+
+        {/* Password Reset Form */}
+        {mode === "reset" && (
+          <motion.form
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            onSubmit={handlePasswordReset}
+            className="space-y-4"
+          >
+            <p className="text-sm text-muted-foreground text-center mb-6">
+              {language === "tr" 
+                ? "E-posta adresinizi girin, size şifre sıfırlama bağlantısı gönderelim." 
+                : "Enter your email address and we'll send you a password reset link."
+              }
+            </p>
+
+            <div className="space-y-2">
+              <Label htmlFor="resetEmail">
+                {language === "tr" ? "E-posta" : "Email"} *
+              </Label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  id="resetEmail"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="ornek@email.com"
+                  className="pl-10 h-12 rounded-xl"
+                />
+              </div>
+              {errors.email && (
+                <p className="text-sm text-destructive">{errors.email}</p>
+              )}
+            </div>
+
+            <Button
+              type="submit"
+              disabled={loading}
+              className="w-full h-14 rounded-2xl btn-primary-glow text-base font-semibold"
+            >
+              {loading 
+                ? (language === "tr" ? "Gönderiliyor..." : "Sending...")
+                : (language === "tr" ? "Şifre Sıfırlama Bağlantısı Gönder" : "Send Reset Link")
+              }
+            </Button>
+
+            <div className="text-center pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode("login");
+                  setErrors({});
+                }}
+                className="text-sm text-muted-foreground hover:text-primary hover:underline transition-colors"
+              >
+                {language === "tr" ? "Giriş sayfasına dön" : "Back to login"}
+              </button>
+            </div>
+          </motion.form>
+        )}
 
         </div>
       </div>
