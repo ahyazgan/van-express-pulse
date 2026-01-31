@@ -45,8 +45,27 @@ const AuthPage = () => {
   // Get redirect destination from location state
   const redirectTo = locationState?.from || "/";
 
-  // Redirect if already logged in
+  // Check for recovery tokens in URL and redirect to reset-password page
   useEffect(() => {
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    const type = hashParams.get("type");
+    const accessToken = hashParams.get("access_token");
+    
+    // If recovery parameters are present, redirect to reset-password page with the hash
+    if (type === "recovery" && accessToken) {
+      navigate(`/reset-password${window.location.hash}`, { replace: true });
+      return;
+    }
+  }, [navigate]);
+
+  // Redirect if already logged in (but not during recovery flow)
+  useEffect(() => {
+    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+    const type = hashParams.get("type");
+    
+    // Don't redirect if this is a recovery flow
+    if (type === "recovery") return;
+    
     if (user) {
       navigate(redirectTo, { replace: true });
     }
