@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { MapPin, Bell, Package, LogOut, LogIn, Building2, Warehouse, User } from "lucide-react";
+import { MapPin, Bell, Package, LogOut, LogIn, User } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
+import SavedAddresses from "@/components/profile/SavedAddresses";
 import { Button } from "@/components/ui/button";
 import {
   AlertDialog,
@@ -28,30 +29,6 @@ const ProfilePage = () => {
   const [priceNotifications, setPriceNotifications] = useState(true);
   const [trackingNotifications, setTrackingNotifications] = useState(true);
   const { toast } = useToast();
-
-  const savedAddresses = [
-    {
-      id: 1,
-      name: language === "tr" ? "İstanbul Depo" : "Istanbul Warehouse",
-      address: "Esenyurt, İstanbul, Türkiye",
-      icon: Warehouse,
-      type: t.profile.origin,
-    },
-    {
-      id: 2,
-      name: "Berlin Office",
-      address: "Kreuzberg, Berlin, Germany",
-      icon: Building2,
-      type: t.profile.destination,
-    },
-    {
-      id: 3,
-      name: language === "tr" ? "Münih Depo" : "Munich Warehouse",
-      address: "Schwabing, München, Germany",
-      icon: Warehouse,
-      type: t.profile.destination,
-    },
-  ];
 
   const handleLogout = async () => {
     await signOut();
@@ -234,28 +211,7 @@ const ProfilePage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h2 className="text-lg font-bold text-foreground mb-3">{t.profile.savedAddresses}</h2>
-          <div className="space-y-3">
-            {savedAddresses.map((address) => (
-              <motion.div
-                key={address.id}
-                className="bg-card rounded-2xl p-4 border border-border flex items-center gap-4"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
-                  <address.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-foreground">{address.name}</h3>
-                  <p className="text-sm text-muted-foreground">{address.address}</p>
-                </div>
-                <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
-                  {address.type}
-                </span>
-              </motion.div>
-            ))}
-          </div>
+          <SavedAddresses />
         </motion.div>
 
         {/* Notification Settings */}

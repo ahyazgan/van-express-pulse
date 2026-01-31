@@ -47,6 +47,39 @@ export type Database = {
         }
         Relationships: []
       }
+      saved_addresses: {
+        Row: {
+          address_type: string | null
+          city: string
+          created_at: string
+          full_address: string
+          id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          address_type?: string | null
+          city: string
+          created_at?: string
+          full_address: string
+          id?: string
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          address_type?: string | null
+          city?: string
+          created_at?: string
+          full_address?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       shipping_requests: {
         Row: {
           admin_documents: string[] | null
