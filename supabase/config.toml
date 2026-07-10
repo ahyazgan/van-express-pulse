@@ -1,0 +1,16 @@
+project_id = "qofguxjqwxkrcienvxnp"
+
+# Guest order form calls this without a session, so JWT verification stays off.
+# The function only sends a templated email to the business inbox.
+[functions.notify-new-order]
+verify_jwt = false
+
+# Public shipment tracking (guests have no session). Returns only non-PII
+# fields and requires the full unguessable order UUID.
+[functions.track-order]
+verify_jwt = false
+
+# Admin-only: requires a valid session JWT (the function also re-checks the
+# 'admin' role before using the service_role key).
+[functions.admin-fetch-orders]
+verify_jwt = true

@@ -1,0 +1,94 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { User, HelpCircle } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useAuth } from "@/contexts/AuthContext";
+import RouteEULogo from "./RouteEULogo";
+import HelpModal from "./HelpModal";
+
+const TopBar = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [helpOpen, setHelpOpen] = useState(false);
+  const {
+    language,
+    setLanguage,
+    t
+  } = useLanguage();
+  const toggleLanguage = () => {
+    setLanguage(language === "tr" ? "en" : "tr");
+  };
+
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+
+  return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none flex justify-center" initial={{
+    y: -50,
+    opacity: 0
+  }} animate={{
+    y: 0,
+    opacity: 1
+  }} transition={{
+    type: "spring",
+    damping: 20,
+    delay: 0.2
+  }}>
+      <div className="flex items-center justify-between px-5 py-3 w-full max-w-md mx-auto">
+        {/* Profile Button */}
+        <motion.button 
+          onClick={handleProfileClick}
+          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md pointer-events-auto hover:bg-secondary/50 transition-colors" 
+          whileHover={{
+            scale: 1.05
+          }} 
+          whileTap={{
+            scale: 0.95
+          }}
+        >
+          <User className={`w-5 h-5 ${user ? "text-accent" : "text-foreground"}`} />
+        </motion.button>
+
+        {/* Logo */}
+        <motion.div className="flex items-center px-3 py-1.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto" initial={{
+        scale: 0.9
+      }} animate={{
+        scale: 1
+      }} transition={{
+        delay: 0.3
+      }}>
+          <RouteEULogo />
+        </motion.div>
+
+        {/* Language Toggle & Help */}
+        <div className="flex items-center gap-2 pointer-events-auto">
+          {/* Language Toggle */}
+          <motion.button onClick={toggleLanguage} className="px-3 py-2 rounded-full glass border border-border/60 flex items-center gap-1.5 shadow-md" whileHover={{
+          scale: 1.05
+        }} whileTap={{
+          scale: 0.95
+        }}>
+            <span className="text-lg">{language === "tr" ? "🇹🇷" : "🇬🇧"}</span>
+            <span className="text-xs font-bold text-foreground uppercase">{language}</span>
+          </motion.button>
+
+          {/* Help Button */}
+          <motion.button 
+            onClick={() => setHelpOpen(true)}
+            className="px-4 py-2.5 rounded-full glass border border-border/60 flex items-center gap-2 shadow-md" 
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
+          >
+            <HelpCircle className="w-4 h-4 text-foreground" />
+            <span className="text-sm font-bold text-foreground hidden sm:inline">
+              {language === "tr" ? "Yardım" : "Help"}
+            </span>
+          </motion.button>
+        </div>
+      </div>
+
+      <HelpModal open={helpOpen} onOpenChange={setHelpOpen} />
+    </motion.div>;
+};
+export default TopBar;

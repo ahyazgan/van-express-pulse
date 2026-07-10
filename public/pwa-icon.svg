@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111c38"/>
+      <stop offset="1" stop-color="#0a0e17"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- route accent behind the pin -->
+  <path d="M108 392 Q 250 300 300 176" fill="none" stroke="#FFCC00" stroke-width="12"
+        stroke-linecap="round" stroke-dasharray="2 30" opacity="0.55"/>
+  <circle cx="108" cy="392" r="15" fill="#FFCC00" opacity="0.9"/>
+  <!-- centered location pin (Material 'place'), scaled into the maskable safe zone -->
+  <g transform="translate(76,70) scale(15)">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"
+          fill="#FFCC00" fill-rule="evenodd"/>
+  </g>
+</svg>
