@@ -1,0 +1,125 @@
+import type { SeoPageData } from "./seoData";
+import { priceRange } from "./seoData";
+
+const almanyaKargo: SeoPageData = {
+  slug: "almanya-kargo",
+  title: "Almanya'ya Panelvan Kargo | Kapıdan Kapıya 24-48 Saatte | RouteEU",
+  description:
+    "Türkiye'den Almanya'ya kapıdan kapıya panelvan kargo. Berlin, Hamburg, Münih, Köln'e 24-48 saatte sigortalı ekspres taşıma. Anında fiyat alın, yükünüzü canlı takip edin.",
+  h1: "Türkiye'den Almanya'ya Kapıdan Kapıya Panelvan Kargo",
+  intro: [
+    "Türkiye'den Almanya'ya kargo göndermek istediğinizde iki seçeneğiniz vardır: haftalarca süren parsiyel TIR taşımacılığı ya da yükünüz için ayrılmış bir panelvanla 24-48 saat içinde teslimat. RouteEU Express, İstanbul ve tüm Türkiye'den Almanya'nın her şehrine kapıdan kapıya ekspres panelvan taşımacılığı yapar: yükünüz adresinizden alınır, araç değiştirmeden ve depo beklemeden doğrudan Almanya'daki teslimat adresine gider.",
+    "Panelvan araçlarımız hafta sonu TIR yasağına tabi olmadığı için cuma günü çıkan yükünüz pazartesiyi beklemez; çift şoför uygulamasıyla araç mola vermeden yola devam eder. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün Avrupa'nın neresinde olduğunu anlık olarak görürsünüz.",
+  ],
+  transitTable: {
+    caption: "Türkiye - Almanya Transit Süreleri",
+    rows: [
+      { destination: "İstanbul → Berlin", time: "24-36 saat" },
+      { destination: "İstanbul → Münih", time: "24-36 saat" },
+      { destination: "İstanbul → Stuttgart", time: "28-40 saat" },
+      { destination: "İstanbul → Frankfurt", time: "28-40 saat" },
+      { destination: "İstanbul → Köln", time: "30-44 saat" },
+      { destination: "İstanbul → Hamburg", time: "32-48 saat" },
+    ],
+  },
+  priceTable: {
+    caption: "Almanya'ya Panelvan Kargo Fiyatları",
+    rows: [
+      { route: "İstanbul → Berlin", price: priceRange("Berlin") },
+      { route: "İstanbul → Münih", price: priceRange("Münih") },
+      { route: "İstanbul → Stuttgart", price: priceRange("Stuttgart") },
+      { route: "İstanbul → Frankfurt", price: priceRange("Frankfurt") },
+      { route: "İstanbul → Köln", price: priceRange("Köln") },
+      { route: "İstanbul → Hamburg", price: priceRange("Hamburg") },
+    ],
+    disclaimer:
+      "Fiyatlar komple panelvan (yaklaşık 1.300 kg / 5 palet kapasiteli) taşıma için tahmini aralıklardır; sezon, yakıt ve talebe göre değişir. Kesin fiyat için uygulama üzerinden anında teklif alabilirsiniz.",
+  },
+  sections: [
+    {
+      heading: "Almanya'nın Hangi Şehirlerine Taşıma Yapıyoruz?",
+      paragraphs: [
+        "Kapıdan kapıya çalıştığımız için teslimat ağımız belirli şehirlerle sınırlı değildir. Berlin, Hamburg, Münih, Köln, Frankfurt, Stuttgart, Düsseldorf, Dortmund, Essen, Bremen, Hannover, Nürnberg ve Leipzig başta olmak üzere Almanya'nın tüm şehirlerine ve kasabalarına teslimat yapıyoruz. Yükünüz hangi adresteyse oradan alınır, Almanya'da hangi adrese gidecekse oraya teslim edilir.",
+      ],
+    },
+    {
+      heading: "Panelvan Ekspres Taşımanın Avantajları",
+      paragraphs: [
+        "Panelvan taşımacılığı, TIR ile parsiyel taşımaya göre Almanya güzergahında ciddi zaman kazandırır. Aradaki farkı yaratan dört unsur vardır:",
+      ],
+      list: [
+        "Hafta sonu yasağı yok: TIR'ların hafta sonu seyir yasağına panelvanlar tabi değildir; teslimat 7 gün kesintisiz sürer.",
+        "Çift şoför: Araç dinlenme molası vermeden yola devam eder, transit süre kısalır.",
+        "Aktarmasız taşıma: Yükünüz depoya girmez, elden ele geçmez; hasar riski en aza iner.",
+        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+      ],
+    },
+    {
+      heading: "Neler Gönderebilirsiniz?",
+      paragraphs: [
+        "Ticari mal, numune, fuar malzemesi, yedek parça, makine ekipmanı, e-ticaret ürünleri, ev eşyası ve zati eşya taşıyoruz. Acil üretim parçası bekleyen fabrikalar, fuara yetişmesi gereken standlar ve teslim tarihi kritik ticari yükler için panelvan ekspres çoğu zaman tek gerçekçi seçenektir.",
+        "Gümrük sürecinde evrak hazırlığı konusunda ekibimiz size yol gösterir; ATR belgesi ve fatura ile Almanya'ya ticari gönderiler sorunsuz ilerler.",
+      ],
+    },
+    {
+      heading: "Süreç Nasıl İşliyor?",
+      paragraphs: [
+        "Almanya'ya gönderiniz dört adımda tamamlanır; her adımda yükünüzün durumunu uygulamadan izleyebilirsiniz:",
+      ],
+      list: [
+        "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
+        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz güvenle araca alınır.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Almanya'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Teslim: Araç Almanya'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
+      ],
+    },
+    {
+      heading: "Almanya'dan Türkiye'ye Dönüş Yükleri",
+      paragraphs: [
+        "Taşımalarımız çift yönlüdür: Almanya'dan Türkiye'ye kargo, eşya veya ticari yük göndermek istiyorsanız aynı hız ve takip imkânıyla dönüş taşıması da yapıyoruz. Berlin, Hamburg, Münih veya Almanya'nın herhangi bir şehrinden Türkiye'deki adrese kapıdan kapıya teslimat mümkündür. Almanya'da yaşayıp Türkiye'ye kalıcı olarak dönecekseniz kesin dönüş nakliyat hizmetimize de göz atabilirsiniz; ev eşyanızın tamamı tek panelvanla, aktarmasız olarak Türkiye'deki yeni adresinize taşınır.",
+      ],
+    },
+  ],
+  faq: [
+    {
+      question: "Türkiye'den Almanya'ya kargo kaç günde gider?",
+      answer:
+        "Panelvan ekspres taşımada İstanbul'dan Berlin veya Münih'e teslimat tipik olarak 24-36 saat, Hamburg gibi kuzey şehirlerine 32-48 saat sürer. Parsiyel TIR taşımacılığında bu süre 7-15 güne çıkar.",
+    },
+    {
+      question: "Almanya'ya panelvan kargo fiyatı ne kadar?",
+      answer:
+        "Komple panelvan taşımada fiyat güzergaha göre değişir: örneğin İstanbul-Berlin hattında " +
+        priceRange("Berlin") +
+        " aralığındadır. Kesin fiyat için uygulamadan kalkış ve varış noktanızı seçerek saniyeler içinde tahmini teklif alabilirsiniz.",
+    },
+    {
+      question: "Yükümü nasıl takip ederim?",
+      answer:
+        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilirsiniz.",
+    },
+    {
+      question: "Gönderim sigortalı mı?",
+      answer:
+        "Evet, tüm gönderiler taşıma sigortası kapsamında taşınır. Değerli yükler için kapsamı teklif aşamasında netleştiriyoruz.",
+    },
+    {
+      question: "Kapıdan kapıya teslimat tam olarak ne demek?",
+      answer:
+        "Yükünüz Türkiye'deki adresinizden araca alınır ve Almanya'daki teslimat adresine kadar aynı araçla gider. Depoya bırakmanız veya bir şubeden teslim almanız gerekmez.",
+    },
+    {
+      question: "Hafta sonu gönderi çıkışı yapılıyor mu?",
+      answer:
+        "Evet. Panelvan araçlar hafta sonu TIR seyir yasağından muaf olduğu için cumartesi ve pazar günleri de yükleme ve seyir devam eder.",
+    },
+  ],
+  related: [
+    { slug: "minivan-ekspres-tasimacilik", label: "Minivan & Panelvan Ekspres Taşımacılık" },
+    { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
+    { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
+    { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },
+  ],
+};
+
+export default almanyaKargo;

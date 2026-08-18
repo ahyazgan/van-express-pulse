@@ -7,6 +7,7 @@ import QuickRouteCards from "./QuickRouteCards";
 import RouteSearchInputs from "./RouteSearchInputs";
 import FeaturesSection from "./FeaturesSection";
 import ServicesGrid from "./ServicesGrid";
+import SeoLinksSection from "./SeoLinksSection";
 import BookingChoiceModal from "./BookingChoiceModal";
 import QuoteSummaryModal from "./QuoteSummaryModal";
 import { getShippingPrice } from "@/constants/shippingRates";
@@ -296,6 +297,7 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                 {/* Marketing sections (visible when the sheet is expanded and scrolled) */}
                 <FeaturesSection />
                 <ServicesGrid />
+                <SeoLinksSection />
               </motion.div>
             </motion.div>
           ) : (

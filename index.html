@@ -31,23 +31,24 @@
     <meta name="author" content="Panelvan Express Lojistik" />
     <meta name="keywords" content="panelvan lojistik, avrupa kargo, express teslimat, almanya kargo, hollanda kargo, uluslararası taşımacılık, ekspres taşımacılık, türkiye avrupa kargo" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://van-express-pulse.lovable.app/" />
+    <link rel="canonical" href="https://routeeu24.com/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://van-express-pulse.lovable.app/" />
+    <meta property="og:url" content="https://routeeu24.com/" />
 
-    <!-- TODO: add a real 1200x630 PNG/JPG social preview and set og:image below.
-         The previous SVG URL was invalid (spaces/Turkish chars) and SVG is not
-         rendered by Facebook/LinkedIn/X, so it is removed rather than left broken. -->
+    <!-- TODO: replace with a real 1200x630 social preview; pwa-512.png is a valid
+         raster placeholder served from our own domain (SVG is not rendered by
+         Facebook/LinkedIn/X and the old external URL had unencoded spaces). -->
+    <meta property="og:image" content="https://routeeu24.com/pwa-512.png" />
     <meta property="og:site_name" content="RouteEU Express" />
     <meta property="og:locale" content="tr_TR" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://van-express-pulse.lovable.app/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://routeeu24.com/" />
     <meta name="twitter:site" content="@PanelvanExpress" />
-    <!-- TODO: add twitter:image once a raster social preview exists (see og:image note above). -->
+    <meta name="twitter:image" content="https://routeeu24.com/pwa-512.png" />
 
     <!-- Favicon & PWA icons -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -68,9 +69,9 @@
       "name": "RouteEU Express",
       "alternateName": "Panelvan Express Lojistik",
       "description": "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.",
-      "url": "https://van-express-pulse.lovable.app",
-      "logo": "https://storage.googleapis.com/gpt-engineer-file-uploads/VpYM52YEanWPy4e98kx4w0B0G2A2/uploads/1769860271004-Adsız (180 x 48 piksel) (Facebook Gönderisi).svg",
-      "image": "https://storage.googleapis.com/gpt-engineer-file-uploads/VpYM52YEanWPy4e98kx4w0B0G2A2/social-images/social-1769860262738-Adsız (180 x 48 piksel) (Facebook Gönderisi).svg",
+      "url": "https://routeeu24.com",
+      "logo": "https://routeeu24.com/pwa-512.png",
+      "image": "https://routeeu24.com/pwa-512.png",
       "areaServed": [
         {
           "@type": "Country",
@@ -91,20 +92,19 @@
         {
           "@type": "Country",
           "name": "Austria"
+        },
+        {
+          "@type": "Country",
+          "name": "France"
         }
       ],
       "serviceType": ["Express Shipping", "Panelvan Transport", "International Logistics"],
       "provider": {
         "@type": "Organization",
         "name": "RouteEU Express",
-        "url": "https://van-express-pulse.lovable.app"
+        "url": "https://routeeu24.com"
       },
-      "sameAs": [],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://van-express-pulse.lovable.app/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
+      "sameAs": []
     }
     </script>
     <meta property="og:title" content="RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri">
@@ -114,7 +114,27 @@
 </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Static, crawlable content: visible on first paint and in the raw HTML
+           search engines fetch before JavaScript runs. React replaces this
+           entire block when the app mounts. -->
+      <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem; color: #222; line-height: 1.6;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık</h1>
+        <p>RouteEU Express, Türkiye ile Avrupa arasında ekspres panelvan ve minivan taşımacılığı yapar. Yükünüz adresinizden alınır, aktarmasız olarak 24–72 saat içinde Avrupa'daki adrese teslim edilir. Tüm gönderiler sigortalı taşınır ve canlı GPS takibi ile anlık olarak izlenir.</p>
+        <p>Almanya, Hollanda, Belçika, Avusturya ve Fransa başta olmak üzere tüm Avrupa'ya kapıdan kapıya hizmet veriyoruz. Panelvan araçlarımız hafta sonu TIR yasağından muaf olduğu için teslimatlar kesintisiz devam eder.</p>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Hizmetlerimiz</h2>
+        <ul>
+          <li><a href="/almanya-kargo">Almanya'ya panelvan kargo</a></li>
+          <li><a href="/hollanda-kargo">Hollanda'ya panelvan kargo</a></li>
+          <li><a href="/belcika-kargo">Belçika'ya panelvan kargo</a></li>
+          <li><a href="/minivan-ekspres-tasimacilik">Minivan &amp; panelvan ekspres taşımacılık</a></li>
+          <li><a href="/parsiyel-tasimacilik">Avrupa'ya parsiyel ve parça eşya taşıma</a></li>
+          <li><a href="/ev-esyasi-tasima">Yurtdışına ev eşyası taşıma</a></li>
+          <li><a href="/kesin-donus-nakliyat">Kesin dönüş nakliyat (Avrupa'dan Türkiye'ye)</a></li>
+        </ul>
+        <p><a href="/track">Gönderi takibi</a> · Fiyat almak için uygulamayı kullanın — sayfa yükleniyor…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

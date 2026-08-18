@@ -20,6 +20,18 @@ const AuthPage = lazy(() => import("./pages/AuthPage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 const SuccessPage = lazy(() => import("./pages/SuccessPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const SeoPage = lazy(() => import("./pages/SeoPage"));
+
+// SEO landing pages; content lives in src/content/seo/, keep in sync with public/sitemap.xml.
+const seoRoutes = [
+  "/almanya-kargo",
+  "/hollanda-kargo",
+  "/belcika-kargo",
+  "/minivan-ekspres-tasimacilik",
+  "/parsiyel-tasimacilik",
+  "/ev-esyasi-tasima",
+  "/kesin-donus-nakliyat",
+];
 
 const queryClient = new QueryClient();
 
@@ -56,6 +68,9 @@ const App = () => (
                     </ProtectedRoute>
                   }
                 />
+                {seoRoutes.map((path) => (
+                  <Route key={path} path={path} element={<SeoPage />} />
+                ))}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                 <Route path="*" element={<NotFound />} />
               </Routes>

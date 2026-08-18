@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import { Map, Package, Search, User } from "lucide-react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const AppNavigation = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const { t } = useLanguage();
 
@@ -33,9 +32,9 @@ const AppNavigation = () => {
       <div className="mx-4 mb-2 rounded-2xl border border-border/60 bg-card/95 backdrop-blur-xl shadow-lg pointer-events-auto">
         <div className="flex items-center justify-around h-16 px-2">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.id}
-              onClick={() => navigate(item.route)}
+              to={item.route}
               className={`bottom-nav-item relative ${activeTab === item.id ? "active" : ""}`}
             >
               {activeTab === item.id && (
@@ -67,7 +66,7 @@ const AppNavigation = () => {
                   style={{ boxShadow: "0 0 14px 3px hsl(45 100% 50% / 0.9)" }}
                 />
               )}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

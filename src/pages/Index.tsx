@@ -15,10 +15,13 @@ const Index = () => {
   usePageMeta({
     title: t.meta.home.title,
     description: t.meta.home.description,
+    canonicalPath: "/",
   });
 
   return (
     <div className="h-screen w-screen overflow-hidden bg-background">
+      {/* Screen-reader/crawler heading: the map-first UI has no visible page title. */}
+      <h1 className="sr-only">{t.hero.heading}</h1>
       <MapBackground mode={mode} />
       <TopBar />
       <BottomSheet mode={mode} onModeChange={setMode} />

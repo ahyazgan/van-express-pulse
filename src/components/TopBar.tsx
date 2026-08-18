@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { User, HelpCircle } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import RouteEULogo from "./RouteEULogo";
 import HelpModal from "./HelpModal";
 
+// Real <a href> so crawlers can discover the route (buttons are invisible to them).
+const MotionLink = motion(Link);
+
 const TopBar = () => {
-  const navigate = useNavigate();
   const { user } = useAuth();
   const [helpOpen, setHelpOpen] = useState(false);
   const {
@@ -18,10 +20,6 @@ const TopBar = () => {
   } = useLanguage();
   const toggleLanguage = () => {
     setLanguage(language === "tr" ? "en" : "tr");
-  };
-
-  const handleProfileClick = () => {
-    navigate("/profile");
   };
 
   return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none flex justify-center" initial={{
@@ -37,18 +35,19 @@ const TopBar = () => {
   }}>
       <div className="flex items-center justify-between px-5 py-3 w-full max-w-md mx-auto">
         {/* Profile Button */}
-        <motion.button 
-          onClick={handleProfileClick}
-          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md pointer-events-auto hover:bg-secondary/50 transition-colors" 
+        <MotionLink
+          to="/profile"
+          aria-label={language === "tr" ? "Profil" : "Profile"}
+          className="w-12 h-12 rounded-full glass border border-border/60 flex items-center justify-center shadow-md pointer-events-auto hover:bg-secondary/50 transition-colors"
           whileHover={{
             scale: 1.05
-          }} 
+          }}
           whileTap={{
             scale: 0.95
           }}
         >
           <User className={`w-5 h-5 ${user ? "text-accent" : "text-foreground"}`} />
-        </motion.button>
+        </MotionLink>
 
         {/* Logo */}
         <motion.div className="flex items-center px-3 py-1.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto" initial={{
