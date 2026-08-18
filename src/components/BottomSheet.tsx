@@ -65,6 +65,12 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
     return () => { unsubscribe(); };
   }, [animationControls]);
 
+  // Mirror the current route pick to the map: the Europe map switches to a
+  // single highlighted route when both ends resolve, back to showcase otherwise.
+  useEffect(() => {
+    destinationEvents.emitRouteSelection({ origin, destination });
+  }, [origin, destination]);
+
   const priceResult = useMemo(() => {
     if (!destination) return null;
     return mode === "domestic"
@@ -272,7 +278,7 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                       setSelectedRouteId(route.id);
                       setOrigin(route.from);
                       setDestination(route.to);
-                      destinationEvents.flyTo(route.to);
+                      // Camera follows via the route-selection effect (fitBounds).
                     }}
                   />
                 )}

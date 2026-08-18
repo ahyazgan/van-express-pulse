@@ -2,8 +2,16 @@ import { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { SHIPPING_RATES } from "@/constants/shippingRates";
-import { DOMESTIC_CITIES, type ShippingMode } from "@/constants/domesticRates";
+import { DOMESTIC_CITIES, type DomesticCity, type ShippingMode } from "@/constants/domesticRates";
 import { destinationEvents } from "@/lib/destinationEvents";
+import {
+  buildSelectedPath,
+  pathDistanceKm,
+  resolveDestinationId,
+  resolveOriginCity,
+  selectedEtaHours,
+  selectedVanDurationMs,
+} from "@/lib/routeSelection";
 
 // Free, no-token vector basemap (CARTO Positron via MapLibre GL). Light & minimal,
 // so the yellow routes/markers pop — matches the app's light theme. Overridable via env.
@@ -48,6 +56,7 @@ const vanRoutes = [
     // Route 1: Istanbul -> Madrid (via E-80, E-90)
     id: 1,
     name: "Madrid Express",
+    destinationId: "madrid",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -69,6 +78,7 @@ const vanRoutes = [
     // Route 2: Istanbul -> Amsterdam (via E-75, E-45)
     id: 2,
     name: "Amsterdam Express",
+    destinationId: "amsterdam",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -91,6 +101,7 @@ const vanRoutes = [
     // Route 3: Istanbul -> Frankfurt (via E-75, E-45)
     id: 3,
     name: "Frankfurt Express",
+    destinationId: "frankfurt",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -111,6 +122,7 @@ const vanRoutes = [
     // Route 4: Istanbul -> Prague (via E-75, E-65)
     id: 4,
     name: "Prague Express",
+    destinationId: "prague",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -131,6 +143,7 @@ const vanRoutes = [
     // Route 5: Istanbul -> Milan (via E-70, E-61)
     id: 5,
     name: "Milan Express",
+    destinationId: "milan",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -151,6 +164,7 @@ const vanRoutes = [
     // Route 6: Istanbul -> Berlin (via E-75, E-55)
     id: 6,
     name: "Berlin Express",
+    destinationId: "berlin",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -171,6 +185,7 @@ const vanRoutes = [
     // Route 7: Istanbul -> Paris (via E-75, E-50, E-25)
     id: 7,
     name: "Paris Express",
+    destinationId: "paris",
     path: [
       [28.9784, 41.0082], // Istanbul
       [26.5, 41.8],
@@ -189,7 +204,52 @@ const vanRoutes = [
     ] as [number, number][],
     duration: 24000,
   },
+  {
+    // Route 8: Istanbul -> London (Paris corridor + Calais channel crossing)
+    id: 8,
+    name: "London Express",
+    destinationId: "london",
+    path: [
+      [28.9784, 41.0082], // Istanbul
+      [26.5, 41.8],
+      [23.3219, 42.6977], // Sofia
+      [21.9, 43.7],
+      [20.4489, 44.7866], // Belgrade
+      [19.5, 46.0],
+      [19.0402, 47.4979], // Budapest
+      [17.5, 47.8],
+      [14.0, 48.0],
+      [11.5820, 48.1351], // Munich
+      [9.0, 48.5],
+      [6.0, 48.8],
+      [4.0, 48.8],
+      [2.3522, 48.8566], // Paris
+      [2.0, 49.9],
+      [1.85, 50.95], // Calais
+      [0.5, 51.2],
+      [-0.1276, 51.5074], // London
+    ] as [number, number][],
+    duration: 27000,
+  },
 ];
+
+type VanRoute = (typeof vanRoutes)[number];
+
+// Shared van marker markup (decorative fleet + selected-route van)
+const VAN_MARKER_HTML = `
+  <div class="van-container">
+    <div class="van-glow"></div>
+    <div class="van-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+        <path d="M15 18H9"/>
+        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+        <circle cx="17" cy="18" r="2"/>
+        <circle cx="7" cy="18" r="2"/>
+      </svg>
+    </div>
+  </div>
+`;
 
 // Major hubs visible at all zoom levels
 const MAJOR_HUBS = ["istanbul", "london", "paris", "berlin", "madrid"];
@@ -203,8 +263,18 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
   const animationFramesRef = useRef<number[]>([]);
   const vanTimeoutsRef = useRef<number[]>([]);
 
+  // Selected-route (single route) mode state
+  const selectedVanMarkerRef = useRef<maplibregl.Marker | null>(null);
+  const selectedVanFrameRef = useRef<number | null>(null);
+  const selectedOriginMarkerRef = useRef<maplibregl.Marker | null>(null);
+  const selectionActiveRef = useRef(false);
+  const pendingSelectionRef = useRef<{ originCity: DomesticCity; route: VanRoute } | null>(null);
+  const mapReadyRef = useRef(false);
+
   // Update price tag visibility based on zoom level
   const updatePriceTagVisibility = (zoom: number) => {
+    // Single-route mode hides all price tags; zoom events must not re-show them.
+    if (selectionActiveRef.current) return;
     priceMarkersRef.current.forEach(({ marker, cityId }) => {
       const element = marker.getElement();
       const isMajorHub = MAJOR_HUBS.includes(cityId);
@@ -237,9 +307,10 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       essential: true
     });
 
-    // Find and pulse the price tag (price markers are keyed by city id)
+    // Find and pulse the price tag (price markers are keyed by city id).
+    // Skip while single-route mode owns tag visibility.
     const priceMarker = priceMarkersRef.current.find(p => p.cityId === city.id);
-    if (priceMarker) {
+    if (priceMarker && !selectionActiveRef.current) {
       const element = priceMarker.marker.getElement();
       element.style.display = "block"; // Ensure it's visible
       element.classList.add("pulse-attention");
@@ -251,6 +322,197 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
     }
   };
 
+  // Drive a van marker along a path in an endless loop (linear per segment).
+  // registerFrame hands back each rAF id so the caller can cancel the loop.
+  const runVanLoop = (
+    marker: maplibregl.Marker,
+    path: [number, number][],
+    duration: number,
+    registerFrame: (id: number) => void,
+  ) => {
+    let startTime: number | null = null;
+
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = (elapsed % duration) / duration;
+
+      // Calculate position along path
+      const pathLength = path.length - 1;
+      const segmentProgress = progress * pathLength;
+      const segmentIndex = Math.floor(segmentProgress);
+      const segmentFraction = segmentProgress - segmentIndex;
+
+      if (segmentIndex < pathLength) {
+        const start = path[segmentIndex];
+        const end = path[segmentIndex + 1];
+        const lng = start[0] + (end[0] - start[0]) * segmentFraction;
+        const lat = start[1] + (end[1] - start[1]) * segmentFraction;
+        marker.setLngLat([lng, lat]);
+      }
+
+      registerFrame(requestAnimationFrame(animate));
+    };
+
+    registerFrame(requestAnimationFrame(animate));
+  };
+
+  // Showcase fleet: staggered van loops on every decorative corridor.
+  const startDecorativeVans = () => {
+    vanRoutes.forEach((route, index) => {
+      const marker = vanMarkersRef.current[index];
+      if (!marker) return;
+      marker.getElement().style.display = "block";
+      marker.setLngLat(route.path[0]);
+      // Stagger start times (track the timeout so we can cancel it on unmount)
+      const timeoutId = window.setTimeout(() => {
+        runVanLoop(marker, route.path, route.duration, (id) => {
+          animationFramesRef.current[index] = id;
+        });
+      }, index * 2000);
+      vanTimeoutsRef.current.push(timeoutId);
+    });
+  };
+
+  const stopDecorativeVans = () => {
+    vanTimeoutsRef.current.forEach((tid) => clearTimeout(tid));
+    vanTimeoutsRef.current = [];
+    animationFramesRef.current.forEach((frame) => cancelAnimationFrame(frame));
+    animationFramesRef.current = [];
+    vanMarkersRef.current.forEach((marker) => {
+      marker.getElement().style.display = "none";
+    });
+  };
+
+  const removeSelectionArtifacts = () => {
+    if (selectedVanFrameRef.current !== null) {
+      cancelAnimationFrame(selectedVanFrameRef.current);
+      selectedVanFrameRef.current = null;
+    }
+    selectedVanMarkerRef.current?.remove();
+    selectedVanMarkerRef.current = null;
+    selectedOriginMarkerRef.current?.remove();
+    selectedOriginMarkerRef.current = null;
+  };
+
+  // Single-route mode: hide the showcase, draw origin → İstanbul → destination,
+  // run one van along it and frame the whole journey.
+  const applySelection = (originCity: DomesticCity, route: VanRoute) => {
+    const m = map.current;
+    if (!m || !mapReadyRef.current) {
+      // Map still loading — remembered and applied from the load handler.
+      pendingSelectionRef.current = { originCity, route };
+      return;
+    }
+    pendingSelectionRef.current = null;
+
+    removeSelectionArtifacts();
+    stopDecorativeVans();
+    selectionActiveRef.current = true;
+    if (m.getLayer("route-line")) m.setLayoutProperty("route-line", "visibility", "none");
+    if (m.getLayer("route-glow")) m.setLayoutProperty("route-glow", "visibility", "none");
+    priceMarkersRef.current.forEach(({ marker }) => {
+      marker.getElement().style.display = "none";
+    });
+
+    const path = buildSelectedPath(originCity.coords, route.path);
+    const source = m.getSource("selected-route") as maplibregl.GeoJSONSource | undefined;
+    source?.setData({
+      type: "Feature",
+      properties: {},
+      geometry: { type: "LineString", coordinates: path },
+    });
+
+    // Turkish origins other than İstanbul aren't in the Europe city set — pin them.
+    if (!cities.some((c) => c.id === originCity.id)) {
+      const el = document.createElement("div");
+      el.className = "city-marker";
+      el.innerHTML = `
+        <div class="marker-container primary">
+          <div class="pulse-ring"></div>
+          <div class="marker-dot"></div>
+          <div class="marker-label">${originCity.label}</div>
+        </div>
+      `;
+      selectedOriginMarkerRef.current = new maplibregl.Marker({ element: el })
+        .setLngLat(originCity.coords)
+        .addTo(m);
+    }
+
+    const km = pathDistanceKm(path);
+    const destLabel = cities.find((c) => c.id === route.destinationId)?.label ?? route.name;
+
+    const vanEl = document.createElement("div");
+    vanEl.className = "van-marker";
+    vanEl.innerHTML = VAN_MARKER_HTML;
+
+    const popup = new maplibregl.Popup({
+      offset: 25,
+      closeButton: true,
+      closeOnClick: true,
+      className: "van-popup",
+    }).setHTML(`
+      <div class="van-popup-content">
+        <div class="van-popup-header">
+          <span class="van-popup-title">${originCity.label} → ${destLabel}</span>
+          <span class="van-popup-badge">ROTANIZ</span>
+        </div>
+        <div class="van-popup-info">
+          <div class="van-popup-row">
+            <span class="van-popup-label">Mesafe:</span>
+            <span class="van-popup-value">~${Math.round(km).toLocaleString("tr-TR")} km</span>
+          </div>
+          <div class="van-popup-row">
+            <span class="van-popup-label">Kapasite:</span>
+            <span class="van-popup-value">1200kg / 12m³</span>
+          </div>
+          <div class="van-popup-row">
+            <span class="van-popup-label">Tahmini Varış:</span>
+            <span class="van-popup-value van-popup-eta">${selectedEtaHours(km)}h</span>
+          </div>
+        </div>
+      </div>
+    `);
+
+    const vanMarker = new maplibregl.Marker({ element: vanEl })
+      .setLngLat(path[0])
+      .setPopup(popup)
+      .addTo(m);
+    selectedVanMarkerRef.current = vanMarker;
+    runVanLoop(vanMarker, path, selectedVanDurationMs(km), (id) => {
+      selectedVanFrameRef.current = id;
+    });
+
+    // Frame the whole journey; extra bottom padding keeps it above the sheet.
+    const bounds = path.reduce(
+      (b, coord) => b.extend(coord),
+      new maplibregl.LngLatBounds(path[0], path[0]),
+    );
+    const h = m.getContainer().clientHeight;
+    m.fitBounds(bounds, {
+      padding: { top: 80, left: 60, right: 60, bottom: Math.max(0, Math.min(h * 0.4, h - 180)) },
+      duration: 1400,
+      essential: true,
+    });
+  };
+
+  // Back to showcase: restore decorative corridors, vans and price tags.
+  const clearSelection = () => {
+    pendingSelectionRef.current = null;
+    const m = map.current;
+    if (!m || !mapReadyRef.current || !selectionActiveRef.current) return;
+    selectionActiveRef.current = false;
+
+    removeSelectionArtifacts();
+    const source = m.getSource("selected-route") as maplibregl.GeoJSONSource | undefined;
+    source?.setData({ type: "FeatureCollection", features: [] });
+    if (m.getLayer("route-line")) m.setLayoutProperty("route-line", "visibility", "visible");
+    if (m.getLayer("route-glow")) m.setLayoutProperty("route-glow", "visibility", "visible");
+    startDecorativeVans();
+    updatePriceTagVisibility(m.getZoom());
+    m.easeTo({ center: [15.0, 45.0], zoom: 4.2, duration: 1200 });
+  };
+
   // Subscribe to flyTo events from search
   useEffect(() => {
     const unsubscribe = destinationEvents.subscribeFlyTo((cityId) => {
@@ -258,6 +520,26 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
     });
     return () => { unsubscribe(); };
   }, []);
+
+  // Origin/destination changes from the search form (Europe mode only):
+  // both ends resolved → single-route mode, anything else → showcase.
+  useEffect(() => {
+    if (mode === "domestic") return;
+    const unsubscribe = destinationEvents.subscribeRouteSelection(({ origin, destination }) => {
+      const originCity = resolveOriginCity(origin);
+      const destinationId = resolveDestinationId(destination);
+      const route = destinationId
+        ? vanRoutes.find((r) => r.destinationId === destinationId)
+        : undefined;
+      if (originCity && route) {
+        applySelection(originCity, route);
+      } else {
+        clearSelection();
+      }
+    });
+    return () => { unsubscribe(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mode]);
 
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
@@ -330,6 +612,43 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
             "line-blur": 8,
           },
         }, "route-line");
+
+        // Selected-route overlay (empty until the user picks origin + destination)
+        map.current.addSource("selected-route", {
+          type: "geojson",
+          data: { type: "FeatureCollection", features: [] },
+        });
+
+        map.current.addLayer({
+          id: "selected-route-glow",
+          type: "line",
+          source: "selected-route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "#FFCC00",
+            "line-width": 14,
+            "line-opacity": 0.35,
+            "line-blur": 8,
+          },
+        });
+
+        map.current.addLayer({
+          id: "selected-route-line",
+          type: "line",
+          source: "selected-route",
+          layout: {
+            "line-join": "round",
+            "line-cap": "round",
+          },
+          paint: {
+            "line-color": "#FFCC00",
+            "line-width": 5,
+            "line-opacity": 0.95,
+          },
+        });
       }
 
       // Add city markers (mode-specific city set)
@@ -405,23 +724,10 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       updatePriceTagVisibility(map.current.getZoom());
 
       // Animated live vans (Europe corridors only)
-      if (!isDomestic) vanRoutes.forEach((route, index) => {
+      if (!isDomestic) vanRoutes.forEach((route) => {
         const el = document.createElement("div");
         el.className = "van-marker";
-        el.innerHTML = `
-          <div class="van-container">
-            <div class="van-glow"></div>
-            <div class="van-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
-                <path d="M15 18H9"/>
-                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
-                <circle cx="17" cy="18" r="2"/>
-                <circle cx="7" cy="18" r="2"/>
-              </svg>
-            </div>
-          </div>
-        `;
+        el.innerHTML = VAN_MARKER_HTML;
 
         // Create popup for this van with route-specific info
         const popup = new maplibregl.Popup({
@@ -456,45 +762,19 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           .setLngLat(route.path[0])
           .setPopup(popup)
           .addTo(map.current!);
-        
+
         vanMarkersRef.current.push(marker);
-
-        // Animate van along path
-        const animateVan = () => {
-          let startTime: number | null = null;
-          const totalDuration = route.duration;
-
-          const animate = (timestamp: number) => {
-            if (!startTime) startTime = timestamp;
-            const elapsed = timestamp - startTime;
-            const progress = (elapsed % totalDuration) / totalDuration;
-
-            // Calculate position along path
-            const pathLength = route.path.length - 1;
-            const segmentProgress = progress * pathLength;
-            const segmentIndex = Math.floor(segmentProgress);
-            const segmentFraction = segmentProgress - segmentIndex;
-
-            if (segmentIndex < pathLength) {
-              const start = route.path[segmentIndex];
-              const end = route.path[segmentIndex + 1];
-              const lng = start[0] + (end[0] - start[0]) * segmentFraction;
-              const lat = start[1] + (end[1] - start[1]) * segmentFraction;
-              marker.setLngLat([lng, lat]);
-            }
-
-            animationFramesRef.current[index] = requestAnimationFrame(animate);
-          };
-
-          // Stagger start times (track the timeout so we can cancel it on unmount)
-          const timeoutId = window.setTimeout(() => {
-            animationFramesRef.current[index] = requestAnimationFrame(animate);
-          }, index * 2000);
-          vanTimeoutsRef.current.push(timeoutId);
-        };
-
-        animateVan();
       });
+
+      // Start the showcase van loops (also restarted when a selection clears)
+      if (!isDomestic) startDecorativeVans();
+
+      // Map is ready — apply any selection that arrived before load finished.
+      mapReadyRef.current = true;
+      if (pendingSelectionRef.current) {
+        const { originCity, route } = pendingSelectionRef.current;
+        applySelection(originCity, route);
+      }
     });
 
     return () => {
@@ -514,12 +794,20 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       vanMarkersRef.current.forEach((marker) => marker.remove());
       vanMarkersRef.current = [];
 
+      // Cleanup selected-route mode state
+      removeSelectionArtifacts();
+      selectionActiveRef.current = false;
+      pendingSelectionRef.current = null;
+      mapReadyRef.current = false;
+
       // Cleanup map
       if (map.current) {
         map.current.remove();
         map.current = null;
       }
     };
+    // applySelection/startDecorativeVans only touch refs — rebuild strictly on mode
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
 
   return (
