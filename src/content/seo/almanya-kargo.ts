@@ -55,10 +55,30 @@ const almanyaKargo: SeoPageData = {
       ],
     },
     {
+      heading: "Panelvan Ekspres mi, Klasik Kargo Firması mı?",
+      paragraphs: [
+        "\"Yurtdışı kargo hangi firma ile gönderilir?\" sorusunun dürüst cevabı yükünüze bağlıdır. 0-30 kg arası tek bir koliniz varsa ve teslimat süresi birkaç gün esneyebiliyorsa, uluslararası kurye firmaları sizin için mantıklı ve ekonomik bir seçenektir; bu segmentte panelvan kiralamak çoğu zaman gereksizdir. Biz size uymayan bir hizmeti satmayız.",
+        "Denge, yük 30 kilogramı aştığında, palet söz konusu olduğunda veya teslim tarihi kritikleştiğinde değişir. Kurye ağlarında büyük ve ağır gönderiler hacimsel ağırlık üzerinden fiyatlanır, birden fazla aktarma merkezinden geçer ve gümrük süreci çoğu zaman alıcının üzerine kalır. Panelvan ekspreste ise fiyat baştan bellidir, yük tek araçta aktarmasız gider, gümrük işlemleri sürece dahildir ve teslimat depoya değil doğrudan Almanya'daki adrese yapılır. Paletli ticari mal, makine parçası, çok parçalı eşya veya acil sevkiyat söz konusuysa panelvan ekspres hem daha hızlı hem de toplamda daha öngörülebilir bir maliyet sunar.",
+      ],
+    },
+    {
       heading: "Neler Gönderebilirsiniz?",
       paragraphs: [
         "Ticari mal, numune, fuar malzemesi, yedek parça, makine ekipmanı, e-ticaret ürünleri, ev eşyası ve zati eşya taşıyoruz. Acil üretim parçası bekleyen fabrikalar, fuara yetişmesi gereken standlar ve teslim tarihi kritik ticari yükler için panelvan ekspres çoğu zaman tek gerçekçi seçenektir.",
         "Gümrük sürecinde evrak hazırlığı konusunda ekibimiz size yol gösterir; ATR belgesi ve fatura ile Almanya'ya ticari gönderiler sorunsuz ilerler.",
+      ],
+    },
+    {
+      heading: "Almanya'ya Kargo Fiyatını Ne Belirler?",
+      paragraphs: [
+        "Almanya'ya kargo fiyatı tek bir tarifeyle açıklanamaz; teklifinizi birkaç somut faktör şekillendirir. Yukarıdaki fiyat tablosunda şehir bazlı güncel aralıkları görebilirsiniz; kendi yükünüz için kesin rakamı ise uygulamadan saniyeler içinde alırsınız. Fiyatı belirleyen başlıca unsurlar şunlardır:",
+      ],
+      list: [
+        "Mesafe ve varış şehri: Münih ile Hamburg arasında yüzlerce kilometre fark vardır; güzergâh uzadıkça yakıt ve süre maliyeti fiyata yansır.",
+        "Hacim ve ağırlık: Yükünüzün kapladığı alan ve toplam kilosu, aracın ne kadarını kullandığınızı belirler.",
+        "Komple mi, parsiyel mi: Aracın tamamını kiralarsanız sabit araç fiyatı ödersiniz; parsiyel gönderide yalnızca kullandığınız hacim kadar ödeme yaparsınız.",
+        "Sezon ve talep: Yaz dönemi, bayram öncesi ve fuar haftalarında talep artar; fiyat aralıkları buna göre hareket eder.",
+        "Gümrük kapsamı: Ticari mal, numune ve zati eşya için evrak ve işlem yükü farklıdır; bu da toplam maliyeti etkiler.",
       ],
     },
     {
@@ -76,7 +96,7 @@ const almanyaKargo: SeoPageData = {
     {
       heading: "Almanya'dan Türkiye'ye Dönüş Yükleri",
       paragraphs: [
-        "Taşımalarımız çift yönlüdür: Almanya'dan Türkiye'ye kargo, eşya veya ticari yük göndermek istiyorsanız aynı hız ve takip imkânıyla dönüş taşıması da yapıyoruz. Berlin, Hamburg, Münih veya Almanya'nın herhangi bir şehrinden Türkiye'deki adrese kapıdan kapıya teslimat mümkündür. Almanya'da yaşayıp Türkiye'ye kalıcı olarak dönecekseniz kesin dönüş nakliyat hizmetimize de göz atabilirsiniz; ev eşyanızın tamamı tek panelvanla, aktarmasız olarak Türkiye'deki yeni adresinize taşınır.",
+        "Taşımalarımız çift yönlüdür: Almanya'dan Türkiye'ye kargo, eşya veya ticari yük göndermek istiyorsanız aynı hız ve takip imkânıyla dönüş taşıması da yapıyoruz. Berlin, Hamburg, Münih veya Almanya'nın herhangi bir şehrinden Türkiye'deki adrese kapıdan kapıya teslimat mümkündür. Almanya'da yaşayıp Türkiye'ye kalıcı olarak dönecekseniz kesin dönüş nakliyat hizmetimize de göz atabilirsiniz; ev eşyanızın tamamı tek panelvanla, aktarmasız olarak Türkiye'deki yeni adresinize taşınır. Dönüş yönündeki güzergâhlar, süreler ve sık sorulan sorular için Almanya'dan Türkiye'ye nakliyat sayfamızı inceleyebilirsiniz.",
       ],
     },
   ],
@@ -113,9 +133,30 @@ const almanyaKargo: SeoPageData = {
       answer:
         "Evet. Panelvan araçlar hafta sonu TIR seyir yasağından muaf olduğu için cumartesi ve pazar günleri de yükleme ve seyir devam eder.",
     },
+    {
+      question: "Almanya'ya en ucuz kargo nasıl gönderilir?",
+      answer:
+        "Aracın tamamına ihtiyacınız yoksa en ekonomik yol parsiyel taşımadır: aynı yöne giden yüklerle aracı paylaşır, yalnızca kullandığınız hacim ve ağırlık kadar ödersiniz. Aktarmasız taşıma ve kapıdan kapıya teslim avantajları parsiyelde de geçerlidir. Detaylar için parsiyel taşımacılık sayfamıza bakabilir, uygulamadan yükünüze özel teklif alabilirsiniz.",
+    },
+    {
+      question: "Tek koli veya birkaç parça eşya gönderebilir miyim?",
+      answer:
+        "Evet. Komple araç kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle birlikte, yine aktarmasız ve sigortalı olarak Almanya'daki adrese teslim edilir.",
+    },
+    {
+      question: "Almanya'ya kargoda gümrük vergisi ödenir mi?",
+      answer:
+        "Yükün türüne bağlıdır. Ticari mallar fatura ve ATR belgesiyle işlem görür; Türkiye-AB gümrük birliği kapsamındaki sanayi ürünlerinde çoğu durumda ek gümrük vergisi doğmaz. Kullanılmış zati eşya ise farklı bir rejime tabidir ve belirli koşullarda muafiyetten yararlanabilir. Ekibimiz evrak sürecinde yol gösterir; yükünüze özel güncel mevzuatı gümrük müşavirinizle teyit etmenizi öneririz.",
+    },
+    {
+      question: "Zati eşya taşıması yapıyor musunuz?",
+      answer:
+        "Evet. Kişisel eşya, valiz, mobilya ve komple ev eşyası taşıyoruz. Almanya'ya taşınıyor veya oradaki bir yakınınıza eşya gönderiyorsanız yurtdışına ev eşyası taşıma sayfamızda süreç, ambalajlama ve evrak detaylarını bulabilirsiniz.",
+    },
   ],
   related: [
-    { slug: "minivan-ekspres-tasimacilik", label: "Minivan & Panelvan Ekspres Taşımacılık" },
+    { slug: "almanyadan-turkiyeye-nakliyat", label: "Almanya'dan Türkiye'ye Nakliyat" },
+    { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
     { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },

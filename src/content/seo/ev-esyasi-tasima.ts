@@ -54,6 +54,20 @@ const evEsyasiTasima: SeoPageData = {
       ],
     },
     {
+      heading: "Ev Eşyası Taşıma Fiyatı Nasıl Belirlenir?",
+      paragraphs: [
+        "Yurt dışına ev eşyası taşıma fiyatını belirleyen ana unsur, eşyanızın kapladığı hacimdir; nakliye sektörü bu hacmi metreküp (m3) ile ölçer. Standart bir 1+1 evin eşyası tipik olarak 8-12 m3 tutar ve tek panelvana rahatça sığar. 2+1 bir ev ortalama 14-20 m3, mobilyası bol bir 3+1 ev ise 25 m3 ve üzeri hacme ulaşır; bu büyüklükteki taşınmalarda ya iki araç planlanır ya da eşyanın öncelikli bölümü panelvanla gönderilip kalan hacim parsiyel seçenekle kombine edilir.",
+        "Net ve sürprizsiz bir teklif için en pratik yol şudur: taşınacak eşyaların listesini çıkarın, mümkünse odaların fotoğraflarını çekin ve talebinizle birlikte iletin. Eşya listesi ve fotoğraflarla toplam hacmi birlikte netleştirir, taşıma günü değişmeyecek sabit bir fiyat veririz. Hacmin dışında fiyatı etkileyen unsurlar şunlardır:",
+      ],
+      list: [
+        "Ev büyüklüğü ve hacim: 1+1 ev yaklaşık 8-12 m3 (tek panelvan); 2+1 ev 14-20 m3; 3+1 ev 25 m3 ve üzeri (iki araç veya panelvan + parsiyel kombinasyonu).",
+        "Güzergah: Kalkış ve varış adresleri arasındaki mesafe ile geçilen ülke sayısı navlunu doğrudan etkiler.",
+        "Sezon: Yaz ayları, bayram ve tatil dönemleri taşınma talebinin en yoğun olduğu zamanlardır; tarih esnekliğiniz varsa fiyat avantajına dönüşür.",
+        "Adres koşulları: Kat, asansör ve aracın kapıya yanaşma imkânı yükleme-boşaltma süresini, dolayısıyla maliyeti etkiler.",
+        "Paketleme desteği: Eşyayı kendiniz mi paketleyeceksiniz, ekipten destek mi istiyorsunuz — teklif aşamasında netleştirilir.",
+      ],
+    },
+    {
       heading: "Adım Adım Yurtdışına Ev Taşıma Süreci",
       paragraphs: [
         "Uluslararası ev taşımayı dört ana adımda yürütüyoruz. Sürecin en kritik kısmı hazırlık aşamasıdır; iyi paketlenmiş bir ev, sınırda ve teslimatta zaman kaybetmez.",
@@ -66,16 +80,31 @@ const evEsyasiTasima: SeoPageData = {
       ],
     },
     {
-      heading: "Zati Eşya Nedir? Gümrükte Ne Anlama Gelir?",
+      heading: "Zati Eşya ve Gümrük: Bilmeniz Gerekenler",
       paragraphs: [
-        "Uluslararası taşınmalarda sık duyacağınız kavram \"zati eşya\"dır: kişinin halihazırda kullandığı, ticari amaç taşımayan kişisel ev eşyalarını ifade eder. Birçok Avrupa ülkesi, ikametini o ülkeye taşıyan kişilerin kullanılmış ev eşyalarını belirli şartlar altında gümrük avantajlarıyla kabul eder. Bu şartlar genellikle ikamet değişikliğinin belgelenmesi ve eşyaların kişisel kullanıma ait olması gibi kriterlere dayanır.",
+        "Uluslararası taşınmalarda sık duyacağınız kavram \"zati eşya\"dır: kişinin halihazırda kullandığı, ticari amaç taşımayan kişisel ev eşyalarını ifade eder. Birçok Avrupa ülkesi, ikametini o ülkeye taşıyan kişilerin kullanılmış ev eşyalarını belirli şartlar altında gümrük avantajlarıyla kabul eder. Bu şartlar genellikle ikamet değişikliğinin resmi belgelerle kanıtlanması (ikamet kaydı, iş veya öğrenci belgesi gibi) ve eşyaların kişisel kullanıma ait, kullanılmış eşyalar olması gibi kriterlere dayanır.",
         "Ancak zati eşya uygulamasının kapsamı, istenen belgeler ve şartlar ülkeye göre farklılık gösterir ve zaman içinde değişebilir. Bu nedenle taşınma tarihinizden önce güncel şartları mutlaka gideceğiniz ülkenin konsolosluğuna veya bir gümrük müşavirine teyit ettirin. Ekibimiz sürecin taşıma tarafını eksiksiz yönetir ve evrak hazırlığında size yol gösterir; resmi şartların güncel halini ise her zaman resmi kaynaktan doğrulamanızı öneririz.",
+        "Yönün tersi için de aynı mantık geçerlidir: Avrupa'da yaşarken Türkiye'ye kalıcı olarak dönüyorsanız, kullanılmış ev eşyalarınız Türkiye tarafında kesin dönüş muafiyeti kapsamında değerlendirilebilir. Bu sürecin şartlarını, evrak sırasını ve Almanya'dan dönüş örneğini kesin dönüş nakliyat sayfamızda adım adım anlattık.",
       ],
     },
     {
       heading: "Hangi Ülkelere Ev Eşyası Taşıyoruz?",
       paragraphs: [
         "En çok talep gören güzergahlar Türk nüfusunun yoğun olduğu Almanya (Berlin, Hamburg, Münih, Köln, Stuttgart, Frankfurt), Hollanda (Amsterdam, Rotterdam, Eindhoven) ve Belçika'dır (Brüksel, Anvers). Bunun yanında Avusturya, Fransa, İsviçre ve Avrupa'nın diğer ülkelerine de kapıdan kapıya ev taşıması yapıyoruz. Genel Avrupa güzergahlarında teslimat tipik olarak 24-72 saat aralığındadır — adres nereye olursa olsun eşyanız aynı araçla kapıya kadar gider.",
+      ],
+    },
+    {
+      heading: "Dolandırıcılığa Karşı: Sözleşme, Sigorta, Canlı Takip",
+      paragraphs: [
+        "Uluslararası evden eve nakliyat, ne yazık ki güven sorununun en sık yaşandığı alanlardan biridir. Kapora alıp ortadan kaybolan, yola çıktıktan sonra \"ek masraf\" adıyla fiyat artıran ya da eşyayı belirsiz depolarda haftalarca bekleten firmalarla ilgili şikâyetleri siz de duymuşsunuzdur. Önerimiz nettir: hangi firmayla çalışırsanız çalışın, yazılı sözleşme isteyin, sigorta poliçesini görün ve aracın nerede olduğunu gösterebilen bir takip sistemi talep edin.",
+        "RouteEU olarak bu güvenceleri standart hizmetin parçası yaptık:",
+      ],
+      list: [
+        "Yazılı sözleşme: Taşıma kapsamı, tarih, adresler ve fiyat sözleşmede yazar; sözlü vaatle iş yürütülmez.",
+        "Sabit fiyat: Teklifte anlaşılan rakam taşıma günü değişmez; yolda zam, sürpriz \"gümrük ücreti\" veya pazarlık yoktur.",
+        "Sigorta poliçesi: Eşyanız taşıma sigortası kapsamındadır ve poliçe bilgisi tarafınızla paylaşılır.",
+        "7/24 canlı GPS: Eşyanızın yüklü olduğu aracı harita üzerinde anlık izlersiniz; \"araç nerede?\" belirsizliği yaşanmaz.",
+        "Kapıda tutanaklı teslim: Teslimatta eşya listesi birlikte kontrol edilir ve teslim tutanağı imzalanır.",
       ],
     },
   ],
@@ -114,12 +143,34 @@ const evEsyasiTasima: SeoPageData = {
       answer:
         "Evet, beyaz eşyalar taşıma kapsamındadır. Taşımadan önce buzdolabının fişini en az 24 saat önce çekip çözülmesini sağlamanızı, çamaşır ve bulaşık makinesinin suyunu tamamen boşaltmanızı ve kapaklarını bantlamanızı öneririz. Araçta beyaz eşyalar dik konumda ve sabitlenmiş şekilde taşınır.",
     },
+    {
+      question: "Yurt dışına ev eşyası taşıma fiyatları ne kadar?",
+      answer:
+        "Fiyat, eşyanızın hacmine (m3) ve güzergaha göre belirlenir. Komple panelvan dolduran bir taşınmada örnek aralık İstanbul-Berlin hattı için " +
+        priceRange("Berlin") +
+        " seviyesindedir; daha küçük hacimler bunun altında, hacme göre fiyatlandırılır. Eşya listenizi ve mümkünse oda fotoğraflarınızı ileterek uygulamadan sabit ve sürprizsiz bir teklif alabilirsiniz.",
+    },
+    {
+      question: "Eşyalarım m3 olarak nasıl hesaplanır?",
+      answer:
+        "Her parçanın en, boy ve yükseklik ölçüsü çarpılarak hacmi bulunur; standart bir taşınma kolisi yaklaşık 0,1-0,15 m3 yer kaplar. Pratikte bu hesabı sizin yapmanız gerekmez: eşya listenizi ve oda fotoğraflarınızı paylaştığınızda toplam hacmi ekibimiz hesaplar, araç planını ve fiyatı buna göre netleştiririz. Referans olarak 1+1 bir evin eşyası 8-12 m3 civarındadır ve tek panelvana sığar.",
+    },
+    {
+      question: "Zati eşya gümrükten vergisiz geçer mi?",
+      answer:
+        "Belirli şartlarla mümkündür: eşyaların kullanılmış ve kişisel olması, ikamet değişikliğinin resmi belgelerle kanıtlanması ve başvurunun süresi içinde yapılması halinde birçok ülke kullanılmış ev eşyasına gümrük muafiyeti tanır. Şartlar ülkeye göre değişir ve güncellenebilir; taşınma tarihinizden önce güncel mevzuatı gideceğiniz ülkenin konsolosluğuna veya bir gümrük müşavirine mutlaka teyit ettirin.",
+    },
+    {
+      question: "Çeyiz eşyası taşıyor musunuz?",
+      answer:
+        "Evet. Çeyiz taşıma en sık çalıştığımız taleplerden biridir: Türkiye'den Almanya, Hollanda veya Belçika'daki yeni eve giden çeyiz eşyası, kırılacak parçaları özenle paketlenerek kapıdan kapıya tek araçla taşınır. Taşıma sigortalıdır, teslimat kapıda tutanakla yapılır ve süreç boyunca aracı canlı olarak takip edersiniz.",
+    },
   ],
   related: [
-    { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
+    { slug: "almanyadan-turkiyeye-nakliyat", label: "Almanya'dan Türkiye'ye Nakliyat" },
+    { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
-    { slug: "minivan-ekspres-tasimacilik", label: "Minivan & Panelvan Ekspres Taşımacılık" },
   ],
 };
 

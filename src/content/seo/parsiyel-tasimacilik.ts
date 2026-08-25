@@ -43,7 +43,7 @@ const parsiyelTasimacilik: SeoPageData = {
     {
       heading: "Panelvan Parsiyelin Klasik TIR Parsiyelinden Farkı",
       paragraphs: [
-        "Geleneksel TIR parsiyelinde yükünüz önce bir toplama deposuna gider, orada araç dolana kadar bekler, ara depolarda elleçlenir ve varış ülkesinde yeniden dağıtıma girer. Bu zincirin her halkası zaman kaybı ve hasar riski demektir. Panelvan parsiyel bu zinciri kısaltır:",
+        "Geleneksel TIR parsiyelinde yükünüz önce bir toplama deposuna gider, orada araç dolana kadar bekler, ara depolarda elleçlenir ve varış ülkesinde yeniden dağıtıma girer; sektör ortalamasında bu süreç 7-15 gün sürer. Zincirin her halkası zaman kaybı ve hasar riski demektir. Panelvan parsiyel bu zinciri kısaltır:",
       ],
       list: [
         "Depo beklemesi yok: Araç dolduğunda değil, planlanan çıkış gününde yola çıkar; yükünüz haftalarca depoda araç beklemez.",
@@ -74,10 +74,47 @@ const parsiyelTasimacilik: SeoPageData = {
       ],
     },
     {
+      heading: "Parsiyel Taşıma Fiyatı Nasıl Hesaplanır?",
+      paragraphs: [
+        "Parsiyel fiyatının arkasındaki mantık tek cümleye sığar: yükünüzün, aracın toplam kapasitesi içinde kapladığı payın bedelini ödersiniz. Bu pay sektörde üç farklı birimle ölçülür ve hangisinin kullanılacağını yükünüzün tipi belirler:",
+      ],
+      list: [
+        "Metreküp (m³): Koliler ve düzensiz şekilli yüklerde en, boy ve yükseklik çarpılarak hacim bulunur; fiyat, bu hacmin aracın 13-14 m³'lük toplam hacmine oranına göre şekillenir.",
+        "Palet: Paletli ticari yüklerde hesap birimi palettir. Panelvan 5 Euro palet aldığı için tek palet, kabaca araç kapasitesinin beşte birine karşılık gelir ve buna göre fiyatlandırılır.",
+        "LDM (yükleme metresi): Araç tabanında tam genişlikte kapladığınız uzunluğu ifade eder. Uzun, bölünemeyen veya üzerine istif yapılamayan yüklerde 1 metrelik taban şeridi başına hesap yapılır.",
+      ],
+    },
+    {
+      heading: "Avrupa'ya Palet Gönderme",
+      paragraphs: [
+        "Avrupa'ya palet göndermek isteyen üretici, toptancı ve e-ticaret firmaları için parsiyel panelvan, 1-5 palet arası ticari yüklerde hem hızlı hem ekonomik bir çözümdür. Standart Euro palet 80 × 120 cm taban ölçüsündedir; yaklaşık 180 cm yüksekliğe kadar istiflenmiş paletler araçlarımıza sorunsuz yüklenir. Tek palet için komple araç bedeli ödemek zorunda kalmazsınız: yalnızca paletinizin kapladığı alanın bedelini ödersiniz, yükünüz yine aynı ekspres hatta, aktarmasız taşınır.",
+        "Palet hazırlığı transit güvenliğinin yarısıdır: ürünler palet tabanını taşmayacak şekilde dizilmeli, streç filmle sarılmalı ve gerekiyorsa köşebent ile çemberlenmelidir. Araç içinde paletler kaymaya karşı sabitlenir, tüm paletli gönderiler taşıma sigortası kapsamında yola çıkar ve 7/24 canlı GPS takibiyle sevkiyatınızın hangi ülkede olduğunu anlık görürsünüz. Palet sayınızı ve ölçülerinizi uygulamaya girerek saniyeler içinde anında teklif alabilirsiniz.",
+      ],
+    },
+    {
       heading: "Komple Araç mı, Parsiyel mi? Karar Rehberi",
       paragraphs: [
         "İki hizmet arasındaki seçim üç soruya bakar: yükünüzün hacmi, teslimatın aciliyeti ve bütçeniz. Birkaç koli, birkaç valiz veya tek palet gönderiyorsanız parsiyel açık ara daha ekonomiktir; komple araç bedelinin küçük bir bölümüyle aynı ekspres hatta taşınırsınız. Yükünüz aracın yarısını aşıyorsa, teslim tarihi saat hassasiyetinde kritikse veya yükünüzün başka gönderilerle aynı araçta taşınmasını istemiyorsanız komple panelvan doğru tercihtir: araç yalnızca sizin için çalışır, rota üzerinde başka durak olmaz.",
         "Parsiyel gönderilerde araç birden fazla teslimat noktasına uğrayabileceği için varış süresi, tabloda verdiğimiz ekspres sürelerin üzerine birkaç saat ekleyebilir. Kararsızsanız uygulamadan her iki seçenek için de teklif alıp karşılaştırmanız yeterli; ekibimiz yük ölçülerinize göre hangi modelin daha avantajlı olduğunu söyler.",
+      ],
+    },
+    {
+      heading: "Avrupa'dan Türkiye'ye Parsiyel",
+      paragraphs: [
+        "Parsiyel hatlarımız çift yönlü çalışır: Almanya, Hollanda, Belçika, Avusturya veya Fransa'dan Türkiye'ye koli, palet ve parça eşya göndermek için de aynı model geçerlidir. Yükünüz Avrupa'daki adresten alınır, dönüş seferindeki panelvana yüklenir ve Türkiye'deki teslimat adresine kapıdan kapıya ulaştırılır; siz yine yalnızca kapladığınız hacmin bedelini ödersiniz.",
+        "Bu yönü en çok Avrupa'da yaşayıp Türkiye'deki ailesine eşya gönderenler, Türkiye'ye numune veya iade sevkiyatı yapan firmalar ve dönüş hazırlığında ön gönderi yapanlar tercih eder. Daha büyük hacimli dönüş yükleri ve komple taşınmalar için Almanya'dan Türkiye'ye nakliyat hizmetimize göz atabilirsiniz: ev eşyanızın tamamı tek araçla, aktarmasız olarak Türkiye'deki yeni adresinize taşınır.",
+      ],
+    },
+    {
+      heading: "Süreç Nasıl İşliyor?",
+      paragraphs: [
+        "Parsiyel gönderiniz de komple taşımalarla aynı dört adımdan geçer; tek fark, aracın aynı yöne giden birkaç gönderiyi birlikte taşımasıdır:",
+      ],
+      list: [
+        "Teklif: Uygulamada kalkış ve varış noktanızı seçin, koli veya palet ölçülerinizi girin; hacme göre tahmini fiyat anında hesaplanır. Onayınızla gönderiniz en yakın çıkışa planlanır ve taşıma sözleşmeniz oluşturulur.",
+        "Alım: Planlanan günde aracımız adresinize gelir; kolileriniz etiketlenir, araç içindeki bölmesine yerleştirilir ve sabitlenir. Yükünüz bu andan itibaren sigorta kapsamındadır.",
+        "Taşıma: Araç planlanan çıkış gününde, depo beklemeden Avrupa'ya hareket eder; gümrük geçişini ve anlık konumu 7/24 canlı GPS takibinden izlersiniz.",
+        "Teslim: Gönderiniz alıcının kapısına teslim edilir; şubeden alma zorunluluğu yoktur. Teslimat bilgisi uygulamada anında görünür.",
       ],
     },
     {
@@ -98,7 +135,7 @@ const parsiyelTasimacilik: SeoPageData = {
     {
       question: "Avrupa'ya parsiyel gönderi kaç günde gider?",
       answer:
-        "Panelvan parsiyelde yükünüz ekspres hatlarımızda taşınır: İstanbul'dan Viyana'ya 20-30 saat, Berlin'e 24-36 saat, Amsterdam'a 32-48 saat tipik sürelerdir. Araç birden fazla teslimat noktasına uğruyorsa bu sürelere birkaç saat eklenebilir. Klasik TIR parsiyelindeki 2-4 haftalık depo bekleme süreci bizim modelimizde yoktur.",
+        "Panelvan parsiyelde yükünüz ekspres hatlarımızda taşınır: İstanbul'dan Viyana'ya 20-30 saat, Berlin'e 24-36 saat, Amsterdam'a 32-48 saat tipik sürelerdir. Araç birden fazla teslimat noktasına uğruyorsa bu sürelere birkaç saat eklenebilir. Klasik TIR parsiyelinde 7-15 günü bulan depo bekleme ve aktarma süreci bizim modelimizde yoktur.",
     },
     {
       question: "En az kaç koli veya kaç desi gönderebilirim?",
@@ -120,12 +157,29 @@ const parsiyelTasimacilik: SeoPageData = {
       answer:
         "Araçtaki tüm gönderiler tek taşıma kapsamında sınırdan geçer; her göndericinin yükü kendi evrakıyla beyan edilir. Ticari ürünlerde fatura, kişisel eşyalarda içerik beyanı gerekir. Evrak hazırlığında ekibimiz size yol gösterir; ülkeye göre değişen güncel muafiyet ve vergi şartlarını gümrük müşavirinize veya konsolosluğa teyit ettirmenizi öneririz.",
     },
+    {
+      question: "Parsiyel taşımada fiyat neye göre belirlenir?",
+      answer:
+        "Üç etken belirler: yükünüzün araçta kapladığı pay (m³, palet sayısı veya yükleme metresi olarak ölçülür), güzergâhın uzunluğu ve yükün ağırlığı. Aynı ağırlıkta ama daha hacimli bir yük daha fazla yer kapladığı için daha yüksek fiyatlanabilir. Ölçülerinizi uygulamaya girdiğinizde hesap sizin için otomatik yapılır ve anında teklif ekranınıza düşer.",
+    },
+    {
+      question: "Tek palet gönderebilir miyim?",
+      answer:
+        "Evet. Tek Euro palet, panelvan kapasitesinin kabaca beşte birine karşılık gelir ve yalnızca bu payın bedelini ödersiniz; komple araç kiralamanız gerekmez. Paletinizin ölçü ve ağırlığını uygulamaya girerek saniyeler içinde fiyat teklifi alabilirsiniz.",
+    },
+    {
+      question: "Yüküm başka yüklerle mi taşınıyor, güvenli mi?",
+      answer:
+        "Parsiyelde araç aynı yöne giden birden fazla gönderiyi taşır; ancak her gönderi araç içinde ayrılmış bölmesinde sabitlenir, etiketlenir ve teslimata kadar yerinden oynamaz. Tüm gönderiler taşıma sigortası kapsamındadır, araç 7/24 canlı GPS ile izlenir ve depo aktarması olmadığı için elleçleme kaynaklı hasar riski klasik parsiyele göre çok daha düşüktür.",
+    },
   ],
   related: [
     { slug: "minivan-ekspres-tasimacilik", label: "Minivan & Panelvan Ekspres Taşımacılık" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
+    { slug: "almanyadan-turkiyeye-nakliyat", label: "Almanya'dan Türkiye'ye Nakliyat" },
+    { slug: "bavul-kargo", label: "Avrupa'ya Bavul Kargo" },
   ],
 };
 

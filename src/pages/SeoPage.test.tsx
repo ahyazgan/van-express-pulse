@@ -7,12 +7,12 @@ import { SEO_PAGES } from "@/content/seo/registry";
 const slugs = Object.keys(SEO_PAGES);
 
 describe("SEO landing pages", () => {
-  it("registers all 7 pages with unique titles and descriptions", () => {
-    expect(slugs).toHaveLength(7);
+  it("registers all 22 pages with unique titles and descriptions", () => {
+    expect(slugs).toHaveLength(22);
     const titles = new Set(Object.values(SEO_PAGES).map((p) => p.title));
     const descriptions = new Set(Object.values(SEO_PAGES).map((p) => p.description));
-    expect(titles.size).toBe(7);
-    expect(descriptions.size).toBe(7);
+    expect(titles.size).toBe(22);
+    expect(descriptions.size).toBe(22);
   });
 
   it("keeps related links inside the known slug set", () => {

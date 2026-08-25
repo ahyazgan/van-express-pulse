@@ -75,6 +75,18 @@ export const SHIPPING_RATES: Record<string, [number, number]> = {
   "Zürih": [1800, 2400],
   "Basel": [1800, 2400],
 
+  // Denmark (Danimarka) — Hamburg + ~350 km; interpolasyon, doğrulanmalı
+  "Copenhagen": [2300, 2950],
+  "Kopenhag": [2300, 2950],
+  "Aarhus": [2400, 3050],
+
+  // Sweden (İsveç) — Öresund geçişi; interpolasyon, doğrulanmalı
+  "Malmö": [2400, 3050],
+  "Malmo": [2400, 3050],
+  "Gothenburg": [2550, 3200],
+  "Göteborg": [2550, 3200],
+  "Stockholm": [2700, 3400],
+
   // Romania (Romanya)
   "Bucharest": [1400, 1800],
   "Bükreş": [1400, 1800],

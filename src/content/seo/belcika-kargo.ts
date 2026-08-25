@@ -5,17 +5,17 @@ const belcikaKargo: SeoPageData = {
   slug: "belcika-kargo",
   title: "Belçika'ya Panelvan Kargo | Kapıdan Kapıya Ekspres | RouteEU",
   description:
-    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo. Brüksel, Anvers, Gent'e 32-48 saatte sigortalı ekspres taşıma ve canlı GPS takip. Anında fiyat alın.",
+    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo. Brüksel, Anvers, Gent'e 30-46 saatte sigortalı ekspres taşıma ve canlı GPS takip. Anında fiyat alın.",
   h1: "Türkiye'den Belçika'ya Kapıdan Kapıya Kargo",
   intro: [
-    "Türkiye'den Belçika'ya kargo göndermenin alışılmış yolu, yükünüzün başka gönderilerle birleştirilip TIR'la yola çıktığı parsiyel taşımadır; bu yöntemde teslimat çoğu zaman haftalar alır ve yükünüz birden fazla depoya uğrar. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Brüksel, Anvers, Gent ya da Belçika'nın herhangi bir adresine 32-48 saat içinde teslim edilir.",
+    "Türkiye'den Belçika'ya kargo göndermenin alışılmış yolu, yükünüzün başka gönderilerle birleştirilip TIR'la yola çıktığı parsiyel taşımadır; bu yöntemde teslimat çoğu zaman haftalar alır ve yükünüz birden fazla depoya uğrar. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Brüksel, Anvers, Gent ya da Belçika'nın herhangi bir adresine 30-46 saat içinde teslim edilir.",
     "Panelvan sınıfı araçlar hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen gönderi pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç uzun molalar vermez, transit süre kısalır. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün hangi ülkede, hangi otoyolda olduğunu telefonunuzdan anlık olarak izlersiniz. Fiyat öğrenmek için kimseyi aramanız gerekmez; uygulamadan kalkış ve varış adresinizi seçerek anında teklif alırsınız.",
   ],
   transitTable: {
     caption: "Türkiye - Belçika Transit Süreleri",
     rows: [
-      { destination: "İstanbul → Brüksel", time: "32-48 saat" },
-      { destination: "İstanbul → Anvers", time: "32-48 saat" },
+      { destination: "İstanbul → Brüksel", time: "30-46 saat" },
+      { destination: "İstanbul → Anvers", time: "30-46 saat" },
       { destination: "İstanbul → Liège", time: "30-46 saat" },
       { destination: "İstanbul → Gent", time: "34-50 saat" },
       { destination: "İstanbul → Charleroi", time: "34-50 saat" },
@@ -46,7 +46,7 @@ const belcikaKargo: SeoPageData = {
       ],
       list: [
         "Hafta sonu yasağı yok: TIR'ların tabi olduğu hafta sonu seyir yasağı panelvanları kapsamaz; yükünüz cumartesi ve pazar da yol alır.",
-        "Çift şoför: Şoförler dönüşümlü sürdüğü için araç uzun dinlenme molası vermeden ilerler, İstanbul'dan Brüksel'e teslimat 32-48 saatte tamamlanır.",
+        "Çift şoför: Şoförler dönüşümlü sürdüğü için araç uzun dinlenme molası vermeden ilerler, İstanbul'dan Brüksel'e teslimat 30-46 saatte tamamlanır.",
         "Aktarmasız taşıma: Eşyanız yükleme anından teslimata kadar aynı araçta kalır; depoya girmez, elden ele geçmez, hasar ve kayıp riski en aza iner.",
         "Sınırda avantaj: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür; sınır geçişleri saatler değil, çok daha kısa sürer.",
         "Canlı takip: 7/24 GPS takibiyle aracın konumunu harita üzerinde görürsünüz; 'yüküm nerede?' sorusunu kimseye sormanız gerekmez.",
@@ -61,10 +61,44 @@ const belcikaKargo: SeoPageData = {
       ],
     },
     {
+      heading: "Belçika'ya Eşya ve Koli Gönderme",
+      paragraphs: [
+        "Belçika'ya gönderiniz her zaman komple bir araç dolduracak kadar büyük olmayabilir. Türkiye'deki ailenizin hazırladığı birkaç koli, yeni evinize eklenecek birkaç mobilya parçası ya da iş yerinize gidecek numune paketleri için komple panelvan kiralamanıza gerek yok: Brüksel, Anvers, Gent, Liège ve Charleroi başta olmak üzere tüm Belçika adreslerine koli ve parça eşya gönderilerini parsiyel olarak taşıyoruz. Gönderiniz yine sigortalıdır, aynı canlı GPS takibinden izlenir ve kapıya teslim edilir.",
+        "Belçika'da yaşayan gurbetçiler için bu hizmet özellikle pratiktir: memleketten gelen çeyiz, giyim kolileri, bebek eşyası veya aile yadigarı parçalar Türkiye'deki adresten alınır, Belçika'daki kapınıza kadar aynı koridorda ilerleyen araçlarımızla ulaştırılır. Almanya ve Hollanda hatlarımızla aynı güzergahı paylaştığımız için kalkış sıklığımız yüksek, koli başına maliyet düşüktür. Hacim bazlı fiyatlandırmanın ayrıntıları için parsiyel taşımacılık sayfamıza göz atabilir, uygulamadan ölçü ve adres bilgilerinizi girerek anında teklif alabilirsiniz.",
+      ],
+    },
+    {
       heading: "Gümrük Süreci Hakkında Bilmeniz Gerekenler",
       paragraphs: [
         "Belçika bir Avrupa Birliği ülkesidir; Türkiye'den gönderilen her yük AB gümrük sahasına giriş işlemi görür. Ticari gönderilerde fatura ve ATR belgesi sürecin temelini oluşturur; zati eşya ve ev eşyası gönderilerinde ise aranan belgeler gönderenin ve alıcının durumuna (ikamet, taşınma, eşyanın niteliği) göre değişir. Ekibimiz hangi gönderi için hangi evrakın hazırlanması gerektiği konusunda size yol gösterir ve süreci sizinle birlikte takip eder.",
         "Gümrük mevzuatı ve muafiyet şartları zaman içinde değişebildiği için, özellikle ev eşyası ve kesin dönüş gibi özel durumlarda güncel şartları gümrük müşavirinize veya konsolosluğa teyit ettirmenizi öneririz.",
+      ],
+    },
+    {
+      heading: "Parsiyel TIR ile Panelvan Ekspres Arasındaki Fark",
+      paragraphs: [
+        "Türkiye'den Belçika'ya yük göndermenin sektör standardı parsiyel TIR taşımacılığıdır. Bu modelde yükünüz önce bir toplama deposuna gider, araç dolana kadar bekler, Avrupa'da bir aktarma merkezinden geçer ve son olarak dağıtım aracına yüklenir. Her aşama gün demektir: sektör ortalamasında Belçika teslimatı 7-15 gün sürer, hafta sonu seyir yasağı bu süreye çoğu zaman iki gün daha ekler ve kesin teslim tarihi ancak araç yola çıktığında netleşir.",
+        "RouteEU panelvan ekspreste aracı ya yalnızca siz kullanırsınız ya da aynı güzergahtaki birkaç gönderiyle paylaşırsınız; her iki durumda da yük depoya girmez, aktarılmaz ve İstanbul'dan Brüksel veya Anvers'e 30-46 saatte ulaşır. İki yöntemi aynı ölçütlerle karşılaştırdığımızda fark şöyle görünür:",
+      ],
+      list: [
+        "Transit süre: parsiyel TIR 7-15 gün; RouteEU panelvan 30-46 saat.",
+        "Aktarma sayısı: parsiyel TIR'da en az iki depo; panelvanda sıfır, yükleme anından teslimata aynı araç.",
+        "Hafta sonu: TIR'lar seyir yasağına tabi; panelvan cumartesi ve pazar da yol alır.",
+        "Takip: parsiyelde telefonla sorulan tahmini konum; panelvanda 7/24 canlı GPS.",
+        "Teslim noktası: parsiyelde sıklıkla depo veya şube; panelvanda Belçika'daki adresin kapısı.",
+        "Güvence: her RouteEU taşıması yazılı sözleşme ve taşıma sigortası kapsamında yola çıkar.",
+      ],
+    },
+    {
+      heading: "Süreç Nasıl İşliyor?",
+      paragraphs: [
+        "Belçika'ya gönderiniz dört adımda tamamlanır; her adımda yükünüzün durumunu uygulamadan izleyebilirsiniz:",
+      ],
+      list: [
+        "Teklif: Uygulamadan kalkış adresinizi ve Belçika'daki varış adresini seçin, yükünüzün hacmini girin ve tahmini fiyatı saniyeler içinde görün. Onayladığınızda taşıma sözleşmesi ve sigorta kapsamı dijital olarak oluşturulur.",
+        "Alım: Aracımız belirlenen gün ve saatte Türkiye'deki adresinize gelir; eşyanız kontrol edilerek araca yüklenir, gümrük evrakı sizinle birlikte tamamlanır.",
+        "Taşıma: Yük, gümrük işlemlerinin ardından aktarmasız olarak Belçika'ya hareket eder. Çift şoför sayesinde araç mola için durmaz; konumunu 7/24 canlı haritada izlersiniz.",
+        "Teslim: Araç Brüksel, Anvers, Gent ya da Belçika'daki hangi adrese gidecekse oraya ulaşır; eşyanız kapıda alıcıya teslim edilir ve teslimat bilgisi uygulamada görünür.",
       ],
     },
     {
@@ -76,12 +110,12 @@ const belcikaKargo: SeoPageData = {
   ],
   faq: [
     {
-      question: "Türkiye'den Belçika'ya kargo kaç günde gider?",
+      question: "Belçika'ya kargo kaç günde gider?",
       answer:
-        "Panelvan ekspres taşımada İstanbul'dan Brüksel veya Anvers'e teslimat tipik olarak 32-48 saat sürer; Liège gibi doğudaki şehirlere 30-46 saat, Brugge gibi batı uçtaki şehirlere 36-52 saat içinde ulaşılır. Parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
+        "Panelvan ekspres taşımada İstanbul'dan Brüksel veya Anvers'e teslimat tipik olarak 30-46 saat sürer; Gent ve Charleroi'ya 34-50, Brugge gibi batı uçtaki şehirlere 36-52 saat içinde ulaşılır. Sektör ortalaması olan parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
     },
     {
-      question: "Belçika'ya eşya gönderme fiyatı ne kadar?",
+      question: "Belçika'ya eşya gönderme ücreti ne kadar?",
       answer:
         "Komple panelvan taşımada İstanbul-Brüksel hattı " +
         priceRange("Brüksel") +
@@ -109,10 +143,15 @@ const belcikaKargo: SeoPageData = {
       answer:
         "Tüm gönderiler taşıma sigortası kapsamında taşınır; değerli yükler için kapsam teklif aşamasında netleştirilir. Her gönderiye 7/24 canlı GPS takibi tanımlanır — aracınızın anlık konumunu gönderi takip sayfasından harita üzerinde izleyebilirsiniz.",
     },
+    {
+      question: "Belçika'dan Türkiye'ye taşıma yapıyor musunuz?",
+      answer:
+        "Evet, hattımız çift yönlü çalışır. Brüksel, Anvers, Gent veya Belçika'nın herhangi bir şehrindeki adresten alınan eşya ve ticari yük, aynı araçla Türkiye'deki teslimat adresine götürülür. Süreç, evrak ve fiyat detayları için Belçika'dan Türkiye'ye nakliyat sayfamızı inceleyebilirsiniz; kesin dönüş yapacaklar için komple ev eşyası taşıma çözümümüz de mevcuttur.",
+    },
   ],
   related: [
+    { slug: "belcikadan-turkiyeye-nakliyat", label: "Belçika'dan Türkiye'ye Nakliyat" },
     { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },
-    { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
   ],
