@@ -140,3 +140,73 @@ export function getShippingPrice(destination: string): PriceResult {
   // Unknown destinations fall through to a manual custom quote.
   return { found: false, currency: "EUR" };
 }
+
+// ---------------------------------------------------------------------------
+// Parsiyel (kısmi yük) tahmini
+// ---------------------------------------------------------------------------
+
+/** Komple panelvan kapasitesi — içerik sayfaları ve hesaplayıcı bu değerleri kullanır. */
+export const VAN_CAPACITY_M3 = 13.5;
+export const VAN_CAPACITY_PALLETS = 5;
+export const VAN_CAPACITY_KG = 1300;
+
+/**
+ * En küçük faturalanabilir hacim. Kapıdan kapıya uluslararası taşımada adresten
+ * alım, gümrük işlemi ve adrese teslim maliyetleri hacimden bağımsızdır; bu
+ * yüzden tek koli ile yarım metreküp aynı taban maliyeti taşır.
+ */
+const MIN_BILLABLE_M3 = 0.5;
+
+/**
+ * Parsiyelde birim maliyet hacim küçüldükçe artar (sabit maliyetler daha az
+ * hacme dağılır). 1'den küçük üs bunu modeller: yükün kapasiteye oranı 0,15 ise
+ * fiyat komple aracın %15'i değil, yaklaşık %24'ü olur.
+ */
+const GROUPAGE_EXPONENT = 0.75;
+
+export interface EstimateResult extends PriceResult {
+  /** true ise komple araç fiyatı, false ise hacme göre parsiyel tahmini. */
+  isComplete?: boolean;
+  /** Fiyatlamada esas alınan hacim (m³); parsiyelde taban hacim uygulanmış olabilir. */
+  billableM3?: number;
+}
+
+/** Palet adedini yaklaşık m³ karşılığına çevirir. */
+export const palletsToM3 = (pallets: number): number =>
+  (pallets * VAN_CAPACITY_M3) / VAN_CAPACITY_PALLETS;
+
+/** En × boy × yükseklik (cm) ve adetten toplam m³ hesaplar. */
+export const dimensionsToM3 = (
+  widthCm: number,
+  lengthCm: number,
+  heightCm: number,
+  quantity = 1
+): number => (widthCm * lengthCm * heightCm * quantity) / 1_000_000;
+
+/**
+ * Bir güzergah için tahmini fiyat aralığı döndürür.
+ *
+ * volumeM3 verilmezse veya kapasiteyi dolduruyorsa komple araç fiyatı döner.
+ * Aksi halde hacme göre parsiyel tahmini yapılır. Sonuç 10 €'ya yuvarlanır;
+ * bunlar pazarlık payı olan tahminlerdir, bağlayıcı teklif değildir.
+ */
+export function estimateShipmentPrice(destination: string, volumeM3?: number): EstimateResult {
+  const base = getShippingPrice(destination);
+  if (!base.found || base.minPrice === undefined || base.maxPrice === undefined) return base;
+
+  if (volumeM3 === undefined || !Number.isFinite(volumeM3) || volumeM3 >= VAN_CAPACITY_M3) {
+    return { ...base, isComplete: true, billableM3: VAN_CAPACITY_M3 };
+  }
+
+  const billableM3 = Math.max(volumeM3, MIN_BILLABLE_M3);
+  const factor = Math.pow(billableM3 / VAN_CAPACITY_M3, GROUPAGE_EXPONENT);
+  const round10 = (n: number) => Math.round(n / 10) * 10;
+
+  return {
+    ...base,
+    isComplete: false,
+    billableM3,
+    minPrice: round10(base.minPrice * factor),
+    maxPrice: round10(base.maxPrice * factor),
+  };
+}

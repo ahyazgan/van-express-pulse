@@ -3,6 +3,7 @@ import { priceRange } from "./seoData";
 
 const kesinDonusNakliyat: SeoPageData = {
   slug: "kesin-donus-nakliyat",
+  hreflangGroup: "relocation",
   title: "Kesin Dönüş Nakliyat | Almanya'dan Türkiye'ye Eşya Taşıma | RouteEU",
   description:
     "Almanya'dan Türkiye'ye kesin dönüş nakliyat: ev eşyanız kapıdan kapıya, sigortalı ve aktarmasız taşınır. Gümrük sürecinde rehberlik, anında fiyat teklifi.",

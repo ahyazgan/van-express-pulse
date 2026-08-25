@@ -3,6 +3,7 @@ import { priceRange } from "./seoData";
 
 const minivanEkspresTasimacilik: SeoPageData = {
   slug: "minivan-ekspres-tasimacilik",
+  hreflangGroup: "express-b2b",
   title: "Minivan & Panelvan Ekspres Taşımacılık | Avrupa'ya 24-72 Saat | RouteEU",
   description:
     "Avrupa'ya ekspres minivan ve panelvan taşımacılık: ~1.300 kg / 5 palet kapasite, sigortalı, aktarmasız kapıdan kapıya teslimat 24-72 saatte. Anında fiyat alın.",

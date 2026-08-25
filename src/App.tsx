@@ -9,6 +9,10 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ConsentBanner from "./components/ConsentBanner";
+// SEO landing page routes. Content lives in src/content/seo/; this list is the
+// cheap mirror of the registry (importing the registry here would drag every
+// content file into the main bundle). A test keeps the two in sync.
+import { SEO_ROUTE_PATHS } from "@/content/seo/seoSlugs";
 
 // Route-level code splitting: keeps the initial bundle small.
 const Index = lazy(() => import("./pages/Index"));
@@ -21,32 +25,7 @@ const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 const SuccessPage = lazy(() => import("./pages/SuccessPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const SeoPage = lazy(() => import("./pages/SeoPage"));
-
-// SEO landing pages; content lives in src/content/seo/, keep in sync with public/sitemap.xml.
-const seoRoutes = [
-  "/almanya-kargo",
-  "/hollanda-kargo",
-  "/belcika-kargo",
-  "/fransa-kargo",
-  "/avusturya-kargo",
-  "/isvicre-kargo",
-  "/italya-kargo",
-  "/danimarka-kargo",
-  "/isvec-kargo",
-  "/polonya-kargo",
-  "/almanyadan-turkiyeye-nakliyat",
-  "/hollandadan-turkiyeye-nakliyat",
-  "/belcikadan-turkiyeye-nakliyat",
-  "/minivan-ekspres-tasimacilik",
-  "/parsiyel-tasimacilik",
-  "/ev-esyasi-tasima",
-  "/kesin-donus-nakliyat",
-  "/fuar-tasimaciligi",
-  "/acil-yedek-parca-sevkiyati",
-  "/amazon-fba-lojistik",
-  "/bavul-kargo",
-  "/ogrenci-esyasi-tasima",
-];
+const PriceCalculatorPage = lazy(() => import("./pages/PriceCalculatorPage"));
 
 const queryClient = new QueryClient();
 
@@ -83,7 +62,8 @@ const App = () => (
                     </ProtectedRoute>
                   }
                 />
-                {seoRoutes.map((path) => (
+                <Route path="/fiyat-hesaplama" element={<PriceCalculatorPage />} />
+                {SEO_ROUTE_PATHS.map((path) => (
                   <Route key={path} path={path} element={<SeoPage />} />
                 ))}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

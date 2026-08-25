@@ -21,6 +21,9 @@ export interface ContentSection {
   list?: string[];
 }
 
+/** Content languages. Non-Turkish pages carry their prefix inside the slug (e.g. "de/umzug-in-die-tuerkei"). */
+export type PageLang = "tr" | "de" | "nl" | "en" | "fr";
+
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -33,6 +36,13 @@ export interface SeoPageData {
   sections: ContentSection[];
   faq: FaqItem[];
   related: { slug: string; label: string }[];
+  /** Defaults to "tr". Drives the page chrome language and the html lang attribute. */
+  lang?: PageLang;
+  /**
+   * Pages that are translations of one another share a group id; SeoPage emits
+   * reciprocal hreflang alternates for every member. The Turkish member is x-default.
+   */
+  hreflangGroup?: string;
 }
 
 /**
