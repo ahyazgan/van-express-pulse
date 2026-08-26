@@ -1,0 +1,5 @@
+# Cloudflare Pages / Netlify SPA fallback.
+# Static files win first, so the prerendered dist/<slug>/index.html pages are
+# served as real HTML; only unknown paths fall through to the app shell, where
+# React Router renders NotFound.
+/*    /index.html   200

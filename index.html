@@ -117,7 +117,10 @@
     <div id="root">
       <!-- Static, crawlable content: visible on first paint and in the raw HTML
            search engines fetch before JavaScript runs. React replaces this
-           entire block when the app mounts. -->
+           entire block when the app mounts.
+           The markers below are load-bearing: scripts/prerender.ts swaps
+           everything between them to build a static page per route. -->
+      <!--PRERENDER-START-->
       <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem; color: #222; line-height: 1.6;">
         <h1 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık</h1>
         <p>RouteEU Express, Türkiye ile Avrupa arasında ekspres panelvan ve minivan taşımacılığı yapar. Yükünüz adresinizden alınır, aktarmasız olarak 24–72 saat içinde Avrupa'daki adrese teslim edilir. Tüm gönderiler sigortalı taşınır ve canlı GPS takibi ile anlık olarak izlenir.</p>
@@ -179,6 +182,7 @@
         </ul>
         <p><a href="/track">Gönderi takibi</a> · Fiyat almak için uygulamayı kullanın — sayfa yükleniyor…</p>
       </div>
+      <!--PRERENDER-END-->
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
