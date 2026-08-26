@@ -131,7 +131,7 @@ const nlTransportNaarTurkije: SeoPageData = {
     {
       question: "Is de zending verzekerd?",
       answer:
-        "Ja, elk transport gaat onder een vervoersovereenkomst met CMR-vrachtbrief en wordt verzekerd vervoerd. Voor hoogwaardige ladingen kunt u de dekking verhogen op basis van de opgegeven factuurwaarde; dat spreken wij af voordat er geladen wordt.",
+        "Standaard geldt de aansprakelijkheid van de vervoerder onder het CMR-verdrag, wettelijk begrensd op 8,33 SDR per kilo brutogewicht. Bij hoogwaardige ladingen dekt dat bedrag zelden de werkelijke waarde, dus sluiten wij op verzoek een aanvullende goederentransportverzekering af op basis van de opgegeven factuurwaarde. Geef die waarde bij de aanvraag door, dan staat de dekking vast voordat er geladen wordt.",
     },
     {
       question: "Verzorgt u ook retourvracht vanuit Turkije?",

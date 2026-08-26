@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const belcikaKargo: SeoPageData = {
@@ -48,7 +48,7 @@ const belcikaKargo: SeoPageData = {
         "Hafta sonu yasağı yok: TIR'ların tabi olduğu hafta sonu seyir yasağı panelvanları kapsamaz; yükünüz cumartesi ve pazar da yol alır.",
         "Çift şoför: Şoförler dönüşümlü sürdüğü için araç uzun dinlenme molası vermeden ilerler, İstanbul'dan Brüksel'e teslimat 30-46 saatte tamamlanır.",
         "Aktarmasız taşıma: Eşyanız yükleme anından teslimata kadar aynı araçta kalır; depoya girmez, elden ele geçmez, hasar ve kayıp riski en aza iner.",
-        "Sınırda avantaj: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür; sınır geçişleri saatler değil, çok daha kısa sürer.",
+        "Sınırda avantaj: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür; yoğun kapılarda kazanılan süre saatlerle ölçülür.",
         "Canlı takip: 7/24 GPS takibiyle aracın konumunu harita üzerinde görürsünüz; 'yüküm nerede?' sorusunu kimseye sormanız gerekmez.",
       ],
     },

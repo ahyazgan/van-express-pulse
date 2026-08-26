@@ -136,7 +136,7 @@ const enMovingToTurkey: SeoPageData = {
     {
       question: "Are my belongings insured while in transit?",
       answer:
-        "Yes. Every move travels under transport insurance, backed by a written contract and an itemised inventory taken at loading. For artwork, instruments, professional equipment or anything else of unusual value, we agree the declared value and the cover in writing before the van is loaded.",
+        "Every move travels under a written contract with a CMR consignment note, which sets the carrier's liability at 8.33 SDR per kilogram of gross weight — a legal cap that rarely matches what a household of furniture and electronics is actually worth. For that reason we arrange additional cargo insurance on request, based on the declared values in your inventory. Tell us about artwork, instruments, professional equipment or anything else of unusual value before the van is loaded, so the cover is agreed in writing rather than argued about after a claim.",
     },
     {
       question: "Can I track the van during the journey?",

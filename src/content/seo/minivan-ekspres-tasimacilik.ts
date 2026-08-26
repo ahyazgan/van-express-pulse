@@ -68,7 +68,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
       ],
       list: [
         "Hafta sonu seyir yasağı muafiyeti: Avrupa'da ağır vasıtaların hafta sonu ve tatil günlerindeki seyir kısıtlamaları panelvan sınıfını kapsamaz. Cuma akşamı çıkan yükünüz pazartesi sabahını beklemez, hafta sonu boyunca yol alır.",
-        "TIR kuyruğu yok: Sınır kapılarında ağır vasıta kuyruğuna girmeden işlem görülür; gümrük geçişlerinde saatler, bazen günler kazanılır.",
+        "Sınırda hız avantajı: Gümrük kapılarında panelvan işlemleri 40 tonluk bir TIR'ınkinden belirgin biçimde kısa sürer; yoğun geçişlerde kazanılan süre saatlerle ölçülür.",
         "Çift şoför, kesintisiz seyir: İki şoför dönüşümlü kullandığı için araç dinlenme molasında saatlerce park halinde beklemez; transit süre belirgin şekilde kısalır.",
         "Aktarmasız, kapıdan kapıya: Yükünüz kalkış adresinde araca biner, varış adresinde iner. Ara depo, elleçleme ve araç değişimi olmadığı için hasar ve kayıp riski en aza iner.",
       ],

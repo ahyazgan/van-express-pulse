@@ -60,7 +60,7 @@ const deSpeditionTuerkei: SeoPageData = {
       paragraphs: [
         "Der wichtigste Zeitgewinn entsteht nicht durch schnelleres Fahren, sondern dadurch, dass das Fahrzeug nicht steht. Ein Fahrzeug mit einem Fahrer muss nach der Tageslenkzeit eine zusammenhängende Ruhezeit einlegen – auf der Strecke Deutschland–Türkei summiert sich das über mehrere Nächte zu einem erheblichen Teil der Gesamtlaufzeit. Im Zwei-Fahrer-Betrieb wechseln sich die Fahrer ab, während der Kollege ruht: Das Fahrzeug bleibt in Bewegung, und die Ruhezeiten werden trotzdem eingehalten.",
         "Dazu kommt das Wochenende. Schwere Lkw unterliegen in Deutschland, Österreich und mehreren Transitländern einem Sonn- und Feiertagsfahrverbot. Ein Transporter bis 3,5 Tonnen fällt nicht darunter. Eine Sendung, die freitags am späten Nachmittag geladen wird, verliert dadurch keine zwei Tage: Sie ist am Samstag auf der Route und kann montags früh bereits zugestellt werden – ein Vorteil, der bei Wochenendaufträgen häufig über den Produktionsstart am Montag entscheidet.",
-        "Ein dritter, oft unterschätzter Punkt ist die Grenzabfertigung. Transporter dieser Klasse werden in vielen Fällen getrennt von der Lkw-Warteschlange abgefertigt, was an stark frequentierten Übergängen zusätzliche Stunden spart. Wie viel es konkret ist, hängt vom Aufkommen am jeweiligen Tag ab – planbar ist der Vorteil, exakt vorhersagbar nicht.",
+        "Ein dritter, oft unterschätzter Punkt ist die Grenzabfertigung. Auch ein Transporter mit Handelsware läuft über die Frachtabfertigung, die Abwicklung geht dort aber je nach Übergang deutlich schneller als bei einem 40-Tonner in der Lkw-Warteschlange, was an stark frequentierten Übergängen zusätzliche Stunden spart. Wie viel es konkret ist, hängt vom Aufkommen am jeweiligen Tag ab – planbar ist der Vorteil, exakt vorhersagbar nicht.",
       ],
     },
     {
@@ -146,7 +146,7 @@ const deSpeditionTuerkei: SeoPageData = {
     {
       question: "Ist die Sendung transportversichert?",
       answer:
-        "Ja, jede Sendung wird versichert transportiert. Bei hohen Warenwerten – etwa Werkzeugen, Elektronik oder Medizintechnik – legen wir die Deckungssumme vor der Verladung schriftlich fest, damit im Schadensfall keine Diskussion über den Wert entsteht. Grundlage sind Rechnung und Packliste.",
+        "Grundlage jeder Fahrt ist die Haftung des Frachtführers nach CMR, gesetzlich begrenzt auf 8,33 SZR je Kilogramm Rohgewicht. Bei Werkzeugen, Elektronik oder Medizintechnik entspricht dieser Betrag selten dem tatsächlichen Warenwert; deshalb schließen wir auf Wunsch eine zusätzliche Warentransportversicherung über den von Ihnen angegebenen Wert ab. Nennen Sie den Warenwert bitte bei der Anfrage, dann steht die Deckungssumme vor der Verladung schriftlich fest. Grundlage sind Rechnung und Packliste.",
     },
     {
       question: "Fahren Sie auch in die Gegenrichtung, von der Türkei nach Deutschland?",

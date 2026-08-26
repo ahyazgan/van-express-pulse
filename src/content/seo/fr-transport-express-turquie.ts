@@ -148,7 +148,7 @@ const frTransportExpressTurquie: SeoPageData = {
     {
       question: "La marchandise est-elle assurée ?",
       answer:
-        "Oui, chaque envoi est couvert par une assurance transport dans le cadre de la lettre de voiture CMR remise au chargement. Pour les marchandises de valeur élevée, la couverture est ajustée sur la base du montant déclaré au devis : indiquez-nous la valeur et la nature exacte des biens avant l'enlèvement.",
+        "Chaque envoi circule sous la responsabilité du transporteur définie par la convention CMR, plafonnée par la loi à 8,33 DTS par kilogramme de poids brut. Pour de l'outillage, de l'électronique ou des pièces certifiées, ce plafond correspond rarement à la valeur réelle : nous souscrivons donc, sur demande, une assurance complémentaire sur la base du montant que vous déclarez. Indiquez-nous la valeur et la nature exacte des biens au devis, et la couverture est fixée par écrit avant l'enlèvement.",
     },
     {
       question: "Assurez-vous les transports retour depuis la Turquie ?",

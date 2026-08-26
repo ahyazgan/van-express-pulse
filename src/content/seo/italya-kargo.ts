@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const italyaKargo: SeoPageData = {
@@ -53,7 +53,7 @@ const italyaKargo: SeoPageData = {
         "Aktarmasız taşıma: Yükünüz depoya girmez, elden ele geçmez; tekstil ve mobilya gibi hasara açık ürünlerde risk en aza iner.",
         "Çift şoför: Araç dinlenme molası vermeden yola devam eder, transit süre kısalır.",
         "Hafta sonu yasağı yok: Panelvan araçlar TIR seyir yasağından muaf olduğu için teslimat 7 gün kesintisiz sürer.",
-        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür.",
       ],
     },
     {

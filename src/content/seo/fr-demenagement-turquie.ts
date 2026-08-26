@@ -109,7 +109,7 @@ const frDemenagementTurquie: SeoPageData = {
         "Devis. Indiquez la ville de départ, la ville d'arrivée et le volume approximatif : l'estimation s'affiche en quelques secondes, avant tout engagement.",
         "Enlèvement à domicile. Le véhicule se présente à votre adresse à la date convenue ; le chargement est réalisé par notre équipe et l'inventaire validé avec vous.",
         "Acheminement. Formalités douanières, puis route directe vers la Turquie, sans transbordement ni passage en entrepôt. La position du véhicule reste visible en continu.",
-        "Livraison. Déchargement à votre nouvelle adresse, à l'étage indiqué. Aucun retrait en agence, aucun passage par un garde-meuble.",
+        "Livraison. Déchargement à votre nouvelle adresse, effectué avec vous et pointé sur l'inventaire. Le portage jusque dans le logement ou au-dessus du rez-de-chaussée se convient à l'avance et figure en poste distinct sur le devis. Aucun retrait en agence, aucun passage par un garde-meuble.",
       ],
     },
     {
@@ -159,7 +159,7 @@ const frDemenagementTurquie: SeoPageData = {
     {
       question: "Le transport est-il assuré ?",
       answer:
-        "Oui, chaque envoi est couvert par une assurance transport, dans le cadre de la lettre de voiture CMR remise au chargement. Pour les objets de valeur, la couverture se fixe sur la base du montant déclaré au devis : signalez-nous ces pièces avant le départ afin que l'inventaire et l'assurance correspondent à leur valeur réelle.",
+        "Chaque envoi circule sous la responsabilité du transporteur définie par la convention CMR, plafonnée par la loi à 8,33 DTS par kilogramme de poids brut. Pour un mobilier, une œuvre ou du matériel de valeur, ce plafond correspond rarement à la valeur réelle : nous souscrivons donc, sur demande, une assurance complémentaire sur la base des valeurs déclarées dans votre inventaire. Signalez-nous ces pièces avant le départ, afin que la couverture soit fixée par écrit et non discutée après un sinistre.",
     },
     {
       question: "Puis-je suivre l'envoi en temps réel ?",

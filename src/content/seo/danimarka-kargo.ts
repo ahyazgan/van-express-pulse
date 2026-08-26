@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const danimarkaKargo: SeoPageData = {
@@ -45,7 +45,7 @@ const danimarkaKargo: SeoPageData = {
         "Aktarmasız taşıma: Yük Almanya'da depoya girmez, İskandinav aktarması beklemez; hasar ve kayıp riski en aza iner.",
         "Hafta sonu yasağı yok: Panelvanlar TIR'ların hafta sonu seyir yasağından muaftır; cuma çıkan yük pazartesiyi beklemeden ilerler.",
         "Çift şoför: İki şoför dönüşümlü kullandığı için araç dinlenme molasında saatlerce durmaz, transit süre kısalır.",
-        "Sınır avantajı: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+        "Sınır avantajı: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür.",
       ],
     },
     {

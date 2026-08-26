@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const almanyaKargo: SeoPageData = {
@@ -51,7 +51,7 @@ const almanyaKargo: SeoPageData = {
         "Hafta sonu yasağı yok: TIR'ların hafta sonu seyir yasağına panelvanlar tabi değildir; teslimat 7 gün kesintisiz sürer.",
         "Çift şoför: Araç dinlenme molası vermeden yola devam eder, transit süre kısalır.",
         "Aktarmasız taşıma: Yükünüz depoya girmez, elden ele geçmez; hasar riski en aza iner.",
-        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür.",
       ],
     },
     {

@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const avusturyaKargo: SeoPageData = {
@@ -48,7 +48,7 @@ const avusturyaKargo: SeoPageData = {
         "Hafta sonu yasağı yok: Panelvan sınıfı araçlar hafta sonu TIR seyir yasağına tabi değildir; teslimat 7 gün kesintisiz sürer.",
         "Çift şoför: İki şoför dönüşümlü sürdüğü için araç zorunlu dinlenme molalarında durmaz, transit süre kısalır.",
         "Aktarmasız taşıma: Yük tek araca yüklenir ve aynı araçtan Avusturya'daki adreste indirilir; depo ve elden ele geçiş yoktur.",
-        "Sınırda beklemez: Panelvanlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+        "Sınırda beklemez: Panelvanlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür.",
       ],
     },
     {

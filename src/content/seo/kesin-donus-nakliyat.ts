@@ -77,7 +77,7 @@ const kesinDonusNakliyat: SeoPageData = {
       list: [
         "Adresten alım: Aracımız Almanya, Hollanda, Belçika, Avusturya veya Fransa'daki adresinize gelir; eşyalar araç içinde sabitlenerek yüklenir. Depoya götürme veya şubeye bırakma zorunluluğu yoktur.",
         "Evrak hazırlığı: Eşya listesi (paket listesi), kimlik ve ikamet belgeleriniz ile varsa muafiyet evrakınız kontrol edilir. Hangi belgenin nereden alınacağı konusunda ekibimiz sizi önceden bilgilendirir.",
-        "Sınır ve gümrük geçişi: Yükünüz güzergah üzerindeki gümrük işlemlerini aynı araç içinde tamamlar. Panelvan sınıfı araçlar TIR kuyruğuna girmeden işlem gördüğü için sınırda kaybedilen süre kısalır.",
+        "Sınır ve gümrük geçişi: Yükünüz güzergah üzerindeki gümrük işlemlerini aynı araç içinde tamamlar. Panelvan sınıfı araçlar 40 tonluk TIR'lara göre daha hızlı işlem gördüğü için sınırda kaybedilen süre kısalır.",
         "Türkiye'de teslim: Eşyanız İstanbul'a veya Türkiye'deki hangi adrese gidecekse oraya, yüklendiği araçtan indirilerek teslim edilir. Tüm süreç boyunca canlı GPS takibi açıktır.",
       ],
     },

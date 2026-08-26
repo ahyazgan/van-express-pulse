@@ -143,7 +143,7 @@ const enExpressVanTransportTurkey: SeoPageData = {
     {
       question: "Is the shipment insured?",
       answer:
-        "Yes, all consignments move under transport insurance. For high-value cargo we confirm the declared value and the scope of cover in writing before loading, so there is no ambiguity if a claim ever arises.",
+        "Every consignment travels under the carrier's liability set by the CMR convention, which is capped by law at 8.33 SDR per kilogram of gross weight. For tooling, electronics or medical equipment that figure rarely matches what the goods are actually worth, so we arrange additional cargo insurance on request, based on the value you declare. Give us the value at quotation stage and the cover is confirmed in writing before loading, rather than argued about after a claim.",
     },
     {
       question: "Are there goods you cannot carry?",

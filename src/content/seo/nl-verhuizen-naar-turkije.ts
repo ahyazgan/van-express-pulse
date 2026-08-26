@@ -85,7 +85,7 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
         "Offerte: u geeft in de app uw ophaaladres in Nederland en uw afleveradres in Turkije op en ziet direct een prijsindicatie. Twijfelt u over het volume, dan lopen we het kamer voor kamer met u door.",
         "Ophalen: op de afgesproken dag rijdt de bus voor. De chauffeurs laden en sjorren de lading vast; u tekent de vrachtbrief en de inventarislijst af.",
         "Onderweg: na de douaneformaliteiten rijdt de bus door naar Turkije. Twee chauffeurs wisselen elkaar af, er wordt niets overgeladen en u ziet de positie live meebewegen.",
-        "Afleveren: de bus komt aan bij uw nieuwe adres, de spullen gaan naar binnen en de aflevering wordt ter plaatse afgetekend.",
+        "Afleveren: de bus komt aan bij uw nieuwe adres, we lossen samen met u aan de hand van de inventarislijst en de aflevering wordt ter plaatse afgetekend. Dragen tot in de woning of boven de begane grond spreken we vooraf af; dat is een aparte post op de offerte.",
       ],
     },
     {
@@ -135,7 +135,7 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
     {
       question: "Is mijn inboedel verzekerd tijdens het transport?",
       answer:
-        "Ja, elke zending wordt verzekerd vervoerd onder een vervoersovereenkomst met CMR-vrachtbrief. Voor waardevolle of breekbare stukken kunt u de dekking verhogen op basis van de waarden op uw inventarislijst; dat regelen we voordat de bus geladen wordt.",
+        "Standaard geldt de aansprakelijkheid van de vervoerder onder het CMR-verdrag, wettelijk begrensd op 8,33 SDR per kilo brutogewicht. Bij inboedel dekt dat bedrag zelden de werkelijke waarde, dus sluiten wij op verzoek een aanvullende goederentransportverzekering af op basis van de waarden op uw inventarislijst. Meld waardevolle of breekbare stukken dus vóór het laden, dan staat de dekking vast voordat de bus vertrekt.",
     },
     {
       question: "Kan ik volgen waar mijn spullen zijn?",

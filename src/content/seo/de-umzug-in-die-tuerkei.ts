@@ -88,7 +88,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
         "Angebot: Sie geben Abhol- und Zieladresse sowie das ungefähre Volumen in der App ein und erhalten den Preis sofort. Wenn Sie unsicher sind, wie viele Kubikmeter zusammenkommen, gehen wir die Zimmerliste gemeinsam durch.",
         "Abholung: Zum vereinbarten Termin kommt das Fahrzeug an Ihre Adresse in Deutschland. Die Ladung wird gezählt, dokumentiert und im Laderaum gesichert. Sie erhalten die Transportpapiere.",
         "Transport: Nach der Zollanmeldung an der Grenze läuft die Fahrt ohne Umladen durch. Sie verfolgen die Position live und wissen jederzeit, wie viele Stunden bis zur Zustellung bleiben.",
-        "Zustellung: Das Fahrzeug erreicht die neue Adresse in der Türkei, entladen wird gemeinsam mit Ihnen anhand der Packliste. Erst wenn alles vor Ort ist, ist der Auftrag abgeschlossen.",
+        "Zustellung: Das Fahrzeug erreicht die neue Adresse in der Türkei, entladen wird gemeinsam mit Ihnen anhand der Packliste. Tragehilfe in die Wohnung oder über das Erdgeschoss hinaus vereinbaren wir vorab; sie steht als eigener Posten im Angebot. Erst wenn alles vor Ort ist, ist der Auftrag abgeschlossen.",
       ],
     },
     {
@@ -138,7 +138,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
     {
       question: "Ist mein Hausrat während des Transports versichert?",
       answer:
-        "Ja, jede Sendung wird versichert transportiert. Grundlage ist die Packliste, die bei der Abholung erstellt wird – deshalb lohnt es sich, sie sorgfältig auszufüllen. Für besonders wertvolle Einzelstücke wie Antiquitäten, Teppiche oder Musikinstrumente klären wir die Deckungssumme vor der Buchung, damit im Schadensfall keine Diskussion über den Wert entsteht.",
+        "Grundlage jeder Fahrt ist die Haftung des Frachtführers nach CMR, gesetzlich begrenzt auf 8,33 SZR je Kilogramm Rohgewicht. Bei Hausrat und hochwertiger Elektronik entspricht dieser Betrag selten dem tatsächlichen Wert; deshalb schließen wir auf Wunsch eine zusätzliche Warentransportversicherung über den von Ihnen angegebenen Wert ab. Grundlage dafür ist die Packliste, die Sie vor dem Ladetermin erstellen und die bei der Abholung gemeinsam geprüft wird – deshalb lohnt es sich, sie sorgfältig auszufüllen. Besonders wertvolle Einzelstücke wie Antiquitäten, Teppiche oder Musikinstrumente nennen Sie bitte vor der Buchung, damit die Deckungssumme feststeht, bevor das Fahrzeug losfährt.",
     },
     {
       question: "Kann ich verfolgen, wo mein Umzug gerade ist?",

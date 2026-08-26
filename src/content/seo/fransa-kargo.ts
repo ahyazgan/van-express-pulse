@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const fransaKargo: SeoPageData = {
@@ -48,7 +48,7 @@ const fransaKargo: SeoPageData = {
         "Hafta sonu yasağı yok: Panelvan sınıfı araçlar Avrupa'daki hafta sonu TIR yasaklarına tabi değildir; yükünüz cumartesi ve pazar günleri de yol alır.",
         "Çift şoför: İki şoför dönüşümlü sürdüğü için araç zorunlu dinlenme molalarında saatlerce durmaz.",
         "Aktarmasız taşıma: Yük tek araca yüklenir ve aynı araçtan Fransa'daki adreste indirilir; depo, forklift ve elden ele geçiş yoktur.",
-        "Sınır geçişinde hız: Panelvanlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür.",
+        "Sınır geçişinde hız: Panelvanlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür.",
         "Esnek kapasite: Yaklaşık 1.300 kg ve 5 palete kadar yük için komple araç, daha küçük gönderiler için parsiyel seçenek sunulur.",
       ],
     },

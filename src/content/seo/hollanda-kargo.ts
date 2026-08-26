@@ -1,4 +1,4 @@
-import type { SeoPageData } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
 import { priceRange } from "./seoData";
 
 const hollandaKargo: SeoPageData = {
@@ -49,7 +49,7 @@ const hollandaKargo: SeoPageData = {
         "Hafta sonu yasağı yok: TIR'ların hafta sonu seyir yasağına panelvanlar tabi değildir; yükünüz cumartesi ve pazar da yol alır.",
         "Çift şoför: İki şoför dönüşümlü kullandığı için araç dinlenme molası vermeden ilerler, İstanbul-Amsterdam 30-46 saatte tamamlanır.",
         "Aktarmasız taşıma: Yükünüz depoya girmez, başka araçlara aktarılmaz; kırılma, kaybolma ve karışma riski en aza iner.",
-        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında TIR kuyruğuna girmeden işlem görür, transit süre öngörülebilir kalır.",
+        "Sınırda beklemez: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür, transit süre öngörülebilir kalır.",
       ],
     },
     {
