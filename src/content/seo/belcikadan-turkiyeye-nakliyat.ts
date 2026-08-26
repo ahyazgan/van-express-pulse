@@ -5,7 +5,7 @@ const belcikadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "belcikadan-turkiyeye-nakliyat",
   title: "Belçika'dan Türkiye'ye Nakliyat ve Kargo | RouteEU",
   description:
-    "Belçika'dan Türkiye'ye kapıdan kapıya nakliyat. Brüksel, Anvers, Gent ve Liège'den eşyanız 30-46 saatte Türkiye'de. Sigortalı, aktarmasız, GPS takipli taşıma.",
+    "Belçika'dan Türkiye'ye kapıdan kapıya nakliyat. Brüksel ve Anvers'ten eşyanız 30-46 saatte Türkiye'de. Sigortalı, aktarmasız, GPS takipli panelvan taşıma.",
   h1: "Belçika'dan Türkiye'ye Kapıdan Kapıya Nakliyat",
   intro: [
     "Belçika'dan Türkiye'ye eşya göndermek çoğu zaman sabır işi sayılır: koliler Brüksel veya Anvers'teki bir depoda haftalarca sıra bekler, teslim tarihi sorulduğunda net bir cevap alınamaz. RouteEU Express'te işleyiş farklıdır. Türkiye-Belçika hattında araçlarımız zaten iki yönlü sefer yaptığından dönüş yükünüz için ayrılmış bir panelvan Belçika'daki adresinize gelir ve eşyanız aktarmasız, depoya uğramadan ve beklemeden 30-46 saat içinde Türkiye'deki kapıya teslim edilir.",
@@ -16,7 +16,7 @@ const belcikadanTurkiyeyeNakliyat: SeoPageData = {
     rows: [
       { destination: "Brüksel → İstanbul", time: "30-46 saat" },
       { destination: "Anvers → İstanbul", time: "30-46 saat" },
-      { destination: "Gent → İstanbul", time: "30-46 saat" },
+      { destination: "Gent → İstanbul", time: "32-48 saat" },
       { destination: "Liège → İstanbul", time: "28-44 saat" },
     ],
   },
@@ -92,7 +92,7 @@ const belcikadanTurkiyeyeNakliyat: SeoPageData = {
     {
       question: "Belçika'dan Türkiye'ye kargo kaç günde gelir?",
       answer:
-        "Panelvan ekspres taşımada Brüksel, Anvers veya Gent'ten İstanbul'a teslimat tipik olarak 30-46 saat, Liège çıkışında 28-44 saat sürer. Depolu parsiyel modelde aynı taşıma çoğunlukla 7-14 gün, yoğun sezonda 3 haftaya kadar uzayabilir.",
+        "Panelvan ekspres taşımada Brüksel veya Anvers'ten İstanbul'a teslimat tipik olarak 30-46 saat, Gent çıkışında 32-48, Liège çıkışında 28-44 saat sürer. Depolu parsiyel modelde aynı taşıma çoğunlukla 7-14 gün, yoğun sezonda 3 haftaya kadar uzayabilir.",
     },
     {
       question: "Belçika'dan Türkiye'ye nakliyat ne kadar?",

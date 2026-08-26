@@ -18,10 +18,10 @@ const kesinDonusNakliyat: SeoPageData = {
       { destination: "Berlin → İstanbul", time: "24-36 saat" },
       { destination: "Frankfurt → İstanbul", time: "28-40 saat" },
       { destination: "Köln → İstanbul", time: "30-44 saat" },
-      { destination: "Viyana → İstanbul", time: "20-30 saat" },
-      { destination: "Amsterdam → İstanbul", time: "32-48 saat" },
-      { destination: "Brüksel → İstanbul", time: "32-48 saat" },
-      { destination: "Paris → İstanbul", time: "28-44 saat" },
+      { destination: "Viyana → İstanbul", time: "20-32 saat" },
+      { destination: "Amsterdam → İstanbul", time: "30-46 saat" },
+      { destination: "Brüksel → İstanbul", time: "30-46 saat" },
+      { destination: "Paris → İstanbul", time: "34-48 saat" },
     ],
   },
   priceTable: {
@@ -86,7 +86,7 @@ const kesinDonusNakliyat: SeoPageData = {
       paragraphs: [
         "Kesin dönüş denince akla ilk Almanya gelse de, taşıma ağımız tüm Batı ve Orta Avrupa'yı kapsar. Amsterdam, Rotterdam ve Eindhoven'dan; Brüksel ve Anvers'ten; Viyana, Graz ve Salzburg'dan; Paris, Strazburg ve Lyon'dan Türkiye'ye aynı kapıdan kapıya modelle taşıma yapıyoruz. Farklı şehirlerde eşyası olan aileler için güzergah üzerinde birden fazla adresten yükleme de planlanabilir.",
         "Evrak mantığı hangi ülkeden dönerseniz dönün büyük ölçüde aynıdır: önce o ülkedeki ikamet kaydınızı resmi olarak sonlandırırsınız (Hollanda'da belediyeden — gemeente — kaydın sildirilmesi, Belçika'da belediyeye ayrılış bildirimi, Avusturya'da Abmeldung), ardından bağlı olduğunuz T.C. başkonsolosluğundan yerleşim yeri nakil belgesini alır ve eşya listenizi hazırlarsınız. Türkiye tarafındaki gümrük muafiyeti şartları ülkeye göre değişmez; değişen yalnızca yurtdışı tarafındaki ilk adımın adı ve başvurulan kurumdur. Ülkenize özel evrak kontrol listesini taşıma planlanırken sizinle paylaşırız.",
-        "Dönüş yönü taşımalarında transit süreler gidiş yönüyle aynı mantıkla işler: Viyana'dan İstanbul'a 20-30 saat, Berlin'den 24-36 saat, Amsterdam veya Brüksel'den 32-48 saat tipik aralıklardır. Parsiyel TIR taşımacılığında haftalar süren bu yolculuk, size ayrılmış panelvanla çoğu güzergahta 1-2 güne iner. Ülke bazında güzergah, süre ve fiyat detayları için Almanya'dan Türkiye'ye nakliyat, Hollanda'dan Türkiye'ye nakliyat ve Belçika'dan Türkiye'ye nakliyat sayfalarımızı inceleyebilirsiniz.",
+        "Dönüş yönü taşımalarında transit süreler gidiş yönüyle aynı mantıkla işler: Viyana'dan İstanbul'a 20-32 saat, Berlin'den 24-36 saat, Amsterdam veya Brüksel'den 30-46 saat tipik aralıklardır. Parsiyel TIR taşımacılığında haftalar süren bu yolculuk, size ayrılmış panelvanla çoğu güzergahta 1-2 güne iner. Ülke bazında güzergah, süre ve fiyat detayları için Almanya'dan Türkiye'ye nakliyat, Hollanda'dan Türkiye'ye nakliyat ve Belçika'dan Türkiye'ye nakliyat sayfalarımızı inceleyebilirsiniz.",
       ],
     },
     {
@@ -148,7 +148,7 @@ const kesinDonusNakliyat: SeoPageData = {
     {
       question: "Hollanda veya Belçika'dan da kesin dönüş taşıması yapıyor musunuz?",
       answer:
-        "Evet. Almanya'nın yanı sıra Hollanda, Belçika, Avusturya ve Fransa'dan Türkiye'ye kapıdan kapıya taşıma yapıyoruz. Amsterdam veya Brüksel'den İstanbul'a tipik transit süre 32-48 saat, Viyana'dan 20-30 saattir.",
+        "Evet. Almanya'nın yanı sıra Hollanda, Belçika, Avusturya ve Fransa'dan Türkiye'ye kapıdan kapıya taşıma yapıyoruz. Amsterdam veya Brüksel'den İstanbul'a tipik transit süre 30-46 saat, Viyana'dan 20-32 saattir.",
     },
     {
       question: "Eşyam yolda güvende mi, takip edebilir miyim?",
@@ -158,7 +158,7 @@ const kesinDonusNakliyat: SeoPageData = {
     {
       question: "Eşyalarım kaç günde Türkiye'de olur?",
       answer:
-        "Komple panelvanla Almanya'dan İstanbul'a tipik süre 24-48 saattir; Viyana'dan 20-30, Amsterdam ve Brüksel'den 32-48 saat sürer. Sektörde yaygın konsolide taşımada (parsiyel TIR veya paylaşımlı konteyner) eşya önce toplama deposunda aracın dolmasını bekler, ardından varış deposunda dağıtım sırası gelir; bu nedenle kesin dönüş taşımaları çoğu zaman 2-4 hafta sürer. Panelvanda araç yalnızca sizin eşyanız için yola çıktığından, uçuşunuzdan bir gün önce yüklenen eşya siz Türkiye'ye vardığınızda kapınızda olur.",
+        "Komple panelvanla Almanya'dan İstanbul'a tipik süre 24-48 saattir; Viyana'dan 20-32, Amsterdam ve Brüksel'den 30-46 saat sürer. Sektörde yaygın konsolide taşımada (parsiyel TIR veya paylaşımlı konteyner) eşya önce toplama deposunda aracın dolmasını bekler, ardından varış deposunda dağıtım sırası gelir; bu nedenle kesin dönüş taşımaları çoğu zaman 2-4 hafta sürer. Panelvanda araç yalnızca sizin eşyanız için yola çıktığından, uçuşunuzdan bir gün önce yüklenen eşya siz Türkiye'ye vardığınızda kapınızda olur.",
     },
     {
       question: "Yaşlı yakınım adına süreci yönetebilir misiniz?",

@@ -15,10 +15,10 @@ const evEsyasiTasima: SeoPageData = {
     caption: "Ev Eşyası Taşımada Tipik Transit Süreleri",
     rows: [
       { destination: "İstanbul → Berlin", time: "24-36 saat" },
-      { destination: "İstanbul → Viyana", time: "20-30 saat" },
-      { destination: "İstanbul → Paris", time: "28-44 saat" },
-      { destination: "İstanbul → Amsterdam", time: "32-48 saat" },
-      { destination: "İstanbul → Brüksel", time: "32-48 saat" },
+      { destination: "İstanbul → Viyana", time: "20-32 saat" },
+      { destination: "İstanbul → Paris", time: "34-48 saat" },
+      { destination: "İstanbul → Amsterdam", time: "30-46 saat" },
+      { destination: "İstanbul → Brüksel", time: "30-46 saat" },
       { destination: "İstanbul → Londra", time: "36-56 saat" },
     ],
   },
@@ -131,7 +131,7 @@ const evEsyasiTasima: SeoPageData = {
     {
       question: "Yurtdışına ev taşıma kaç gün sürer?",
       answer:
-        "Panelvan taşımada İstanbul'dan Berlin'e 24-36 saat, Amsterdam ve Brüksel'e 32-48 saat, Paris'e 28-44 saat sürer. Genel Avrupa güzergahlarında teslimat 24-72 saat aralığındadır. Konsolide (parsiyel) taşımacılıkta haftalar süren bu yolculuk, aracın yalnızca sizin eşyanız için yola çıkmasıyla saatlere iner.",
+        "Panelvan taşımada İstanbul'dan Berlin'e 24-36 saat, Amsterdam ve Brüksel'e 30-46 saat, Paris'e 34-48 saat sürer. Genel Avrupa güzergahlarında teslimat 24-72 saat aralığındadır. Konsolide (parsiyel) taşımacılıkta haftalar süren bu yolculuk, aracın yalnızca sizin eşyanız için yola çıkmasıyla saatlere iner.",
     },
     {
       question: "Mobilya ve kırılacak eşyalarım taşımada zarar görür mü?",

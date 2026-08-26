@@ -5,10 +5,10 @@ const belcikaKargo: SeoPageData = {
   slug: "belcika-kargo",
   title: "Belçika'ya Panelvan Kargo | Kapıdan Kapıya Ekspres | RouteEU",
   description:
-    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo. Brüksel, Anvers, Gent'e 30-46 saatte sigortalı ekspres taşıma ve canlı GPS takip. Anında fiyat alın.",
+    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo. Brüksel ve Anvers'e 30-46 saatte sigortalı ekspres taşıma ve canlı GPS takip. Anında fiyat alın.",
   h1: "Türkiye'den Belçika'ya Kapıdan Kapıya Kargo",
   intro: [
-    "Türkiye'den Belçika'ya kargo göndermenin alışılmış yolu, yükünüzün başka gönderilerle birleştirilip TIR'la yola çıktığı parsiyel taşımadır; bu yöntemde teslimat çoğu zaman haftalar alır ve yükünüz birden fazla depoya uğrar. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Brüksel, Anvers, Gent ya da Belçika'nın herhangi bir adresine 30-46 saat içinde teslim edilir.",
+    "Türkiye'den Belçika'ya kargo göndermenin alışılmış yolu, yükünüzün başka gönderilerle birleştirilip TIR'la yola çıktığı parsiyel taşımadır; bu yöntemde teslimat çoğu zaman haftalar alır ve yükünüz birden fazla depoya uğrar. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Brüksel ve Anvers'e 30-46 saat, Gent, Charleroi ve Brugge gibi diğer şehirlere 32-50 saat içinde teslim edilir.",
     "Panelvan sınıfı araçlar hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen gönderi pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç uzun molalar vermez, transit süre kısalır. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün hangi ülkede, hangi otoyolda olduğunu telefonunuzdan anlık olarak izlersiniz. Fiyat öğrenmek için kimseyi aramanız gerekmez; uygulamadan kalkış ve varış adresinizi seçerek anında teklif alırsınız.",
   ],
   transitTable: {
@@ -16,10 +16,10 @@ const belcikaKargo: SeoPageData = {
     rows: [
       { destination: "İstanbul → Brüksel", time: "30-46 saat" },
       { destination: "İstanbul → Anvers", time: "30-46 saat" },
-      { destination: "İstanbul → Liège", time: "30-46 saat" },
-      { destination: "İstanbul → Gent", time: "34-50 saat" },
-      { destination: "İstanbul → Charleroi", time: "34-50 saat" },
-      { destination: "İstanbul → Brugge", time: "36-52 saat" },
+      { destination: "İstanbul → Liège", time: "28-44 saat" },
+      { destination: "İstanbul → Gent", time: "32-48 saat" },
+      { destination: "İstanbul → Charleroi", time: "32-48 saat" },
+      { destination: "İstanbul → Brugge", time: "34-50 saat" },
     ],
   },
   priceTable: {
@@ -112,7 +112,7 @@ const belcikaKargo: SeoPageData = {
     {
       question: "Belçika'ya kargo kaç günde gider?",
       answer:
-        "Panelvan ekspres taşımada İstanbul'dan Brüksel veya Anvers'e teslimat tipik olarak 30-46 saat sürer; Gent ve Charleroi'ya 34-50, Brugge gibi batı uçtaki şehirlere 36-52 saat içinde ulaşılır. Sektör ortalaması olan parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
+        "Panelvan ekspres taşımada İstanbul'dan Brüksel veya Anvers'e teslimat tipik olarak 30-46 saat sürer; Gent ve Charleroi'ya 32-48, Brugge gibi batı uçtaki şehirlere 34-50 saat içinde ulaşılır. Sektör ortalaması olan parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
     },
     {
       question: "Belçika'ya eşya gönderme ücreti ne kadar?",

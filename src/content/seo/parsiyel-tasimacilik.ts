@@ -14,11 +14,11 @@ const parsiyelTasimacilik: SeoPageData = {
   transitTable: {
     caption: "Ekspres Hat Transit Süreleri (İstanbul Çıkışlı)",
     rows: [
-      { destination: "İstanbul → Viyana", time: "20-30 saat" },
+      { destination: "İstanbul → Viyana", time: "20-32 saat" },
       { destination: "İstanbul → Berlin", time: "24-36 saat" },
-      { destination: "İstanbul → Paris", time: "28-44 saat" },
-      { destination: "İstanbul → Amsterdam", time: "32-48 saat" },
-      { destination: "İstanbul → Brüksel", time: "32-48 saat" },
+      { destination: "İstanbul → Paris", time: "34-48 saat" },
+      { destination: "İstanbul → Amsterdam", time: "30-46 saat" },
+      { destination: "İstanbul → Brüksel", time: "30-46 saat" },
       { destination: "Genel Avrupa", time: "24-72 saat" },
     ],
   },
@@ -135,7 +135,7 @@ const parsiyelTasimacilik: SeoPageData = {
     {
       question: "Avrupa'ya parsiyel gönderi kaç günde gider?",
       answer:
-        "Panelvan parsiyelde yükünüz ekspres hatlarımızda taşınır: İstanbul'dan Viyana'ya 20-30 saat, Berlin'e 24-36 saat, Amsterdam'a 32-48 saat tipik sürelerdir. Araç birden fazla teslimat noktasına uğruyorsa bu sürelere birkaç saat eklenebilir. Klasik TIR parsiyelinde 7-15 günü bulan depo bekleme ve aktarma süreci bizim modelimizde yoktur.",
+        "Panelvan parsiyelde yükünüz ekspres hatlarımızda taşınır: İstanbul'dan Viyana'ya 20-32 saat, Berlin'e 24-36 saat, Amsterdam'a 30-46 saat tipik sürelerdir. Araç birden fazla teslimat noktasına uğruyorsa bu sürelere birkaç saat eklenebilir. Klasik TIR parsiyelinde 7-15 günü bulan depo bekleme ve aktarma süreci bizim modelimizde yoktur.",
     },
     {
       question: "En az kaç koli veya kaç desi gönderebilirim?",

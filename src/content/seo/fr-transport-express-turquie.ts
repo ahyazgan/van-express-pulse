@@ -17,9 +17,9 @@ const frTransportExpressTurquie: SeoPageData = {
   transitTable: {
     caption: "Délais d'acheminement indicatifs — véhicule dédié",
     rows: [
-      { destination: "Paris → Istanbul", time: "28-44 heures" },
-      { destination: "Strasbourg → Istanbul", time: "26-40 heures" },
-      { destination: "Lyon → Istanbul", time: "30-46 heures" },
+      { destination: "Paris → Istanbul", time: "34-48 heures" },
+      { destination: "Strasbourg → Istanbul", time: "28-40 heures" },
+      { destination: "Lyon → Istanbul", time: "32-46 heures" },
       { destination: "Istanbul → Paris", time: "34-48 heures" },
     ],
   },
@@ -114,7 +114,7 @@ const frTransportExpressTurquie: SeoPageData = {
     {
       question: "Quel délai pour un transport express France-Turquie ?",
       answer:
-        "En véhicule dédié avec double équipage, comptez 26 à 40 heures depuis Strasbourg, 28 à 44 heures depuis Paris et 30 à 46 heures depuis Lyon jusqu'à Istanbul. Dans le sens retour, Istanbul-Paris se situe entre 34 et 48 heures. Pour une destination anatolienne comme Konya, Kayseri ou Gaziantep, prévoyez une journée supplémentaire.",
+        "En véhicule dédié avec double équipage, comptez 28 à 40 heures depuis Strasbourg, 32 à 46 heures depuis Lyon et 34 à 48 heures depuis Paris jusqu'à Istanbul. Le sens retour se situe dans la même fourchette : Istanbul-Paris compte 34 à 48 heures. Pour une destination anatolienne comme Konya, Kayseri ou Gaziantep, prévoyez une journée supplémentaire.",
     },
     {
       question: "Quel prix pour un véhicule dédié vers la Turquie ?",

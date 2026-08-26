@@ -17,10 +17,10 @@ const frDemenagementTurquie: SeoPageData = {
   transitTable: {
     caption: "Délais d'acheminement indicatifs France → Turquie",
     rows: [
-      { destination: "Paris → Istanbul", time: "28-44 heures" },
-      { destination: "Strasbourg → Istanbul", time: "26-40 heures" },
-      { destination: "Lyon → Istanbul", time: "30-46 heures" },
-      { destination: "Marseille → Istanbul", time: "32-48 heures" },
+      { destination: "Paris → Istanbul", time: "34-48 heures" },
+      { destination: "Strasbourg → Istanbul", time: "28-40 heures" },
+      { destination: "Lyon → Istanbul", time: "32-46 heures" },
+      { destination: "Marseille → Istanbul", time: "34-48 heures" },
     ],
   },
   priceTable: {
@@ -127,7 +127,7 @@ const frDemenagementTurquie: SeoPageData = {
     {
       question: "Combien de temps dure un déménagement France-Turquie ?",
       answer:
-        "En camionnette dédiée, comptez 26 à 40 heures depuis Strasbourg, 28 à 44 heures depuis Paris, 30 à 46 heures depuis Lyon et 32 à 48 heures depuis Marseille jusqu'à Istanbul. Pour une destination plus lointaine comme Antalya ou Adana, ajoutez une journée de route. En groupage traditionnel, le même déménagement demande généralement trois à six semaines.",
+        "En camionnette dédiée, comptez 28 à 40 heures depuis Strasbourg, 32 à 46 heures depuis Lyon et 34 à 48 heures depuis Paris ou Marseille jusqu'à Istanbul. Pour une destination plus lointaine comme Antalya ou Adana, ajoutez une journée de route. En groupage traditionnel, le même déménagement demande généralement trois à six semaines.",
     },
     {
       question: "Quel est le prix d'un déménagement France-Turquie ?",

@@ -18,7 +18,7 @@ const enMovingToTurkey: SeoPageData = {
     rows: [
       { destination: "Vienna → Istanbul", time: "20-32 hours" },
       { destination: "Munich → Istanbul", time: "24-36 hours" },
-      { destination: "Paris → Istanbul", time: "28-44 hours" },
+      { destination: "Paris → Istanbul", time: "34-48 hours" },
       { destination: "Amsterdam → Istanbul", time: "30-46 hours" },
     ],
   },
@@ -102,7 +102,7 @@ const enMovingToTurkey: SeoPageData = {
     {
       question: "How long does a move from Europe to Türkiye take?",
       answer:
-        "The road leg is fast: Vienna to Istanbul is typically 20 to 32 hours, Munich 24 to 36, Paris 28 to 44 and Amsterdam 30 to 46 hours door to door. Add a little time for customs clearance at the border and for onward delivery if your new address is on the coast rather than in Istanbul. A container move over the same route normally takes four to eight weeks.",
+        "The road leg is fast: Vienna to Istanbul is typically 20 to 32 hours, Munich 24 to 36, Amsterdam 30 to 46 and Paris 34 to 48 hours door to door. Add a little time for customs clearance at the border and for onward delivery if your new address is on the coast rather than in Istanbul. A container move over the same route normally takes four to eight weeks.",
     },
     {
       question: "How much does it cost to move my belongings to Türkiye?",

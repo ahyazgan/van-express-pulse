@@ -16,9 +16,9 @@ const hollandaKargo: SeoPageData = {
     rows: [
       { destination: "İstanbul → Amsterdam", time: "30-46 saat" },
       { destination: "İstanbul → Rotterdam", time: "30-46 saat" },
-      { destination: "İstanbul → Eindhoven", time: "30-44 saat" },
-      { destination: "İstanbul → Utrecht", time: "32-46 saat" },
-      { destination: "İstanbul → Lahey (Den Haag)", time: "32-48 saat" },
+      { destination: "İstanbul → Eindhoven", time: "28-44 saat" },
+      { destination: "İstanbul → Utrecht", time: "30-46 saat" },
+      { destination: "İstanbul → Lahey (Den Haag)", time: "30-46 saat" },
       { destination: "İstanbul → Groningen", time: "36-52 saat" },
     ],
   },
@@ -113,7 +113,7 @@ const hollandaKargo: SeoPageData = {
     {
       question: "Hollanda'ya kargo kaç günde gider?",
       answer:
-        "RouteEU panelvan ekspres taşımalarında Avrupa teslimatları genel olarak 24-48 saat bandında tamamlanır. Hollanda özelinde İstanbul'dan Amsterdam veya Rotterdam'a tipik teslimat 30-46 saat sürer; Eindhoven gibi güney şehirlerine 30-44 saatte ulaşılır. Sektör ortalaması olan parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
+        "RouteEU panelvan ekspres taşımalarında Avrupa teslimatları genel olarak 24-48 saat bandında tamamlanır. Hollanda özelinde İstanbul'dan Amsterdam veya Rotterdam'a tipik teslimat 30-46 saat sürer; Eindhoven gibi güney şehirlerine 28-44 saatte ulaşılır. Sektör ortalaması olan parsiyel TIR taşımacılığında aynı güzergah 7-15 gün alabilir.",
     },
     {
       question: "Hollanda'ya kargo ücreti ne kadar?",

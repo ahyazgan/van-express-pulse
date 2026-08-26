@@ -89,6 +89,47 @@ describe("SEO landing pages", () => {
     }
   });
 
+  it("quotes one consistent transit time per route across every page and language", () => {
+    // Aynı şehir dile göre farklı yazılıyor; karşılaştırmadan önce tek isme indiriyoruz.
+    const alias: Record<string, string> = {
+      istanbul: "İstanbul",
+      münih: "Münih", münchen: "Münih", munich: "Münih",
+      köln: "Köln", cologne: "Köln",
+      viyana: "Viyana", wien: "Viyana", vienna: "Viyana", wenen: "Viyana",
+      brüksel: "Brüksel", brussels: "Brüksel", bruxelles: "Brüksel", brüssel: "Brüksel",
+      anvers: "Anvers", antwerp: "Anvers", antwerpen: "Anvers",
+      varşova: "Varşova", warsaw: "Varşova", warschau: "Varşova",
+      milano: "Milano", milan: "Milano",
+      zürih: "Zürih", zurich: "Zürih",
+      kopenhag: "Kopenhag", copenhagen: "Kopenhag",
+      strazburg: "Strazburg", strasbourg: "Strazburg",
+      marsilya: "Marsilya", marseille: "Marsilya",
+      lahey: "Lahey", "den haag": "Lahey",
+    };
+    const norm = (raw: string) => alias[raw.trim().toLowerCase()] ?? raw.trim();
+
+    const byPair = new Map<string, { range: string; page: string; label: string }[]>();
+    for (const page of Object.values(SEO_PAGES)) {
+      for (const row of page.transitTable?.rows ?? []) {
+        const ends = row.destination.split(/→|->/).map((s) => s.trim());
+        const span = row.time.match(/(\d+)\s*[-–]\s*(\d+)/);
+        if (ends.length !== 2 || !span) continue; // "Genel Avrupa" gibi serbest satırlar
+        // Yön simetrik: Berlin→İstanbul ile İstanbul→Berlin aynı mesafe, aynı süre.
+        const key = [norm(ends[0]), norm(ends[1])].sort().join(" <-> ");
+        byPair.set(key, [
+          ...(byPair.get(key) ?? []),
+          { range: `${span[1]}-${span[2]}`, page: page.slug, label: row.destination },
+        ]);
+      }
+    }
+
+    for (const [pair, claims] of byPair) {
+      const ranges = new Set(claims.map((c) => c.range));
+      const detail = claims.map((c) => `${c.range} (${c.page}: "${c.label}")`).join(", ");
+      expect(ranges.size, `${pair} farklı süreler veriyor -> ${detail}`).toBe(1);
+    }
+  });
+
   it.each(slugs)("renders /%s with H1, FAQ and canonical", (slug) => {
     const page = SEO_PAGES[slug];
     render(
