@@ -1,5 +1,5 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeEn as priceRange } from "./seoData";
 
 const enMovingToTurkey: SeoPageData = {
   slug: "en/moving-to-turkey",
@@ -7,7 +7,7 @@ const enMovingToTurkey: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Moving to Türkiye from Europe | Door-to-Door Removals",
   description:
-    "Moving to Türkiye from Europe? Door-to-door van removals from Munich, Amsterdam, Paris and Vienna in 24-48 hours, no transhipment, insured and tracked.",
+    "Moving to Türkiye from Europe? Door-to-door van removals from Munich, Amsterdam, Paris and Vienna in 20-48 hours, no transhipment, insured and tracked.",
   h1: "Moving to Türkiye: Door-to-Door Removals from Europe",
   intro: [
     "If you are relocating to Antalya, Fethiye, Bodrum, Izmir or Istanbul, the hardest part of the move is rarely the flight — it is working out how to get your furniture, books, kitchen equipment and the things you actually care about from a European address to a Turkish one without them spending six weeks in a container yard. RouteEU Express moves household goods by dedicated van, collected at your door in Europe and delivered to your door in Türkiye, usually within 24 to 48 hours of departure.",
@@ -38,14 +38,21 @@ const enMovingToTurkey: SeoPageData = {
       heading: "Who this service is for",
       paragraphs: [
         "Most of the people we move fall into one of four groups. Retirees buying or renting on the Turkish coast, who want their own bed, their own armchair and their own kitchen rather than starting again from a furniture showroom. Remote workers and digital nomads settling in Istanbul or Izmir, whose priority is a desk setup, monitors, an instrument or a bicycle arriving intact. Families relocating for a partner's job, moving a full household. And people going the other way — professionals finishing a posting in Türkiye and moving back to Germany, the Netherlands, Belgium or France.",
-        "The common thread is scale. A full 40-foot container is far more space than most of these moves need, and an international parcel service becomes absurdly expensive once a wardrobe or a sofa is involved. A single van of about 13.5 m³ covers a one or two-bedroom home comfortably, and for anything smaller you can book part of a van and pay for the volume you actually occupy.",
+        "The common thread is scale. A full 40-foot container is far more space than most of these moves need, and an international parcel service becomes absurdly expensive once a wardrobe or a sofa is involved. A single van of about 13.5 m³ and 1,300 kg covers a studio or a one-bedroom flat when wardrobes are dismantled; larger homes usually need two vans or a second trip. Weight can bind before volume does — books, tools and white goods fill the payload quickly — so tell us roughly what is in the load and we will say honestly whether one van is enough. For anything smaller you can book part of a van and pay for the volume you actually occupy.",
+      ],
+    },
+    {
+      heading: "What we cannot load",
+      paragraphs: [
+        "A short list settles this before the van arrives rather than on the doorstep. We cannot load dangerous goods of any kind: gas bottles from the barbecue, petrol and diesel cans, paint, solvents, thinners, aerosols, fireworks or batteries shipped loose rather than fitted inside a device. Please drain the tank of any mower or scooter completely before collection. We also cannot carry medicines, food of animal origin, live plants or pets, and you should keep cash, jewellery, passports and original documents with you personally rather than in the load space.",
+        "Everything else — furniture, appliances, electronics, books, bicycles, tools, kitchenware — travels normally, provided it is packed and secured properly. If an item is borderline, mention it when you request the quotation and we will tell you plainly whether it can go.",
       ],
     },
     {
       heading: "Should you ship your furniture at all?",
       paragraphs: [
         "Before you book anything, it is worth being honest about what deserves a place in the van, because moving everything is rarely the cheapest or the smartest option. Türkiye runs on 220-240 V at 50 Hz with Europlug and Schuko-type sockets, so appliances from Germany, Austria, the Netherlands, Belgium and France generally work without conversion — but UK equipment needs adapters, and anything designed for a different voltage or fitted to a specific kitchen carcass is often more trouble than it is worth. Bulky flat-pack furniture is another common regret: a wardrobe that cost a few hundred euros new can easily take up a quarter of the load space, and the same money buys a replacement locally.",
-        "The other half of that decision is the part removal companies rarely volunteer. Cheap flat-pack shelving, a three-year-old sofa, garden furniture, half-empty tins of paint and the contents of the loft cost real money to move and almost nothing to replace in Türkiye, where furniture, white goods and household basics are widely available and often cheaper than in Northern Europe. Selling or donating those items before you go usually saves more than it costs you in replacements. A simple rule works well: for each large item, ask what it would cost to buy the equivalent locally, and compare that with the share of the van it will occupy.",
+        "The other half of that decision is the part that removal companies rarely volunteer. Cheap flat-pack shelving, a three-year-old sofa, garden furniture and the contents of the loft cost real money to move and almost nothing to replace in Türkiye, where furniture, white goods and household basics are widely available and often cheaper than in Northern Europe. Paint, solvents and gas bottles are a separate matter — they cannot travel at all, so plan to use them up or dispose of them before the van arrives. Selling or donating those items before you go usually saves more than it costs you in replacements. A simple rule works well: for each large item, ask what it would cost to buy the equivalent locally, and compare that with the share of the van it will occupy.",
         "What is genuinely worth shipping, in our experience, is everything that fails that test in the opposite direction — the pieces that are expensive to replace, impossible to replace, or that make an unfamiliar flat feel like home:",
       ],
       list: [
@@ -67,7 +74,7 @@ const enMovingToTurkey: SeoPageData = {
     {
       heading: "Customs and personal effects",
       paragraphs: [
-        "Used household goods and personal effects are treated differently from commercial cargo when they enter Türkiye. In general terms, the framework covers people transferring their normal residence to Türkiye — typically supported by a residence permit or the appropriate visa, a detailed inventory of the goods with approximate values, a passport copy and the transport documents — and household items that have been in your use rather than newly purchased for the move. Certain categories, notably vehicles, alcohol, tobacco, firearms and some electronics, sit outside the normal personal-effects treatment and follow their own rules.",
+        "Used household goods and personal effects are treated differently from commercial cargo when they enter Türkiye. In general terms, the framework covers people transferring their normal residence to Türkiye, with the claim typically supported by a residence permit or the appropriate visa, a detailed inventory of the goods with approximate values, a passport copy and the transport documents; the goods themselves must have been in your use rather than newly purchased for the move. Certain categories, notably vehicles, alcohol, tobacco, firearms and some electronics, sit outside the normal personal-effects treatment and follow their own rules.",
         "We prepare the inventory with you, coordinate the file with a customs broker at the Turkish border and keep the vehicle moving while the declaration is processed. What we will not do is quote you a duty figure or promise an exemption, because the thresholds, time limits and documentary requirements change and they depend on your personal status. Please confirm the current rules for your own situation with a licensed customs broker or the relevant customs authority before you pack — this page describes the general framework and is not a substitute for professional advice.",
       ],
     },
@@ -87,7 +94,7 @@ const enMovingToTurkey: SeoPageData = {
       heading: "Insurance, contract and live tracking",
       paragraphs: [
         "Every move is carried out under a written transport contract with a CMR consignment note and an itemised inventory, so what left the house is documented before the doors close. All goods travel under transport insurance; for higher-value items — artwork, instruments, professional equipment — we agree the declared value and the scope of cover in writing at the quotation stage rather than leaving it to be argued about later.",
-        "Tracking is live rather than a daily status message. You see the vehicle on a map at any hour, which matters more than it sounds when you are waiting in an empty flat in Antalya trying to decide whether the delivery lands today or tomorrow. One company handles the whole movement, so there is one phone number to call and one invoice at the end.",
+        "Tracking is live rather than a daily status message. You see the vehicle on a map at any hour, which matters more than you would think when you are waiting in an empty flat in Antalya trying to decide whether the delivery lands today or tomorrow. One company handles the whole movement, so there is one phone number to call and one invoice at the end.",
       ],
     },
     {
@@ -124,7 +131,7 @@ const enMovingToTurkey: SeoPageData = {
     {
       question: "Do you disassemble and pack furniture?",
       answer:
-        "Our crews dismantle standard furniture such as beds, wardrobes and tables at collection and reassemble them on delivery, and everything is blanket-wrapped and secured in the van. Full packing of crockery, glassware and small items can be arranged in advance if you prefer not to do it yourself — mention it when you request the quotation so it is included in the price.",
+        "Our drivers dismantle standard items such as beds, wardrobes and tables at collection and reassemble them on delivery, and everything is blanket-wrapped and secured in the van. Full packing of crockery, glassware and small items is available as a priced extra on request — mention it when you ask for the quotation so we can allow the time and include it in the price.",
     },
     {
       question: "Are my belongings insured while in transit?",

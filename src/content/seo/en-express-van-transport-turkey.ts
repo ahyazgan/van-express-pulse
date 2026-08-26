@@ -1,11 +1,11 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeEn as priceRange } from "./seoData";
 
 const enExpressVanTransportTurkey: SeoPageData = {
   slug: "en/express-van-transport-turkey",
   lang: "en",
   hreflangGroup: "express-b2b",
-  title: "Express Van Transport Turkey to Europe | Direct, No Transhipment",
+  title: "Express Van Transport Turkey to Europe | Door to Door in 24-48h",
   description:
     "Dedicated express van transport between Türkiye and Europe. Door-to-door in 24-48 hours, no transhipment, two drivers, customs handled, live GPS tracking.",
   h1: "Express Van Transport Between Türkiye and Europe",
@@ -33,36 +33,37 @@ const enExpressVanTransportTurkey: SeoPageData = {
       { route: "Istanbul → Warsaw", price: priceRange("Varşova") },
     ],
     disclaimer:
-      "Figures are indicative ranges for a full dedicated van of roughly 1,300 kg / 5 euro pallets and move with season, fuel and demand. Part-load consignments are quoted on the volume you actually use. For a binding figure, request a quotation in the app with your collection and delivery addresses.",
+      "Figures are indicative ranges for a full dedicated van of roughly 1,300 kg / 5 Euro pallets and vary with season, fuel and demand. Part-load consignments are quoted on the volume you actually use. For a binding figure, request a quotation in the app with your collection and delivery addresses.",
   },
   sections: [
     {
       heading: "When air freight is too expensive and road groupage too slow",
       paragraphs: [
         "Most shippers moving goods between Türkiye and Europe end up choosing between two imperfect options. Air freight is quick in the air but slow on the ground: handling agents, terminal cut-offs, airport-to-airport rather than door-to-door, and a chargeable weight calculation that punishes anything bulky. Road groupage is affordable but unhurried — your pallets wait for the trailer to fill, change vehicles at a consolidation hub, and arrive somewhere between seven and fifteen days later.",
-        "Express van transport sits precisely in that gap. For consignments up to roughly 1,300 kg or five euro pallets, a dedicated van reaches Munich or Milan in about the same working time as a door-to-door air movement, at a fraction of the cost, and without your goods ever leaving the vehicle. The commercial case is strongest where the cost of being late — a stopped line, a missed exhibition, a contractual delivery window — is larger than the freight bill itself.",
+        "Express van transport sits precisely in that gap. For consignments up to roughly 1,300 kg or five Euro pallets, a dedicated van reaches Munich or Milan in about the same working time as a door-to-door air movement, at a fraction of the cost, and without your goods ever leaving the vehicle. The commercial case is strongest where the cost of being late — a stopped line, a missed exhibition, a contractual delivery window — is larger than the freight bill itself.",
         "It is also worth saying plainly what this service is not for. A single carton under 30 kg with a flexible deadline belongs with an international parcel carrier, and we will tell you so rather than sell you a van you do not need.",
       ],
     },
     {
       heading: "Dedicated vehicle, no transhipment",
       paragraphs: [
-        "Every full-load booking is a dedicated vehicle. The van is loaded at your address and sealed, and the same vehicle and the same crew carry the goods to the delivery address. Nothing is unloaded into a warehouse, re-palletised or handed between subcontractors en route, which removes the single largest source of damage and loss claims in international road freight.",
+        "Every full-load booking is a dedicated vehicle. The van is loaded and secured at your address, and the same vehicle and the same crew carry the goods to the delivery address. Nothing is unloaded into a warehouse, re-palletised or handed between subcontractors en route, which removes the single largest source of damage and loss claims in international road freight.",
         "The practical envelope of a sprinter-class van is straightforward:",
       ],
       list: [
         "Payload: approximately 1,300 kg",
-        "Capacity: 5 euro pallets, or roughly 13.5 m³ of loading space",
+        "Capacity: 5 Euro pallets, or roughly 13.5 m³ of loading space",
         "Loading: rear and side doors, floor loading or pallet loading by forklift at your dock",
         "Groupage option: if you do not need the whole vehicle, you can book part-load space and pay for the volume you occupy — still without transhipment",
         "Suitable cargo: production and spare parts, machinery components, textiles and samples, e-commerce stock, exhibition material, electronics, personal effects",
+        "Not carried: dangerous goods of any class (ADR), including compressed gases, fuels, solvents, paints, aerosols and lithium batteries shipped loose rather than fitted in equipment; pharmaceuticals; food of animal origin; live animals and plants; cash, jewellery and bearer documents. If you are unsure how your product is classified, tell us before you book rather than on loading day",
       ],
     },
     {
       heading: "Two drivers and the weekend advantage",
       paragraphs: [
         "Two things make the transit times above realistic rather than optimistic. The first is double manning: with two drivers on board, one rests while the other drives, so the vehicle keeps rolling through the night instead of standing at a service area for a nine-hour break. On a 2,500-kilometre run that difference alone is worth the better part of a day.",
-        "The second is regulatory. Heavy goods vehicles above 7.5 tonnes face weekend and public-holiday driving bans in Germany, Austria, France and several neighbouring countries — the reason a trailer leaving on a Friday afternoon frequently does not move again until Sunday night. Vans in this weight class are not subject to those bans. A Friday collection in Istanbul is therefore still a Sunday delivery in Bavaria rather than a Tuesday one, and border formalities at the Bulgarian and Greek crossings are handled in the light-vehicle lanes rather than the HGV queue.",
+        "The second is regulatory. Heavy goods vehicles above 7.5 tonnes face weekend and public-holiday driving bans in Germany, Austria, France and several neighbouring countries — the reason a trailer leaving on a Friday afternoon frequently does not move again until Sunday night. Vans in this weight class are not subject to those bans. A Friday collection in Istanbul is therefore still a Sunday delivery in Bavaria rather than a Tuesday one, and at the Bulgarian and Greek crossings a van clears the freight terminal considerably faster than a 40-tonne rig waiting in the HGV queue.",
       ],
     },
     {
@@ -99,7 +100,8 @@ const enExpressVanTransportTurkey: SeoPageData = {
         "France — Paris, Strasbourg, Lyon, Marseille",
         "Italy — Milan, Verona, Rome",
         "Poland, Czechia and Central Europe — Warsaw, Kraków, Poznań, Prague, Budapest, Bratislava",
-        "Scandinavia and the UK — Copenhagen, Malmö, Stockholm, London, Manchester",
+        "Scandinavia — Copenhagen, Malmö, Gothenburg, Stockholm",
+        "United Kingdom — London and Manchester on request. Since Brexit the UK sits outside the EU customs union, so a GB import declaration and a ferry or tunnel crossing are involved; transit is longer than the figures above and we quote this lane individually rather than as a scheduled service",
       ],
     },
     {
@@ -114,7 +116,7 @@ const enExpressVanTransportTurkey: SeoPageData = {
     {
       question: "How long does express van transport from Türkiye to Europe take?",
       answer:
-        "Istanbul to Munich, Milan or Warsaw is typically 24 to 36 hours, Amsterdam 30 to 46 hours and Paris 34 to 48 hours, door to door. Groupage on a full trailer covering the same distance normally takes seven to fifteen days. Actual transit depends on the collection address, border traffic and the customs clearance at destination.",
+        "Istanbul to Munich or Milan is typically 24 to 36 hours, Warsaw 24 to 40, Amsterdam 30 to 46 and Paris 34 to 48, door to door. Groupage on a full trailer covering the same distance normally takes seven to fifteen days. Actual transit depends on the collection address, border traffic and customs clearance at destination.",
     },
     {
       question: "How much does an express van from Türkiye to Europe cost?",
@@ -126,7 +128,7 @@ const enExpressVanTransportTurkey: SeoPageData = {
     {
       question: "How many pallets fit in one van?",
       answer:
-        "A sprinter-class van takes five euro pallets, around 13.5 m³ of loading volume and a payload of approximately 1,300 kg. If your consignment is larger, we can dispatch two vehicles in convoy or quote a rigid truck instead; if it is smaller, part-load space is the more economical route.",
+        "A sprinter-class van takes five Euro pallets, around 13.5 m³ of loading volume and a payload of approximately 1,300 kg. If your consignment is larger, we run two vans in parallel rather than switching to a trailer, so you keep the transit time and the absence of transhipment; if it is smaller, part-load space is the more economical route.",
     },
     {
       question: "Do you run at weekends and on public holidays?",
@@ -144,9 +146,14 @@ const enExpressVanTransportTurkey: SeoPageData = {
         "Yes, all consignments move under transport insurance. For high-value cargo we confirm the declared value and the scope of cover in writing before loading, so there is no ambiguity if a claim ever arises.",
     },
     {
+      question: "Are there goods you cannot carry?",
+      answer:
+        "Yes, and we say so at quotation stage rather than at the loading bay. We do not carry ADR-classified dangerous goods — compressed gases, fuels, solvents, paints, aerosols, pyrotechnics or lithium batteries shipped loose rather than fitted inside equipment. We also do not carry pharmaceuticals, food of animal origin, live animals or plants, cash, jewellery or bearer documents. Batteries built into a device are normally fine; send us the product description or safety data sheet and we will confirm before you book.",
+    },
+    {
       question: "Do you carry return loads from Europe to Türkiye?",
       answer:
-        "Yes, the service runs in both directions with the same transit times, tracking and insurance. Return loads from Germany, the Netherlands, Belgium, France, Austria and Italy back to Turkish addresses are a regular part of our schedule, and a booked return leg is usually cheaper than a one-way movement.",
+        "Yes, the service runs in both directions with comparable transit times, tracking and insurance. Return loads from Germany, the Netherlands, Belgium, France, Austria and Italy back to Turkish addresses are a regular part of our schedule, and a return load booked alongside an outbound trip is usually cheaper than a standalone one-way movement.",
     },
     {
       question: "Can I send a part load instead of hiring the whole van?",

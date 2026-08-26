@@ -1,5 +1,5 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeNl as priceRange } from "./seoData";
 
 const nlTransportNaarTurkije: SeoPageData = {
   slug: "nl/transport-naar-turkije",
@@ -7,10 +7,10 @@ const nlTransportNaarTurkije: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Transport naar Turkije | Expresslevering zonder overslag | RouteEU",
   description:
-    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 24-48 uur, zonder overslag, twee chauffeurs, douaneafhandeling en live track and trace.",
+    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 28 tot 46 uur, zonder overslag, twee chauffeurs, begeleiding bij de douanepapieren en live tracking.",
   h1: "Transport naar Turkije: expresslevering zonder overslag",
   intro: [
-    "Als een productielijn stilstaat of een order de leverdatum dreigt te missen, is de vraag niet wat een zending kost, maar wanneer hij er is. RouteEU Express rijdt spoedtransporten tussen Nederland en Turkije met eigen bestelbussen: wij halen uw goederen op bij uw magazijn, laden ze één keer in en leveren ze 24 tot 48 uur later af bij de ontvanger. Geen hubs, geen overslag, geen wachten tot een trailer vol is.",
+    "Als een productielijn stilstaat of een order de leverdatum dreigt te missen, is de vraag niet wat een zending kost, maar wanneer hij er is. RouteEU Express rijdt spoedtransporten tussen Nederland en Turkije met eigen bestelbussen: wij halen uw goederen op bij uw magazijn, laden ze één keer in en leveren ze 28 tot 46 uur later af bij de ontvanger. Geen hubs, geen overslag, geen wachten tot een trailer vol is.",
     "Eén bus neemt tot ongeveer 1.300 kg, vijf europallets of circa 13,5 m³ mee. Twee chauffeurs wisselen elkaar af, zodat het voertuig doorrijdt op momenten waarop zwaar vrachtverkeer verplicht stilstaat, en het weekendrijverbod voor vrachtwagens raakt deze voertuigklasse niet. Elke zending is verzekerd en 24/7 live te volgen; een prijsindicatie haalt u in seconden uit de app.",
   ],
   transitTable: {

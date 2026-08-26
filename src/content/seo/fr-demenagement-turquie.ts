@@ -1,18 +1,18 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeFr as priceRange } from "./seoData";
 
 const frDemenagementTurquie: SeoPageData = {
   slug: "fr/demenagement-turquie",
   lang: "fr",
   hreflangGroup: "relocation",
-  title: "Déménagement France Turquie | Porte-à-porte en 28-48 h",
+  title: "Déménagement France-Turquie | Porte-à-porte en 28-48 h",
   description:
     "Déménagement France-Turquie en camionnette dédiée : enlèvement à domicile, sans rupture de charge, livraison en 28 à 48 h, assurance et suivi GPS.",
   h1: "Déménagement France-Turquie : vos affaires de porte à porte",
   intro: [
-    "Quitter la France pour s'installer en Turquie se heurte presque toujours au même mur : les devis des déménageurs internationaux dépassent largement le budget prévu, et le groupage annonce des délais qui se comptent en semaines, sans date ferme. RouteEU Express propose une troisième voie : une camionnette dédiée de classe Sprinter qui charge chez vous, en France, et décharge à votre nouvelle adresse en Turquie. Un seul chargement, un seul déchargement, aucun entrepôt entre les deux.",
-    "Nos véhicules ne sont pas concernés par les restrictions de circulation du week-end qui immobilisent les poids lourds, et le double équipage permet au camion d'avancer pendant que le second chauffeur prend son repos. Concrètement, comptez 28 à 48 heures entre Paris, Strasbourg, Lyon ou Marseille et Istanbul, là où un déménagement en groupage classique demande trois à six semaines.",
-    "Une camionnette complète représente environ 1 300 kg, 5 palettes europe et 13,5 m³ : de quoi loger le mobilier et les effets personnels d'un studio ou d'un deux-pièces bien rempli. Si votre volume est plus modeste — quelques cartons, un bureau, un lit — le groupage reste possible et vous ne payez que la place réellement occupée. Chaque envoi part couvert par une assurance transport et suivi en direct par GPS, 24 h/24.",
+    "Quitter la France pour s'installer en Turquie, c'est presque toujours se heurter au même mur : les devis des déménageurs internationaux dépassent largement le budget prévu, et le groupage annonce des délais qui se comptent en semaines, sans date ferme. RouteEU Express propose une troisième voie : une camionnette dédiée de classe Sprinter qui charge chez vous, en France, et décharge à votre nouvelle adresse en Turquie. Un seul chargement, un seul déchargement, aucun entrepôt entre les deux.",
+    "Nos véhicules ne sont pas concernés par les restrictions de circulation du week-end qui immobilisent les poids lourds, et le double équipage permet au véhicule de continuer à rouler pendant que l'un des deux chauffeurs se repose. Concrètement, comptez 28 à 48 heures selon la ville de départ — Strasbourg étant la plus proche et Paris ou Marseille les plus éloignées sur cet axe — là où un déménagement en groupage classique demande trois à six semaines.",
+    "Une camionnette complète représente environ 1 300 kg, 5 palettes Europe et 13,5 m³ : de quoi loger le mobilier et les effets personnels d'un studio ou d'un petit deux-pièces, armoires démontées. Le poids peut limiter avant le volume — livres, électroménager et outillage remplissent vite la charge utile — alors décrivez-nous le contenu et nous vous dirons franchement si un seul véhicule suffit. Si votre volume est plus modeste — quelques cartons, un bureau, un lit — le groupage reste possible et vous ne payez que la place réellement occupée. Chaque envoi part couvert par une assurance transport et suivi en direct par GPS, 24 h/24.",
   ],
   transitTable: {
     caption: "Délais d'acheminement indicatifs France → Turquie",
@@ -32,13 +32,13 @@ const frDemenagementTurquie: SeoPageData = {
       { route: "Marseille → Istanbul", price: priceRange("Marsilya") },
     ],
     disclaimer:
-      "Fourchettes indicatives pour une camionnette complète (environ 1 300 kg, 5 palettes europe, 13,5 m³), enlèvement et livraison à domicile compris. Le tarif définitif dépend de la saison, du volume réel, de l'étage et de la nature des formalités. L'estimation personnalisée s'obtient en quelques secondes depuis l'application.",
+      "Fourchettes indicatives pour une camionnette complète (environ 1 300 kg, 5 palettes Europe, 13,5 m³), enlèvement et livraison à domicile compris. Le tarif définitif dépend de la saison, du volume réel, de l'étage et de la nature des formalités. L'estimation personnalisée s'obtient en quelques secondes depuis l'application.",
   },
   sections: [
     {
       heading: "À qui s'adresse ce service ?",
       paragraphs: [
-        "Nous transportons chaque semaine les affaires de personnes dont la vie bascule d'un pays à l'autre. Les situations reviennent souvent :",
+        "Nous déménageons chaque semaine des particuliers qui changent de pays. Les situations reviennent souvent :",
       ],
       list: [
         "Familles franco-turques qui rentrent s'installer à Istanbul, Izmir, Ankara, Antalya ou Bursa après plusieurs années passées en France.",
@@ -60,7 +60,7 @@ const frDemenagementTurquie: SeoPageData = {
         "Départ calé sur votre date, et non sur le remplissage d'une remorque.",
         "Circulation maintenue le week-end : les interdictions applicables aux poids lourds ne visent pas nos véhicules.",
         "Double équipage : le véhicule progresse pendant les temps de repos réglementaires.",
-        "Passage aux postes-frontières plus fluide qu'un ensemble routier de 40 tonnes.",
+        "Passage aux postes-frontières plus fluide que celui d'un ensemble routier de 40 tonnes.",
         "Moins de manutention, donc nettement moins de risques pour la vaisselle, les miroirs et le mobilier démonté.",
       ],
     },
@@ -77,13 +77,18 @@ const frDemenagementTurquie: SeoPageData = {
         "Justificatif de l'adresse quittée en France et de la nouvelle adresse en Turquie.",
         "Le cas échéant, le mandat donné au commissionnaire en douane qui présente la déclaration.",
         "La lettre de voiture CMR établie au départ, qui accompagne l'envoi jusqu'à la livraison.",
-        "Important : la réglementation évolue et les seuils, délais et pièces exigées sont révisés d'une année à l'autre. Confirmez votre situation auprès d'un commissionnaire en douane ou du service douanier compétent avant l'expédition ; ce texte est informatif et ne remplace pas un conseil officiel.",
+      ],
+    },
+    {
+      heading: "Une précision importante sur la réglementation",
+      paragraphs: [
+        "La réglementation douanière évolue : les seuils, les délais et les pièces exigées sont révisés d'une année à l'autre, et votre situation personnelle — date d'obtention du titre de séjour, durée de résidence en France, composition du foyer — change la réponse. Confirmez votre cas auprès d'un commissionnaire en douane ou du service douanier compétent avant l'expédition. Ce texte présente un cadre général à titre d'information et ne remplace pas un conseil officiel.",
       ],
     },
     {
       heading: "Que transportons-nous, et que laissons-nous de côté ?",
       paragraphs: [
-        "Commençons par les exclusions, car elles se règlent en amont et jamais le jour du chargement. Restent en dehors de notre périmètre, pour des raisons réglementaires ou d'assurance : les espèces, bijoux, métaux précieux et documents originaux irremplaçables ; les produits dangereux tels que bouteilles de gaz, carburants, solvants, aérosols sous pression ou articles pyrotechniques ; les denrées périssables, plantes vivantes et animaux ; enfin les armes, munitions et tout bien dont l'importation est prohibée ou subordonnée à une autorisation spéciale. Lors de la préparation du devis, nous passons l'inventaire en revue avec vous : la bouteille de gaz du barbecue et les bidons du garage se repèrent à ce moment-là.",
+        "Commençons par les exclusions, car elles se règlent en amont et jamais le jour du chargement. Restent en dehors de notre périmètre, pour des raisons réglementaires ou d'assurance : les espèces, bijoux, métaux précieux et documents originaux irremplaçables ; les produits dangereux tels que bouteilles de gaz, carburants, solvants, peintures, aérosols sous pression ou articles pyrotechniques ; les médicaments et produits pharmaceutiques ; les produits d'origine animale — viande, charcuterie, produits laitiers, miel — y compris sous vide ou en conserve ; les denrées périssables, plantes vivantes et animaux ; enfin les armes, munitions et tout bien dont l'importation est prohibée ou subordonnée à une autorisation spéciale. Lors de la préparation du devis, nous passons l'inventaire en revue avec vous : la bouteille de gaz du barbecue et les bidons du garage se repèrent à ce moment-là.",
         "Pour le reste, le contenu habituel d'un logement voyage sans difficulté particulière, à condition d'être correctement emballé et calé :",
       ],
       list: [
@@ -118,7 +123,7 @@ const frDemenagementTurquie: SeoPageData = {
     {
       heading: "Départs depuis la Belgique et la Suisse romande",
       paragraphs: [
-        "Nos tournées desservent l'ensemble de l'espace francophone. Un enlèvement à Bruxelles, Liège, Namur, Charleroi, Mons, Genève, Lausanne, Neuchâtel ou Fribourg s'organise dans les mêmes conditions qu'un départ français, avec des délais comparables : la Belgique se situe même légèrement plus près sur l'axe emprunté.",
+        "Nos tournées desservent l'ensemble de l'espace francophone. Un enlèvement à Bruxelles, Liège, Namur, Charleroi, Mons, Genève, Lausanne, Neuchâtel ou Fribourg s'organise dans les mêmes conditions qu'un départ français, avec des délais comparables : la Belgique est à peine plus loin que Strasbourg et légèrement plus près que Paris sur l'axe emprunté.",
         "Une nuance mérite d'être connue pour la Suisse : le pays ne fait pas partie de l'union douanière, ce qui ajoute des formalités d'exportation à l'enlèvement. Elles n'allongent pas le trajet, mais elles se préparent en amont — nous en tenons compte dans le planning et vous indiquons les documents à réunir dès la prise de commande.",
       ],
     },
@@ -132,7 +137,7 @@ const frDemenagementTurquie: SeoPageData = {
     {
       question: "Quel est le prix d'un déménagement France-Turquie ?",
       answer:
-        "Pour une camionnette complète, la fourchette indicative sur l'axe Paris-Istanbul se situe entre " +
+        "Pour une camionnette complète, la fourchette indicative sur l'axe Paris-Istanbul s'établit autour de " +
         priceRange("Paris") +
         ", enlèvement et livraison à domicile compris. Le montant exact dépend du volume réel, de la ville d'arrivée, de la saison et de l'étage. L'application affiche une estimation personnalisée en quelques secondes.",
     },

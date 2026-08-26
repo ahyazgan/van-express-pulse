@@ -1,5 +1,5 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeDe as priceRange } from "./seoData";
 
 const deUmzugInDieTuerkei: SeoPageData = {
   slug: "de/umzug-in-die-tuerkei",
@@ -11,7 +11,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
   h1: "Umzug in die Türkei: Ihr Hausrat direkt von Tür zu Tür",
   intro: [
     "Wer seinen Hausrat von Deutschland in die Türkei bringen will, hört fast überall dieselbe Auskunft: zwei bis vier Wochen Laufzeit, Sammelgut, Zwischenlager, ein Umschlagtermin, den niemand genau benennen kann. Wir arbeiten anders. RouteEU fährt Ihren Umzug als Direktfahrt im eigenen Transporter – Abholung an Ihrer Wohnungstür in Deutschland, Zustellung an der neuen Adresse in der Türkei, ohne dass Ihre Möbel unterwegs auch nur einmal auf ein anderes Fahrzeug umgeladen werden.",
-    "Möglich macht das die Fahrzeugklasse: Ein Sprinter unterliegt nicht dem Wochenendfahrverbot für schwere Lkw, und mit zwei Fahrern rollt das Fahrzeug durch, statt zwölf Stunden auf einem Rastplatz zu stehen. Deshalb liegt die Laufzeit nach Istanbul typischerweise bei 24 bis 36 Stunden statt bei Wochen. Ihr Umzugsgut ist während der gesamten Fahrt versichert, und Sie sehen den Standort des Fahrzeugs rund um die Uhr live auf der Karte.",
+    "Möglich macht das die Fahrzeugklasse: Ein Sprinter unterliegt nicht dem Sonn- und Feiertagsfahrverbot für schwere Lkw, und mit zwei Fahrern rollt das Fahrzeug durch, statt elf Stunden Ruhezeit auf einem Rastplatz zu stehen. Deshalb liegt die Laufzeit nach Istanbul typischerweise bei 24 bis 36 Stunden statt bei Wochen. Ihr Umzugsgut ist während der gesamten Fahrt versichert, und Sie sehen den Standort des Fahrzeugs rund um die Uhr live auf der Karte.",
   ],
   transitTable: {
     caption: "Laufzeiten für Ihren Umzug in die Türkei (Direktfahrt, zwei Fahrer)",
@@ -42,8 +42,8 @@ const deUmzugInDieTuerkei: SeoPageData = {
       ],
       list: [
         "Rückkehr nach dem Berufsleben: Sie haben Jahrzehnte in Deutschland gearbeitet, das Haus an der Ägäis oder in der Heimatstadt steht bereit, und der komplette Hausrat soll mit. Hier zählt vor allem, dass nichts unterwegs verloren geht und der Termin steht.",
-        "Familienzusammenführung und Rückzug zu Angehörigen: Häufig geht es um eine Teilwohnung – Schlafzimmer, Küchengeräte, persönliche Dinge – während der Rest in Deutschland aufgelöst wird. Dafür ist die Beiladung meist die wirtschaftlichere Lösung.",
-        "Berufliche Versetzung: Wenn Sie in Istanbul, Izmir oder Ankara einen neuen Vertrag antreten, ist die Laufzeit der entscheidende Punkt. Sie können nicht drei Wochen ohne Schreibtisch, Bett und Werkzeug in einer leeren Wohnung sitzen.",
+        "Familienzusammenführung und Umzug zu Angehörigen: Häufig geht es nur um einen Teil des Haushalts – Schlafzimmer, Küchengeräte, persönliche Dinge – während der Rest in Deutschland aufgelöst wird. Dafür ist die Beiladung meist die wirtschaftlichere Lösung.",
+        "Berufliche Versetzung: Wenn Sie in Istanbul, Izmir oder Ankara eine neue Stelle antreten, ist die Laufzeit der entscheidende Punkt. Sie können nicht drei Wochen ohne Schreibtisch, Bett und Werkzeug in einer leeren Wohnung sitzen.",
         "Zweitwohnsitz oder Immobilienkauf: Sie haben eine Wohnung in Antalya, Alanya oder Bodrum gekauft und möchten sie mit Möbeln aus Deutschland einrichten, statt vor Ort alles neu zu beschaffen.",
       ],
     },
@@ -52,7 +52,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
       paragraphs: [
         "Im klassischen Sammelgutverkehr wird Ihr Hausrat abgeholt, in ein Lager gebracht und dort so lange zwischengelagert, bis genug Ladung für eine Komplettfahrt zusammenkommt. Danach folgen Umschlag im Zielland, ein weiteres Lager und schließlich die Verteilung. Jede dieser Stationen ist ein Termin, den Sie nicht beeinflussen können, und jeder Umschlag ist ein Moment, in dem Kartons kippen, Möbelfüße abbrechen und Kleinteile verschwinden.",
         "Bei einer Direktfahrt entfällt diese Kette vollständig. Ihre Sendung wird an Ihrer Adresse geladen, das Fahrzeug fährt los, und dieselbe Ladung wird an der Zieladresse wieder ausgeladen. Es gibt kein Zwischenlager, keinen zweiten Fahrer, der Ihre Möbel nie gesehen hat, und keine Warteschleife, bis der Laderaum voll ist. Für Sie heißt das: ein fester Abholtermin, ein realistisches Zustellfenster und ein Ansprechpartner statt einer Kette von Subunternehmen.",
-        "Dazu kommt der Zeitvorteil aus der Fahrzeugklasse. Transporter bis 3,5 Tonnen sind vom Wochenendfahrverbot für Lkw ausgenommen. Eine Sendung, die freitagmittags in Köln geladen wird, wartet nicht bis Sonntagabend, sondern ist am Wochenende bereits auf der Balkanroute. In Kombination mit dem Zwei-Fahrer-Betrieb verkürzt sich die Laufzeit auf ein bis zwei Tage – der Unterschied zu Sammelgut liegt nicht bei Stunden, sondern bei Wochen.",
+        "Dazu kommt der Zeitvorteil aus der Fahrzeugklasse. Transporter bis 3,5 Tonnen sind vom Sonn- und Feiertagsfahrverbot für Lkw ausgenommen. Eine Sendung, die freitagmittags in Köln geladen wird, wartet nicht bis Sonntagabend, sondern ist am Wochenende bereits auf der Balkanroute. In Kombination mit dem Zwei-Fahrer-Betrieb verkürzt sich die Laufzeit auf ein bis zwei Tage – der Unterschied zu Sammelgut liegt nicht bei Stunden, sondern bei Wochen.",
       ],
     },
     {
@@ -74,9 +74,9 @@ const deUmzugInDieTuerkei: SeoPageData = {
     {
       heading: "Was wir transportieren – und was nicht",
       paragraphs: [
-        "Ein kompletter Transporter fasst rund 13,5 m³, etwa 1.300 kg oder fünf Europaletten. Das entspricht in der Praxis dem Inhalt einer gut gefüllten Zwei- bis Dreizimmerwohnung, wenn Schränke zerlegt werden. Transportiert werden regelmäßig: Schlaf- und Wohnzimmermöbel, zerlegte Schrankwände, Matratzen, Kühlschrank, Waschmaschine, Geschirrspüler, Fernseher und Elektronik in Originalverpackung oder gut gepolstert, Umzugskartons mit Geschirr, Kleidung, Büchern und Dokumenten, Teppiche, Fahrräder, Werkzeug und Gartengeräte.",
-        "Nicht mitgenommen werden dürfen Gefahrgüter jeder Art – also Gasflaschen, Benzinkanister, Farben, Lösungsmittel, Feuerwerk oder Batterien außerhalb von Geräten. Bitte leeren Sie Tanks von Rasenmähern und Motorrollern vollständig. Ebenfalls nicht in den Laderaum gehören Bargeld, Schmuck, Ausweise, Wertpapiere und Medikamente, die Sie unterwegs brauchen: Diese Dinge nehmen Sie bitte persönlich mit. Pflanzen und Lebensmittel unterliegen eigenen Einfuhrbestimmungen und werden im Einzelfall vorab geklärt.",
-        "Ein praktischer Hinweis zur Packung: Kartons einheitlicher Größe lassen sich deutlich dichter stapeln als ein Sammelsurium aus Bananenkisten. Wer sauber packt, beschriftet und Schränke zerlegt, spart oft genug Volumen, um eine Preisstufe tiefer zu landen.",
+        "Ein kompletter Transporter fasst rund 13,5 m³ oder fünf Europaletten bei etwa 1.300 kg Nutzlast. Das entspricht in der Praxis dem Hausrat einer Ein- bis Zweizimmerwohnung oder einer bewussten Auswahl aus einer größeren Wohnung – Schlafzimmer, Küche, Weißware und Kartons. Für einen kompletten Haushalt ab drei Zimmern rechnen Sie eher mit 25 bis 30 m³; dafür planen wir zwei Fahrzeuge oder zwei Touren und rechnen Ihnen beide Varianten vor. Transportiert werden regelmäßig: Schlaf- und Wohnzimmermöbel, zerlegte Schrankwände, Matratzen, Kühlschrank, Waschmaschine, Geschirrspüler, Fernseher und Elektronik in Originalverpackung oder gut gepolstert, Umzugskartons mit Geschirr, Kleidung, Büchern und Dokumenten, Teppiche, Fahrräder, Werkzeug und Gartengeräte.",
+        "Nicht mitgenommen werden dürfen Gefahrgüter jeder Art – also Gasflaschen, Benzinkanister, Farben, Lösungsmittel, Feuerwerk oder Batterien außerhalb von Geräten. Bitte leeren Sie Tanks von Rasenmähern und Motorrollern vollständig. Ebenfalls nicht in den Laderaum gehören Bargeld, Schmuck, Ausweise und Wertpapiere: Diese Dinge nehmen Sie bitte persönlich mit. Arzneimittel transportieren wir grundsätzlich nicht – Medikamente für den Eigenbedarf nehmen Sie ebenfalls selbst mit. Lebensmittel tierischen Ursprungs wie Fleisch, Wurst, Käse und Milchprodukte sind ausgeschlossen; ihre Einfuhr ist im Reise- und Umzugsverkehr ohnehin nicht zulässig. Pflanzen und übrige Lebensmittel unterliegen eigenen Einfuhrbestimmungen und werden vorab im Einzelfall geklärt.",
+        "Ein praktischer Hinweis zum Packen: Kartons einheitlicher Größe lassen sich deutlich dichter stapeln als ein Sammelsurium aus Bananenkisten. Wer sauber packt, beschriftet und Schränke zerlegt, spart oft genug Volumen, um eine Preisstufe tiefer zu landen.",
       ],
     },
     {
@@ -94,8 +94,8 @@ const deUmzugInDieTuerkei: SeoPageData = {
     {
       heading: "Versicherung, Vertrag und GPS-Ortung",
       paragraphs: [
-        "Ein Umzug ist Vertrauenssache, deshalb halten wir drei Punkte schriftlich fest, bevor das Fahrzeug losfährt. Erstens den Preis: Was im Auftrag steht, gilt: Kein Nachschlag am Ladetag, weil angeblich mehr Volumen zusammengekommen ist als besprochen. Zweitens den Umfang: Abholadresse, Zieladresse, Ladetermin und Zustellfenster stehen im Vertrag, ebenso die Packliste als Anlage. Drittens die Deckung: Jede Sendung wird versichert transportiert, und bei besonders wertvollen Einzelstücken klären wir die Deckungssumme vor der Buchung, nicht danach.",
-        "Die GPS-Ortung läuft parallel dazu und ist mehr als eine Spielerei. Gerade wenn Sie selbst mit dem Flugzeug vorausreisen und in der Türkei auf den Transporter warten, macht es einen Unterschied, ob Sie den Standort selbst sehen oder in einer Telefonschleife nachfragen müssen. Sie sehen die Position rund um die Uhr und können die Ankunft realistisch planen – etwa den Aufzug im neuen Gebäude reservieren oder Helfer bestellen.",
+        "Ein Umzug ist Vertrauenssache, deshalb halten wir drei Punkte schriftlich fest, bevor das Fahrzeug losfährt. Erstens den Preis: Was im Auftrag steht, gilt – ohne Nachforderung am Ladetag, solange das Volumen dem entspricht, was Sie angemeldet haben. Steht am Ladetag deutlich mehr bereit, nennen wir Ihnen den Aufpreis vor dem Verladen, nicht erst auf der Rechnung. Zweitens den Umfang: Abholadresse, Zieladresse, Ladetermin und Zustellfenster stehen im Vertrag, ebenso die Packliste als Anlage. Drittens die Deckung: Jede Sendung wird versichert transportiert, und bei besonders wertvollen Einzelstücken klären wir die Deckungssumme vor der Buchung, nicht danach.",
+        "Die GPS-Ortung läuft parallel dazu und ist mehr als eine Spielerei. Gerade wenn Sie selbst mit dem Flugzeug vorausreisen und in der Türkei auf den Transporter warten, macht es einen Unterschied, ob Sie den Standort selbst sehen oder in einer Telefonschleife nachfragen müssen. Sie sehen die Position rund um die Uhr und können die Ankunft realistisch planen – etwa den Aufzug im neuen Gebäude reservieren oder Helfer organisieren.",
       ],
     },
     {

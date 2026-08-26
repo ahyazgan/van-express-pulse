@@ -1,16 +1,16 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeNl as priceRange } from "./seoData";
 
 const nlVerhuizenNaarTurkije: SeoPageData = {
   slug: "nl/verhuizen-naar-turkije",
   lang: "nl",
   hreflangGroup: "relocation",
-  title: "Verhuizen naar Turkije | Van deur tot deur in 24-48 uur | RouteEU",
+  title: "Verhuizen naar Turkije | Van deur tot deur in 2 dagen | RouteEU",
   description:
-    "Verhuizen naar Turkije met een eigen bestelbus: uw inboedel van deur tot deur in 24-48 uur, zonder overslag, verzekerd en met live tracking. Direct een prijs.",
+    "Verhuizen naar Turkije met een eigen bestelbus: uw inboedel van deur tot deur in 28 tot 46 uur, zonder overslag, verzekerd en met live tracking. Direct een prijs.",
   h1: "Verhuizen naar Turkije: uw inboedel van deur tot deur",
   intro: [
-    "Wie naar Turkije verhuist, krijgt meestal twee opties voorgeschoteld: een zeecontainer die twee tot vier weken onderweg is, of groupage, waarbij uw inboedel eerst in een loods wacht tot de trailer vol is. RouteEU Express pakt het anders aan. Wij zetten één bestelbus in voor uw verhuizing, halen uw spullen op bij uw huidige adres in Nederland en rijden ze in 24 tot 48 uur rechtstreeks naar uw nieuwe adres in Turkije, zonder overslag en zonder tussenopslag.",
+    "Wie naar Turkije verhuist, krijgt meestal twee opties voorgeschoteld: een zeecontainer die twee tot vier weken onderweg is, of groupage, waarbij uw inboedel eerst in een loods wacht tot de trailer vol is. RouteEU Express pakt het anders aan. Wij zetten één bestelbus in voor uw verhuizing, halen uw spullen op bij uw huidige adres in Nederland en rijden ze in 28 tot 46 uur rechtstreeks naar uw nieuwe adres in Turkije, zonder overslag en zonder tussenopslag.",
     "Uw dozen worden dus precies één keer ingeladen en één keer uitgeladen: bij u thuis en bij uw nieuwe woning. Twee chauffeurs lossen elkaar onderweg af, zodat de bus niet stil hoeft te staan voor verplichte rusttijden, en bestelbussen vallen niet onder het weekendrijverbod voor zwaar vrachtverkeer. Alles gaat verzekerd mee en u volgt de rit 24/7 live op de kaart.",
   ],
   transitTable: {
@@ -50,7 +50,7 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
       heading: "Waarom wegtransport sneller is dan een zeecontainer",
       paragraphs: [
         "Een zeecontainer oogt goedkoop per kubieke meter, maar de doorlooptijd is een optelsom die zelden volledig op de offerte staat: inladen in de loods, wachten op de afvaart, de zeereis, lossen in de haven, de afhandeling daar en daarna nog het natransport naar uw adres. In de praktijk bent u twee tot vier weken verder en zijn uw spullen op minstens vier momenten opnieuw aangepakt. Bij groupage over de weg wacht uw inboedel in een loods tot de trailer vol is en wordt hij onderweg vaak overgeladen; zeven tot tien dagen is dan gebruikelijk.",
-        "Een directe bestelbus knipt die tussenstappen eruit: één laadmoment, één rit, één losmoment. Daardoor staat de bus binnen 24 tot 48 uur voor uw Turkse deur en blijft het risico beperkt tot wat er tijdens het rijden gebeurt, niet tot wat er in vier loodsen gebeurt.",
+        "Een directe bestelbus knipt die tussenstappen eruit: één laadmoment, één rit, één losmoment. Daardoor staat de bus binnen 28 tot 46 uur voor uw Turkse deur en blijft het risico beperkt tot wat er tijdens de rit kan gebeuren, in plaats van tot wat er in vier loodsen kan misgaan.",
         "Toch is een bestelbus niet altijd het juiste antwoord, en dat zeggen wij liever meteen. Verhuist u een compleet vrijstaand huis met ruim dertig kubieke meter inboedel, inclusief piano, tuinmeubilair en een volle garage, dan blijft een zeecontainer per kubieke meter voordeliger; drie of vier bussen inzetten is dan zonde van uw geld. Onder die grens, waar vrijwel elke appartements- of kustwoningverhuizing valt, wint de weg het op tijd en op zekerheid, en vaak ook op de totale rekening, omdat opslag- en havenkosten wegvallen.",
       ],
     },
@@ -58,7 +58,7 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
       heading: "Douane en verhuisgoed: hoe het kader eruitziet",
       paragraphs: [
         "Turkije behandelt verhuisgoed anders dan handelsgoederen: gebruikte huishoudelijke spullen van iemand die zijn woonplaats verlegt, vallen onder een eigen regeling. Of u daarvoor in aanmerking komt, hangt onder meer af van hoe lang u aaneengesloten in het buitenland woonde, van het feit dat de goederen gebruikt en niet nieuw zijn, van uw verblijfsstatus in Turkije en van de termijn tussen uw vestiging daar en de aankomst van de zending.",
-        "Aan Nederlandse zijde hoort daar in de regel uitschrijving uit de Basisregistratie Personen bij uw gemeente bij. Dat bewijs van uitschrijving toont aan dat u uw woonplaats daadwerkelijk verplaatst en wordt bij de Turkse afhandeling vaak opgevraagd. Regel het tijdig, want het is zelden op één dag geregeld.",
+        "Aan Nederlandse zijde hoort daar in de regel uitschrijving uit de Basisregistratie Personen bij uw gemeente bij. Dat bewijs van uitschrijving toont aan dat u uw hoofdverblijf daadwerkelijk naar Turkije verplaatst en wordt bij de Turkse afhandeling vaak opgevraagd. Let op de timing: de aangifte van vertrek naar het buitenland doet u bij uw gemeente pas vanaf vijf dagen vóór uw vertrek – eerder kan niet – en uiterlijk op de dag van vertrek zelf. Plan die afspraak dus samen met de laaddatum in en vraag meteen om een internationaal bewijs van uitschrijving.",
         "Daarnaast hebt u altijd een deugdelijke inventarislijst nodig: een genummerde opsomming van elke doos en elk meubelstuk, met omschrijving en reële waarde. Slordige lijsten zijn veruit de belangrijkste oorzaak van oponthoud aan de grens. Wij sturen u een sjabloon en lopen de lijst met u door voordat de bus vertrekt.",
         "Voorwaarden, termijnen en vrijstellingen worden op dit terrein regelmatig aangepast en per geval beoordeeld. Lees het bovenstaande dus als een schets van het kader en niet als een toezegging: laat uw eigen situatie bevestigen door een douane-expediteur of door de bevoegde Turkse en Nederlandse instanties. Deze tekst is algemene voorlichting en komt niet in de plaats van officieel advies.",
       ],

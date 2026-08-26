@@ -1,5 +1,5 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeDe as priceRange } from "./seoData";
 
 const deSpeditionTuerkei: SeoPageData = {
   slug: "de/spedition-tuerkei",
@@ -7,7 +7,7 @@ const deSpeditionTuerkei: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Spedition Türkei | Express-Direktfahrt ohne Umladen | RouteEU",
   description:
-    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-48 Stunden, mit GPS-Tracking und fester Zusage.",
+    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-40 Stunden, mit GPS-Tracking und fester Zusage.",
   h1: "Spedition Türkei: Express-Transporte ohne Umladen",
   intro: [
     "Wenn eine Sendung in die Türkei termingebunden ist, hilft der günstigste Frachtsatz wenig. Entscheidend ist, ob die Ware am zugesagten Tag am Werkstor steht. RouteEU fährt zeitkritische Sendungen zwischen Deutschland und der Türkei als Direktfahrt: ein Fahrzeug, eine Ladung, kein Hub, kein Umschlag, kein Zwischenlager. Was in Stuttgart geladen wird, wird in Bursa entladen – von denselben zwei Fahrern.",
@@ -38,7 +38,7 @@ const deSpeditionTuerkei: SeoPageData = {
       heading: "Wenn die Produktion stillsteht",
       paragraphs: [
         "Eine Presse, die stillsteht, kostet pro Stunde mehr als jede Sonderfahrt. Genau in diese Lücke fahren wir. Der typische Anruf kommt am Nachmittag: Ein Werkzeug ist gebrochen, eine Lieferung aus der Türkei fehlt, oder die Qualitätssicherung hat eine Charge gesperrt und der Ersatz muss vor der Frühschicht am Band sein. In solchen Fällen zählt nicht der Kilometerpreis, sondern die Frage, ob ein Fahrzeug innerhalb weniger Stunden an der Rampe steht.",
-        "Der Unterschied zur Linienverladung ist strukturell. Sammelgut ist auf Auslastung optimiert: Die Sendung wartet, bis der Zug voll ist, wird umgeschlagen, wartet erneut. Eine Direktfahrt ist auf Zeit optimiert. Sobald der Auftrag bestätigt ist, ist das Fahrzeug ausschließlich für Ihre Sendung unterwegs, und die Ankunftszeit ergibt sich aus Strecke und Lenkzeiten, nicht aus einem Abfahrtsplan. Deshalb können wir ein Zeitfenster zusagen, statt eine Laufzeitspanne zu schätzen.",
+        "Der Unterschied zum Sammelgutverkehr ist strukturell. Sammelgut ist auf Auslastung optimiert: Die Sendung wartet, bis der Lkw voll ist, wird umgeschlagen, wartet erneut. Eine Direktfahrt ist auf Zeit optimiert. Sobald der Auftrag bestätigt ist, ist das Fahrzeug ausschließlich für Ihre Sendung unterwegs, und die Ankunftszeit ergibt sich aus Strecke und Lenkzeiten, nicht aus einem Abfahrtsplan. Deshalb können wir ein Zeitfenster zusagen, statt eine Laufzeitspanne zu schätzen.",
         "Wir sagen aber auch ab, wenn eine Sonderfahrt wirtschaftlich keinen Sinn ergibt. Wenn Ihre Sendung zehn Tage Zeit hat und aus drei Paletten Standardware besteht, ist reguläres Sammelgut die richtige Wahl. Die Sonderfahrt lohnt sich dort, wo Stillstandskosten, Konventionalstrafen oder ein Liefertermin gegenüber dem Kunden auf dem Spiel stehen.",
       ],
     },
@@ -58,7 +58,7 @@ const deSpeditionTuerkei: SeoPageData = {
     {
       heading: "Zwei Fahrer, keine Zwangspause",
       paragraphs: [
-        "Der wichtigste Zeitgewinn entsteht nicht durch schnelleres Fahren, sondern durch Nichtstehen. Ein Fahrzeug mit einem Fahrer muss nach der Tageslenkzeit eine zusammenhängende Ruhezeit einlegen – auf der Strecke Deutschland–Türkei summiert sich das über mehrere Nächte zu einem erheblichen Teil der Gesamtlaufzeit. Im Zwei-Fahrer-Betrieb wechseln sich die Fahrer ab, während der Kollege ruht: Das Fahrzeug bleibt in Bewegung, und die Ruhezeiten werden trotzdem eingehalten.",
+        "Der wichtigste Zeitgewinn entsteht nicht durch schnelleres Fahren, sondern dadurch, dass das Fahrzeug nicht steht. Ein Fahrzeug mit einem Fahrer muss nach der Tageslenkzeit eine zusammenhängende Ruhezeit einlegen – auf der Strecke Deutschland–Türkei summiert sich das über mehrere Nächte zu einem erheblichen Teil der Gesamtlaufzeit. Im Zwei-Fahrer-Betrieb wechseln sich die Fahrer ab, während der Kollege ruht: Das Fahrzeug bleibt in Bewegung, und die Ruhezeiten werden trotzdem eingehalten.",
         "Dazu kommt das Wochenende. Schwere Lkw unterliegen in Deutschland, Österreich und mehreren Transitländern einem Sonn- und Feiertagsfahrverbot. Ein Transporter bis 3,5 Tonnen fällt nicht darunter. Eine Sendung, die freitags am späten Nachmittag geladen wird, verliert dadurch keine zwei Tage: Sie ist am Samstag auf der Route und kann montags früh bereits zugestellt werden – ein Vorteil, der bei Wochenendaufträgen häufig über den Produktionsstart am Montag entscheidet.",
         "Ein dritter, oft unterschätzter Punkt ist die Grenzabfertigung. Transporter dieser Klasse werden in vielen Fällen getrennt von der Lkw-Warteschlange abgefertigt, was an stark frequentierten Übergängen zusätzliche Stunden spart. Wie viel es konkret ist, hängt vom Aufkommen am jeweiligen Tag ab – planbar ist der Vorteil, exakt vorhersagbar nicht.",
       ],
@@ -66,22 +66,23 @@ const deSpeditionTuerkei: SeoPageData = {
     {
       heading: "Kapazität: 1.300 kg, 5 Europaletten, 13,5 m³",
       paragraphs: [
-        "Der Laderaum ist die Grenze, an der sich entscheidet, ob eine Sonderfahrt das richtige Mittel ist. Ein Express-Sprinter nimmt rund 1.300 kg Nutzlast, fünf Europaletten in Bodenreihe und etwa 13,5 m³ Volumen auf. Für die Praxis heißt das: Getriebeteile, Spritzgussformen, Elektronikkomponenten, Textilrollen, Messebau-Elemente und Kleinmaschinen passen problemlos; ein kompletter Maschinensatz auf Sonderrahmen passt nicht.",
+        "Der Laderaum ist die Grenze, an der sich entscheidet, ob eine Sonderfahrt das richtige Mittel ist. Ein Express-Sprinter nimmt rund 1.300 kg Nutzlast, fünf Europaletten in Bodenreihe und etwa 13,5 m³ Volumen auf. Für die Praxis heißt das: Getriebeteile, Elektronikkomponenten, Textilrollen, Messebau-Elemente und Kleinmaschinen passen problemlos, sofern das Einzelgewicht die Nutzlast von rund 1.300 kg nicht überschreitet – bei Werkzeugen und Spritzgussformen ist das die eigentliche Grenze, nicht das Volumen. Ein kompletter Maschinensatz auf Sonderrahmen passt nicht.",
         "Wenn Ihre Sendung kleiner ist als eine Komplettladung, muss trotzdem nicht der ganze Laderaum bezahlt werden. Für ein bis zwei Paletten bieten wir die Beiladung an: Die Sendung teilt sich das Fahrzeug mit weiterer Ladung derselben Route, bleibt aber auf demselben Fahrzeug bis zur Entladestelle – es gibt also auch hier keinen Umschlag. Berechnet wird nur der genutzte Laderaum, die Laufzeit bleibt weitgehend die der Direktfahrt.",
         "Bei der Anfrage helfen drei Angaben am meisten: Gewicht in Kilogramm, Außenmaße der größten Einheit und die Anzahl der Packstücke. Damit lässt sich sofort sagen, ob eine Komplettbuchung nötig ist oder eine Beiladung ausreicht, und der Preis steht ohne weitere Rückfragen.",
+        "Was wir nicht fahren, sagen wir vorab: Gefahrgut nach ADR – dazu zählen auch Lithiumbatterien außerhalb von Geräten, pyrotechnische Bauteile wie Airbaggeneratoren, Lacke, Lösungsmittel und Druckgasbehälter – transportieren wir nicht. Unsere Fahrzeuge sind nicht temperaturgeführt, deshalb sind Arzneimittel, Frischware und Lebensmittel tierischen Ursprungs ebenfalls ausgeschlossen. Fällt Ihre Sendung in eine dieser Gruppen, sagen wir das bei der Anfrage und nennen Ihnen einen passenden Anbieter, statt den Auftrag anzunehmen und an der Rampe abzubrechen.",
       ],
     },
     {
       heading: "Zollabwicklung für Handelsware: ATR, Rechnung, CMR",
       paragraphs: [
-        "Für Handelsware gilt ein anderer Rahmen als für private Sendungen. Zwischen der EU und der Türkei besteht eine Zollunion für gewerbliche Industriewaren; das Warenverkehrsdokument A.TR ist in diesem Zusammenhang das Papier, das den freien Verkehr solcher Waren nachweist. Für Agrarerzeugnisse, Waren mit Ursprung außerhalb der Zollunion sowie für Textilien in bestimmten Konstellationen gelten abweichende Regeln, bei denen ein Ursprungsnachweis oder eine Warenverkehrsbescheinigung erforderlich sein kann.",
+        "Für Handelsware gilt ein anderer Rahmen als für private Sendungen. Zwischen der EU und der Türkei besteht eine Zollunion für Industriewaren. Die Warenverkehrsbescheinigung A.TR weist nach, dass sich die Ware im zollrechtlich freien Verkehr eines der beiden Gebiete befindet – über den Ursprung der Ware sagt sie nichts aus. Nicht unter die Zollunion fallen landwirtschaftliche Erzeugnisse sowie bestimmte Eisen- und Stahlwaren (EGKS-Waren); dort ist statt der A.TR ein Präferenznachweis wie die EUR.1 erforderlich.",
         "Welche Papiere Ihre Sendung konkret benötigt, hängt von der Zolltarifnummer, dem Ursprung der Ware und dem vereinbarten Incoterm ab; die Vorschriften werden zudem regelmäßig angepasst. Wir stellen den Frachtbrief aus und koordinieren die Abwicklung mit den Zollagenten auf beiden Seiten, ersetzen damit aber keine Zollberatung: Lassen Sie die für Ihre Ware geltenden Anforderungen vor der Buchung von Ihrem Zollberater oder der zuständigen Zollstelle bestätigen.",
         "Das Dokumentenpaket, das in der Praxis mitläuft, sieht meist so aus:",
       ],
       list: [
         "Handelsrechnung mit vollständiger Warenbeschreibung, Zolltarifnummer, Wert und Lieferbedingung nach Incoterms",
         "Packliste mit Anzahl, Gewicht und Maßen der Packstücke",
-        "A.TR oder ein anderer für die Ware passender Präferenz- beziehungsweise Ursprungsnachweis",
+        "A.TR als Nachweis des freien Verkehrs – bei Agrar- oder EGKS-Waren stattdessen ein Präferenznachweis wie die EUR.1",
         "CMR-Frachtbrief, der von uns ausgestellt wird",
         "Ausfuhranmeldung auf deutscher Seite sowie Vollmacht für den Zollagenten auf türkischer Seite",
         "Bei bestimmten Warengruppen zusätzliche Nachweise wie Konformitätserklärungen oder Analysezertifikate",
@@ -133,9 +134,14 @@ const deSpeditionTuerkei: SeoPageData = {
         "Ja. Fahrzeuge bis 3,5 Tonnen unterliegen nicht dem Sonn- und Feiertagsfahrverbot für schwere Lkw. Eine Sendung, die freitags geladen wird, bleibt das Wochenende über auf der Route und kann zum Wochenstart zugestellt werden – bei stehender Produktion ist das häufig der entscheidende Unterschied.",
     },
     {
+      question: "Transportieren Sie Gefahrgut (ADR)?",
+      answer:
+        "Nein. Wir führen keine ADR-Transporte durch und fahren auch keine temperaturgeführten Sendungen, keine Arzneimittel und keine Lebensmittel tierischen Ursprungs. Dazu zählen auch Lithiumbatterien außerhalb von Geräten, pyrotechnische Bauteile wie Airbaggeneratoren, Lacke, Lösungsmittel und Druckgasbehälter. Prüfen Sie bitte vor der Anfrage das Sicherheitsdatenblatt Ihrer Ware – im Zweifel klären wir das in wenigen Minuten am Telefon, statt den Auftrag anzunehmen und an der Rampe abzubrechen.",
+    },
+    {
       question: "Welche Zolldokumente werden für Handelsware benötigt?",
       answer:
-        "In der Regel Handelsrechnung mit Zolltarifnummer und Incoterm, Packliste, das für die Ware passende Präferenz- beziehungsweise Ursprungsdokument – bei Industriewaren im Rahmen der Zollunion üblicherweise die A.TR – sowie der CMR-Frachtbrief und die Ausfuhranmeldung. Je nach Warengruppe kommen weitere Nachweise hinzu. Da sich die Vorschriften ändern und die Einstufung vom Einzelfall abhängt, stimmen Sie das bitte vor der Verladung mit Ihrem Zollagenten oder der zuständigen Behörde ab; diese Angaben sind eine Orientierung und ersetzen keine offizielle Zollberatung.",
+        "In der Regel Handelsrechnung mit Zolltarifnummer und Incoterm, Packliste, bei Industriewaren die Warenverkehrsbescheinigung A.TR und bei Agrar- und EGKS-Waren ein Präferenznachweis wie die EUR.1, sowie der CMR-Frachtbrief und die Ausfuhranmeldung. Je nach Warengruppe kommen weitere Nachweise hinzu. Da sich die Vorschriften ändern und die Einstufung vom Einzelfall abhängt, stimmen Sie das bitte vor der Verladung mit Ihrem Zollagenten oder der zuständigen Behörde ab; diese Angaben sind eine Orientierung und ersetzen keine offizielle Zollberatung.",
     },
     {
       question: "Ist die Sendung transportversichert?",

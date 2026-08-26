@@ -1,5 +1,5 @@
-import type { SeoPageData } from "./seoData";
-import { priceRange } from "./seoData";
+﻿import type { SeoPageData } from "./seoData";
+import { priceRangeDe as priceRange } from "./seoData";
 
 const deTuerkeiTransportKosten: SeoPageData = {
   slug: "de/tuerkei-transport-kosten",
