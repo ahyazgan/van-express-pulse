@@ -7,6 +7,8 @@ interface PageMetaOptions {
   canonicalPath?: string;
   /** Set true on pages that must stay out of search results (404, admin, profile). */
   noindex?: boolean;
+  /** Pins <html lang>. Use on pages whose served HTML has a fixed content language. */
+  lang?: string;
 }
 
 const BASE_TITLE = "RouteEU Express";
@@ -32,7 +34,7 @@ const upsertMeta = (attr: "name" | "property", key: string, content: string) => 
   el.setAttribute("content", content);
 };
 
-export const usePageMeta = ({ title, description, canonicalPath, noindex }: PageMetaOptions) => {
+export const usePageMeta = ({ title, description, canonicalPath, noindex, lang }: PageMetaOptions) => {
   useEffect(() => {
     document.title = title;
     upsertMeta("property", "og:title", title);
@@ -51,12 +53,13 @@ export const usePageMeta = ({ title, description, canonicalPath, noindex }: Page
     upsertMeta("property", "og:url", canonicalUrl);
 
     upsertMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    if (lang) document.documentElement.lang = lang;
 
     return () => {
       document.title = BASE_TITLE;
       upsertMeta("name", "robots", "index, follow");
     };
-  }, [title, description, canonicalPath, noindex]);
+  }, [title, description, canonicalPath, noindex, lang]);
 };
 
 export default usePageMeta;

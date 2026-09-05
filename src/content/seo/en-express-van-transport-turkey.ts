@@ -7,11 +7,11 @@ const enExpressVanTransportTurkey: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Express Van Transport Turkey to Europe | Door to Door in 24-48h",
   description:
-    "Dedicated express van transport between Türkiye and Europe. Door-to-door in 24-48 hours, no transhipment, two drivers, customs handled, live GPS tracking.",
+    "Dedicated express van transport between Türkiye and Europe. Door-to-door in 24-48 hours, no transhipment, two drivers, customs handled, status tracking.",
   h1: "Express Van Transport Between Türkiye and Europe",
   intro: [
     "RouteEU Express runs dedicated sprinter-class vans between Türkiye and Western Europe on a door-to-door basis. Your consignment is collected at your supplier's loading bay or warehouse, stays on the same vehicle for the whole journey, and is delivered to the consignee's address, typically within 24 to 48 hours to nearer European markets. There is no hub, no cross-dock and no transhipment along the way.",
-    "The service is built for shipments that sit awkwardly between air freight and road groupage: a few pallets of production parts, a machine sub-assembly, an exhibition stand, a sample run for a buyer meeting. Too big or too heavy to fly economically, too urgent to spend ten days on a consolidated trailer. One vehicle, two drivers, a fixed price agreed before loading, and live GPS tracking from collection to delivery.",
+    "The service is built for shipments that sit awkwardly between air freight and road groupage: a few pallets of production parts, a machine sub-assembly, an exhibition stand, a sample run for a buyer meeting. Too big or too heavy to fly economically, too urgent to spend ten days on a consolidated trailer. One vehicle, two drivers, a fixed price agreed before loading, and a tracking number that shows the stage the shipment has reached from collection to delivery.",
   ],
   transitTable: {
     caption: "Indicative transit times from Istanbul",
@@ -105,9 +105,9 @@ const enExpressVanTransportTurkey: SeoPageData = {
       ],
     },
     {
-      heading: "Live GPS tracking, insurance and how to book",
+      heading: "Shipment tracking, insurance and how to book",
       paragraphs: [
-        "Every vehicle is tracked in real time and the position is visible to you around the clock on a map, not summarised in a status e-mail the next morning. If your consignee needs a delivery window on the day, you can see where the van actually is and give them a realistic hour. All consignments move under transport insurance; for high-value cargo we agree the declared value and the cover in writing at the quotation stage.",
+        "Your tracking number shows which stage the shipment has reached — received, quoted, in transit, delivered — with the route between Istanbul and the destination city drawn on a map, rather than summarised in a status e-mail the next morning. If your consignee needs a delivery window on the day, ask us for the current position over WhatsApp and you can give them a realistic hour. All consignments move under the carrier's liability set by the CMR convention, capped by law at 8.33 SDR per kilogram of gross weight; for high-value cargo we arrange additional cover on the value you declare, agreed in writing at the quotation stage.",
         "Booking takes minutes. Enter the collection and delivery addresses in the app, choose a full vehicle or part-load, and you will see an indicative price immediately. Confirm the booking and we schedule collection, prepare the customs documentation with your broker, and send you the tracking link. You receive a single point of contact for the whole movement — one company, one vehicle, one invoice.",
       ],
     },

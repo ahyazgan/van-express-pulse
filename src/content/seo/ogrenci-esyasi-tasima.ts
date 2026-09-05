@@ -8,7 +8,7 @@ const ogrenciEsyasiTasima: SeoPageData = {
   h1: "Yurtdışı Öğrenci ve Erasmus Eşyası Taşıma",
   intro: [
     "Erasmus kabul mektubu geldi, yüksek lisans kaydı yapıldı, uçak bileti alındı; sıra eşyaları toplamaya gelince gerçek ortaya çıkar: bir dönem ya da birkaç yıl boyunca yaşayacağınız şehre 23 kilogramlık tek valizle gitmek mümkün değildir. Kitaplar, bilgisayar ve monitör, kış montu ve botlar, nevresim takımı, mutfak eşyası, belki bir bisiklet ya da müzik aleti; hepsi toplandığında ortaya üç dört parça ve yüz kiloya yaklaşan bir yük çıkar. Havayolunda fazla bagaj ücreti bu noktada uçak biletinin kendisinden pahalıya gelir.",
-    "RouteEU Express, Türkiye'deki evinizden Avrupa'daki yurt odanıza veya öğrenci dairenize kadar kapıdan kapıya öğrenci eşyası taşır. Eşyalar evinizden araca alınır, aktarmasız ve sigortalı olarak yola çıkar, 7/24 canlı GPS takibiyle nerede olduğunu görürsünüz ve öğrenci adresinde kapıda teslim edilir. Komple araç kiralamanıza gerek yoktur; aynı yöne giden yüklerle aracı paylaşan parsiyel seçenek, öğrenci bütçesine göre kurgulanmıştır. Dönem bittiğinde aynı eşyaları Türkiye'ye geri getirmek de bizim işimiz.",
+    "RouteEU Express, Türkiye'deki evinizden Avrupa'daki yurt odanıza veya öğrenci dairenize kadar kapıdan kapıya öğrenci eşyası taşır. Eşyalar evinizden araca alınır, aktarmasız ve CMR sorumluluğu altında yola çıkar, takip numaranızla sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görürsünüz ve öğrenci adresinde kapıda teslim edilir. Komple araç kiralamanıza gerek yoktur; aynı yöne giden yüklerle aracı paylaşan parsiyel seçenek, öğrenci bütçesine göre kurgulanmıştır. Dönem bittiğinde aynı eşyaları Türkiye'ye geri getirmek de bizim işimiz.",
   ],
   sections: [
     {
@@ -42,7 +42,7 @@ const ogrenciEsyasiTasima: SeoPageData = {
       heading: "Dönem Sonu Geri Dönüş Taşıması",
       paragraphs: [
         "Erasmus dönemi ya da mezuniyet yaklaştığında sorun tersine döner: bir yıl boyunca biriken eşya, gidişte olduğundan daha fazladır ve yurt odasının belirli bir tarihte boşaltılması gerekir. Havayolu fazla bagaj ücretleri yine devreye girer ve çoğu öğrenci, para etmeyen ama değerli eşyalarını arkada bırakmak zorunda kalır.",
-        "Geri dönüş taşımalarımız gidişle aynı sistemle çalışır: eşyalar yurt odasından veya öğrenci dairesinden alınır, aktarmasız ve sigortalı olarak Türkiye'deki aile adresine teslim edilir. Yurt çıkış tarihine göre alım gününü birlikte planlarız; final haftasına denk gelen çıkışlarda aracın sabah erken saatte gelmesi gibi ayrıntıları önceden konuşuruz. Haziran ve temmuz aylarında dönüş talebi yoğunlaştığı için, çıkış tarihiniz belliyse birkaç hafta önceden rezervasyon yaptırmanız hem yer hem de fiyat açısından avantaj sağlar. Aynı şehirden dönen birkaç öğrencinin eşyasını tek araçta birleştirmek de mümkündür; bu, her öğrencinin ödediği tutarı düşürür.",
+        "Geri dönüş taşımalarımız gidişle aynı sistemle çalışır: eşyalar yurt odasından veya öğrenci dairesinden alınır, aktarmasız ve CMR sorumluluğu altında Türkiye'deki aile adresine teslim edilir. Yurt çıkış tarihine göre alım gününü birlikte planlarız; final haftasına denk gelen çıkışlarda aracın sabah erken saatte gelmesi gibi ayrıntıları önceden konuşuruz. Haziran ve temmuz aylarında dönüş talebi yoğunlaştığı için, çıkış tarihiniz belliyse birkaç hafta önceden rezervasyon yaptırmanız hem yer hem de fiyat açısından avantaj sağlar. Aynı şehirden dönen birkaç öğrencinin eşyasını tek araçta birleştirmek de mümkündür; bu, her öğrencinin ödediği tutarı düşürür.",
       ],
     },
     {
@@ -59,9 +59,9 @@ const ogrenciEsyasiTasima: SeoPageData = {
       ],
     },
     {
-      heading: "Güvence: Sigorta, Sözleşme ve Canlı Takip",
+      heading: "Güvence: CMR Sorumluluğu, Sözleşme ve Aşama Takibi",
       paragraphs: [
-        "Öğrenci eşyası maddi değerinden çok kişisel değeriyle önemlidir; bu yüzden her gönderiyi aynı özenle taşırız. Tüm yükler taşıma sigortası kapsamındadır; bilgisayar gibi değerli parçalar için kapsamı teklif aşamasında birlikte netleştiririz. Taşıma öncesinde yazılı sözleşme ve parça listesi hazırlanır, alım ve teslimde imzalı tutanak tutulur. Yola çıkan aracı hem öğrenci hem aile uygulamadan 7/24 canlı haritada izleyebilir; araç yurda yaklaşırken tahmini varış saatini görür, resepsiyona veya oda arkadaşına haber verecek zamanı bulursunuz.",
+        "Öğrenci eşyası maddi değerinden çok kişisel değeriyle önemlidir; bu yüzden her gönderiyi aynı özenle taşırız. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Bilgisayar gibi değerli parçalarda bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Taşıma öncesinde yazılı sözleşme ve parça listesi hazırlanır, alım ve teslimde imzalı tutanak tutulur. Sevkiyatın hangi aşamada olduğunu hem öğrenci hem aile takip numarasıyla görebilir; aracın o anki yerini ve yurda yaklaşırkenki tahmini varış saatini WhatsApp'tan sorar, resepsiyona veya oda arkadaşına haber verecek zamanı bulursunuz.",
       ],
     },
     {
@@ -72,7 +72,7 @@ const ogrenciEsyasiTasima: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış şehrini seçin, parça sayısı ve tahmini hacmi belirtin; parsiyel fiyat tahminini saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Aracımız belirlenen gün Türkiye'deki evinize gelir; koliler ve parçalar liste karşılığında araca alınır. Ambalaj konusunda tereddütünüz varsa alım öncesi ekibimiz yönlendirir.",
-        "Taşıma: Eşya gümrük işlemlerinin ardından aktarmasız olarak Avrupa'ya hareket eder; konumunu öğrenci ve aile aynı anda canlı haritada izler.",
+        "Taşıma: Eşya gümrük işlemlerinin ardından aktarmasız olarak Avrupa'ya hareket eder; hangi aşamada olduğunu öğrenci ve aile aynı takip numarasıyla izler.",
         "Teslim: Araç yurt veya öğrenci dairesinin kapısına gelir, eşyalar liste karşılığında kapıda teslim edilir; öğrenci dilerse odasına taşınmasını da talep edebilir.",
       ],
     },
@@ -101,7 +101,7 @@ const ogrenciEsyasiTasima: SeoPageData = {
     {
       question: "Dönem sonunda eşyaları Türkiye'ye geri getirebilir misiniz?",
       answer:
-        "Evet, dönüş taşımaları gidişle aynı sistemle çalışır: eşyalar yurt odasından alınır, aktarmasız ve sigortalı olarak Türkiye'deki adrese teslim edilir. Haziran ve temmuz aylarında talep yoğunlaştığından yurt çıkış tarihiniz belliyse birkaç hafta önceden rezervasyon yaptırmanızı öneririz. Aynı şehirden dönen birkaç öğrencinin eşyasını tek araçta birleştirerek kişi başı maliyeti düşürmek de mümkündür.",
+        "Evet, dönüş taşımaları gidişle aynı sistemle çalışır: eşyalar yurt odasından alınır, aktarmasız ve CMR sorumluluğu altında Türkiye'deki adrese teslim edilir. Haziran ve temmuz aylarında talep yoğunlaştığından yurt çıkış tarihiniz belliyse birkaç hafta önceden rezervasyon yaptırmanızı öneririz. Aynı şehirden dönen birkaç öğrencinin eşyasını tek araçta birleştirerek kişi başı maliyeti düşürmek de mümkündür.",
     },
     {
       question: "Aile öğrenciye yemek veya gıda kolisi gönderebilir mi?",
@@ -111,12 +111,12 @@ const ogrenciEsyasiTasima: SeoPageData = {
     {
       question: "Bilgisayar, bisiklet veya müzik aleti gönderebilir miyim?",
       answer:
-        "Evet. Bilgisayar ve monitörü orijinal kutusunda ya da köpükle sarılı, bisikleti ön tekerleği sökülmüş, enstrümanı sert kutusunda teslim etmeniz yeterlidir. Bu parçalar havayolunda özel bagaj ücretine tabiyken panelvanda standart yük olarak taşınır. Değerli elektronik için sigorta kapsamını teklif aşamasında birlikte netleştiririz; fatura ve seri numarası bulundurmak gümrükte kolaylık sağlar.",
+        "Evet. Bilgisayar ve monitörü orijinal kutusunda ya da köpükle sarılı, bisikleti ön tekerleği sökülmüş, enstrümanı sert kutusunda teslim etmeniz yeterlidir. Bu parçalar havayolunda özel bagaj ücretine tabiyken panelvanda standart yük olarak taşınır. Değerli elektronik için beyan edeceğiniz değer üzerinden ek sigorta kapsamını teklif aşamasında birlikte netleştiririz; fatura ve seri numarası bulundurmak gümrükte kolaylık sağlar.",
     },
     {
       question: "Eşyalar sigortalı mı ve nasıl takip ederim?",
       answer:
-        "Tüm gönderiler taşıma sigortası kapsamındadır ve alım öncesinde yazılı sözleşme ile parça listesi hazırlanır. Her gönderiye canlı GPS takibi tanımlanır; aracın anlık konumunu ve tahmini varış saatini hem öğrenci hem aile uygulamadan 7/24 izleyebilir.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Bilgisayar gibi değerli parçalarda bu tavan gerçek değeri karşılamayabileceği için talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz; alım öncesinde yazılı sözleşme ile parça listesi hazırlanır. Her gönderiye bir takip numarası tanımlanır; sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) hem öğrenci hem aile görebilir, aracın o anki yerini WhatsApp'tan sorabilir.",
     },
   ],
   related: [

@@ -5,11 +5,11 @@ const avusturyaKargo: SeoPageData = {
   slug: "avusturya-kargo",
   title: "Avusturya'ya Panelvan Kargo | Viyana'ya 20-32 Saat | RouteEU",
   description:
-    "Türkiye'den Avusturya'ya panelvan kargo: Viyana, Graz ve Salzburg'a 20-32 saatte kapıdan kapıya, sigortalı, aktarmasız teslimat. Canlı takip, anında teklif.",
+    "Türkiye'den Avusturya'ya panelvan kargo: Viyana, Graz ve Salzburg'a 20-32 saatte kapıdan kapıya, CMR sorumluluğunda, aktarmasız teslimat. Aşama takibi, anında teklif.",
   h1: "Türkiye'den Avusturya'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "Avusturya, Türkiye'den Batı Avrupa'ya uzanan ana kara güzergâhının tam üzerinde yer alır; bu yüzden panelvanla en hızlı teslimat yaptığımız ülkelerden biridir. RouteEU Express, İstanbul ve tüm Türkiye'den Viyana, Graz, Linz, Salzburg ve Avusturya'nın her şehrine kapıdan kapıya ekspres panelvan taşımacılığı yapar: yükünüz adresinizden alınır, araç değiştirmeden ve depoda beklemeden 20-32 saat içinde Avusturya'daki teslimat adresine ulaşır.",
-    "Viyana'daki köklü Türk toplumu için ev eşyası ve zati eşya, Avusturya'nın sanayi bölgeleri için paletli ticari yük ve yedek parça taşıyoruz. Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi değildir ve çift şoförle mola kaybı yaşamadan yol alır; her gönderi sigortalı taşınır, sözleşmeyle güvence altına alınır ve 7/24 canlı GPS takibiyle anlık olarak izlenir.",
+    "Viyana'daki köklü Türk toplumu için ev eşyası ve zati eşya, Avusturya'nın sanayi bölgeleri için paletli ticari yük ve yedek parça taşıyoruz. Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi değildir ve çift şoförle mola kaybı yaşamadan yol alır; her sevkiyat yazılı sözleşmeyle güvence altına alınır ve CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır. Bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğundan, mobilya veya elektronik gibi yüklerde talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görürsünüz (talep alındı, anlaşma, yolda, teslim edildi); aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - Avusturya Transit Süreleri",
@@ -92,8 +92,8 @@ const avusturyaKargo: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
-        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz sözleşme ve sigorta kapsamında araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Avusturya'ya hareket eder; konumunu 7/24 canlı haritada izlersiniz.",
+        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz yazılı sözleşme ve CMR taşıyıcı sorumluluğu kapsamında araca alınır.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Avusturya'ya hareket eder; takip sayfasında aşaması \"yolda\" görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç Avusturya'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -128,7 +128,7 @@ const avusturyaKargo: SeoPageData = {
     {
       question: "Komple araç kiralamadan parsiyel gönderebilir miyim?",
       answer:
-        "Evet. Tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Avusturya, Almanya'ya giden araçlarımızın güzergâhı üzerinde olduğu için parsiyel yer bulma olasılığı yüksektir; yükünüz yine aktarmasız ve sigortalı olarak adrese teslim edilir ve yalnızca kullandığınız hacim kadar ödersiniz.",
+        "Evet. Tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Avusturya, Almanya'ya giden araçlarımızın güzergâhı üzerinde olduğu için parsiyel yer bulma olasılığı yüksektir; yükünüz yine aktarmasız ve CMR sorumluluğu altında adrese teslim edilir, talep ederseniz beyan değeriniz üzerinden ek sigorta yaptırılır ve yalnızca kullandığınız hacim kadar ödersiniz.",
     },
     {
       question: "Avusturya'ya kargoda gümrük nasıl işler?",
@@ -138,12 +138,12 @@ const avusturyaKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, teslimat öncesinde alıcıyla saat koordinasyonu yapabilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görebilir, güzergâhı harita üzerinde izleyebilirsiniz. Aracın o anki yerini WhatsApp'tan sorabilir, teslimat öncesinde alıcıyla saat koordinasyonu yapabilirsiniz.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında ve yazılı sözleşmeyle taşınır. Değerli yükler için sigorta kapsamını teklif aşamasında birlikte netleştiriyoruz.",
+        "Her sevkiyat yazılı sözleşmeyle ve CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Değerli yükler için kapsamı teklif aşamasında birlikte netleştiriyoruz.",
     },
     {
       question: "Viyana'ya hafta sonu teslimat yapılıyor mu?",

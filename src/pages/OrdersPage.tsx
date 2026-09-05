@@ -39,6 +39,8 @@ const OrdersPage = () => {
   usePageMeta({
     title: t.meta.orders.title,
     description: t.meta.orders.description,
+    // Per-user private data.
+    noindex: true,
   });
 
   const statusConfig: Record<OrderStatus, { label: string; icon: React.ReactNode; color: string }> = {

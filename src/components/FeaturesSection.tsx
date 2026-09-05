@@ -1,4 +1,4 @@
-import { Calendar, Users, Satellite } from "lucide-react";
+import { Calendar, Users, PackageSearch } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeaturesSection = () => {
@@ -8,7 +8,7 @@ const FeaturesSection = () => {
   const features = [
     { icon: Calendar, ...f.items.noWeekendBan },
     { icon: Users, ...f.items.doubleDriver },
-    { icon: Satellite, ...f.items.gps },
+    { icon: PackageSearch, ...f.items.gps },
   ];
 
   return (

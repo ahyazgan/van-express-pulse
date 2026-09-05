@@ -723,13 +723,16 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       // Initial visibility update
       updatePriceTagVisibility(map.current.getZoom());
 
-      // Animated live vans (Europe corridors only)
+      // Decorative animated markers illustrating the service corridors we run.
+      // These are looped illustrations of the routes, not positions of real
+      // vehicles: no vehicle location data is collected anywhere in the product,
+      // so the popup must describe the corridor and never imply a live position.
       if (!isDomestic) vanRoutes.forEach((route) => {
         const el = document.createElement("div");
         el.className = "van-marker";
         el.innerHTML = VAN_MARKER_HTML;
 
-        // Create popup for this van with route-specific info
+        // Create popup describing this corridor
         const popup = new maplibregl.Popup({
           offset: 25,
           closeButton: true,
@@ -739,19 +742,19 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           <div class="van-popup-content">
             <div class="van-popup-header">
               <span class="van-popup-title">${route.name}</span>
-              <span class="van-popup-badge">CANLI</span>
+              <span class="van-popup-badge">GÜZERGÂH</span>
             </div>
             <div class="van-popup-info">
               <div class="van-popup-row">
-                <span class="van-popup-label">Durum:</span>
-                <span class="van-popup-value">Transit Halinde</span>
+                <span class="van-popup-label">Hizmet:</span>
+                <span class="van-popup-value">Kapıdan Kapıya</span>
               </div>
               <div class="van-popup-row">
                 <span class="van-popup-label">Kapasite:</span>
                 <span class="van-popup-value">1200kg / 12m³</span>
               </div>
               <div class="van-popup-row">
-                <span class="van-popup-label">Tahmini Varış:</span>
+                <span class="van-popup-label">Tahmini Süre:</span>
                 <span class="van-popup-value van-popup-eta">${Math.round(route.duration / 1000)}h</span>
               </div>
             </div>

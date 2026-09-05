@@ -7,11 +7,11 @@ const enMovingToTurkey: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Moving to Türkiye from Europe | Door-to-Door Removals",
   description:
-    "Moving to Türkiye from Europe? Door-to-door van removals from Munich, Amsterdam, Paris and Vienna in 20-48 hours, no transhipment, insured and tracked.",
+    "Moving to Türkiye from Europe? Door-to-door van removals from Munich, Amsterdam, Paris and Vienna in 20-48 hours, no transhipment, tracked, insured on request.",
   h1: "Moving to Türkiye: Door-to-Door Removals from Europe",
   intro: [
     "If you are relocating to Antalya, Fethiye, Bodrum, Izmir or Istanbul, the hardest part of the move is rarely the flight — it is working out how to get your furniture, books, kitchen equipment and the things you actually care about from a European address to a Turkish one without them spending six weeks in a container yard. RouteEU Express moves household goods by dedicated van, collected at your door in Europe and delivered to your door in Türkiye, usually within 24 to 48 hours of departure.",
-    "Your belongings are loaded once and unloaded once. There is no depot, no transhipment, no repacking by a local agent you have never met. Two drivers share the wheel so the vehicle keeps moving, the van is not affected by the weekend driving bans that hold up heavy trucks, everything travels under transport insurance, and you can watch the vehicle's position on a live map for the whole journey.",
+    "Your belongings are loaded once and unloaded once. There is no depot, no transhipment, no repacking by a local agent you have never met. Two drivers share the wheel so the vehicle keeps moving, the van is not affected by the weekend driving bans that hold up heavy trucks, everything travels under CMR carrier liability with additional cargo insurance available on request, and your tracking number shows which stage the move has reached from collection to delivery.",
   ],
   transitTable: {
     caption: "Indicative transit times to Istanbul",
@@ -86,21 +86,21 @@ const enMovingToTurkey: SeoPageData = {
       list: [
         "Quotation — tell us the collection and delivery addresses and roughly what you are moving, in rooms or in cubic metres, and you will get an indicative price straight away. A short video walk-through of your home is usually enough for us to confirm it.",
         "Collection — the van arrives at your European address on the agreed date. We load, secure and blanket-wrap the furniture, and hand you the inventory and consignment note.",
-        "In transit — the vehicle runs through with two drivers, clears customs at the Turkish border with your broker, and its position stays visible on the live map.",
+        "In transit — the vehicle runs through with two drivers, clears customs at the Turkish border with your broker, and the tracking page shows the move standing at the in-transit stage.",
         "Delivery — the same van pulls up at your new address in Türkiye and the goods are carried in. No warehouse, no local agent, nothing to collect from a depot.",
       ],
     },
     {
-      heading: "Insurance, contract and live tracking",
+      heading: "Insurance, contract and shipment tracking",
       paragraphs: [
-        "Every move is carried out under a written transport contract with a CMR consignment note and an itemised inventory, so what left the house is documented before the doors close. All goods travel under transport insurance; for higher-value items — artwork, instruments, professional equipment — we agree the declared value and the scope of cover in writing at the quotation stage rather than leaving it to be argued about later.",
-        "Tracking is live rather than a daily status message. You see the vehicle on a map at any hour, which matters more than you would think when you are waiting in an empty flat in Antalya trying to decide whether the delivery lands today or tomorrow. One company handles the whole movement, so there is one phone number to call and one invoice at the end.",
+        "Every move is carried out under a written transport contract with a CMR consignment note and an itemised inventory, so what left the house is documented before the doors close. All goods travel under the carrier's liability set by the CMR convention, capped by law at 8.33 SDR per kilogram of gross weight, and we arrange additional cargo insurance on request; for higher-value items — artwork, instruments, professional equipment — we agree the declared value and the scope of cover in writing at the quotation stage rather than leaving it to be argued about later.",
+        "Tracking runs by stage rather than as a daily status message. Your tracking number shows whether the move has been received, quoted, is in transit or has been delivered, with the route drawn on a map; and when you are waiting in an empty flat in Antalya trying to decide whether the delivery lands today or tomorrow, ask us over WhatsApp and we will tell you where the van actually is. One company handles the whole movement, so there is one phone number to call and one invoice at the end.",
       ],
     },
     {
       heading: "Moving the other way: Türkiye to Europe",
       paragraphs: [
-        "The service is symmetrical. If your contract in Istanbul has ended, or you are returning to Europe after several years on the coast, we run the same door-to-door removals from Turkish addresses to Germany, Austria, the Netherlands, Belgium, France, Italy, Switzerland, Poland and Scandinavia, with the same transit times, the same insurance and the same live tracking.",
+        "The service is symmetrical. If your contract in Istanbul has ended, or you are returning to Europe after several years on the coast, we run the same door-to-door removals from Turkish addresses to Germany, Austria, the Netherlands, Belgium, France, Italy, Switzerland, Poland and Scandinavia, with the same transit times, the same cover arrangements and the same stage-by-stage tracking.",
         "Return legs are frequently cheaper than one-way movements, because a vehicle that has already delivered in Türkiye would otherwise travel back empty. If your dates are even slightly flexible, say so when you request the quotation — it can make a noticeable difference to the price. Customs formalities in the export direction follow the rules of the destination country, and the same advice applies: confirm the current requirements with a customs broker before you pack.",
       ],
     },
@@ -141,7 +141,7 @@ const enMovingToTurkey: SeoPageData = {
     {
       question: "Can I track the van during the journey?",
       answer:
-        "Yes. Each vehicle carries live GPS tracking and you can see its position on a map at any time of day or night, right up to the moment it reaches your new address. You also have a single point of contact for the whole move rather than being passed between agents in two countries.",
+        "Yes. Your tracking number shows which stage the move has reached — received, quoted, in transit, delivered — with the route drawn on a map, right up to the moment the van reaches your new address. If you want to know where it actually is at a given hour, ask us over WhatsApp. You also have a single point of contact for the whole move rather than being passed between agents in two countries.",
     },
   ],
   related: [

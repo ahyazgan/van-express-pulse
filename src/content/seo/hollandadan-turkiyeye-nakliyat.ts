@@ -5,11 +5,11 @@ const hollandadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "hollandadan-turkiyeye-nakliyat",
   title: "Hollanda'dan Türkiye'ye Kargo ve Eşya Taşıma | RouteEU",
   description:
-    "Hollanda'dan Türkiye'ye kapıdan kapıya eşya taşıma ve kargo. Amsterdam, Rotterdam, Lahey'den 30-46 saatte teslimat. Sigortalı panelvan, canlı GPS takip.",
+    "Hollanda'dan Türkiye'ye kapıdan kapıya eşya taşıma ve kargo. Amsterdam, Rotterdam, Lahey'den 30-46 saatte teslimat. CMR sorumluluğunda panelvan, takip numaralı.",
   h1: "Hollanda'dan Türkiye'ye Kapıdan Kapıya Kargo ve Eşya Taşıma",
   intro: [
     "Hollanda'da yaşayan Türk toplumu, Türkiye'ye eşya gönderirken genellikle aynı sıkıntıyla karşılaşır: koliler bir depoya bırakılır, araç dolana kadar beklenir ve teslimat tarihi kimsenin taahhüt edemediği bir tahmine dönüşür. RouteEU Express bu belirsizliği ortadan kaldırır. Araçlarımız Türkiye-Hollanda hattında iki yönlü çalıştığı için Amsterdam, Rotterdam, Lahey veya Eindhoven'dan alınan yükünüz aynı panelvanla, aktarmasız olarak 30-46 saat içinde Türkiye'deki kapınıza ulaşır.",
-    "İster Zaandam'daki evinizden aileye gönderilen birkaç koli, ister Rotterdam'dan Türkiye'ye getirilen ticari bir parti mal olsun; taşıma çift şoförle kesintisiz sürer, gönderiniz sigortalıdır ve 7/24 canlı GPS takibiyle aracın konumunu her an telefonunuzdan görürsünüz.",
+    "İster Zaandam'daki evinizden aileye gönderilen birkaç koli, ister Rotterdam'dan Türkiye'ye getirilen ticari bir parti mal olsun; taşıma çift şoförle kesintisiz sürer, gönderiniz CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır ve takip numaranızla sevkiyatın hangi aşamada olduğunu her an telefonunuzdan görürsünüz; aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Hollanda - Türkiye Transit Süreleri",
@@ -58,9 +58,9 @@ const hollandadanTurkiyeyeNakliyat: SeoPageData = {
       ],
     },
     {
-      heading: "Güvence: Sigortalı Taşıma, Yazılı Sözleşme, Canlı Takip",
+      heading: "Güvence: CMR Sorumluluğu, Yazılı Sözleşme, Aşamalı Takip",
       paragraphs: [
-        "Hollanda'dan yola çıkan her gönderi taşıma sigortası altındadır; Türkiye'ye götürdüğünüz eşyanın değeri yüksekse teminatı teklif aşamasında ihtiyacınıza göre genişletiyoruz. Alım gününden önce fiyat, adresler, tahmini transit süre ve eşya listesi yazılı sözleşmede sabitlenir; telefonda söylenen rakamın yolda değişmesi RouteEU'da söz konusu değildir. Yükleme tutanağı, teslimatta alıcının imzaladığı belgeyle eşleştirilir. Bu iki an arasında aracın konumunu canlı GPS haritasından siz de, Türkiye'deki alıcınız da izleyebilir; eşya bir depoya değil, sözleşmedeki adrese kapıda teslim edilir.",
+        "Hollanda'dan yola çıkan her gönderi, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altındadır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Alım gününden önce fiyat, adresler, tahmini transit süre ve eşya listesi yazılı sözleşmede sabitlenir; telefonda söylenen rakamın yolda değişmesi RouteEU'da söz konusu değildir. Yükleme tutanağı, teslimatta alıcının imzaladığı belgeyle eşleştirilir. Bu iki an arasında takip numarasıyla sevkiyatın hangi aşamada olduğunu siz de, Türkiye'deki alıcınız da görebilir, aracın o anki yerini WhatsApp'tan sorabilirsiniz; eşya bir depoya değil, sözleşmedeki adrese kapıda teslim edilir.",
       ],
     },
     {
@@ -78,7 +78,7 @@ const hollandadanTurkiyeyeNakliyat: SeoPageData = {
       list: [
         "Teklif: Uygulamada Hollanda'daki alım adresi ile Türkiye'deki varış noktasını girin; tahmini fiyat saniyeler içinde ekranınızda.",
         "Alım: Aracımız belirlenen gün ve saatte adresinize gelir, eşyanız tutanakla teslim alınıp güvenle yüklenir.",
-        "Taşıma: Gümrük evrakları tamamlanınca araç aktarmasız olarak Türkiye'ye hareket eder; konumu canlı haritadan izlersiniz.",
+        "Taşıma: Gümrük evrakları tamamlanınca araç aktarmasız olarak Türkiye'ye hareket eder; aşamayı takip numaranızdan, güzergâhı haritadan izlersiniz.",
         "Teslim: Eşyanız Türkiye'deki adrese kapıda, imza karşılığı teslim edilir.",
       ],
     },
@@ -132,7 +132,7 @@ const hollandadanTurkiyeyeNakliyat: SeoPageData = {
     {
       question: "Gönderimi nasıl takip ederim?",
       answer:
-        "Her taşımaya canlı GPS takibi tanımlanır. Aracın Hollanda'dan çıkışından Türkiye'deki teslim anına kadar anlık konumunu 7/24 uygulamadaki harita üzerinden izleyebilirsiniz.",
+        "Her taşımaya bir takip numarası tanımlanır. Bu numarayla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) uygulamadan görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
   ],
   related: [

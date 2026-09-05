@@ -52,7 +52,7 @@ const SuccessScreen = ({ onClose }: SuccessScreenProps) => {
         className="w-full space-y-3 px-4"
       >
         <Button
-          onClick={() => window.open("https://wa.me/905551234567", "_blank")}
+          onClick={() => window.open("https://wa.me/905393308617", "_blank")}
           className="w-full h-12 rounded-xl bg-accent hover:bg-accent/90 text-accent-foreground gap-2"
         >
           <Phone className="w-4 h-4" />

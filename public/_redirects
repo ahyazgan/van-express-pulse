@@ -2,4 +2,8 @@
 # Static files win first, so the prerendered dist/<slug>/index.html pages are
 # served as real HTML; only unknown paths fall through to the app shell, where
 # React Router renders NotFound.
+# NOTE: www -> apex is NOT done here. Pages _redirects only matches paths, not
+# hosts (verified live 2026-09-05: the rule was silently ignored). It lives in a
+# Cloudflare zone Redirect Rule instead ("Redirect from WWW to root").
+
 /*    /index.html   200

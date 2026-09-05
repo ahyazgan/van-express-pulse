@@ -26,11 +26,9 @@
     
     <!-- Primary Meta Tags -->
     <title>RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri</title>
-    <meta name="title" content="RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri" />
-    <meta name="description" content="Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.">
-    <meta name="author" content="Panelvan Express Lojistik" />
-    <meta name="keywords" content="panelvan lojistik, avrupa kargo, express teslimat, almanya kargo, hollanda kargo, uluslararası taşımacılık, ekspres taşımacılık, türkiye avrupa kargo" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Türkiye ve Avrupa arası kapıdan kapıya ekspres panelvan taşımacılığı. Saniyeler içinde tahmini fiyat alın, takip numaranızla sevkiyatınızın aşamasını izleyin.">
+    <meta name="author" content="RouteEU Express" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://routeeu24.com/" />
 
     <!-- Open Graph / Facebook -->
@@ -47,7 +45,6 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="https://routeeu24.com/" />
-    <meta name="twitter:site" content="@PanelvanExpress" />
     <meta name="twitter:image" content="https://routeeu24.com/pwa-512.png" />
 
     <!-- Favicon & PWA icons -->
@@ -61,56 +58,66 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="RouteEU" />
 
-    <!-- JSON-LD Structured Data for Logistics Company -->
+    <!-- Structured data. This node used to declare a type that does not exist in
+         the schema.org vocabulary, so Google discarded it on all 42 pages and the
+         brand, logo and service data never reached the knowledge graph. Organization
+         plus Service is the valid pair; the @id lets each page's own JSON-LD point at
+         the same entity. Check any new @type against schema.org before shipping it —
+         an unknown type fails silently. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LogisticsService",
-      "name": "RouteEU Express",
-      "alternateName": "Panelvan Express Lojistik",
-      "description": "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.",
-      "url": "https://routeeu24.com",
-      "logo": "https://routeeu24.com/pwa-512.png",
-      "image": "https://routeeu24.com/pwa-512.png",
-      "areaServed": [
+      "@graph": [
         {
-          "@type": "Country",
-          "name": "Turkey"
+          "@type": "Organization",
+          "@id": "https://routeeu24.com/#org",
+          "name": "RouteEU Express",
+          "url": "https://routeeu24.com",
+          "description": "Türkiye ve Avrupa arası kapıdan kapıya ekspres panelvan taşımacılığı.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://routeeu24.com/pwa-512.png",
+            "width": 512,
+            "height": 512
+          },
+          "image": "https://routeeu24.com/pwa-512.png",
+          "telephone": "+90 539 330 86 17",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "@id": "https://routeeu24.com/#contact",
+            "contactType": "customer service",
+            "telephone": "+905393308617",
+            "availableLanguage": ["tr", "de", "nl", "en", "fr"]
+          }
         },
         {
-          "@type": "Country",
-          "name": "Germany"
-        },
-        {
-          "@type": "Country",
-          "name": "Netherlands"
-        },
-        {
-          "@type": "Country",
-          "name": "Belgium"
-        },
-        {
-          "@type": "Country",
-          "name": "Austria"
-        },
-        {
-          "@type": "Country",
-          "name": "France"
+          "@type": "Service",
+          "@id": "https://routeeu24.com/#service",
+          "name": "Türkiye ↔ Avrupa ekspres panelvan taşımacılığı",
+          "serviceType": "Uluslararası karayolu eşya taşımacılığı",
+          "url": "https://routeeu24.com",
+          "provider": { "@id": "https://routeeu24.com/#org" },
+          "areaServed": [
+            { "@type": "Country", "name": "Turkey" },
+            { "@type": "Country", "name": "Germany" },
+            { "@type": "Country", "name": "Netherlands" },
+            { "@type": "Country", "name": "Belgium" },
+            { "@type": "Country", "name": "Austria" },
+            { "@type": "Country", "name": "France" },
+            { "@type": "Country", "name": "Switzerland" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Country", "name": "Denmark" },
+            { "@type": "Country", "name": "Sweden" },
+            { "@type": "Country", "name": "Poland" }
+          ]
         }
-      ],
-      "serviceType": ["Express Shipping", "Panelvan Transport", "International Logistics"],
-      "provider": {
-        "@type": "Organization",
-        "name": "RouteEU Express",
-        "url": "https://routeeu24.com"
-      },
-      "sameAs": []
+      ]
     }
     </script>
     <meta property="og:title" content="RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri">
   <meta name="twitter:title" content="RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri">
-  <meta property="og:description" content="Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.">
-  <meta name="twitter:description" content="Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.">
+  <meta property="og:description" content="Türkiye ve Avrupa arası kapıdan kapıya ekspres panelvan taşımacılığı. Saniyeler içinde tahmini fiyat alın, takip numaranızla sevkiyatınızın aşamasını izleyin.">
+  <meta name="twitter:description" content="Türkiye ve Avrupa arası kapıdan kapıya ekspres panelvan taşımacılığı. Saniyeler içinde tahmini fiyat alın, takip numaranızla sevkiyatınızın aşamasını izleyin.">
 </head>
 
   <body>
@@ -123,7 +130,7 @@
       <!--PRERENDER-START-->
       <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem; color: #222; line-height: 1.6;">
         <h1 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık</h1>
-        <p>RouteEU Express, Türkiye ile Avrupa arasında ekspres panelvan ve minivan taşımacılığı yapar. Yükünüz adresinizden alınır, aktarmasız olarak 24–72 saat içinde Avrupa'daki adrese teslim edilir. Tüm gönderiler sigortalı taşınır ve canlı GPS takibi ile anlık olarak izlenir.</p>
+        <p>RouteEU Express, Türkiye ile Avrupa arasında ekspres panelvan ve minivan taşımacılığı yapar. Yükünüz adresinizden alınır, aktarmasız olarak 24–72 saat içinde Avrupa'daki adrese teslim edilir. Her sevkiyat CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.</p>
         <p>Almanya, Hollanda, Belçika, Avusturya ve Fransa başta olmak üzere tüm Avrupa'ya kapıdan kapıya hizmet veriyoruz. Panelvan araçlarımız hafta sonu TIR yasağından muaf olduğu için teslimatlar kesintisiz devam eder.</p>
         <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Ülke Güzergahları</h2>
         <ul>

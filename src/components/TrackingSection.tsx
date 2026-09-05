@@ -72,13 +72,13 @@ const TrackingSection = () => {
       <div className="space-y-2 mb-8">
         <div className="flex items-center gap-2">
           <Navigation className="w-5 h-5 text-primary" />
-          <span className="text-sm font-medium text-primary">Canlı Takip</span>
+          <span className="text-sm font-medium text-primary">Sevkiyat Takibi</span>
         </div>
         <h2 className="text-2xl font-bold text-foreground">
-          Kargonuz Nerede?
+          Gönderiniz Hangi Aşamada?
         </h2>
         <p className="text-muted-foreground">
-          Takip numaranızla anlık konum bilgisi alın.
+          Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görün: talep alındı, anlaşma, yolda, teslim edildi. Aracın o anki yerini WhatsApp'tan sorabilirsiniz.
         </p>
       </div>
 

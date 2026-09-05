@@ -7,11 +7,11 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Verhuizen naar Turkije | Van deur tot deur in 2 dagen | RouteEU",
   description:
-    "Verhuizen naar Turkije met een eigen bestelbus: uw inboedel van deur tot deur in 28 tot 46 uur, zonder overslag, verzekerd en met live tracking. Direct een prijs.",
+    "Verhuizen naar Turkije met een eigen bestelbus: uw inboedel van deur tot deur in 28 tot 46 uur, zonder overslag, op verzoek verzekerd en met statustracking. Direct een prijs.",
   h1: "Verhuizen naar Turkije: uw inboedel van deur tot deur",
   intro: [
     "Wie naar Turkije verhuist, krijgt meestal twee opties voorgeschoteld: een zeecontainer die twee tot vier weken onderweg is, of groupage, waarbij uw inboedel eerst in een loods wacht tot de trailer vol is. RouteEU Express pakt het anders aan. Wij zetten één bestelbus in voor uw verhuizing, halen uw spullen op bij uw huidige adres in Nederland en rijden ze in 28 tot 46 uur rechtstreeks naar uw nieuwe adres in Turkije, zonder overslag en zonder tussenopslag.",
-    "Uw dozen worden dus precies één keer ingeladen en één keer uitgeladen: bij u thuis en bij uw nieuwe woning. Twee chauffeurs lossen elkaar onderweg af, zodat de bus niet stil hoeft te staan voor verplichte rusttijden, en bestelbussen vallen niet onder het weekendrijverbod voor zwaar vrachtverkeer. Alles gaat verzekerd mee en u volgt de rit 24/7 live op de kaart.",
+    "Uw dozen worden dus precies één keer ingeladen en één keer uitgeladen: bij u thuis en bij uw nieuwe woning. Twee chauffeurs lossen elkaar onderweg af, zodat de bus niet stil hoeft te staan voor verplichte rusttijden, en bestelbussen vallen niet onder het weekendrijverbod voor zwaar vrachtverkeer. Alles reist onder de aansprakelijkheid van de vervoerder volgens het CMR-verdrag, met op verzoek een aanvullende goederentransportverzekering, en met uw zendingnummer ziet u in welke fase uw verhuizing is.",
   ],
   transitTable: {
     caption: "Rijtijden Nederland - Turkije, van deur tot deur",
@@ -84,16 +84,16 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
       list: [
         "Offerte: u geeft in de app uw ophaaladres in Nederland en uw afleveradres in Turkije op en ziet direct een prijsindicatie. Twijfelt u over het volume, dan lopen we het kamer voor kamer met u door.",
         "Ophalen: op de afgesproken dag rijdt de bus voor. De chauffeurs laden en sjorren de lading vast; u tekent de vrachtbrief en de inventarislijst af.",
-        "Onderweg: na de douaneformaliteiten rijdt de bus door naar Turkije. Twee chauffeurs wisselen elkaar af, er wordt niets overgeladen en u ziet de positie live meebewegen.",
+        "Onderweg: na de douaneformaliteiten rijdt de bus door naar Turkije. Twee chauffeurs wisselen elkaar af, er wordt niets overgeladen en op de trackingpagina staat uw verhuizing in de fase onderweg.",
         "Afleveren: de bus komt aan bij uw nieuwe adres, we lossen samen met u aan de hand van de inventarislijst en de aflevering wordt ter plaatse afgetekend. Dragen tot in de woning of boven de begane grond spreken we vooraf af; dat is een aparte post op de offerte.",
       ],
     },
     {
-      heading: "Verzekering, contract en live tracking",
+      heading: "Verzekering, contract en statustracking",
       paragraphs: [
         "Elke rit gaat onder een schriftelijke vervoersovereenkomst en een CMR-vrachtbrief, met daarop de adressen, de afgesproken datum, de omvang van de zending en de naam van de chauffeur. U weet dus vooraf zwart-op-wit wie er komt, wat er meegaat en wanneer.",
-        "Uw inboedel wordt verzekerd vervoerd. Voor waardevolle stukken adviseren wij aanvullende dekking op basis van de waarden die u zelf op de inventarislijst invult; daarom loont het om die lijst zorgvuldig te maken. Wat wel en niet gedekt is, leggen we bij de offerte in gewone taal uit.",
-        "Tijdens de rit hoeft u niemand te bellen om te vragen waar de bus is: u opent de trackingpagina en ziet de actuele positie, dag en nacht. Nadert de bus uw Turkse adres, dan weet u ruim op tijd wanneer u de lift of een parkeerplaats moet vrijhouden.",
+        "Uw inboedel reist onder de aansprakelijkheid van de vervoerder volgens het CMR-verdrag, wettelijk begrensd op 8,33 SDR per kilo brutogewicht. Voor waardevolle stukken sluiten wij op verzoek een aanvullende goederentransportverzekering af op basis van de waarden die u zelf op de inventarislijst invult; daarom loont het om die lijst zorgvuldig te maken. Wat wel en niet gedekt is, leggen we bij de offerte in gewone taal uit.",
+        "Tijdens de rit ziet u op de trackingpagina in welke fase uw verhuizing is - aangenomen, offerte, onderweg, bezorgd - met de route op de kaart. Wilt u weten waar de bus op dat moment precies rijdt, dan vraagt u de actuele locatie op via WhatsApp, zodat u ruim op tijd weet wanneer u de lift of een parkeerplaats moet vrijhouden.",
       ],
     },
     {
@@ -140,7 +140,7 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
     {
       question: "Kan ik volgen waar mijn spullen zijn?",
       answer:
-        "Ja. Aan elke zending is live gps-tracking gekoppeld. Via de trackingpagina ziet u dag en nacht waar de bus rijdt, zodat u weet wanneer u in Turkije klaar moet staan voor de aflevering.",
+        "Ja. Met uw zendingnummer ziet u op de trackingpagina in welke fase uw zending is: aangenomen, offerte, onderweg of bezorgd, met de route op de kaart. Wilt u de actuele locatie van de bus weten, dan vraagt u die op via WhatsApp, zodat u weet wanneer u in Turkije klaar moet staan voor de aflevering.",
     },
   ],
   related: [

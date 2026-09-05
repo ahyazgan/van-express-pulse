@@ -5,11 +5,11 @@ const fuarTasimaciligi: SeoPageData = {
   slug: "fuar-tasimaciligi",
   title: "Yurtdışı Fuar Taşımacılığı | Stand ve Numune 24-48 Saatte | RouteEU",
   description:
-    "Fuar standı ve numuneleriniz Frankfurt, Köln, Münih, Milano ve Paris'e 24-48 saatte, aktarmasız ve sigortalı. Gidiş-dönüş fuar taşıması, 7/24 canlı GPS takip.",
+    "Fuar standı ve numuneleriniz Frankfurt, Köln, Münih, Milano ve Paris'e 24-48 saatte, aktarmasız ve CMR sorumluluğu altında. Gidiş-dönüş fuar taşıması, takip numarasıyla aşama takibi.",
   h1: "Yurtdışı Fuar Taşımacılığı: Fuarınıza 24-48 Saatte Teslimat",
   intro: [
     "Fuar katılımcısının tek bir korkusu vardır: aylarca hazırlanan standın, numunelerin ve kataloğun açılış sabahına yetişmemesi. Fuar alanı kiralanmış, uçak biletleri alınmış, müşteri randevuları planlanmıştır; yük bir depoda ya da sınırda beklerse bütün yatırım boşa gider. RouteEU Express, Türkiye'den Avrupa'nın fuar şehirlerine kapıdan kapıya panelvan ekspres fuar taşımacılığı yapar: standınız atölyenizden alınır, araç değiştirmeden ve depoya girmeden doğrudan fuar alanındaki teslim noktasına gider.",
-    "Panelvan araçlarımız hafta sonu TIR seyir yasağından muaf olduğu için pazartesi açılan bir fuar için cuma günü yola çıkabiliriz; çift şoför uygulamasıyla araç mola vermeden ilerler ve teslim tarihi sabit kalır. Her sevkiyat sigortalı taşınır, 7/24 canlı GPS takibiyle yükünüzün nerede olduğunu anlık olarak görürsünüz. Fuar bittiğinde aynı araç standınızı toplayıp Türkiye'ye geri getirir; gidiş-dönüş taşımayı tek sözleşmeyle planlarız.",
+    "Panelvan araçlarımız hafta sonu TIR seyir yasağından muaf olduğu için pazartesi açılan bir fuar için cuma günü yola çıkabiliriz; çift şoför uygulamasıyla araç mola vermeden ilerler ve teslim tarihi sabit kalır. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz. Fuar bittiğinde aynı araç standınızı toplayıp Türkiye'ye geri getirir; gidiş-dönüş taşımayı tek sözleşmeyle planlarız.",
   ],
   transitTable: {
     caption: "Türkiye - Avrupa Fuar Şehirleri Transit Süreleri",
@@ -52,7 +52,7 @@ const fuarTasimaciligi: SeoPageData = {
       heading: "Parsiyel TIR ile Panelvan Ekspres Arasındaki Fark",
       paragraphs: [
         "Sektörde fuar yükleri çoğunlukla parsiyel TIR ile taşınır ve bu yöntemde transit süre 7-15 gün arasında değişir. Yük önce bir toplama deposuna gider, araç dolana kadar bekler, sınırda TIR kuyruğuna girer ve hafta sonu seyir yasağı nedeniyle cumartesi-pazar hareketsiz kalır. Bu belirsizlik yüzünden katılımcılar standlarını fuardan iki-üç hafta önce göndermek zorunda kalır; stand o süre boyunca atölyede kullanılamaz, son değişiklikler yapılamaz.",
-        "Panelvan ekspreste hesap tersine döner. Araç yalnızca sizin için çalışır, depo beklemez, hafta sonu dahil seyreder ve Frankfurt, Köln, Münih ya da Milano gibi fuar şehirlerine 24-48 saat içinde ulaşır. Standınızı fuardan iki-üç gün önce yola çıkarırsınız; kalan süreyi son rötuşlara ve numunelerin güncellenmesine ayırırsınız. Teslim tarihi tahmini değil, planlanmış bir saattir ve canlı GPS takibi sayesinde \"yük nerede kaldı\" sorusunu kimse sormaz.",
+        "Panelvan ekspreste hesap tersine döner. Araç yalnızca sizin için çalışır, depo beklemez, hafta sonu dahil seyreder ve Frankfurt, Köln, Münih ya da Milano gibi fuar şehirlerine 24-48 saat içinde ulaşır. Standınızı fuardan iki-üç gün önce yola çıkarırsınız; kalan süreyi son rötuşlara ve numunelerin güncellenmesine ayırırsınız. Teslim tarihi tahmini değil, planlanmış bir saattir; takip numaranızla sevkiyatın hangi aşamada olduğunu gördüğünüz ve aracın o anki yerini WhatsApp'tan sorabildiğiniz için \"yük nerede kaldı\" sorusunu kimse sormaz.",
       ],
     },
     {
@@ -92,14 +92,14 @@ const fuarTasimaciligi: SeoPageData = {
       ],
     },
     {
-      heading: "Fuar Yükünüz Güvende: Sigorta, Sözleşme ve Canlı Takip",
+      heading: "Fuar Yükünüz Güvende: Sigorta, Sözleşme ve Sevkiyat Takibi",
       paragraphs: [
         "Fuar yükünün maddi değeri kadar zamansal değeri de yüksektir; bu yüzden süreci baştan sona şeffaf kurarız:",
       ],
       list: [
-        "Taşıma sigortası: Her sevkiyat sigortalı taşınır; yüksek değerli demo makineleri ve prototipler için kapsamı teklif aşamasında netleştiririz.",
+        "Taşıyıcı sorumluluğu ve sigorta: Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Yüksek değerli demo makineleri ve prototiplerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz.",
         "Yazılı sözleşme: Alım tarihi, teslim noktası, dönüş planı ve fiyat tek belgede sabitlenir; sürpriz ek ücret yoktur.",
-        "7/24 canlı GPS: Aracın konumunu uygulamadan izlersiniz; stand ekibinize gerçek varış saatini paylaşabilirsiniz.",
+        "Aşama takibi: Takip numaranızla sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) uygulamadan görürsünüz; aracın o anki yerini WhatsApp'tan sorar, tahmini varış saatini stand ekibinizle paylaşabilirsiniz.",
         "Kapıda teslim: Yük fuar alanındaki hol kapısına veya organizatörün belirlediği teslim noktasına kadar aynı araçla gider; aktarma ve depo yoktur.",
       ],
     },
@@ -111,7 +111,7 @@ const fuarTasimaciligi: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış adresini ve fuar şehrini seçin, tahmini fiyatı anında görün; kurulum tarihini, hol numarasını ve dönüş planını ekleyin.",
         "Alım: Araç, kurulum gününden transit süre kadar önce (Münih ve Milano için iki gün, Paris için üç gün) atölyenizden yükü alır; ATA Karnesi ve fatura bu aşamada hazır olmalıdır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız ve hafta sonu dahil kesintisiz seyreder; konumunu canlı haritadan izlersiniz.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız ve hafta sonu dahil kesintisiz seyreder; güzergâhı haritadan görür, o anki yerini WhatsApp'tan sorarsınız.",
         "Teslim ve dönüş: Stand, kurulum sabahı fuar alanında teslim edilir; fuar kapanışında aynı araç standı toplayıp Türkiye'ye geri getirir.",
       ],
     },
@@ -140,7 +140,7 @@ const fuarTasimaciligi: SeoPageData = {
     {
       question: "Fuar yükü sigortalı mı?",
       answer:
-        "Evet, tüm fuar sevkiyatları taşıma sigortası kapsamında taşınır. Prototip, demo makinesi veya yüksek değerli numuneler için sigorta kapsamını teklif aşamasında birlikte netleştiririz; yük aktarmasız gittiği için hasar riski zaten en aza iner.",
+        "Her fuar sevkiyatı, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Prototip, demo makinesi veya yüksek değerli numunelerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyor ve kapsamı teklif aşamasında birlikte netleştiriyoruz. Yük aktarmasız gittiği için hasar riski zaten en aza iner.",
     },
     {
       question: "Yurtdışı fuar taşımacılığı fiyatı ne kadar?",
@@ -157,7 +157,7 @@ const fuarTasimaciligi: SeoPageData = {
     {
       question: "Fuar yükümü nasıl takip ederim?",
       answer:
-        "Her sevkiyata canlı GPS takibi tanımlanır. Uygulamadaki gönderi takip sayfasından aracın anlık konumunu 7/24 görebilir, tahmini varış saatini stand kurulum ekibinizle paylaşabilirsiniz.",
+        "Her sevkiyata bir takip numarası tanımlanır. Uygulamadaki gönderi takip sayfasından sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorabilir, tahmini varış saatini stand kurulum ekibinizle paylaşabilirsiniz.",
     },
   ],
   related: [

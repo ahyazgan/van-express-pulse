@@ -7,11 +7,11 @@ const nlTransportNaarTurkije: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Transport naar Turkije | Expresslevering zonder overslag | RouteEU",
   description:
-    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 28 tot 46 uur, zonder overslag, twee chauffeurs, begeleiding bij de douanepapieren en live tracking.",
+    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 28 tot 46 uur, zonder overslag, twee chauffeurs, begeleiding bij de douanepapieren en statustracking.",
   h1: "Transport naar Turkije: expresslevering zonder overslag",
   intro: [
     "Als een productielijn stilstaat of een order de leverdatum dreigt te missen, is de vraag niet wat een zending kost, maar wanneer hij er is. RouteEU Express rijdt spoedtransporten tussen Nederland en Turkije met eigen bestelbussen: wij halen uw goederen op bij uw magazijn, laden ze één keer in en leveren ze 28 tot 46 uur later af bij de ontvanger. Geen hubs, geen overslag, geen wachten tot een trailer vol is.",
-    "Eén bus neemt tot ongeveer 1.300 kg, vijf europallets of circa 13,5 m³ mee. Twee chauffeurs wisselen elkaar af, zodat het voertuig doorrijdt op momenten waarop zwaar vrachtverkeer verplicht stilstaat, en het weekendrijverbod voor vrachtwagens raakt deze voertuigklasse niet. Elke zending is verzekerd en 24/7 live te volgen; een prijsindicatie haalt u in seconden uit de app.",
+    "Eén bus neemt tot ongeveer 1.300 kg, vijf europallets of circa 13,5 m³ mee. Twee chauffeurs wisselen elkaar af, zodat het voertuig doorrijdt op momenten waarop zwaar vrachtverkeer verplicht stilstaat, en het weekendrijverbod voor vrachtwagens raakt deze voertuigklasse niet. Elke zending rijdt onder de aansprakelijkheid van de vervoerder volgens het CMR-verdrag, met op verzoek een aanvullende goederentransportverzekering, en met uw zendingnummer ziet u in welke fase uw zending is; een prijsindicatie haalt u in seconden uit de app.",
   ],
   transitTable: {
     caption: "Levertijden Nederland - Turkije, van deur tot deur",
@@ -94,8 +94,8 @@ const nlTransportNaarTurkije: SeoPageData = {
     {
       heading: "Track and trace en communicatie",
       paragraphs: [
-        "Aan elke zending is live gps-tracking gekoppeld. U opent de trackingpagina en ziet de actuele positie van de bus op de kaart, dag en nacht, zonder eerst een planner te bellen. Dat scheelt tijd en stelt u in staat uw eigen klant proactief te informeren over de verwachte aankomst.",
-        "Bij het laden wordt de zending afgetekend en gedocumenteerd, bij aankomst gebeurt hetzelfde, en u krijgt de getekende CMR terug voor uw administratie. Verandert er onderweg iets, bijvoorbeeld door drukte bij een grensovergang, dan hoort u dat van ons voordat u het zelf op de kaart ziet.",
+        "Aan elke zending is een zendingnummer gekoppeld. U opent de trackingpagina en ziet in welke fase uw zending is - aangenomen, offerte, onderweg, bezorgd - met de route tussen Istanbul en de bestemmingsstad op de kaart. Wilt u weten waar de bus op dat moment precies rijdt, dan vraagt u de actuele locatie op via WhatsApp; zo informeert u uw eigen klant proactief over de verwachte aankomst.",
+        "Bij het laden wordt de zending afgetekend en gedocumenteerd, bij aankomst gebeurt hetzelfde, en u krijgt de getekende CMR terug voor uw administratie. Verandert er onderweg iets, bijvoorbeeld door drukte bij een grensovergang, dan hoort u dat van ons en passen wij de verwachte aankomsttijd voor u aan.",
         "Een offerte begint in de app: vul laad- en losadres in, geef gewicht en aantal pallets op en u ziet direct een indicatie. Voor terugkerende zendingen of vaste routes maken wij afspraken op maat, zodat u niet elke keer opnieuw hoeft te calculeren.",
       ],
     },

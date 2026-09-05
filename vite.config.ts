@@ -28,7 +28,7 @@ export default defineConfig(({ mode }) => ({
       manifest: {
         name: "RouteEU Express",
         short_name: "RouteEU",
-        description: "Türkiye–Avrupa ekspres panelvan lojistik. Anında fiyat alın, gönderinizi canlı takip edin.",
+        description: "Türkiye–Avrupa ekspres panelvan lojistik. Anında fiyat alın, sevkiyatınızın hangi aşamada olduğunu takip edin.",
         lang: "tr",
         dir: "ltr",
         start_url: "/",

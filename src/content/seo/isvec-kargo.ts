@@ -5,11 +5,11 @@ const isvecKargo: SeoPageData = {
   slug: "isvec-kargo",
   title: "İsveç'e Kargo ve Nakliyat | Stockholm ve Göteborg'a Teslimat | RouteEU",
   description:
-    "Türkiye'den İsveç'e kapıdan kapıya panelvan nakliyat. Stockholm, Göteborg ve Malmö'ye 2-3 günde sigortalı teslimat, 7/24 canlı GPS takip, anında fiyat.",
+    "Türkiye'den İsveç'e kapıdan kapıya panelvan nakliyat. Stockholm, Göteborg ve Malmö'ye 2-3 günde aktarmasız teslimat, CMR sorumluluğu, takip, anında fiyat.",
   h1: "Türkiye'den İsveç'e Kapıdan Kapıya Nakliyat",
   intro: [
     "Türkiye'den İsveç'e kargo göndermek, klasik parsiyel taşımacılıkta sabır isteyen bir iştir: yükler Almanya'da aktarma bekler, İskandinav hattına haftada bir araç kalkar ve teslimat çoğu firmada 2-4 haftayı bulur. RouteEU Express bu hattı panelvan ekspres modeliyle çalışır: yükünüz Türkiye'deki adresinizden ayrılmış bir araca alınır, Almanya ve Danimarka üzerinden kesintisiz ilerler, Öresund köprüsünden İsveç'e geçer ve Malmö'ye tipik olarak 38-54 saat, Stockholm'e 48-72 saat içinde — yani 2-3 gün içinde — kapıya teslim edilir.",
-    "İsveç, Avrupa'daki en köklü Türk topluluklarından birine ev sahipliği yapar; Stockholm, Göteborg ve Malmö'deki ailelere ev eşyası, kişisel eşya ve ticari yük taşımak bu hattaki ana işimizdir. Tüm gönderiler sigortalı ve yazılı sözleşmeyle taşınır; aracın konumunu 7/24 canlı GPS takibiyle harita üzerinden anlık izlersiniz. Komple panelvan tutmak istemeyenler için aynı seferlere parsiyel yükleme de yapıyoruz.",
+    "İsveç, Avrupa'daki en köklü Türk topluluklarından birine ev sahipliği yapar; Stockholm, Göteborg ve Malmö'deki ailelere ev eşyası, kişisel eşya ve ticari yük taşımak bu hattaki ana işimizdir. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı sözleşmeyle taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorarsınız. Komple panelvan tutmak istemeyenler için aynı seferlere parsiyel yükleme de yapıyoruz.",
   ],
   transitTable: {
     caption: "Türkiye - İsveç Transit Süreleri",
@@ -58,7 +58,7 @@ const isvecKargo: SeoPageData = {
     {
       heading: "İsveç'e Ev Eşyası Taşıma ve Kesin Dönüş",
       paragraphs: [
-        "Stockholm'e taşınan bir aile için ev eşyası göndermek, bu hattaki en sık taleplerden biridir. Eşyanız Türkiye'deki adresinizden panelvana yüklenir ve aktarmasız olarak İsveç'teki yeni adresinize taşınır; mobilya, beyaz eşya ve koliler aynı araçta, sigortalı gider. Yaklaşık 1.300 kg / 5 palet kapasiteli aracımız ortalama bir evin temel eşyası için yeterlidir; daha büyük hacimlerde iki araçlı planlama yapıyoruz.",
+        "Stockholm'e taşınan bir aile için ev eşyası göndermek, bu hattaki en sık taleplerden biridir. Eşyanız Türkiye'deki adresinizden panelvana yüklenir ve aktarmasız olarak İsveç'teki yeni adresinize taşınır; mobilya, beyaz eşya ve koliler aynı araçta, CMR sorumluluğu altında ve talep üzerine ek sigortalı gider. Yaklaşık 1.300 kg / 5 palet kapasiteli aracımız ortalama bir evin temel eşyası için yeterlidir; daha büyük hacimlerde iki araçlı planlama yapıyoruz.",
         "Ters yön de aynı hızda çalışır: İsveç'te yaşayıp Türkiye'ye kalıcı olarak dönecekseniz kesin dönüş nakliyat hizmetimizle eşyanız Stockholm, Göteborg, Malmö veya bulunduğunuz herhangi bir şehirden alınır ve Türkiye'deki yeni adresinize kapıdan kapıya teslim edilir. Kesin dönüş kapsamındaki gümrük muafiyeti şartları kişisel duruma göre değiştiği için güncel mevzuatı gümrük müşavirinizle teyit etmenizi öneririz; evrak hazırlığında ekibimiz size yol gösterir.",
       ],
     },
@@ -66,7 +66,7 @@ const isvecKargo: SeoPageData = {
       heading: "İsveç'e Neler Gönderebilirsiniz?",
       paragraphs: [
         "Ev eşyası ve kişisel gönderilerin yanı sıra bu hatta ticari yük de taşıyoruz: numune, e-ticaret ürünleri, tekstil ve mobilya partileri, makine yedek parçası, fuar malzemesi ve paletli ticari mal. Stockholm'deki bir müşteriye teslim tarihi kritik bir siparişi yetiştirmek ya da Göteborg'daki bir üretim hattına acil parça ulaştırmak gerektiğinde, haftalarca süren parsiyel yerine 2-3 gün içinde kapıda olan panelvan çoğu zaman tek gerçekçi seçenektir.",
-        "Komple araca ihtiyacınız yoksa tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır; yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, yine aktarmasız ve sigortalı olarak taşınır. Kış aylarında İsveç'in kuzey güzergahlarında hava koşulları seyir hızını etkileyebilir; bu dönemde güncel transit süreyi teklif aşamasında sizinle açıkça paylaşırız.",
+        "Komple araca ihtiyacınız yoksa tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır; yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, yine aktarmasız ve CMR sorumluluğu altında taşınır. Kış aylarında İsveç'in kuzey güzergahlarında hava koşulları seyir hızını etkileyebilir; bu dönemde güncel transit süreyi teklif aşamasında sizinle açıkça paylaşırız.",
       ],
     },
     {
@@ -76,8 +76,8 @@ const isvecKargo: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
-        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz sözleşme ve sigorta kapsamında araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından Almanya ve Danimarka üzerinden aktarmasız olarak İsveç'e hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz yazılı sözleşme ve CMR taşıyıcı sorumluluğu kapsamında araca alınır.",
+        "Taşıma: Yük gümrük işlemlerinin ardından Almanya ve Danimarka üzerinden aktarmasız olarak İsveç'e hareket eder; hangi aşamada olduğunu takip numaranızla, güzergâhı harita üzerinde izlersiniz.",
         "Teslim: Araç İsveç'teki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -98,7 +98,7 @@ const isvecKargo: SeoPageData = {
     {
       question: "İsveç'e tek koli veya birkaç valiz gönderebilir miyim?",
       answer:
-        "Evet. Komple panelvan kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça mobilya için parsiyel seçeneğimiz vardır. Yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, aktarmasız ve sigortalı olarak İsveç'teki adrese teslim edilir; yalnızca kullandığınız hacim ve ağırlık kadar ödersiniz.",
+        "Evet. Komple panelvan kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça mobilya için parsiyel seçeneğimiz vardır. Yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, aktarmasız ve CMR sorumluluğu altında İsveç'teki adrese teslim edilir; yalnızca kullandığınız hacim ve ağırlık kadar ödersiniz.",
     },
     {
       question: "İsveç'e ev eşyası nasıl gönderilir?",
@@ -118,12 +118,12 @@ const isvecKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, Öresund geçişinden teslimata kadar her aşamayı izleyebilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu görürsünüz: talep alındı, anlaşma, yolda ve teslim edildi. Güzergâh harita üzerinde gösterilir; Öresund geçişi gibi kritik anlarda aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında ve yazılı sözleşmeyle taşınır. Değerli yükler için sigorta kapsamını teklif aşamasında netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı sözleşmeyle taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Kapsamı teklif aşamasında netleştiriyoruz.",
     },
   ],
   related: [

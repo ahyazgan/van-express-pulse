@@ -43,10 +43,10 @@ const HelpModal = ({ open, onOpenChange }: HelpModalProps) => {
         : "For personal shipments: ID/passport copy and item list. For commercial shipments: Proforma Invoice and Packing List are sufficient.",
     },
     {
-      question: language === "tr" ? "CMR Sigortası nedir?" : "What is CMR Insurance?",
-      answer: language === "tr" 
-        ? "Taşınan tüm yükler, uluslararası karayolu taşıma kanunları gereği CMR sigortası güvencesi altındadır." 
-        : "All transported cargo is covered by CMR insurance under international road transport regulations.",
+      question: language === "tr" ? "CMR sorumluluğu nedir, yüküm sigortalı mı?" : "What is CMR liability, is my cargo insured?",
+      answer: language === "tr"
+        ? "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz."
+        : "Every shipment moves under the carrier liability set by the CMR convention; by law that liability is capped at 8.33 SDR per gross kilogram. For furniture, electronics or machinery this ceiling often falls short of the real value, so on request we arrange additional cargo cover based on the value you declare.",
     },
     {
       question: language === "tr" ? "Ödeme şartları nelerdir?" : "What are the payment terms?",

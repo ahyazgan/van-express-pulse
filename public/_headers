@@ -1,0 +1,15 @@
+# Cloudflare Pages response headers.
+#
+# Hashed build assets never change under a given name, so they can be cached
+# permanently. Everything else (HTML, sitemap, sw.js) keeps Pages' default
+# revalidate-every-time behaviour, which is what we want for content that is
+# republished on each deploy.
+#
+# NOTE: a `/*.html` rule would match nothing here — prerendered pages are served
+# at extensionless paths (/almanya-kargo), not /almanya-kargo.html.
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate

@@ -5,11 +5,11 @@ const almanyaKargo: SeoPageData = {
   slug: "almanya-kargo",
   title: "Almanya'ya Panelvan Kargo | Kapıdan Kapıya 24-48 Saatte | RouteEU",
   description:
-    "Türkiye'den Almanya'ya kapıdan kapıya panelvan kargo. Berlin, Hamburg, Münih, Köln'e 24-48 saatte sigortalı ekspres taşıma. Anında fiyat alın, yükünüzü canlı takip edin.",
+    "Türkiye'den Almanya'ya kapıdan kapıya panelvan kargo. Berlin, Hamburg, Münih, Köln'e 24-48 saatte aktarmasız ekspres taşıma. Anında fiyat alın, sevkiyat aşamasını takip edin.",
   h1: "Türkiye'den Almanya'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "Türkiye'den Almanya'ya kargo göndermek istediğinizde iki seçeneğiniz vardır: haftalarca süren parsiyel TIR taşımacılığı ya da yükünüz için ayrılmış bir panelvanla 24-48 saat içinde teslimat. RouteEU Express, İstanbul ve tüm Türkiye'den Almanya'nın her şehrine kapıdan kapıya ekspres panelvan taşımacılığı yapar: yükünüz adresinizden alınır, araç değiştirmeden ve depo beklemeden doğrudan Almanya'daki teslimat adresine gider.",
-    "Panelvan araçlarımız hafta sonu TIR yasağına tabi olmadığı için cuma günü çıkan yükünüz pazartesiyi beklemez; çift şoför uygulamasıyla araç mola vermeden yola devam eder. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün Avrupa'nın neresinde olduğunu anlık olarak görürsünüz.",
+    "Panelvan araçlarımız hafta sonu TIR yasağına tabi olmadığı için cuma günü çıkan yükünüz pazartesiyi beklemez; çift şoför uygulamasıyla araç mola vermeden yola devam eder. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğu için mobilya, elektronik veya makine gibi yüklerde talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görürsünüz (talep alındı, anlaşma, yolda, teslim edildi); aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - Almanya Transit Süreleri",
@@ -89,7 +89,7 @@ const almanyaKargo: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz güvenle araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Almanya'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Almanya'ya hareket eder; takip sayfasında aşaması \"yolda\" görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç Almanya'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -116,12 +116,12 @@ const almanyaKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu görürsünüz: talep alındı, anlaşma, yolda ve teslim edildi. Güzergâh harita üzerinde gösterilir; aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında taşınır. Değerli yükler için kapsamı teklif aşamasında netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Değerli yükler için kapsamı teklif aşamasında netleştiriyoruz.",
     },
     {
       question: "Kapıdan kapıya teslimat tam olarak ne demek?",
@@ -141,7 +141,7 @@ const almanyaKargo: SeoPageData = {
     {
       question: "Tek koli veya birkaç parça eşya gönderebilir miyim?",
       answer:
-        "Evet. Komple araç kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle birlikte, yine aktarmasız ve sigortalı olarak Almanya'daki adrese teslim edilir.",
+        "Evet. Komple araç kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle birlikte, yine aktarmasız ve CMR sorumluluğu altında Almanya'daki adrese teslim edilir; talep ederseniz beyan değeriniz üzerinden ek sigorta yaptırırız.",
     },
     {
       question: "Almanya'ya kargoda gümrük vergisi ödenir mi?",

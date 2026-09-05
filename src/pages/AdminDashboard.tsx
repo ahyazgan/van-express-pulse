@@ -25,6 +25,7 @@ import { format } from "date-fns";
 import { tr } from "date-fns/locale";
 import DocumentUpload from "@/components/admin/DocumentUpload";
 import PhotoGallery from "@/components/admin/PhotoGallery";
+import usePageMeta from "@/hooks/usePageMeta";
 
 type OrderStatus = "new" | "negotiating" | "in_transit" | "delivered";
 
@@ -69,6 +70,9 @@ const CATEGORY_LABELS: Record<string, string> = {
 };
 
 const AdminDashboard = () => {
+  // Internal admin surface.
+  usePageMeta({ title: "Yonetim | RouteEU Express", description: "Yonetim paneli.", noindex: true });
+
   const [orders, setOrders] = useState<ShippingRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"current" | "completed" | "revenue">("current");

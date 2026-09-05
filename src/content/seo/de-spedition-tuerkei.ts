@@ -7,11 +7,11 @@ const deSpeditionTuerkei: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Spedition Türkei | Express-Direktfahrt ohne Umladen | RouteEU",
   description:
-    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-40 Stunden, mit GPS-Tracking und fester Zusage.",
+    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-40 Stunden, mit Sendungsstatus und fester Zusage.",
   h1: "Spedition Türkei: Express-Transporte ohne Umladen",
   intro: [
     "Wenn eine Sendung in die Türkei termingebunden ist, hilft der günstigste Frachtsatz wenig. Entscheidend ist, ob die Ware am zugesagten Tag am Werkstor steht. RouteEU fährt zeitkritische Sendungen zwischen Deutschland und der Türkei als Direktfahrt: ein Fahrzeug, eine Ladung, kein Hub, kein Umschlag, kein Zwischenlager. Was in Stuttgart geladen wird, wird in Bursa entladen – von denselben zwei Fahrern.",
-    "Der Express-Sprinter fasst rund 1.300 kg, fünf Europaletten oder etwa 13,5 m³ und ist damit die passende Größe für das, was in der Industrie tatsächlich eilt: ein Ersatzteil, eine Werkzeugform, eine nachgearbeitete Charge, Messegut oder eine Vorserie. Mit zwei Fahrern im Wechsel und ohne Wochenendfahrverbot liegt die Laufzeit typischerweise bei 24 bis 40 Stunden ab Ladestelle. Sie erhalten ein verbindliches Zeitfenster, ein Festpreisangebot und durchgehende GPS-Ortung.",
+    "Der Express-Sprinter fasst rund 1.300 kg, fünf Europaletten oder etwa 13,5 m³ und ist damit die passende Größe für das, was in der Industrie tatsächlich eilt: ein Ersatzteil, eine Werkzeugform, eine nachgearbeitete Charge, Messegut oder eine Vorserie. Mit zwei Fahrern im Wechsel und ohne Wochenendfahrverbot liegt die Laufzeit typischerweise bei 24 bis 40 Stunden ab Ladestelle. Sie erhalten ein verbindliches Zeitfenster, ein Festpreisangebot und eine Sendungsnummer, mit der Sie den Status Ihrer Sendung jederzeit abrufen.",
   ],
   transitTable: {
     caption: "Laufzeiten Direktfahrt Deutschland – Türkei (zwei Fahrer, ohne Umladen)",
@@ -51,7 +51,7 @@ const deSpeditionTuerkei: SeoPageData = {
         "Anfrage und Festpreis: Sie nennen Ladestelle, Entladestelle, Gewicht, Maße und Ladebereitschaft. Sie erhalten den Preis sofort – ohne Rückfrageschleife und ohne Tagespreisvorbehalt.",
         "Disposition: Wir setzen ein Fahrzeug auf die Ladestelle. Bei Aufträgen, die vormittags bestätigt werden, ist eine Beladung noch am selben Tag in der Regel machbar; bei späteren Bestätigungen wird am Folgemorgen geladen.",
         "Verladung und Papiere: Rechnung, Packliste, Präferenz- oder Ursprungsdokumente und CMR werden bei der Beladung geprüft, damit die Grenzabfertigung nicht an einem fehlenden Blatt Papier hängt.",
-        "Durchlauf: Das Fahrzeug fährt ohne Umschlag durch. Sie sehen die Position live und erhalten die Ankunftsprognose laufend aktualisiert.",
+        "Durchlauf: Das Fahrzeug fährt ohne Umschlag durch. Mit Ihrer Sendungsnummer sehen Sie den Status Ihrer Sendung (angenommen, Angebot, unterwegs, zugestellt); den aktuellen Standort erfragen Sie jederzeit per WhatsApp.",
         "Entladung: Zugestellt wird direkt an Werk, Lager oder Messestand – nicht an ein Terminal, aus dem Sie die Ware selbst abholen müssten.",
       ],
     },
@@ -102,10 +102,10 @@ const deSpeditionTuerkei: SeoPageData = {
       ],
     },
     {
-      heading: "GPS-Tracking und feste Zusagen",
+      heading: "Sendungsstatus und feste Zusagen",
       paragraphs: [
-        "Transparenz ist bei zeitkritischen Sendungen kein Zusatz, sondern die Voraussetzung dafür, dass Ihre Disposition arbeiten kann. Jedes Fahrzeug ist mit durchgehender GPS-Ortung ausgestattet: Sie sehen die Position rund um die Uhr und können die Ankunftszeit an Ihre Produktionsplanung, Ihren Kunden oder den Messeaufbau weitergeben – ohne Rückfrage bei uns und ohne Statusmeldungen, die schon beim Absenden veraltet sind.",
-        "Dazu gehören verbindliche Zusagen. Der Preis, den Sie bei der Buchung sehen, ist der Preis, der in Rechnung gestellt wird; Nachforderungen für Standzeiten oder Umwege entstehen nur, wenn sie von der Ladestelle oder Entladestelle verursacht und vorher abgestimmt wurden. Der Transport ist versichert; bei hohen Warenwerten stimmen wir die Deckungssumme vor der Verladung ab. Und wenn wir ein Zeitfenster nicht halten können, erfahren Sie es, sobald wir es wissen, nicht erst am Zustelltag.",
+        "Transparenz ist bei zeitkritischen Sendungen kein Zusatz, sondern die Voraussetzung dafür, dass Ihre Disposition arbeiten kann. Mit Ihrer Sendungsnummer sehen Sie rund um die Uhr den Status Ihrer Sendung – angenommen, Angebot, unterwegs, zugestellt – und die Route auf der Karte; den aktuellen Standort des Fahrzeugs erfragen Sie jederzeit per WhatsApp und geben die Ankunftszeit an Ihre Produktionsplanung, Ihren Kunden oder den Messeaufbau weiter.",
+        "Dazu gehören verbindliche Zusagen. Der Preis, den Sie bei der Buchung sehen, ist der Preis, der in Rechnung gestellt wird; Nachforderungen für Standzeiten oder Umwege entstehen nur, wenn sie von der Ladestelle oder Entladestelle verursacht und vorher abgestimmt wurden. Jede Fahrt läuft unter der Haftung des Frachtführers nach CMR; bei hohen Warenwerten vereinbaren wir vor der Verladung eine zusätzliche Warentransportversicherung mit fester Deckungssumme. Und wenn wir ein Zeitfenster nicht halten können, erfahren Sie es, sobald wir es wissen, nicht erst am Zustelltag.",
         "Die Fahrten laufen in beide Richtungen. Rückladungen aus der Türkei nach Deutschland, Österreich und in die Schweiz sind Teil des Regelbetriebs – häufig als Kombination aus Hinfahrt mit Material und Rückfahrt mit Fertigware, was die Kosten pro Richtung spürbar senkt.",
       ],
     },
@@ -151,7 +151,7 @@ const deSpeditionTuerkei: SeoPageData = {
     {
       question: "Fahren Sie auch in die Gegenrichtung, von der Türkei nach Deutschland?",
       answer:
-        "Ja, Rückladungen sind Teil des Regelbetriebs. Aus Istanbul, Bursa, Izmir, Kocaeli und Ankara fahren wir nach Deutschland, Österreich und in die Schweiz mit denselben Laufzeiten und derselben Ortung. Wenn Sie Material hinschicken und Fertigware zurückholen, lässt sich das als Rundlauf disponieren, was die Kosten pro Richtung senkt.",
+        "Ja, Rückladungen sind Teil des Regelbetriebs. Aus Istanbul, Bursa, Izmir, Kocaeli und Ankara fahren wir nach Deutschland, Österreich und in die Schweiz mit denselben Laufzeiten und derselben Sendungsverfolgung per Trackingnummer. Wenn Sie Material hinschicken und Fertigware zurückholen, lässt sich das als Rundlauf disponieren, was die Kosten pro Richtung senkt.",
     },
   ],
   related: [

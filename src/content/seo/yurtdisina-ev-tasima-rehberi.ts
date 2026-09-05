@@ -83,7 +83,7 @@ const yurtdisinaEvTasimaRehberi: SeoPageData = {
         "Yüklemeden önce fotoğraf çekin. Özellikle mobilyaların mevcut çizik ve kusurlarını, beyaz eşyaların kapaklarını ve kırılacak kolilerin dış hâlini kayda alın. Bu fotoğraflar bir sorun çıkarsa en güçlü belgenizdir.",
         "Teslim-tesellüm tutanağını okuyup imzalayın. Taşınan parça sayısı, adresler, tarih ve varsa özel notlar tutanakta yazmalı; sözlü mutabakat yeterli değildir.",
         "İlk gece çantanızı araca vermeyin. Evrak asılları, ilaçlarınız, şarj aletleri, birkaç kat kıyafet ve temel temizlik malzemesi yanınızda kalsın.",
-        "Takip bağlantısını alın. Aracın konumunu yol boyunca canlı olarak izleyebilmek, taşınmanın en çok kaygı üreten kısmını sessizce ortadan kaldırır.",
+        "Takip bağlantısını alın. Sevkiyatın hangi aşamada olduğunu yol boyunca görebilmek ve aracın o anki yerini WhatsApp'tan sorabilmek, taşınmanın en çok kaygı üreten kısmını sessizce ortadan kaldırır.",
       ],
     },
     {
@@ -91,7 +91,7 @@ const yurtdisinaEvTasimaRehberi: SeoPageData = {
       paragraphs: [
         "Varışta ilk iş, ekibe koli numaralarına göre hangi kutunun hangi odaya gideceğini söylemektir; etiketleme sisteminiz burada karşılığını verir. Mobilyaları önce yerleştirin, kolileri sonra açın — ters sırada yaparsanız evde yürüyecek yer kalmaz. Mutfak ve banyo kolilerini ilk gün, geri kalanı sonraki günlere yayarak açmak en rahat yöntemdir.",
         "Hasar kontrolünü tutanağı imzalamadan önce yapın. Görünür bir hasar veya eksik parça varsa bunu teslim tutanağına yazdırın; \"sonra hallederiz\" demeyin, çünkü imzalanmış temiz bir tutanak sonradan itirazı zorlaştırır. Ambalajı yırtık veya ezik gelen kolileri teslimat anında açıp içine bakın ve fotoğraflayın.",
-        "Kolileri açtıktan sonra fark edilen, teslim anında görülemeyen hasarlar için ise ayrı bir kural işler: uluslararası karayolu taşımalarında bu tür gizli hasarların kısa bir süre içinde yazılı olarak bildirilmesi beklenir. Süre sözleşmenize ve tabi olduğunuz taşıma rejimine göre değişir, çoğu durumda birkaç iş günüdür; bu yüzden kolileri teslimattan hemen sonra açmak ve hasar bulursanız aynı gün yazılı bildirim yapmak en güvenli yoldur. Hasarlı eşyayı ve ambalajını, dosya kapanana kadar atmayın. Sigortalı ve sözleşmeli çalışan bir taşımacıyla bu süreç genellikle sorunsuz yürür; yazılı sözleşmesi ve poliçesi olmayan bir firmayla ise hasar anında elinizde hiçbir dayanak olmaz.",
+        "Kolileri açtıktan sonra fark edilen, teslim anında görülemeyen hasarlar için ise ayrı bir kural işler: uluslararası karayolu taşımalarında bu tür gizli hasarların kısa bir süre içinde yazılı olarak bildirilmesi beklenir. Süre sözleşmenize ve tabi olduğunuz taşıma rejimine göre değişir, çoğu durumda birkaç iş günüdür; bu yüzden kolileri teslimattan hemen sonra açmak ve hasar bulursanız aynı gün yazılı bildirim yapmak en güvenli yoldur. Hasarlı eşyayı ve ambalajını, dosya kapanana kadar atmayın. CMR sorumluluğu altında ve yazılı sözleşmeyle çalışan bir taşımacıyla bu süreç genellikle sorunsuz yürür; sözleşmesi ve CMR belgesi olmayan bir firmayla ise hasar anında elinizde hiçbir dayanak olmaz.",
       ],
     },
   ],
@@ -114,7 +114,7 @@ const yurtdisinaEvTasimaRehberi: SeoPageData = {
     {
       question: "Eşyalarım sigortalı mı taşınıyor?",
       answer:
-        "Bizimle yapılan tüm taşımalar yazılı taşıma sözleşmesi ve taşıma sigortası kapsamındadır. Genel tavsiyemiz şudur: hangi firmayla çalışırsanız çalışın, sözleşmeyi görmeden ve poliçe kapsamını sormadan eşyanızı teslim etmeyin. Nakit para, mücevher ve kıymetli evrak sigorta kapsamı dışında kalır; bunları yanınızda taşıyın.",
+        "Bizimle yapılan her sevkiyat, yazılı taşıma sözleşmesi ve CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Genel tavsiyemiz şudur: hangi firmayla çalışırsanız çalışın, sözleşmeyi görmeden ve sorumluluk sınırını sormadan eşyanızı teslim etmeyin. Nakit para, mücevher ve kıymetli evrak hiçbir kapsama girmez; bunları yanınızda taşıyın.",
     },
     {
       question: "Kendim mi paketlemeliyim?",
@@ -139,7 +139,7 @@ const yurtdisinaEvTasimaRehberi: SeoPageData = {
     {
       question: "Eşyamda hasar çıkarsa ne yaparım?",
       answer:
-        "Görünür hasarı teslim anında tutanağa yazdırın ve fotoğraflayın; tutanağı hasar notu olmadan imzalamayın. Kolileri açtıktan sonra fark edilen gizli hasarlarda ise yazılı bildirim süresi işler — süre sözleşmenize göre değişir ve genelde birkaç iş günüdür, bu nedenle kolileri teslimattan hemen sonra açmak önemlidir. Hasarlı eşyayı ve ambalajını saklayın, fotoğraflarla birlikte taşımacınıza yazılı olarak bildirin; sigortalı taşımalarda süreç poliçe kapsamında yürütülür.",
+        "Görünür hasarı teslim anında tutanağa yazdırın ve fotoğraflayın; tutanağı hasar notu olmadan imzalamayın. Kolileri açtıktan sonra fark edilen gizli hasarlarda ise yazılı bildirim süresi işler — süre sözleşmenize göre değişir ve genelde birkaç iş günüdür, bu nedenle kolileri teslimattan hemen sonra açmak önemlidir. Hasarlı eşyayı ve ambalajını saklayın, fotoğraflarla birlikte taşımacınıza yazılı olarak bildirin; talep CMR sorumluluğu kapsamında değerlendirilir, ek yük sigortası yaptırdıysanız süreç ayrıca poliçe üzerinden yürütülür.",
     },
   ],
   related: [

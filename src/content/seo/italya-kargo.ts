@@ -5,11 +5,11 @@ const italyaKargo: SeoPageData = {
   slug: "italya-kargo",
   title: "İtalya'ya Panelvan Kargo | Milano'ya 24-36 Saat Ekspres | RouteEU",
   description:
-    "Türkiye'den İtalya'ya kapıdan kapıya panelvan kargo. Milano ve Verona'ya 24-36 saatte fuar, tekstil ve ticari yük taşıma; anında fiyat, canlı GPS takip.",
+    "Türkiye'den İtalya'ya kapıdan kapıya panelvan kargo. Milano ve Verona'ya 24-36 saatte fuar, tekstil ve ticari yük taşıma; anında fiyat, aşamalı gönderi takibi.",
   h1: "Türkiye'den İtalya'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "İtalya, Türkiye'nin Avrupa'daki en yoğun ticaret ortaklarından biridir: tekstil ve hazır giyim koleksiyonları, deri ürünleri, mobilya ve makine parçaları iki ülke arasında sürekli hareket eder ve Milano'nun moda ile mobilya fuarları her sezon yüzlerce Türk firmasını ağırlar. Bu trafikte parsiyel TIR ile haftalarca beklemek, koleksiyonun sezonu kaçırması ya da fuar standının açılışa yetişmemesi demektir. RouteEU Express, İstanbul ve tüm Türkiye'den Milano, Verona, Bologna, Torino ve Roma başta olmak üzere İtalya'nın her adresine kapıdan kapıya ekspres panelvan taşımacılığı yapar; Milano'ya teslimat tipik olarak 24-36 saatte tamamlanır.",
-    "Yükünüz Türkiye'deki adresinizden alınır; araç değiştirmeden, depoda beklemeden doğrudan İtalya'daki teslimat adresine gider. Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi olmadığı için cuma günü çıkan yük pazartesiyi beklemez; çift şoför uygulamasıyla araç mola vermeden yola devam eder. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün konumunu anlık olarak görürsünüz.",
+    "Yükünüz Türkiye'deki adresinizden alınır; araç değiştirmeden, depoda beklemeden doğrudan İtalya'daki teslimat adresine gider. Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi olmadığı için cuma günü çıkan yük pazartesiyi beklemez; çift şoför uygulamasıyla araç mola vermeden yola devam eder. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - İtalya Transit Süreleri",
@@ -59,7 +59,7 @@ const italyaKargo: SeoPageData = {
     {
       heading: "Minivan Ekspres: Küçük ve Acil Yükler",
       paragraphs: [
-        "Her gönderi beş paletlik bir panelvanı doldurmaz. Birkaç koli koleksiyon numunesi, üretim hattını bekleyen tek bir makine parçası ya da fuar açılışına yetişmesi gereken bir stand aksesuarı için minivan ekspres seçeneğimiz daha hızlı ve daha ekonomik bir çözümdür. Daha küçük araç, daha hızlı yükleme ve şehir içi teslimatlarda daha kolay erişim demektir; Milano ve Verona'ya yine 24-36 saat aralığında, kapıdan kapıya ve sigortalı teslimat yapılır. Yükünüzün hacmi ve aciliyeti hangi aracın uygun olduğunu belirler; uygulamadan teklif alırken her iki seçeneği de karşılaştırabilirsiniz. Ayrıntılar için minivan ekspres taşımacılık sayfamıza göz atabilirsiniz.",
+        "Her gönderi beş paletlik bir panelvanı doldurmaz. Birkaç koli koleksiyon numunesi, üretim hattını bekleyen tek bir makine parçası ya da fuar açılışına yetişmesi gereken bir stand aksesuarı için minivan ekspres seçeneğimiz daha hızlı ve daha ekonomik bir çözümdür. Daha küçük araç, daha hızlı yükleme ve şehir içi teslimatlarda daha kolay erişim demektir; Milano ve Verona'ya yine 24-36 saat aralığında, kapıdan kapıya ve CMR sorumluluğu altında teslimat yapılır. Yükünüzün hacmi ve aciliyeti hangi aracın uygun olduğunu belirler; uygulamadan teklif alırken her iki seçeneği de karşılaştırabilirsiniz. Ayrıntılar için minivan ekspres taşımacılık sayfamıza göz atabilirsiniz.",
       ],
     },
     {
@@ -76,7 +76,7 @@ const italyaKargo: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz güvenle araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak İtalya'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak İtalya'ya hareket eder; takip sayfasında sevkiyatınızın durumu yolda olarak görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç İtalya'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -108,7 +108,7 @@ const italyaKargo: SeoPageData = {
     {
       question: "Tek koli veya birkaç parça eşya için parsiyel gönderebilir miyim?",
       answer:
-        "Evet. Komple araç kiralamanız gerekmez; birkaç koli numune, valiz veya bir-iki palet için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle aracı paylaşır, yine aktarmasız ve sigortalı olarak İtalya'daki adrese teslim edilir. Küçük ve acil yükler için minivan ekspres de uygun bir alternatiftir.",
+        "Evet. Komple araç kiralamanız gerekmez; birkaç koli numune, valiz veya bir-iki palet için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle aracı paylaşır, yine aktarmasız ve CMR sorumluluğu altında İtalya'daki adrese teslim edilir. Küçük ve acil yükler için minivan ekspres de uygun bir alternatiftir.",
     },
     {
       question: "İtalya'ya kargoda gümrük vergisi ödenir mi?",
@@ -118,12 +118,12 @@ const italyaKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, sınır geçişi ve teslimat aşamalarını uygulamadan izleyebilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görebilir, güzergâhı harita üzerinde izleyebilirsiniz. Aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz; ekibimiz şoförden teyit alıp size bildirir.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında taşınır. Mobilya, koleksiyon numunesi ve makine parçası gibi değerli yüklerde sigorta kapsamını teklif aşamasında birlikte netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, koleksiyon numunesi ve makine parçası gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Kapsamı teklif aşamasında birlikte netleştiriyoruz.",
     },
     {
       question: "Hafta sonu gönderi çıkışı yapılıyor mu?",

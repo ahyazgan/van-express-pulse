@@ -5,11 +5,11 @@ const acilYedekParcaSevkiyati: SeoPageData = {
   slug: "acil-yedek-parca-sevkiyati",
   title: "Avrupa'ya Acil Yedek Parça Sevkiyatı | Aynı Gün Çıkış | RouteEU",
   description:
-    "Üretim hattı durdu mu? Acil yedek parçanız aynı gün çıkar, çift şoförle aktarmasız Münih, Stuttgart, Milano ve Viyana'ya 24-48 saatte teslim. Canlı GPS takip.",
+    "Üretim hattı durdu mu? Acil yedek parçanız aynı gün çıkar, çift şoförle aktarmasız Münih, Stuttgart, Milano ve Viyana'ya 24-48 saatte teslim. Takip numarasıyla aşama takibi.",
   h1: "Avrupa'ya Acil Yedek Parça ve Time-Critical Sevkiyat",
   intro: [
     "Üretim hattı durduğunda saat değil, dakika sayarsınız. Almanya'daki bir montaj hattı Türkiye'den gelecek tek bir kalıbı, rulmanı ya da kontrol kartını bekliyorsa her saat hattın durması, cezai şart ve müşteri kaybı demektir. RouteEU Express, Türkiye'den Avrupa'ya acil yedek parça sevkiyatını kapıdan kapıya panelvan ekspresle yapar: talebiniz alındığı gün araç fabrikanıza gelir, parça yüklenir ve depo, aktarma ya da uçuş saati beklemeden doğrudan Avrupa'daki tesise hareket eder.",
-    "Çift şoförle çalışan panelvanımız mola vermeden yol alır; hafta sonu TIR seyir yasağından muaf olduğu için cuma akşamı çıkan parça pazartesiyi beklemez. Viyana'ya 20-32, Münih ve Milano'ya 24-36, Stuttgart'a 28-40 saat içinde teslim ederiz. Sevkiyat sigortalıdır ve 7/24 canlı GPS takibiyle bakım ekibiniz parçanın tam olarak nerede olduğunu görür; hat yeniden çalışana kadar saati sizinle birlikte izleriz.",
+    "Çift şoförle çalışan panelvanımız mola vermeden yol alır; hafta sonu TIR seyir yasağından muaf olduğu için cuma akşamı çıkan parça pazartesiyi beklemez. Viyana'ya 20-32, Münih ve Milano'ya 24-36, Stuttgart'a 28-40 saat içinde teslim ederiz. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla bakım ekibiniz sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilir; hat yeniden çalışana kadar saati sizinle birlikte izleriz.",
   ],
   transitTable: {
     caption: "Türkiye - Avrupa Acil Sevkiyat Transit Süreleri",
@@ -75,19 +75,19 @@ const acilYedekParcaSevkiyati: SeoPageData = {
         "Otomotiv yan sanayi: Almanya, Avusturya ve İtalya'daki ana sanayi ve birinci kademe tedarikçi hatlarına kalıp, fikstür, döküm ve enjeksiyon parçası; hat durma cezalarına karşı saat bazlı teslim.",
         "Makine imalat: Redüktör, mil, servo motor, PLC ve kontrol kartı gibi Avrupa'daki müşteri tesislerinde montaj ya da servis bekleyen parçalar.",
         "Tekstil makineleri: Dokuma, örme ve boyahane hatlarında arızalanan bileşenlerin yedeği; sezon döneminde duran hat için ekspres teslim.",
-        "Medikal cihaz: Hastane ve laboratuvar cihazlarına ait modül ve yedek parçalar; hassas ambalajlı, aktarmasız ve sigortalı taşıma.",
+        "Medikal cihaz: Hastane ve laboratuvar cihazlarına ait modül ve yedek parçalar; hassas ambalajlı, aktarmasız ve CMR sorumluluğu altında, talep üzerine ek sigortalı taşıma.",
         "Enerji ve endüstriyel tesisler: Türbin, kompresör ve pompa bileşenleri; plansız duruşlarda tek parça ağır yük taşıması.",
       ],
     },
     {
-      heading: "Güven: Sigorta, Sözleşme ve Canlı Takip",
+      heading: "Güven: Sigorta, Sözleşme ve Sevkiyat Takibi",
       paragraphs: [
         "Acil sevkiyatta hız kadar hesap verebilirlik de önemlidir; bu yüzden süreci yazılı ve izlenebilir kurarız:",
       ],
       list: [
-        "Taşıma sigortası: Her sevkiyat sigortalı taşınır; yüksek değerli kalıp ve elektronik modüller için kapsamı teklif aşamasında netleştiririz.",
+        "Taşıyıcı sorumluluğu ve sigorta: Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Yüksek değerli kalıp ve elektronik modüllerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz.",
         "Yazılı sözleşme: Alım saati, teslim adresi ve fiyat tek belgede sabitlenir; yol boyunca ek ücret sürprizi yoktur.",
-        "7/24 canlı GPS: Aracın konumunu uygulamadan izlersiniz; Avrupa'daki bakım ekibine gerçek varış saatini paylaşırsınız.",
+        "Aşama takibi: Takip numaranızla sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) uygulamadan görürsünüz; aracın o anki yerini WhatsApp'tan sorar, tahmini varış saatini Avrupa'daki bakım ekibine iletirsiniz.",
         "Kapıda teslim: Parça tesisin kapısına, gerekirse üretim hattının yanına kadar aynı araçla gider; teslim tutanağı anında uygulamaya düşer.",
       ],
     },
@@ -99,7 +99,7 @@ const acilYedekParcaSevkiyati: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktasını seçin, tahmini fiyatı anında görün; acil sevkiyat için telefon hattımız da 7/24 açıktır.",
         "Alım: Atanan araç sanayi bölgelerinde 2-4 saat içinde fabrikanızdadır; parça, ATR ve fatura kontrol edilerek yüklenir.",
-        "Taşıma: Araç aynı gün çıkar, çift şoförle kesintisiz seyreder; konumunu canlı haritada izlersiniz.",
+        "Taşıma: Araç aynı gün çıkar, çift şoförle kesintisiz seyreder; güzergâhı haritada görür, o anki yerini WhatsApp'tan sorarsınız.",
         "Teslim: Parça Avrupa'daki tesise kapıda teslim edilir; alıcı imzasıyla süreç uygulamada kapanır.",
       ],
     },
@@ -135,7 +135,7 @@ const acilYedekParcaSevkiyati: SeoPageData = {
     {
       question: "Parçamın nerede olduğunu nasıl takip ederim?",
       answer:
-        "Her sevkiyata canlı GPS takibi tanımlanır. Uygulamadaki gönderi takip sayfasından aracın konumunu 7/24 görebilir, tahmini varış saatini Avrupa'daki bakım ekibiyle paylaşabilirsiniz; teslim anında tutanak uygulamaya düşer.",
+        "Her sevkiyata bir takip numarası tanımlanır. Uygulamadaki gönderi takip sayfasından sevkiyatın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorabilir, tahmini varış saatini Avrupa'daki bakım ekibiyle paylaşabilirsiniz. Teslim anında tutanak uygulamaya düşer.",
     },
     {
       question: "Acil sevkiyat için hangi gümrük evrakları gerekir?",

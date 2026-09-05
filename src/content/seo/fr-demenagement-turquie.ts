@@ -7,12 +7,12 @@ const frDemenagementTurquie: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Déménagement France-Turquie | Porte-à-porte en 28-48 h",
   description:
-    "Déménagement France-Turquie en camionnette dédiée : enlèvement à domicile, sans rupture de charge, livraison en 28 à 48 h, assurance et suivi GPS.",
+    "Déménagement France-Turquie en camionnette dédiée : enlèvement à domicile, sans rupture de charge, livraison en 28 à 48 h, couverture CMR et suivi par étapes.",
   h1: "Déménagement France-Turquie : vos affaires de porte à porte",
   intro: [
     "Quitter la France pour s'installer en Turquie, c'est presque toujours se heurter au même mur : les devis des déménageurs internationaux dépassent largement le budget prévu, et le groupage annonce des délais qui se comptent en semaines, sans date ferme. RouteEU Express propose une troisième voie : une camionnette dédiée de classe Sprinter qui charge chez vous, en France, et décharge à votre nouvelle adresse en Turquie. Un seul chargement, un seul déchargement, aucun entrepôt entre les deux.",
     "Nos véhicules ne sont pas concernés par les restrictions de circulation du week-end qui immobilisent les poids lourds, et le double équipage permet au véhicule de continuer à rouler pendant que l'un des deux chauffeurs se repose. Concrètement, comptez 28 à 48 heures selon la ville de départ — Strasbourg étant la plus proche et Paris ou Marseille les plus éloignées sur cet axe — là où un déménagement en groupage classique demande trois à six semaines.",
-    "Une camionnette complète représente environ 1 300 kg, 5 palettes Europe et 13,5 m³ : de quoi loger le mobilier et les effets personnels d'un studio ou d'un petit deux-pièces, armoires démontées. Le poids peut limiter avant le volume — livres, électroménager et outillage remplissent vite la charge utile — alors décrivez-nous le contenu et nous vous dirons franchement si un seul véhicule suffit. Si votre volume est plus modeste — quelques cartons, un bureau, un lit — le groupage reste possible et vous ne payez que la place réellement occupée. Chaque envoi part couvert par une assurance transport et suivi en direct par GPS, 24 h/24.",
+    "Une camionnette complète représente environ 1 300 kg, 5 palettes Europe et 13,5 m³ : de quoi loger le mobilier et les effets personnels d'un studio ou d'un petit deux-pièces, armoires démontées. Le poids peut limiter avant le volume — livres, électroménager et outillage remplissent vite la charge utile — alors décrivez-nous le contenu et nous vous dirons franchement si un seul véhicule suffit. Si votre volume est plus modeste — quelques cartons, un bureau, un lit — le groupage reste possible et vous ne payez que la place réellement occupée. Chaque envoi circule sous la responsabilité du transporteur définie par la convention CMR, avec une assurance complémentaire souscrite sur demande, et votre numéro de suivi indique l'étape atteinte : demande reçue, devis, en route, livré.",
   ],
   transitTable: {
     caption: "Délais d'acheminement indicatifs France → Turquie",
@@ -108,16 +108,16 @@ const frDemenagementTurquie: SeoPageData = {
       list: [
         "Devis. Indiquez la ville de départ, la ville d'arrivée et le volume approximatif : l'estimation s'affiche en quelques secondes, avant tout engagement.",
         "Enlèvement à domicile. Le véhicule se présente à votre adresse à la date convenue ; le chargement est réalisé par notre équipe et l'inventaire validé avec vous.",
-        "Acheminement. Formalités douanières, puis route directe vers la Turquie, sans transbordement ni passage en entrepôt. La position du véhicule reste visible en continu.",
+        "Acheminement. Formalités douanières, puis route directe vers la Turquie, sans transbordement ni passage en entrepôt. La page de suivi indique l'étape en cours ; pour connaître la position du véhicule un jour donné, écrivez-nous sur WhatsApp.",
         "Livraison. Déchargement à votre nouvelle adresse, effectué avec vous et pointé sur l'inventaire. Le portage jusque dans le logement ou au-dessus du rez-de-chaussée se convient à l'avance et figure en poste distinct sur le devis. Aucun retrait en agence, aucun passage par un garde-meuble.",
       ],
     },
     {
-      heading: "Assurance, contrat de transport et suivi GPS",
+      heading: "Assurance, contrat de transport et suivi de l'envoi",
       paragraphs: [
         "Tout transport routier international est encadré par la convention CMR : la lettre de voiture émise au départ constitue le contrat entre vous et le transporteur, et fixe le cadre de responsabilité. Vous en recevez un exemplaire au chargement, avec l'inventaire signé.",
-        "Chaque envoi part couvert par une assurance transport. Pour les biens de valeur — instruments de musique, œuvres, matériel professionnel, mobilier ancien — le montant déclaré se fixe au moment du devis : signalez donc ces pièces avant le chargement, jamais après. C'est le seul moyen d'ajuster la couverture à leur valeur réelle.",
-        "Le suivi GPS fonctionne 24 h/24 : depuis la page de suivi, vous voyez où se trouve le véhicule, qu'il soit encore en France, en train de traverser les Balkans ou déjà sur la route d'Istanbul. Vous savez donc la veille — et non le matin même — s'il faut réserver l'ascenseur, prévenir le gardien ou demander une autorisation de stationnement.",
+        "Cette responsabilité est plafonnée par la loi à 8,33 DTS par kilogramme de poids brut, un montant qui couvre rarement la valeur réelle d'un intérieur ; nous souscrivons donc, sur demande, une assurance complémentaire sur la base des valeurs que vous déclarez. Pour les biens de valeur — instruments de musique, œuvres, matériel professionnel, mobilier ancien — le montant déclaré se fixe au moment du devis : signalez donc ces pièces avant le chargement, jamais après. C'est le seul moyen d'ajuster la couverture à leur valeur réelle.",
+        "Le suivi, lui, se fait par étapes : avec votre numéro de suivi, la page dédiée indique où en est le déménagement — demande reçue, devis accepté, en route, livré — et la carte trace l'itinéraire entre le point de départ et la ville d'arrivée. Ce n'est pas une localisation du véhicule en direct, et nous préférons le dire clairement : si vous avez besoin de savoir où se trouve le véhicule un jour précis, demandez-nous la position actuelle par WhatsApp. Nous vous répondons avec le point atteint et l'heure d'arrivée attendue, de quoi réserver l'ascenseur, prévenir le gardien ou demander une autorisation de stationnement sans attendre le matin même.",
       ],
     },
     {
@@ -154,7 +154,7 @@ const frDemenagementTurquie: SeoPageData = {
     {
       question: "Puis-je envoyer seulement quelques cartons ?",
       answer:
-        "Oui. Vous n'êtes pas obligé de réserver le véhicule entier : en groupage, vos affaires voyagent avec d'autres envois circulant sur le même axe et vous ne payez que le volume occupé. Le principe reste le même — pas de transbordement, livraison à domicile, assurance et suivi GPS inclus.",
+        "Oui. Vous n'êtes pas obligé de réserver le véhicule entier : en groupage, vos affaires voyagent avec d'autres envois circulant sur le même axe et vous ne payez que le volume occupé. Le principe reste le même — pas de transbordement, livraison à domicile, responsabilité CMR et suivi par étapes inclus.",
     },
     {
       question: "Le transport est-il assuré ?",
@@ -162,9 +162,9 @@ const frDemenagementTurquie: SeoPageData = {
         "Chaque envoi circule sous la responsabilité du transporteur définie par la convention CMR, plafonnée par la loi à 8,33 DTS par kilogramme de poids brut. Pour un mobilier, une œuvre ou du matériel de valeur, ce plafond correspond rarement à la valeur réelle : nous souscrivons donc, sur demande, une assurance complémentaire sur la base des valeurs déclarées dans votre inventaire. Signalez-nous ces pièces avant le départ, afin que la couverture soit fixée par écrit et non discutée après un sinistre.",
     },
     {
-      question: "Puis-je suivre l'envoi en temps réel ?",
+      question: "Puis-je suivre l'envoi pendant le trajet ?",
       answer:
-        "Oui. Un suivi GPS est associé à chaque déménagement : la page de suivi affiche la position du véhicule sur la carte, 24 h/24, du chargement en France jusqu'à la livraison en Turquie. Vous pouvez ainsi organiser votre arrivée sans attendre un appel la veille.",
+        "Oui, étape par étape. Votre numéro de suivi indique l'étape atteinte par le déménagement — demande reçue, devis, en route, livré — et la carte affiche l'itinéraire entre la ville de départ en France et la ville d'arrivée en Turquie. Il ne s'agit pas d'une localisation du véhicule en direct : pour savoir où se trouve le véhicule à un moment donné, demandez-nous la position actuelle par WhatsApp. Vous pouvez ainsi organiser votre arrivée sans attendre un appel la veille.",
     },
   ],
   related: [{ slug: "fr/transport-express-turquie", label: "Transport express France-Turquie" }],

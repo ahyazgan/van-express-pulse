@@ -5,11 +5,11 @@ const danimarkaKargo: SeoPageData = {
   slug: "danimarka-kargo",
   title: "Danimarka'ya Kargo ve Nakliyat | Kopenhag'a Kapıdan Kapıya | RouteEU",
   description:
-    "Türkiye'den Danimarka'ya kapıdan kapıya panelvan nakliyat. Kopenhag, Aarhus ve Odense'ye 2-3 günde sigortalı teslimat, canlı GPS takip, anında fiyat teklifi.",
+    "Türkiye'den Danimarka'ya kapıdan kapıya panelvan nakliyat. Kopenhag, Aarhus ve Odense'ye 2-3 günde aktarmasız teslimat, gönderi takibi, anında fiyat teklifi.",
   h1: "Türkiye'den Danimarka'ya Kapıdan Kapıya Nakliyat",
   intro: [
     "Türkiye'den Danimarka'ya kargo veya eşya göndermek istediğinizde karşınıza çoğunlukla tek seçenek çıkar: parsiyel TIR ile 2-3 hafta süren, aktarmalı ve takibi zor bir taşıma. RouteEU Express bu hatta farklı çalışır. Yükünüz Türkiye'deki adresinizden ayrılmış bir panelvana alınır, Almanya üzerinden kesintisiz ilerler ve Kopenhag'a tipik olarak 36-52 saat içinde, yani 2-3 gün içinde kapınıza teslim edilir. Araç değişmez, yük depo beklemez, elden ele geçmez.",
-    "Danimarka'da yaşayan Türk toplumu için bu hat yalnızca ticari kargo değil; ev eşyası, kesin dönüş nakliyatı ve aileye gönderilen kişisel eşyalar için de düzenli çalışan bir köprüdür. İskandinav hattına planlı seferlerimiz sayesinde hem komple panelvan hem de parsiyel seçenek sunuyoruz. Tüm gönderiler sigortalı taşınır, aracın konumunu 7/24 canlı GPS takibiyle harita üzerinden anlık izlersiniz.",
+    "Danimarka'da yaşayan Türk toplumu için bu hat yalnızca ticari kargo değil; ev eşyası, kesin dönüş nakliyatı ve aileye gönderilen kişisel eşyalar için de düzenli çalışan bir köprüdür. İskandinav hattına planlı seferlerimiz sayesinde hem komple panelvan hem de parsiyel seçenek sunuyoruz. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - Danimarka Transit Süreleri",
@@ -57,7 +57,7 @@ const danimarkaKargo: SeoPageData = {
     {
       heading: "Danimarka'ya Ev Eşyası Taşıma ve Kesin Dönüş",
       paragraphs: [
-        "Danimarka'daki Türk toplumundan en sık aldığımız talepler ev eşyası taşıma ve kesin dönüş nakliyatıdır. Türkiye'den Kopenhag'a taşınıyorsanız evinizin eşyası tek panelvanla, aktarmasız olarak yeni adresinize kadar gider; mobilya, beyaz eşya ve koliler aynı araçta, sigortalı taşınır. Yaklaşık 1.300 kg / 5 palet kapasiteli aracımız ortalama bir evin temel eşyası için yeterlidir; daha büyük hacimlerde iki araçlı planlama yapıyoruz.",
+        "Danimarka'daki Türk toplumundan en sık aldığımız talepler ev eşyası taşıma ve kesin dönüş nakliyatıdır. Türkiye'den Kopenhag'a taşınıyorsanız evinizin eşyası tek panelvanla, aktarmasız olarak yeni adresinize kadar gider; mobilya, beyaz eşya ve koliler aynı araçta, CMR sorumluluğu altında taşınır. Yaklaşık 1.300 kg / 5 palet kapasiteli aracımız ortalama bir evin temel eşyası için yeterlidir; daha büyük hacimlerde iki araçlı planlama yapıyoruz.",
         "Ters yönde de çalışıyoruz: Danimarka'da yaşayıp Türkiye'ye kalıcı olarak dönecekseniz kesin dönüş nakliyat hizmetimizle eşyanız Kopenhag, Aarhus veya bulunduğunuz herhangi bir şehirden alınır, Türkiye'deki yeni adresinize teslim edilir. Kesin dönüş kapsamındaki gümrük muafiyeti şartları kişisel duruma göre değiştiği için güncel mevzuatı gümrük müşavirinizle teyit etmenizi öneririz; evrak hazırlığında ekibimiz size yol gösterir.",
       ],
     },
@@ -71,7 +71,7 @@ const danimarkaKargo: SeoPageData = {
       heading: "Danimarka'ya Neler Gönderebilirsiniz?",
       paragraphs: [
         "Bu hatta ev eşyası ve kişisel gönderilerin yanı sıra ticari yük de düzenli olarak taşıyoruz: numune, e-ticaret ürünleri, tekstil ve mobilya partileri, makine yedek parçası, fuar malzemesi ve paletli ticari mal. Kopenhag'daki bir mağazaya sezon ürünü yetiştirmek ya da Aarhus'taki bir üretim hattına acil parça ulaştırmak gerektiğinde, haftalarca bekleyen parsiyel yerine 2-3 gün içinde kapıda olan bir panelvan çoğu zaman tek gerçekçi seçenektir.",
-        "Komple araca ihtiyacınız yoksa tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır; yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, yine aktarmasız ve sigortalı olarak taşınır. Yükleme öncesinde eşya listesini ve varsa faturayı paylaşmanız yeterlidir; evrak hazırlığında ekibimiz adım adım yol gösterir.",
+        "Komple araca ihtiyacınız yoksa tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır; yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, yine aktarmasız ve CMR sorumluluğu altında taşınır. Yükleme öncesinde eşya listesini ve varsa faturayı paylaşmanız yeterlidir; evrak hazırlığında ekibimiz adım adım yol gösterir.",
       ],
     },
     {
@@ -81,8 +81,8 @@ const danimarkaKargo: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
-        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz sözleşme ve sigorta kapsamında araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından Almanya üzerinden aktarmasız olarak Danimarka'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz yazılı taşıma sözleşmesi ve CMR sorumluluğu kapsamında araca alınır.",
+        "Taşıma: Yük gümrük işlemlerinin ardından Almanya üzerinden aktarmasız olarak Danimarka'ya hareket eder; takip sayfasında sevkiyatınızın durumu yolda olarak görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç Danimarka'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -103,7 +103,7 @@ const danimarkaKargo: SeoPageData = {
     {
       question: "Danimarka'ya tek koli veya birkaç parça eşya gönderebilir miyim?",
       answer:
-        "Evet. Komple panelvan kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça mobilya için parsiyel seçeneğimiz vardır. Yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, aktarmasız ve sigortalı olarak Danimarka'daki adrese teslim edilir; yalnızca kullandığınız hacim ve ağırlık kadar ödersiniz.",
+        "Evet. Komple panelvan kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça mobilya için parsiyel seçeneğimiz vardır. Yükünüz aynı İskandinav seferindeki diğer gönderilerle birlikte, aktarmasız ve CMR sorumluluğu altında Danimarka'daki adrese teslim edilir; yalnızca kullandığınız hacim ve ağırlık kadar ödersiniz.",
     },
     {
       question: "Danimarka'ya ev eşyası nasıl gönderilir?",
@@ -123,12 +123,12 @@ const danimarkaKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, teslimata kalan mesafeyi izleyebilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görebilir, güzergâhı harita üzerinde izleyebilirsiniz. Aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz; ekibimiz şoförden teyit alıp size bildirir.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında ve yazılı sözleşmeyle taşınır. Değerli yükler için sigorta kapsamını teklif aşamasında netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı sözleşmeyle taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Değerli yükler için kapsamı teklif aşamasında netleştiriyoruz.",
     },
   ],
   related: [

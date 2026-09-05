@@ -5,11 +5,11 @@ const fransaKargo: SeoPageData = {
   slug: "fransa-kargo",
   title: "Fransa'ya Panelvan Kargo | Paris'e Kapıdan Kapıya 34-48 Saat | RouteEU",
   description:
-    "Türkiye'den Fransa'ya kapıdan kapıya panelvan kargo: Paris, Lyon, Marsilya ve Strazburg'a 34-48 saatte sigortalı, aktarmasız teslimat. Anında teklif alın.",
+    "Türkiye'den Fransa'ya kapıdan kapıya panelvan kargo: Paris, Lyon, Marsilya ve Strazburg'a 34-48 saatte aktarmasız teslimat, CMR sorumluluğu. Anında teklif alın.",
   h1: "Türkiye'den Fransa'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "Türkiye'den Fransa'ya kargo göndermenin klasik yolu parsiyel TIR taşımacılığıdır; bu yolda yükünüz depo bekleme, aktarma ve hafta sonu seyir yasakları yüzünden çoğu zaman 10-15 günde adrese ulaşır. RouteEU Express bu süreyi yükünüze ayrılmış bir panelvanla 34-48 saate indirir: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depoya girmeden doğrudan Paris, Lyon, Marsilya, Strazburg ya da Fransa'nın herhangi bir şehrindeki teslimat adresine gider.",
-    "Panelvan araçlarımız hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen eşya pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç mola kaybı yaşamadan ilerler; yaklaşık 1.300 kg ve 5 palet kapasiteli araçlarımızla komple ya da parsiyel taşıma seçeneği sunarız. Tüm gönderiler sigortalı taşınır, sözleşmeyle güvence altına alınır ve 7/24 canlı GPS takibiyle yükünüzün Avrupa'nın neresinde olduğunu anlık olarak görürsünüz.",
+    "Panelvan araçlarımız hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen eşya pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç mola kaybı yaşamadan ilerler; yaklaşık 1.300 kg ve 5 palet kapasiteli araçlarımızla komple ya da parsiyel taşıma seçeneği sunarız. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı sözleşmeyle taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - Fransa Transit Süreleri",
@@ -86,8 +86,8 @@ const fransaKargo: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
-        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz sözleşme ve sigorta kapsamında araca alınır.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Fransa'ya hareket eder; konumunu 7/24 canlı haritada izlersiniz.",
+        "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir, yükünüz yazılı sözleşme ve CMR taşıyıcı sorumluluğu kapsamında araca alınır.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak Fransa'ya hareket eder; hangi aşamada olduğunu takip numaranızla, güzergâhı harita üzerinde izlersiniz.",
         "Teslim: Araç Fransa'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -122,7 +122,7 @@ const fransaKargo: SeoPageData = {
     {
       question: "Tek koli veya birkaç parça eşya için parsiyel gönderebilir miyim?",
       answer:
-        "Evet. Komple araç kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle birlikte, yine aktarmasız ve sigortalı olarak Fransa'daki adrese teslim edilir; yalnızca kullandığınız hacim kadar ödersiniz.",
+        "Evet. Komple araç kiralamanız gerekmez; tek koli, birkaç valiz veya birkaç parça eşya için parsiyel seçeneğimiz vardır. Yükünüz aynı güzergâhtaki diğer gönderilerle birlikte, yine aktarmasız ve CMR sorumluluğu altında Fransa'daki adrese teslim edilir; yalnızca kullandığınız hacim kadar ödersiniz.",
     },
     {
       question: "Fransa'ya kargoda gümrük nasıl işler, vergi ödenir mi?",
@@ -132,12 +132,12 @@ const fransaKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, teslimat öncesinde alıcıyla saat koordinasyonu yapabilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu görürsünüz: talep alındı, anlaşma, yolda ve teslim edildi. Güzergâh harita üzerinde gösterilir; aracın o anki yerini WhatsApp'tan sorabilir, teslimat öncesinde alıcıyla saat koordinasyonu yapabilirsiniz.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında ve yazılı sözleşmeyle taşınır. Değerli yükler için sigorta kapsamını teklif aşamasında birlikte netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı sözleşmeyle taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Kapsamı ve maliyeti teklif aşamasında birlikte netleştiriyoruz.",
     },
     {
       question: "Fransa'ya hafta sonu gönderi çıkışı yapılıyor mu?",

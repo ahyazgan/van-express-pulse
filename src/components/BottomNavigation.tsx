@@ -26,7 +26,7 @@ const BottomNavigation = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/905551234567", "_blank");
+    window.open("https://wa.me/905393308617", "_blank");
   };
 
   return (

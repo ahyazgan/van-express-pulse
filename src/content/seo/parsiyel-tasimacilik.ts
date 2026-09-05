@@ -5,11 +5,11 @@ const parsiyelTasimacilik: SeoPageData = {
   slug: "parsiyel-tasimacilik",
   title: "Avrupa'ya Parsiyel ve Parça Eşya Taşıma | Koli Gönderimi | RouteEU",
   description:
-    "Avrupa'ya parsiyel taşımacılık: koli, palet ve parça eşyanızı panelvan parsiyelle hızlı, aktarmasız ve sigortalı gönderin. Hacme göre fiyat, anında teklif.",
+    "Avrupa'ya parsiyel taşımacılık: koli, palet ve parça eşyanızı panelvan parsiyelle hızlı, aktarmasız ve CMR sorumluluğu altında gönderin. Hacme göre fiyat, anında teklif.",
   h1: "Avrupa'ya Parsiyel Yük ve Koli Taşıma",
   intro: [
     "Avrupa'ya göndereceğiniz yük bir aracı dolduracak kadar büyük değilse komple panelvan kiralamanıza gerek yok. Parsiyel taşımacılıkta aynı güzergaha giden birden fazla göndericinin yükü tek araçta birleştirilir ve siz yalnızca kendi yükünüzün kapladığı hacim için ödeme yaparsınız. RouteEU Express, Türkiye'den Almanya, Hollanda, Belçika, Avusturya, Fransa ve diğer Avrupa ülkelerine panelvan parsiyel taşıma yapar: birkaç koliden yarım araçlık yüke kadar her ölçekte gönderi için ekonomik ve hızlı bir çözümdür.",
-    "Klasik parsiyel denince akla haftalarca süren TIR organizasyonları gelir; bizim modelimiz farklıdır. Yükünüz adresinizden alınır, panelvana yüklenir ve depo aktarması olmadan doğrudan Avrupa'daki teslimat adresine gider. Tüm gönderiler sigortalı taşınır, 7/24 canlı GPS takibiyle kolinizin hangi ülkede olduğunu anlık görürsünüz ve uygulamadan saniyeler içinde hacme göre fiyat teklifi alırsınız.",
+    "Klasik parsiyel denince akla haftalarca süren TIR organizasyonları gelir; bizim modelimiz farklıdır. Yükünüz adresinizden alınır, panelvana yüklenir ve depo aktarması olmadan doğrudan Avrupa'daki teslimat adresine gider. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır ve talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırırız; takip numaranızla kolinizin hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilir ve uygulamadan saniyeler içinde hacme göre fiyat teklifi alırsınız.",
   ],
   transitTable: {
     caption: "Ekspres Hat Transit Süreleri (İstanbul Çıkışlı)",
@@ -88,7 +88,7 @@ const parsiyelTasimacilik: SeoPageData = {
       heading: "Avrupa'ya Palet Gönderme",
       paragraphs: [
         "Avrupa'ya palet göndermek isteyen üretici, toptancı ve e-ticaret firmaları için parsiyel panelvan, 1-5 palet arası ticari yüklerde hem hızlı hem ekonomik bir çözümdür. Standart Euro palet 80 × 120 cm taban ölçüsündedir; yaklaşık 180 cm yüksekliğe kadar istiflenmiş paletler araçlarımıza sorunsuz yüklenir. Tek palet için komple araç bedeli ödemek zorunda kalmazsınız: yalnızca paletinizin kapladığı alanın bedelini ödersiniz, yükünüz yine aynı ekspres hatta, aktarmasız taşınır.",
-        "Palet hazırlığı transit güvenliğinin yarısıdır: ürünler palet tabanını taşmayacak şekilde dizilmeli, streç filmle sarılmalı ve gerekiyorsa köşebent ile çemberlenmelidir. Araç içinde paletler kaymaya karşı sabitlenir, tüm paletli gönderiler taşıma sigortası kapsamında yola çıkar ve 7/24 canlı GPS takibiyle sevkiyatınızın hangi ülkede olduğunu anlık görürsünüz. Palet sayınızı ve ölçülerinizi uygulamaya girerek saniyeler içinde anında teklif alabilirsiniz.",
+        "Palet hazırlığı transit güvenliğinin yarısıdır: ürünler palet tabanını taşmayacak şekilde dizilmeli, streç filmle sarılmalı ve gerekiyorsa köşebent ile çemberlenmelidir. Araç içinde paletler kaymaya karşı sabitlenir, tüm paletli gönderiler CMR taşıyıcı sorumluluğu kapsamında yola çıkar ve talep üzerine ek yük sigortasıyla güvenceye alınır; takip numaranızla sevkiyatınızın hangi aşamada olduğunu görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz. Palet sayınızı ve ölçülerinizi uygulamaya girerek saniyeler içinde anında teklif alabilirsiniz.",
       ],
     },
     {
@@ -112,8 +112,8 @@ const parsiyelTasimacilik: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamada kalkış ve varış noktanızı seçin, koli veya palet ölçülerinizi girin; hacme göre tahmini fiyat anında hesaplanır. Onayınızla gönderiniz en yakın çıkışa planlanır ve taşıma sözleşmeniz oluşturulur.",
-        "Alım: Planlanan günde aracımız adresinize gelir; kolileriniz etiketlenir, araç içindeki bölmesine yerleştirilir ve sabitlenir. Yükünüz bu andan itibaren sigorta kapsamındadır.",
-        "Taşıma: Araç planlanan çıkış gününde, depo beklemeden Avrupa'ya hareket eder; gümrük geçişini ve anlık konumu 7/24 canlı GPS takibinden izlersiniz.",
+        "Alım: Planlanan günde aracımız adresinize gelir; kolileriniz etiketlenir, araç içindeki bölmesine yerleştirilir ve sabitlenir. Yükünüz bu andan itibaren CMR taşıyıcı sorumluluğu kapsamındadır.",
+        "Taşıma: Araç planlanan çıkış gününde, depo beklemeden Avrupa'ya hareket eder; gümrük geçişini ve sevkiyatın hangi aşamada olduğunu takip sayfasından izlersiniz.",
         "Teslim: Gönderiniz alıcının kapısına teslim edilir; şubeden alma zorunluluğu yoktur. Teslimat bilgisi uygulamada anında görünür.",
       ],
     },
@@ -150,7 +150,7 @@ const parsiyelTasimacilik: SeoPageData = {
     {
       question: "Parsiyel gönderim sigortalı mı, takip edebilir miyim?",
       answer:
-        "Evet. Parsiyel gönderiler de komple taşımalar gibi taşıma sigortası kapsamındadır ve araçtaki 7/24 canlı GPS takibi sayesinde kolinizin anlık konumunu takip sayfasından görebilirsiniz.",
+        "Parsiyel gönderiler de komple taşımalar gibi CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya ve elektronik gibi yüklerde bu tavan eşyanın gerçek değerini karşılamayabilir; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takibe gelince: takip numaranızla kolinizin hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) takip sayfasından görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Parsiyel yükte gümrük işlemi nasıl olur?",
@@ -170,7 +170,7 @@ const parsiyelTasimacilik: SeoPageData = {
     {
       question: "Yüküm başka yüklerle mi taşınıyor, güvenli mi?",
       answer:
-        "Parsiyelde araç aynı yöne giden birden fazla gönderiyi taşır; ancak her gönderi araç içinde ayrılmış bölmesinde sabitlenir, etiketlenir ve teslimata kadar yerinden oynamaz. Tüm gönderiler taşıma sigortası kapsamındadır, araç 7/24 canlı GPS ile izlenir ve depo aktarması olmadığı için elleçleme kaynaklı hasar riski klasik parsiyele göre çok daha düşüktür.",
+        "Parsiyelde araç aynı yöne giden birden fazla gönderiyi taşır; ancak her gönderi araç içinde ayrılmış bölmesinde sabitlenir, etiketlenir ve teslimata kadar yerinden oynamaz. Tüm gönderiler CMR taşıyıcı sorumluluğu kapsamındadır ve talep üzerine ek yük sigortasıyla güvenceye alınır; sevkiyatın hangi aşamada olduğunu takip numaranızla görür, depo aktarması olmadığı için elleçleme kaynaklı hasar riskini klasik parsiyele göre çok daha düşük tutarız.",
     },
   ],
   related: [

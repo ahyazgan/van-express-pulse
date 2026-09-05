@@ -40,6 +40,20 @@ describe("prerender contract", () => {
     expect(indexHtml).toContain('href="/fiyat-hesaplama"');
   });
 
+  it("keeps public/sitemap.xml in sync with the routes we actually serve", () => {
+    // seoSlugs.ts carries a "Keep in sync with public/sitemap.xml" comment but
+    // nothing enforced it, so the sitemap drifted: it advertised /track, which is
+    // not prerendered and answers with a byte-for-byte copy of the homepage.
+    // Google reports that as a duplicate. Assert the contract instead of hoping.
+    const sitemap = readFileSync(resolve(process.cwd(), "public/sitemap.xml"), "utf8");
+    const listed = [...sitemap.matchAll(/<loc>https:\/\/routeeu24\.com(\/[^<]*)?<\/loc>/g)]
+      .map((m) => (m[1] ?? "/").replace(/\/$/, "") || "/");
+    const expected = ["/", ...SEO_ROUTE_PATHS, "/fiyat-hesaplama"].sort();
+
+    expect([...listed].sort()).toEqual(expected);
+    expect(new Set(listed).size, "sitemap has duplicate <loc> entries").toBe(listed.length);
+  });
+
   it("gives the SPA fallback so unknown paths still reach React Router", () => {
     const redirects = readFileSync(resolve(process.cwd(), "public/_redirects"), "utf8");
     expect(redirects).toMatch(/\/\*\s+\/index\.html\s+200/);
@@ -47,7 +61,7 @@ describe("prerender contract", () => {
 
   it("uses slugs that are safe as directory names", () => {
     for (const slug of Object.keys(SEO_PAGES)) {
-      // dist/<slug>/index.html — a leading or trailing slash would escape the tree.
+      // dist/<slug>.html — a leading or trailing slash would escape the tree.
       expect(slug, `${slug} is not a clean path`).toMatch(/^[a-z0-9]+(?:[-/][a-z0-9]+)*$/);
       expect(slug.startsWith("/")).toBe(false);
       expect(slug.endsWith("/")).toBe(false);

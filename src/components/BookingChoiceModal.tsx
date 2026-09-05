@@ -46,12 +46,12 @@ const BookingChoiceModal = ({
   const memberBenefits = language === "tr" 
     ? [
         "Geçmiş siparişlerinize ve fatura arşivinize anında ulaşın.",
-        "Yükünüzü 7/24 harita üzerinden canlı takip edin.",
+        "Sevkiyatınızın hangi aşamada olduğunu takip numaranızla görün.",
         "Şirket ve fatura bilgilerinizi kaydederek bir sonraki sefer saniyeler içinde sipariş verin.",
       ]
     : [
         "Instantly access your past orders and invoice archive.",
-        "Track your cargo live on the map 24/7.",
+        "See which stage your shipment has reached with your tracking number.",
         "Save your company and billing info to order in seconds next time.",
       ];
 
@@ -114,7 +114,7 @@ const BookingChoiceModal = ({
               </div>
               <div className="flex items-center gap-1.5 text-xs text-primary font-medium">
                 <MapPin className="w-4 h-4" />
-                <span>{language === "tr" ? "Canlı Takip" : "Live Tracking"}</span>
+                <span>{language === "tr" ? "Sevkiyat Takibi" : "Shipment Status"}</span>
               </div>
               <div className="flex items-center gap-1.5 text-xs text-primary font-medium">
                 <FileText className="w-4 h-4" />

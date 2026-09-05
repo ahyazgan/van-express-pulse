@@ -5,11 +5,11 @@ const polonyaKargo: SeoPageData = {
   slug: "polonya-kargo",
   title: "Polonya'ya Kargo ve Parsiyel Taşıma | Varşova'ya 24-40 Saat | RouteEU",
   description:
-    "Türkiye'den Polonya'ya kapıdan kapıya panelvan kargo ve parsiyel taşıma. Varşova, Kraków ve Wrocław'a 24-40 saatte sigortalı sevkiyat; anında teklif alın.",
+    "Türkiye'den Polonya'ya kapıdan kapıya panelvan kargo ve parsiyel taşıma. Varşova, Kraków ve Wrocław'a 24-40 saatte aktarmasız ekspres sevkiyat; hemen teklif alın.",
   h1: "Türkiye'den Polonya'ya Kargo ve Parsiyel Taşımacılık",
   intro: [
     "Türkiye ile Polonya arasındaki ticaret hacmi her yıl büyüyor: otomotiv yan sanayiden beyaz eşya komponentine, tekstilden e-ticaret ürünlerine kadar yüzlerce Türk işletmesi Polonya'daki üretici, distribütör ve depolara düzenli mal gönderiyor. RouteEU Express, İstanbul ve tüm Türkiye'den Varşova, Kraków, Wrocław ve Poznań başta olmak üzere Polonya'nın tüm şehirlerine kapıdan kapıya panelvan ekspres ve parsiyel taşımacılık yapar. Yükünüz fabrikanızdan veya deponuzdan alınır, araç değiştirmeden doğrudan Polonya'daki alıcı adresine teslim edilir.",
-    "Çift şoförlü panelvanlarımız hafta sonu TIR seyir yasağına tabi olmadığı için sevkiyat yedi gün kesintisiz sürer; İstanbul'dan Varşova'ya teslimat tipik olarak 24-40 saat içinde tamamlanır. Tüm yükler sigortalı taşınır, taşıma sözleşmesiyle güvence altına alınır ve 7/24 canlı GPS takibi sayesinde sevkiyatın anlık konumunu dilerseniz Polonya'daki müşterinizle de paylaşırsınız.",
+    "Çift şoförlü panelvanlarımız hafta sonu TIR seyir yasağına tabi olmadığı için sevkiyat yedi gün kesintisiz sürer; İstanbul'dan Varşova'ya teslimat tipik olarak 24-40 saat içinde tamamlanır. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır ve yazılı taşıma sözleşmesiyle güvence altına alınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatın hangi aşamada olduğunu görür, bu bağlantıyı dilerseniz Polonya'daki müşterinizle de paylaşırsınız.",
   ],
   transitTable: {
     caption: "Türkiye - Polonya Transit Süreleri",
@@ -79,7 +79,7 @@ const polonyaKargo: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Aracımız belirlenen tarihte fabrika, depo veya ofis adresinize gelir; yükünüz güvenle araca alınır.",
-        "Taşıma: Gümrük işlemlerinin ardından yük aktarmasız olarak Polonya'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Gümrük işlemlerinin ardından yük aktarmasız olarak Polonya'ya hareket eder; takip sayfasında sevkiyatınızın durumu yolda olarak görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç Polonya'daki alıcı adresine ulaşır, yük kapıda imza karşılığı teslim edilir.",
       ],
     },
@@ -122,7 +122,7 @@ const polonyaKargo: SeoPageData = {
     {
       question: "Sevkiyatımı nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Aracın anlık konumunu 7/24 harita üzerinden izleyebilir, takip bağlantısını Polonya'daki alıcınızla paylaşarak mal kabul planlamasını kolaylaştırabilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) takip sayfasından görür, güzergâhı harita üzerinden izlersiniz; takip bağlantısını Polonya'daki alıcınızla paylaşarak mal kabul planlamasını kolaylaştırabilirsiniz. Aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Polonya'dan Türkiye'ye dönüş yükü taşıyor musunuz?",

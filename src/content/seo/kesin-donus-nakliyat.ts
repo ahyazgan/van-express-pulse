@@ -6,11 +6,11 @@ const kesinDonusNakliyat: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Kesin Dönüş Nakliyat | Almanya'dan Türkiye'ye Eşya Taşıma | RouteEU",
   description:
-    "Almanya'dan Türkiye'ye kesin dönüş nakliyat: ev eşyanız kapıdan kapıya, sigortalı ve aktarmasız taşınır. Gümrük sürecinde rehberlik, anında fiyat teklifi.",
+    "Almanya'dan Türkiye'ye kesin dönüş nakliyat: ev eşyanız kapıdan kapıya, CMR sorumluluğunda ve aktarmasız taşınır. Gümrük sürecinde rehberlik, anında fiyat teklifi.",
   h1: "Almanya'dan Türkiye'ye Kesin Dönüş ve Eşya Taşıma",
   intro: [
     "Yıllarca Avrupa'da yaşadıktan sonra Türkiye'ye kesin dönüş yapmak büyük bir karar; ev eşyanızın taşınması ise bu kararın en çok kafa karıştıran ayağıdır. RouteEU Express, Almanya başta olmak üzere Hollanda, Belçika, Avusturya ve Fransa'dan Türkiye'ye kapıdan kapıya kesin dönüş nakliyatı yapar: eşyalarınız Avrupa'daki adresinizden alınır, araç değiştirmeden ve ara depoya girmeden Türkiye'deki yeni adresinize kadar aynı panelvanla gider.",
-    "Aktarmasız taşıma özellikle ev eşyasında önemlidir; eşyanız elden ele geçmediği için hasar ve kayıp riski en aza iner. Tüm gönderiler sigortalı taşınır, 7/24 canlı GPS takibiyle eşyanızın yolun neresinde olduğunu telefonunuzdan anlık görürsünüz. Panelvan araçlar hafta sonu TIR seyir yasağından muaf olduğu için taşımanız cumartesi-pazar da kesintisiz devam eder; çift şoför uygulamasıyla araç mola vermeden yol alır.",
+    "Aktarmasız taşıma özellikle ev eşyasında önemlidir; eşyanız elden ele geçmediği için hasar ve kayıp riski en aza iner. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğundan ve mobilya ile elektronikte bu tavan eşyanın gerçek değerini çoğu zaman karşılamadığından, talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu telefonunuzdan görürsünüz (talep alındı, anlaşma, yolda, teslim edildi); aracın o anki yerini WhatsApp'tan sorabilirsiniz. Panelvan araçlar hafta sonu TIR seyir yasağından muaf olduğu için taşımanız cumartesi-pazar da kesintisiz devam eder; çift şoför uygulamasıyla araç mola vermeden yol alır.",
   ],
   transitTable: {
     caption: "Avrupa'dan Türkiye'ye Kesin Dönüş Transit Süreleri",
@@ -78,7 +78,7 @@ const kesinDonusNakliyat: SeoPageData = {
         "Adresten alım: Aracımız Almanya, Hollanda, Belçika, Avusturya veya Fransa'daki adresinize gelir; eşyalar araç içinde sabitlenerek yüklenir. Depoya götürme veya şubeye bırakma zorunluluğu yoktur.",
         "Evrak hazırlığı: Eşya listesi (paket listesi), kimlik ve ikamet belgeleriniz ile varsa muafiyet evrakınız kontrol edilir. Hangi belgenin nereden alınacağı konusunda ekibimiz sizi önceden bilgilendirir.",
         "Sınır ve gümrük geçişi: Yükünüz güzergah üzerindeki gümrük işlemlerini aynı araç içinde tamamlar. Panelvan sınıfı araçlar 40 tonluk TIR'lara göre daha hızlı işlem gördüğü için sınırda kaybedilen süre kısalır.",
-        "Türkiye'de teslim: Eşyanız İstanbul'a veya Türkiye'deki hangi adrese gidecekse oraya, yüklendiği araçtan indirilerek teslim edilir. Tüm süreç boyunca canlı GPS takibi açıktır.",
+        "Türkiye'de teslim: Eşyanız İstanbul'a veya Türkiye'deki hangi adrese gidecekse oraya, yüklendiği araçtan indirilerek teslim edilir. Tüm süreç boyunca sevkiyatın hangi aşamada olduğunu takip numaranızla izlersiniz.",
       ],
     },
     {
@@ -99,14 +99,14 @@ const kesinDonusNakliyat: SeoPageData = {
         "Süre: Konsolide taşımada (parsiyel TIR veya paylaşımlı konteyner) eşyanız önce toplama deposunda aracın dolmasını bekler; kesin dönüş taşımaları bu yöntemle çoğu zaman 2-4 hafta sürer. RouteEU panelvanında araç yalnızca sizin için yola çıkar ve Almanya'dan İstanbul'a 24-48 saatte ulaşır.",
         "Aktarma: Parsiyelde eşya en az iki kez elden geçer (yükleme deposu ve varış deposu); panelvanda aktarma sıfırdır, yükleyen ekip ile teslim eden ekip aynıdır.",
         "Teslim: Konsolide taşımada eşyanızı varış deposundan almanız ya da ayrıca dağıtım ücreti ödemeniz gerekebilir; panelvanda teslim doğrudan kapınızda ve tutanaklıdır.",
-        "Takip: Parsiyelde çoğu zaman \"yükünüz depoda\" bilgisiyle yetinirsiniz; panelvanda aracı 7/24 canlı GPS ile harita üzerinde izlersiniz.",
+        "Takip: Parsiyelde çoğu zaman \"yükünüz depoda\" bilgisiyle yetinirsiniz; panelvanda takip numaranızla sevkiyatın hangi aşamada olduğunu görür, aracın o anki yerini WhatsApp'tan sorarsınız.",
         "Maliyet: Birkaç koli için parsiyel daha ekonomiktir; komple ev eşyasında ise panelvan, depo ve aktarma masrafı olmadığı için toplamda öngörülebilir bir maliyet sunar.",
       ],
     },
     {
-      heading: "Güvence: Sözleşme, Sabit Fiyat, Sigorta ve Tutanaklı Teslim",
+      heading: "Güvence: Sözleşme, Sabit Fiyat, CMR Sorumluluğu ve Tutanaklı Teslim",
       paragraphs: [
-        "Kesin dönüş eşyası, yıllar içinde biriktirdiğiniz hayatın kendisidir; bu yüzden kimin taşıdığı kadar hangi güvencelerle taşıdığı da önemlidir. Yazılı sözleşme, taşıma sigortası poliçesi ve canlı takip, hangi firmayla çalışırsanız çalışın talep etmeniz gereken asgari standartlardır. RouteEU'da bu güvenceler hizmetin ayrılmaz parçasıdır: taşıma kapsamı, tarih, adresler ve fiyat yazılı sözleşmede yer alır; teklifte anlaşılan rakam taşıma günü değişmez ve yolda ek ücret talep edilmez; eşyanız taşıma sigortası kapsamındadır ve poliçe bilgisi tarafınızla paylaşılır; aracı 7/24 canlı GPS ile izlersiniz; yükleme ve teslimat, eşya listesi karşılıklı kontrol edilerek tutanakla yapılır.",
+        "Kesin dönüş eşyası, yıllar içinde biriktirdiğiniz hayatın kendisidir; bu yüzden kimin taşıdığı kadar hangi güvencelerle taşıdığı da önemlidir. Yazılı sözleşme, sorumluluk kapsamının açıkça belirtilmesi ve sevkiyatın aşamasını görebilmek, hangi firmayla çalışırsanız çalışın talep etmeniz gereken asgari standartlardır. RouteEU'da bu güvenceler hizmetin ayrılmaz parçasıdır: taşıma kapsamı, tarih, adresler ve fiyat yazılı sözleşmede yer alır; teklifte anlaşılan rakam taşıma günü değişmez ve yolda ek ücret talep edilmez; eşyanız CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır, bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğu ve mobilya ile elektronikte bu tavan gerçek değeri çoğu zaman karşılamadığı için talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırır, poliçe bilgisini sizinle paylaşırız; takip numaranızla sevkiyatın hangi aşamada olduğunu görür, aracın o anki yerini WhatsApp'tan sorarsınız; yükleme ve teslimat, eşya listesi karşılıklı kontrol edilerek tutanakla yapılır.",
       ],
     },
   ],
@@ -153,7 +153,7 @@ const kesinDonusNakliyat: SeoPageData = {
     {
       question: "Eşyam yolda güvende mi, takip edebilir miyim?",
       answer:
-        "Tüm gönderiler sigortalı taşınır ve aktarmasız gittiği için eşyanız yol boyunca araçtan inmez. Her taşımaya 7/24 canlı GPS takibi tanımlanır; aracın anlık konumunu gönderi takip sayfasından harita üzerinde izleyebilirsiniz.",
+        "Eşyanız aktarmasız gittiği için yol boyunca araçtan inmez ve her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya ve elektronikte bu tavan eşyanın gerçek değerini çoğu zaman karşılamadığı için talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Her taşımaya bir takip numarası tanımlanır; sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) gönderi takip sayfasından görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Eşyalarım kaç günde Türkiye'de olur?",
@@ -163,7 +163,7 @@ const kesinDonusNakliyat: SeoPageData = {
     {
       question: "Yaşlı yakınım adına süreci yönetebilir misiniz?",
       answer:
-        "Evet. Emekli anne veya babasının kesin dönüşünü Türkiye'den ya da Avrupa'nın başka bir şehrinden organize eden ailelerle sık çalışıyoruz. Teklif, sözleşme ve tarih planlaması sizinle yürütülür; yükleme günü ekibimiz yakınınızın adresine gider, eşya listesini birlikte kontrol eder ve tutanakla teslim alır. Aracı canlı GPS ile siz takip edersiniz, Türkiye'deki teslimat da yine tutanakla yapılır. Konsolosluk ve gümrük başvuruları kişinin kendisi veya vekâlet verdiği kişi tarafından yapılır; bu adımlarda hangi evrakın nereden alınacağını adım adım anlatır, gerekirse gümrük müşavirinizle koordinasyonu üstleniriz.",
+        "Evet. Emekli anne veya babasının kesin dönüşünü Türkiye'den ya da Avrupa'nın başka bir şehrinden organize eden ailelerle sık çalışıyoruz. Teklif, sözleşme ve tarih planlaması sizinle yürütülür; yükleme günü ekibimiz yakınınızın adresine gider, eşya listesini birlikte kontrol eder ve tutanakla teslim alır. Sevkiyatın hangi aşamada olduğunu takip numarasıyla siz izler, aracın o anki yerini WhatsApp'tan sorarsınız; Türkiye'deki teslimat da yine tutanakla yapılır. Konsolosluk ve gümrük başvuruları kişinin kendisi veya vekâlet verdiği kişi tarafından yapılır; bu adımlarda hangi evrakın nereden alınacağını adım adım anlatır, gerekirse gümrük müşavirinizle koordinasyonu üstleniriz.",
     },
   ],
   related: [

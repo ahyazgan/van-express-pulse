@@ -32,8 +32,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     localStorage.setItem("language", language);
-    // Keep <html lang> in sync for a11y (screen readers) and SEO.
-    document.documentElement.lang = language;
+    // Deliberately NOT writing document.documentElement.lang here. This value is
+    // auto-detected from navigator.language, and Googlebot renders with an en-US
+    // locale — so stamping it would relabel Turkish documents as English in the
+    // rendered DOM that Google indexes. Pages that know their own content
+    // language set <html lang> themselves (SeoPage, usePageMeta's `lang`).
   }, [language]);
 
   const t = translations[language];

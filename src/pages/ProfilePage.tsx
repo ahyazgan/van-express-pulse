@@ -21,8 +21,12 @@ import AppNavigation from "@/components/AppNavigation";
 import TopBar from "@/components/TopBar";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
+import usePageMeta from "@/hooks/usePageMeta";
 
 const ProfilePage = () => {
+  // Per-user private data.
+  usePageMeta({ title: "Profil | RouteEU Express", description: "Hesap bilgileriniz.", noindex: true });
+
   const navigate = useNavigate();
   const { language, t } = useLanguage();
   const { user, profile, signOut } = useAuth();
@@ -124,7 +128,7 @@ const ProfilePage = () => {
             <div className="mt-6 flex items-center justify-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                {language === "tr" ? "Canlı Takip" : "Live Tracking"}
+                {language === "tr" ? "Sevkiyat Takibi" : "Shipment Status"}
               </span>
               <span className="flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary" />

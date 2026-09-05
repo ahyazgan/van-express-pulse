@@ -12,6 +12,8 @@ const SuccessPage = () => {
   usePageMeta({
     title: t.meta.success.title,
     description: t.meta.success.description,
+    // Post-order confirmation reachable only after a submission.
+    noindex: true,
   });
 
   return (

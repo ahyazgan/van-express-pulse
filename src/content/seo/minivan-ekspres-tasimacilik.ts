@@ -6,11 +6,11 @@ const minivanEkspresTasimacilik: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Minivan & Panelvan Ekspres Taşımacılık | Avrupa'ya 24-72 Saat | RouteEU",
   description:
-    "Avrupa'ya ekspres minivan ve panelvan taşımacılık: ~1.300 kg / 5 palet kapasite, sigortalı, aktarmasız kapıdan kapıya teslimat 24-72 saatte. Anında fiyat alın.",
+    "Avrupa'ya ekspres minivan ve panelvan taşımacılık: ~1.300 kg / 5 palet kapasite, CMR sorumluluğunda, aktarmasız kapıdan kapıya teslimat 24-72 saatte. Fiyat alın.",
   h1: "Avrupa'ya Ekspres Minivan / Panelvan Taşımacılık",
   intro: [
     "Üretim hattınız bir yedek parça bekliyorsa, fuar standınızın açılışa yetişmesi gerekiyorsa ya da müşteriniz teslim tarihini öne çektiyse, klasik parsiyel TIR taşımacılığının 7-15 günlük süreleri bir seçenek olmaktan çıkar. Minivan ve panelvan ekspres taşımacılık tam bu noktada devreye girer: yükünüz için tahsis edilmiş bir araç, adresinizden yükleme yapar ve Avrupa'daki teslimat noktasına aktarmasız, depo beklemeden, 24-72 saat içinde ulaşır.",
-    "RouteEU Express, Türkiye'den Almanya, Avusturya, Hollanda, Belçika, Fransa, İtalya, Polonya ve Çekya başta olmak üzere tüm Avrupa'ya ekspres panelvan taşımacılığı yapar. Araçlarımız çift şoförle kesintisiz ilerler, tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün hangi ülkede, hangi otoyolda olduğunu anlık görürsünüz. Fiyat için telefon trafiğine gerek yok: uygulamadan kalkış ve varış noktasını seçin, saniyeler içinde tahmini teklifinizi alın.",
+    "RouteEU Express, Türkiye'den Almanya, Avusturya, Hollanda, Belçika, Fransa, İtalya, Polonya ve Çekya başta olmak üzere tüm Avrupa'ya ekspres panelvan taşımacılığı yapar. Araçlarımız çift şoförle kesintisiz ilerler, tüm gönderiler CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır ve takip numaranızla yükünüzün hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görürsünüz; aracın o anki yerini WhatsApp'tan sorabilirsiniz. Fiyat için telefon trafiğine gerek yok: uygulamadan kalkış ve varış noktasını seçin, saniyeler içinde tahmini teklifinizi alın.",
   ],
   transitTable: {
     caption: "İstanbul'dan Avrupa'ya Ekspres Minivan Transit Süreleri",
@@ -92,8 +92,8 @@ const minivanEkspresTasimacilik: SeoPageData = {
       ],
       list: [
         "Teklif: Uygulamadan kalkış ve varış adresinizi seçin, yük bilgilerinizi girin; tahmini fiyat saniyeler içinde ekranınıza gelir. Onayladığınızda talebiniz planlamaya düşer ve taşıma sözleşmeniz oluşturulur.",
-        "Alım: Sprinter sınıfı aracımız belirlenen saatte Türkiye'deki adresinize gelir; yükünüz araç içinde sabitlenir, sigorta kapsamı yola çıkmadan önce netleşir.",
-        "Taşıma: İhracat işlemleri tamamlanır tamamlanmaz araç çift şoförle, aktarmasız olarak Avrupa'ya hareket eder; konumunu 7/24 canlı GPS haritasında izlersiniz.",
+        "Alım: Sprinter sınıfı aracımız belirlenen saatte Türkiye'deki adresinize gelir; yükünüz araç içinde sabitlenir, CMR sorumluluğu ve talep ettiyseniz ek sigorta kapsamı yola çıkmadan önce netleşir.",
+        "Taşıma: İhracat işlemleri tamamlanır tamamlanmaz araç çift şoförle, aktarmasız olarak Avrupa'ya hareket eder; aşamasını takip numaranızdan, güzergâhı harita üzerinden izlersiniz.",
         "Teslim: Araç Avrupa'daki teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir ve teslimat bilgisi uygulamaya işlenir.",
       ],
     },
@@ -101,7 +101,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
       heading: "Gümrük ve Evrak Süreci Nasıl İşler?",
       paragraphs: [
         "Türkiye'den Avrupa Birliği ülkelerine ticari gönderilerde temel olarak fatura ve dolaşım belgesi (ör. ATR) ile ihracat beyanı süreci işler; ekibimiz hangi evrakların gerekeceği konusunda size yol gösterir ve süreci taşımayla eş zamanlı yürütür. Gümrük mevzuatı ürün grubuna ve ülkeye göre farklılık gösterebildiğinden, gönderinize özel güncel şartları gümrük müşavirinize veya ilgili ülkenin konsolosluğuna teyit ettirmenizi öneririz.",
-        "Taşımalarımız çift yönlüdür: Avrupa'dan Türkiye'ye dönüş yükleriniz için de aynı hız, sigorta ve canlı takip imkânıyla hizmet veriyoruz.",
+        "Taşımalarımız çift yönlüdür: Avrupa'dan Türkiye'ye dönüş yükleriniz için de aynı hız, aynı CMR sorumluluğu ve aynı aşamalı takip imkânıyla hizmet veriyoruz.",
       ],
     },
   ],
@@ -138,7 +138,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
     {
       question: "Gönderim sigortalı mı, yolda takip edebilir miyim?",
       answer:
-        "Tüm gönderiler taşıma sigortası kapsamında taşınır; değerli yüklerde kapsam teklif aşamasında netleştirilir. Her araca 7/24 canlı GPS takibi tanımlıdır — yükünüzün anlık konumunu harita üzerinden kendiniz izlersiniz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk brüt kilogram başına 8,33 SDR ile sınırlı olduğundan, elektronik veya makine gibi değerli yüklerde talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Her gönderiye bir takip numarası tanımlanır — sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) kendiniz görür, aracın o anki yerini WhatsApp'tan sorarsınız.",
     },
     {
       question: "Minivan express taşımacılık nedir?",

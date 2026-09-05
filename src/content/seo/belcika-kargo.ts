@@ -5,11 +5,11 @@ const belcikaKargo: SeoPageData = {
   slug: "belcika-kargo",
   title: "Belçika'ya Panelvan Kargo | Kapıdan Kapıya Ekspres | RouteEU",
   description:
-    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo. Brüksel ve Anvers'e 30-46 saatte sigortalı ekspres taşıma ve canlı GPS takip. Anında fiyat alın.",
+    "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo: Brüksel ve Anvers'e 30-46 saatte aktarmasız teslimat, CMR sorumluluğu, aşama takibi. Anında fiyat alın.",
   h1: "Türkiye'den Belçika'ya Kapıdan Kapıya Kargo",
   intro: [
     "Türkiye'den Belçika'ya kargo göndermenin alışılmış yolu, yükünüzün başka gönderilerle birleştirilip TIR'la yola çıktığı parsiyel taşımadır; bu yöntemde teslimat çoğu zaman haftalar alır ve yükünüz birden fazla depoya uğrar. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Brüksel ve Anvers'e 30-46 saat, Gent, Charleroi ve Brugge gibi diğer şehirlere 32-50 saat içinde teslim edilir.",
-    "Panelvan sınıfı araçlar hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen gönderi pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç uzun molalar vermez, transit süre kısalır. Tüm gönderiler sigortalı taşınır ve 7/24 canlı GPS takibiyle yükünüzün hangi ülkede, hangi otoyolda olduğunu telefonunuzdan anlık olarak izlersiniz. Fiyat öğrenmek için kimseyi aramanız gerekmez; uygulamadan kalkış ve varış adresinizi seçerek anında teklif alırsınız.",
+    "Panelvan sınıfı araçlar hafta sonu TIR seyir yasağından muaf olduğu için cuma günü yüklenen gönderi pazartesiyi beklemeden yola devam eder. Çift şoför uygulamasıyla araç uzun molalar vermez, transit süre kısalır. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası da yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) telefonunuzdan görürsünüz; aracın o anki yerini WhatsApp'tan sorabilirsiniz. Fiyat öğrenmek için kimseyi aramanız gerekmez; uygulamadan kalkış ve varış adresinizi seçerek anında teklif alırsınız.",
   ],
   transitTable: {
     caption: "Türkiye - Belçika Transit Süreleri",
@@ -49,21 +49,21 @@ const belcikaKargo: SeoPageData = {
         "Çift şoför: Şoförler dönüşümlü sürdüğü için araç uzun dinlenme molası vermeden ilerler, İstanbul'dan Brüksel'e teslimat 30-46 saatte tamamlanır.",
         "Aktarmasız taşıma: Eşyanız yükleme anından teslimata kadar aynı araçta kalır; depoya girmez, elden ele geçmez, hasar ve kayıp riski en aza iner.",
         "Sınırda avantaj: Panelvan sınıfı araçlar gümrük kapılarında 40 tonluk TIR'lara göre belirgin biçimde daha hızlı işlem görür; yoğun kapılarda kazanılan süre saatlerle ölçülür.",
-        "Canlı takip: 7/24 GPS takibiyle aracın konumunu harita üzerinde görürsünüz; 'yüküm nerede?' sorusunu kimseye sormanız gerekmez.",
+        "Aşama takibi: Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorarsınız.",
       ],
     },
     {
       heading: "Belçika'daki Türk Topluluğuna Eşya Gönderimi",
       paragraphs: [
         "Belçika, Avrupa'daki en köklü Türk topluluklarından birine ev sahipliği yapar; Brüksel, Anvers, Gent ve Limburg bölgesindeki Genk gibi şehirlerde geniş bir Türkçe konuşan topluluk yaşar. Türkiye'deki ailesinden eşya bekleyenler, yeni eve çıkanlar veya memleketten özel eşyalarını getirtmek isteyenler için kapıdan kapıya panelvan taşıma en pratik yoldur: eşyanız Türkiye'deki evden alınır, Belçika'daki kapıya kadar aynı araçla gelir.",
-        "Çeyiz, mobilya, beyaz eşya, kişisel eşya kolileri, bebek eşyası veya aile yadigarı özel parçalar — hepsi sigortalı ve tek elden taşınır. Komple panelvan doldurmayacak kadar küçük gönderiler için de çözümümüz var: koli ve parça eşya gönderileri hacme göre fiyatlandırılır, uygulamadan anında teklif alarak gönderinizi planlayabilirsiniz.",
+        "Çeyiz, mobilya, beyaz eşya, kişisel eşya kolileri, bebek eşyası veya aile yadigarı özel parçalar — hepsi CMR sorumluluğu altında, talep üzerine ek sigortalı ve tek elden taşınır. Komple panelvan doldurmayacak kadar küçük gönderiler için de çözümümüz var: koli ve parça eşya gönderileri hacme göre fiyatlandırılır, uygulamadan anında teklif alarak gönderinizi planlayabilirsiniz.",
         "Belçika'da yaşayıp Türkiye'ye kalıcı dönüş yapmayı planlıyorsanız, tüm ev eşyanızın tek seferde taşındığı kesin dönüş nakliyat hizmetimiz bu iş için tasarlandı.",
       ],
     },
     {
       heading: "Belçika'ya Eşya ve Koli Gönderme",
       paragraphs: [
-        "Belçika'ya gönderiniz her zaman komple bir araç dolduracak kadar büyük olmayabilir. Türkiye'deki ailenizin hazırladığı birkaç koli, yeni evinize eklenecek birkaç mobilya parçası ya da iş yerinize gidecek numune paketleri için komple panelvan kiralamanıza gerek yok: Brüksel, Anvers, Gent, Liège ve Charleroi başta olmak üzere tüm Belçika adreslerine koli ve parça eşya gönderilerini parsiyel olarak taşıyoruz. Gönderiniz yine sigortalıdır, aynı canlı GPS takibinden izlenir ve kapıya teslim edilir.",
+        "Belçika'ya gönderiniz her zaman komple bir araç dolduracak kadar büyük olmayabilir. Türkiye'deki ailenizin hazırladığı birkaç koli, yeni evinize eklenecek birkaç mobilya parçası ya da iş yerinize gidecek numune paketleri için komple panelvan kiralamanıza gerek yok: Brüksel, Anvers, Gent, Liège ve Charleroi başta olmak üzere tüm Belçika adreslerine koli ve parça eşya gönderilerini parsiyel olarak taşıyoruz. Gönderiniz yine CMR sorumluluğu altındadır, aynı aşama takibinden izlenir ve kapıya teslim edilir.",
         "Belçika'da yaşayan gurbetçiler için bu hizmet özellikle pratiktir: memleketten gelen çeyiz, giyim kolileri, bebek eşyası veya aile yadigarı parçalar Türkiye'deki adresten alınır, Belçika'daki kapınıza kadar aynı koridorda ilerleyen araçlarımızla ulaştırılır. Almanya ve Hollanda hatlarımızla aynı güzergahı paylaştığımız için kalkış sıklığımız yüksek, koli başına maliyet düşüktür. Hacim bazlı fiyatlandırmanın ayrıntıları için parsiyel taşımacılık sayfamıza göz atabilir, uygulamadan ölçü ve adres bilgilerinizi girerek anında teklif alabilirsiniz.",
       ],
     },
@@ -84,9 +84,9 @@ const belcikaKargo: SeoPageData = {
         "Transit süre: parsiyel TIR 7-15 gün; RouteEU panelvan 30-46 saat.",
         "Aktarma sayısı: parsiyel TIR'da en az iki depo; panelvanda sıfır, yükleme anından teslimata aynı araç.",
         "Hafta sonu: TIR'lar seyir yasağına tabi; panelvan cumartesi ve pazar da yol alır.",
-        "Takip: parsiyelde telefonla sorulan tahmini konum; panelvanda 7/24 canlı GPS.",
+        "Takip: parsiyelde telefonla sorulan tahmini konum; panelvanda takip numarasıyla aşama bilgisi ve WhatsApp'tan konum sorma.",
         "Teslim noktası: parsiyelde sıklıkla depo veya şube; panelvanda Belçika'daki adresin kapısı.",
-        "Güvence: her RouteEU taşıması yazılı sözleşme ve taşıma sigortası kapsamında yola çıkar.",
+        "Güvence: her RouteEU taşıması yazılı sözleşme ve CMR taşıyıcı sorumluluğu kapsamında yola çıkar; talep üzerine ek yük sigortası yapılır.",
       ],
     },
     {
@@ -95,16 +95,16 @@ const belcikaKargo: SeoPageData = {
         "Belçika'ya gönderiniz dört adımda tamamlanır; her adımda yükünüzün durumunu uygulamadan izleyebilirsiniz:",
       ],
       list: [
-        "Teklif: Uygulamadan kalkış adresinizi ve Belçika'daki varış adresini seçin, yükünüzün hacmini girin ve tahmini fiyatı saniyeler içinde görün. Onayladığınızda taşıma sözleşmesi ve sigorta kapsamı dijital olarak oluşturulur.",
+        "Teklif: Uygulamadan kalkış adresinizi ve Belçika'daki varış adresini seçin, yükünüzün hacmini girin ve tahmini fiyatı saniyeler içinde görün. Onayladığınızda taşıma sözleşmesi ve CMR sorumluluk kapsamı dijital olarak oluşturulur; ek sigorta isterseniz eşyanın değerini bu aşamada beyan edersiniz.",
         "Alım: Aracımız belirlenen gün ve saatte Türkiye'deki adresinize gelir; eşyanız kontrol edilerek araca yüklenir, gümrük evrakı sizinle birlikte tamamlanır.",
-        "Taşıma: Yük, gümrük işlemlerinin ardından aktarmasız olarak Belçika'ya hareket eder. Çift şoför sayesinde araç mola için durmaz; konumunu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Yük, gümrük işlemlerinin ardından aktarmasız olarak Belçika'ya hareket eder. Çift şoför sayesinde araç mola için durmaz; sevkiyatın hangi aşamada olduğunu takip numaranızla, güzergâhı harita üzerinde izlersiniz.",
         "Teslim: Araç Brüksel, Anvers, Gent ya da Belçika'daki hangi adrese gidecekse oraya ulaşır; eşyanız kapıda alıcıya teslim edilir ve teslimat bilgisi uygulamada görünür.",
       ],
     },
     {
       heading: "Belçika'dan Türkiye'ye Dönüş Taşımaları",
       paragraphs: [
-        "Taşımalarımız çift yönlüdür. Belçika'dan Türkiye'ye eşya, ticari yük veya numune göndermek istiyorsanız aynı araç tipi, aynı hız ve aynı canlı takip imkânıyla dönüş taşıması da yapıyoruz. Anvers, Avrupa'nın en büyük liman kentlerinden biri olduğu için bölgede ticari hareketlilik yoğundur; Belçika'dan Türkiye'ye yedek parça, makine ekipmanı veya ticari mal taşıyan işletmeler için dönüş yönü de tam kapasiteyle çalışır.",
+        "Taşımalarımız çift yönlüdür. Belçika'dan Türkiye'ye eşya, ticari yük veya numune göndermek istiyorsanız aynı araç tipi, aynı hız ve aynı aşama takibi imkânıyla dönüş taşıması da yapıyoruz. Anvers, Avrupa'nın en büyük liman kentlerinden biri olduğu için bölgede ticari hareketlilik yoğundur; Belçika'dan Türkiye'ye yedek parça, makine ekipmanı veya ticari mal taşıyan işletmeler için dönüş yönü de tam kapasiteyle çalışır.",
       ],
     },
   ],
@@ -141,7 +141,7 @@ const belcikaKargo: SeoPageData = {
     {
       question: "Gönderim sigortalı mı, yolda takip edebilir miyim?",
       answer:
-        "Tüm gönderiler taşıma sigortası kapsamında taşınır; değerli yükler için kapsam teklif aşamasında netleştirilir. Her gönderiye 7/24 canlı GPS takibi tanımlanır — aracınızın anlık konumunu gönderi takip sayfasından harita üzerinde izleyebilirsiniz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) gönderi takip sayfasından görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Belçika'dan Türkiye'ye taşıma yapıyor musunuz?",

@@ -47,7 +47,7 @@ const ServicesGrid = () => {
           <p className="text-xs text-muted-foreground">{s.doorToDoor.description}</p>
         </div>
 
-        {/* Wide Box - Insured Transport */}
+        {/* Wide Box - CMR liability + added cover on request */}
         <div className="col-span-2 bento-box h-28 flex-row items-center gap-4">
           <div className="w-14 h-14 rounded-xl bg-success/10 flex items-center justify-center flex-shrink-0">
             <Shield className="w-7 h-7 text-success" />

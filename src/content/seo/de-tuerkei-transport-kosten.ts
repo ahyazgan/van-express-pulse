@@ -24,7 +24,7 @@ const deTuerkeiTransportKosten: SeoPageData = {
       { route: "Amsterdam → Istanbul", price: priceRange("Amsterdam") },
     ],
     disclaimer:
-      "Die Werte gelten für einen exklusiv gebuchten Transporter mit rund 1.300 kg Nutzlast, 5 Europaletten und etwa 13,5 m³ Laderaum, inklusive Transport und Transportversicherung. Zölle, Einfuhrabgaben und Steuern sind nicht enthalten. Bei einer Beiladung zahlen Sie nur den genutzten Laderaum, der Preis liegt dann entsprechend niedriger. Ihren verbindlichen Preis berechnen Sie in der App in wenigen Sekunden.",
+      "Die Werte gelten für einen exklusiv gebuchten Transporter mit rund 1.300 kg Nutzlast, 5 Europaletten und etwa 13,5 m³ Laderaum, inklusive Transport und der Haftung des Frachtführers nach CMR; eine zusätzliche Warentransportversicherung schließen wir auf Wunsch ab. Zölle, Einfuhrabgaben und Steuern sind nicht enthalten. Bei einer Beiladung zahlen Sie nur den genutzten Laderaum, der Preis liegt dann entsprechend niedriger. Ihren verbindlichen Preis berechnen Sie in der App in wenigen Sekunden.",
   },
   sections: [
     {
@@ -78,8 +78,8 @@ const deTuerkeiTransportKosten: SeoPageData = {
     {
       heading: "Was im Preis enthalten ist – und was nicht",
       paragraphs: [
-        "Damit Sie Angebote vergleichen können, muss klar sein, wo die Leistung endet. In unseren Preisen enthalten sind: die Abholung an der angegebenen Adresse, der Transport ohne Umladen bis zur Zieladresse, die Ladungssicherung, die Transportversicherung, Maut und Kraftstoff auf der gesamten Strecke, die GPS-Ortung sowie die Erstellung der Frachtpapiere.",
-        "Nicht enthalten sind Zölle, Einfuhrabgaben und Steuern, die im Bestimmungsland auf die Sendung erhoben werden. Diese Beträge fließen nicht an die Spedition, sondern an den Staat, und ihre Höhe hängt von der Warenart, vom Wert und vom anwendbaren Zollverfahren ab. Ebenfalls separat zu betrachten sind das Verpackungsmaterial, wenn Sie es über uns beziehen, sowie Zusatzleistungen wie Möbeldemontage oder Tragehilfe.",
+        "Damit Sie Angebote vergleichen können, muss klar sein, wo die Leistung endet. In unseren Preisen enthalten sind: die Abholung an der angegebenen Adresse, der Transport ohne Umladen bis zur Zieladresse, die Ladungssicherung, die Haftung des Frachtführers nach CMR, Maut und Kraftstoff auf der gesamten Strecke, die Sendungsverfolgung per Trackingnummer sowie die Erstellung der Frachtpapiere.",
+        "Nicht enthalten sind Zölle, Einfuhrabgaben und Steuern, die im Bestimmungsland auf die Sendung erhoben werden. Diese Beträge fließen nicht an die Spedition, sondern an den Staat, und ihre Höhe hängt von der Warenart, vom Wert und vom anwendbaren Zollverfahren ab. Ebenfalls separat zu betrachten sind das Verpackungsmaterial, wenn Sie es über uns beziehen, eine zusätzliche Warentransportversicherung über den von Ihnen angegebenen Wert sowie Zusatzleistungen wie Möbeldemontage oder Tragehilfe.",
         "Für gebrauchten Hausrat bei einer Wohnsitzverlegung gilt ein anderer Rahmen als für Handelsware, und für Handelsware zwischen der EU und der Türkei gelten wiederum die Regeln der Zollunion mit den zugehörigen Nachweisdokumenten. Feste Beträge oder Wertgrenzen nennen wir hier bewusst nicht: Die Vorschriften ändern sich, und die Einstufung hängt vom Einzelfall ab. Lassen Sie die aktuell geltenden Regelungen vor der Buchung von einem Zollagenten oder der zuständigen Behörde bestätigen – dieser Text ist eine Orientierungshilfe und ersetzt keine offizielle Zoll- oder Rechtsberatung.",
       ],
     },
@@ -118,7 +118,7 @@ const deTuerkeiTransportKosten: SeoPageData = {
     {
       question: "Sind Zoll und Steuern im Preis enthalten?",
       answer:
-        "Nein. Der Preis deckt Transport, Ladungssicherung und Transportversicherung ab. Zölle, Einfuhrabgaben und Steuern werden im Bestimmungsland erhoben und richten sich nach Warenart, Wert und Zollverfahren. Da sich diese Regelungen ändern, klären Sie Ihren konkreten Fall bitte vorab mit einem Zollagenten oder der zuständigen Behörde ab; diese Angaben ersetzen keine offizielle Beratung.",
+        "Nein. Der Preis deckt Transport, Ladungssicherung und die Haftung des Frachtführers nach CMR ab, die gesetzlich auf 8,33 SZR je Kilogramm Rohgewicht begrenzt ist; eine zusätzliche Warentransportversicherung über den von Ihnen angegebenen Wert schließen wir auf Wunsch ab. Zölle, Einfuhrabgaben und Steuern werden im Bestimmungsland erhoben und richten sich nach Warenart, Wert und Zollverfahren. Da sich diese Regelungen ändern, klären Sie Ihren konkreten Fall bitte vorab mit einem Zollagenten oder der zuständigen Behörde ab; diese Angaben ersetzen keine offizielle Beratung.",
     },
     {
       question: "Beiladung oder Komplettladung – was ist günstiger?",

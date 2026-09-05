@@ -4,7 +4,12 @@
  * The app is a client-rendered SPA, so a crawler that does not execute
  * JavaScript sees an empty <div id="root">. Rather than depend on a host that
  * prerenders for verified bots, this script writes a real HTML file for every
- * content route after `vite build`: dist/<slug>/index.html.
+ * content route after `vite build`: dist/<slug>.html.
+ *
+ * Why `<slug>.html` and not `<slug>/index.html`: Cloudflare Pages serves
+ * `dist/foo.html` at `/foo` (and 308s `/foo/` -> `/foo`), whereas a directory
+ * index is served at `/foo/` with `/foo` redirected. Canonical + sitemap URLs
+ * have no trailing slash, so the flat file keeps the served URL identical.
  *
  * All SEO page content is plain data (SeoPageData), so no React is involved —
  * we render the same markup the crawler needs, then the SPA mounts over it and
@@ -167,9 +172,9 @@ const render = (
   if (from < 0 || to < 0) throw new Error("PRERENDER markers missing from index.html");
   html = html.slice(0, from + START.length) + "\n        " + opts.body + "\n      " + html.slice(to);
 
-  const dir = join(DIST, opts.slug);
-  mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, "index.html"), html, "utf8");
+  const file = join(DIST, `${opts.slug}.html`);
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, html, "utf8");
 };
 
 const template = readFileSync(join(DIST, "index.html"), "utf8");
@@ -242,4 +247,4 @@ render(template, {
 });
 count++;
 
-console.log(`prerender: ${count} sayfa yazıldı (dist/<slug>/index.html)`);
+console.log(`prerender: ${count} sayfa yazıldı (dist/<slug>.html)`);

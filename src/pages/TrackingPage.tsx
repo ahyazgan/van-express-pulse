@@ -92,6 +92,8 @@ const TrackingPage = () => {
   usePageMeta({
     title: t.meta.tracking.title,
     description: t.meta.tracking.description,
+    // Utility page keyed by a tracking number: no unique indexable content, and the served HTML is a byte-for-byte copy of the homepage.
+    noindex: true,
   });
 
   const TRACKING_STAGES: { key: OrderStatus; label: string; icon: typeof Package }[] = [

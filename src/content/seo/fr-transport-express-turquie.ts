@@ -7,12 +7,12 @@ const frTransportExpressTurquie: SeoPageData = {
   hreflangGroup: "express-b2b",
   title: "Transport express France-Turquie | Véhicule dédié en 28-48 h",
   description:
-    "Transport express France-Turquie en véhicule dédié : 28 à 48 h, 5 palettes Europe, sans rupture de charge, double équipage, suivi GPS et assurance.",
+    "Transport express France-Turquie en véhicule dédié : 28 à 48 h, 5 palettes Europe, sans rupture de charge, double équipage, suivi par étapes et couverture CMR.",
   h1: "Transport express France-Turquie sans rupture de charge",
   intro: [
     "Un transport express n'a de sens que si la marchandise ne s'arrête nulle part. RouteEU Express met à disposition des véhicules utilitaires légers de classe Sprinter dédiés à un seul client : votre envoi est chargé chez vous, en France, et déchargé chez le destinataire en Turquie sans passer par un hub, un quai de groupage ou un entrepôt de transit. Un chargement, un déchargement, deux chauffeurs entre les deux.",
     "Sur les principaux axes, le délai d'acheminement se situe entre 28 et 48 heures selon le point de départ. Nos véhicules ne sont pas concernés par les interdictions de circulation qui immobilisent les poids lourds le week-end et les jours fériés : un envoi remis le vendredi après-midi ne perd pas deux jours à l'arrêt sur une aire d'autoroute.",
-    "Capacité utile : environ 1 300 kg, 5 palettes Europe et 13,5 m³. Au-delà, nous engageons plusieurs véhicules en parallèle ; en dessous, l'envoi partiel permet de ne payer que la place occupée sans perdre l'avantage du transport direct. Dans tous les cas, la marchandise est assurée et suivie par GPS 24 h/24, et l'estimation tarifaire s'obtient immédiatement depuis l'application.",
+    "Capacité utile : environ 1 300 kg, 5 palettes Europe et 13,5 m³. Au-delà, nous engageons plusieurs véhicules en parallèle ; en dessous, l'envoi partiel permet de ne payer que la place occupée sans perdre l'avantage du transport direct. Dans tous les cas, la marchandise circule sous la responsabilité CMR du transporteur, avec une assurance complémentaire sur demande, et son numéro de suivi en indique l'étape ; l'estimation tarifaire s'obtient immédiatement depuis l'application.",
   ],
   transitTable: {
     caption: "Délais d'acheminement indicatifs — véhicule dédié",
@@ -109,10 +109,10 @@ const frTransportExpressTurquie: SeoPageData = {
       ],
     },
     {
-      heading: "Suivi GPS et assurance",
+      heading: "Suivi de l'envoi et assurance",
       paragraphs: [
-        "Chaque envoi dispose d'un suivi GPS actif 24 h/24. Depuis la page de suivi, votre service logistique voit la position réelle du véhicule et peut caler l'heure de mise à quai, prévenir l'équipe de réception ou informer le client final. Cette visibilité change la nature de l'information transmise : vous ne relayez plus une estimation, vous annoncez une position.",
-        "La marchandise est couverte par une assurance transport, dans le cadre de la lettre de voiture CMR établie au chargement. Pour les envois de valeur élevée — équipements électroniques, outillage de précision, pièces certifiées — le montant déclaré se fixe au moment du devis : signalez-nous ces caractéristiques avant l'enlèvement afin que la couverture corresponde à la valeur réelle.",
+        "Chaque envoi reçoit un numéro de suivi. Depuis la page de suivi, votre service logistique voit l'étape atteinte par l'expédition — demande reçue, devis, en route, livrée — et l'itinéraire tracé sur la carte entre le point de chargement et la ville de destination. Il ne s'agit pas d'une localisation du véhicule en direct : c'est un état d'avancement, mis à jour au fil du transport. Pour caler l'heure de mise à quai, prévenir l'équipe de réception ou informer le client final, demandez-nous la position actuelle du véhicule sur WhatsApp — nous vous répondons avec le point atteint et l'heure d'arrivée attendue.",
+        "La marchandise circule sous la responsabilité du transporteur, dans le cadre de la lettre de voiture CMR établie au chargement : une responsabilité plafonnée par la loi à 8,33 DTS par kilogramme de poids brut, à laquelle s'ajoute sur demande une assurance complémentaire fondée sur la valeur que vous déclarez. Pour les envois de valeur élevée — équipements électroniques, outillage de précision, pièces certifiées — le montant déclaré se fixe au moment du devis : signalez-nous ces caractéristiques avant l'enlèvement afin que la couverture corresponde à la valeur réelle.",
         "Un interlocuteur unique suit le dossier du chargement à la livraison, avec la preuve de livraison transmise dès le déchargement. Pour les comptes qui expédient régulièrement, nous mettons en place des conditions cadres et des enlèvements récurrents sur créneau fixe.",
       ],
     },
@@ -153,7 +153,7 @@ const frTransportExpressTurquie: SeoPageData = {
     {
       question: "Assurez-vous les transports retour depuis la Turquie ?",
       answer:
-        "Oui, nos lignes fonctionnent dans les deux sens. Un enlèvement à Istanbul, Bursa, Izmir ou Ankara pour livraison en France, en Belgique ou en Suisse s'organise dans les mêmes conditions, avec le même véhicule dédié, le même suivi GPS et la même absence de rupture de charge. Le sens retour compte généralement quelques heures de plus, du fait des formalités d'exportation.",
+        "Oui, nos lignes fonctionnent dans les deux sens. Un enlèvement à Istanbul, Bursa, Izmir ou Ankara pour livraison en France, en Belgique ou en Suisse s'organise dans les mêmes conditions, avec le même véhicule dédié, le même suivi par étapes et la même absence de rupture de charge. Le sens retour compte généralement quelques heures de plus, du fait des formalités d'exportation.",
     },
   ],
   related: [{ slug: "fr/demenagement-turquie", label: "Déménagement France-Turquie" }],

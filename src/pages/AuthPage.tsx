@@ -26,6 +26,8 @@ const AuthPage = () => {
   usePageMeta({
     title: t.meta.auth.title,
     description: t.meta.auth.description,
+    // Sign-in surface.
+    noindex: true,
   });
 
   // Get state from navigation (from BookingChoiceModal)

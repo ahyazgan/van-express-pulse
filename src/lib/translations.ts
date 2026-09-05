@@ -6,7 +6,7 @@ export const translations = {
     nav: {
       explore: "Keşfet",
       shipments: "Gönderilerim",
-      liveTracking: "Canlı Takip",
+      liveTracking: "Gönderi Takibi",
       profile: "Profil",
     },
 
@@ -22,7 +22,7 @@ export const translations = {
       subheading: "Türkiye'den tüm Avrupa'ya en hızlı, güvenli ve şeffaf ekspres taşımacılık çözümleri. Sınırları sizin için hızla aşıyoruz.",
       cta: "Hemen Fiyat Al",
       trustMarkers: {
-        liveTracking: "7/24 Canlı Takip",
+        liveTracking: "Aşamalı Sevkiyat Takibi",
         expressBorder: "Ekspres Sınır Geçişi",
         proService: "Profesyonel Servis",
       },
@@ -49,7 +49,7 @@ export const translations = {
       items: {
         noWeekendBan: { title: "Haftasonu Yasağı Yok", description: "7 gün kesintisiz teslimat" },
         doubleDriver: { title: "Çift Şoför", description: "Mola vermeden hızlı ulaşım" },
-        gps: { title: "7/24 GPS Takip", description: "Anlık konum bilgisi" },
+        gps: { title: "Aşamalı Sevkiyat Takibi", description: "Dört aşamada durum bilgisi" },
       },
       trustPrefix: "2018'den beri",
       trustSuffix: "güvenilir lojistik partneri",
@@ -67,23 +67,23 @@ export const translations = {
       customs: { title: "Gümrükleme", description: "Tüm evrak işlemleri dahil" },
       doorToDoor: { title: "Kapıdan Kapıya", description: "Adresinizden alıp teslim" },
       insured: {
-        title: "Sigortalı Taşıma",
-        description: "Tüm gönderileriniz %100 sigorta kapsamında. Değerli eşyalarınız güvende.",
+        title: "CMR Sorumluluğu + Ek Sigorta",
+        description: "Her sevkiyat CMR taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan değeriniz üzerinden ek yük sigortası yaptırıyoruz.",
       },
     },
 
     meta: {
       home: {
         title: "RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri",
-        description: "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, yükünüzü canlı takip edin.",
+        description: "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, sevkiyatınızın hangi aşamada olduğunu takip edin.",
       },
       auth: {
         title: "RouteEU - Kullanıcı Girişi",
         description: "RouteEU Express hesabınıza giriş yapın veya yeni hesap oluşturun.",
       },
       tracking: {
-        title: "RouteEU - Gerçek Zamanlı Panelvan Takibi",
-        description: "Panelvan gönderinizi canlı olarak takip edin. RouteEU Express ile yükünüzün nerede olduğunu anında görün.",
+        title: "RouteEU - Panelvan Gönderi Takibi",
+        description: "Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görün: talep alındı, anlaşma, yolda, teslim edildi. Aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
       },
       orders: {
         title: "RouteEU - Gönderilerim",
@@ -202,8 +202,8 @@ export const translations = {
       origin: "İstanbul",
       destination: "Varış Noktası",
       stages: {
-        new: "Alındı",
-        negotiating: "Gümrükte",
+        new: "Talep Alındı",
+        negotiating: "Anlaşma",
         in_transit: "Yolda",
         delivered: "Teslim Edildi",
       },
@@ -256,18 +256,18 @@ export const translations = {
       signupSuccess: "Hesabınız oluşturuldu.",
       noAccount: "Hesabınız yok mu?",
       hasAccount: "Zaten üye misiniz?",
-      memberBenefits: "Üyelere Özel: Canlı Takip + Sipariş Geçmişi",
+      memberBenefits: "Üyelere Özel: Sevkiyat Takibi + Sipariş Geçmişi",
     },
 
     // Booking Choice
     bookingChoice: {
       title: "Nasıl devam etmek istersiniz?",
       memberOption: "Üye Ol / Giriş Yap",
-      memberDescription: "Bilgileriniz kaydedilsin ve yükünüzü canlı takip edin.",
+      memberDescription: "Bilgileriniz kaydedilsin ve sevkiyatınızın aşamasını takip edin.",
       guestOption: "Misafir Olarak Devam Et",
       guestDescription: "Üye olmadan hızlıca talep oluşturun. (Sadece bu sipariş için geçerlidir)",
       recommended: "ÖNERİLEN",
-      liveTracking: "Canlı Takip",
+      liveTracking: "Sevkiyat Takibi",
       quickForm: "Hızlı Form",
     },
   },
@@ -277,7 +277,7 @@ export const translations = {
     nav: {
       explore: "Explore",
       shipments: "Shipments",
-      liveTracking: "Live Tracking",
+      liveTracking: "Track Shipment",
       profile: "Profile",
     },
 
@@ -293,7 +293,7 @@ export const translations = {
       subheading: "The fastest, safest, and most transparent express shipping solutions from Turkey to all of Europe. We cross borders swiftly for you.",
       cta: "Get a Quote Now",
       trustMarkers: {
-        liveTracking: "24/7 Live Tracking",
+        liveTracking: "Four-Stage Shipment Status",
         expressBorder: "Express Border Crossing",
         proService: "Professional Service",
       },
@@ -320,7 +320,7 @@ export const translations = {
       items: {
         noWeekendBan: { title: "No Weekend Ban", description: "7-day uninterrupted delivery" },
         doubleDriver: { title: "Double Driver", description: "Fast transport without breaks" },
-        gps: { title: "24/7 GPS Tracking", description: "Real-time location info" },
+        gps: { title: "Four-Stage Shipment Status", description: "Status updates at every stage" },
       },
       trustPrefix: "Since 2018",
       trustSuffix: "a trusted logistics partner",
@@ -338,23 +338,23 @@ export const translations = {
       customs: { title: "Customs Clearance", description: "All paperwork included" },
       doorToDoor: { title: "Door to Door", description: "Pickup and delivery at your address" },
       insured: {
-        title: "Insured Transport",
-        description: "All your shipments are 100% insured. Your valuables are safe.",
+        title: "CMR Liability + Added Cover",
+        description: "Every shipment moves under CMR carrier liability; added cargo cover on your declared value is arranged on request.",
       },
     },
 
     meta: {
       home: {
         title: "RouteEU Express - Professional Panelvan & Fast Logistics Solutions",
-        description: "Express panelvan shipping between Turkey and Europe. Get instant quotes and track your cargo live.",
+        description: "Express panelvan shipping between Turkey and Europe. Get instant quotes and see which stage your shipment has reached.",
       },
       auth: {
         title: "RouteEU - Sign In",
         description: "Sign in to your RouteEU Express account or create a new one.",
       },
       tracking: {
-        title: "RouteEU - Real-Time Panelvan Tracking",
-        description: "Track your panelvan shipment live. See where your cargo is instantly with RouteEU Express.",
+        title: "RouteEU - Panelvan Shipment Tracking",
+        description: "Your tracking number shows which stage the shipment has reached: received, quoted, in transit, delivered. Ask us for the current position over WhatsApp.",
       },
       orders: {
         title: "RouteEU - My Shipments",
@@ -474,7 +474,7 @@ export const translations = {
       destination: "Destination",
       stages: {
         new: "Received",
-        negotiating: "At Customs",
+        negotiating: "Quoted",
         in_transit: "In Transit",
         delivered: "Delivered",
       },
@@ -527,18 +527,18 @@ export const translations = {
       signupSuccess: "Your account has been created.",
       noAccount: "Don't have an account?",
       hasAccount: "Already have an account?",
-      memberBenefits: "Members Only: Live Tracking + Order History",
+      memberBenefits: "Members Only: Shipment Status + Order History",
     },
 
     // Booking Choice
     bookingChoice: {
       title: "How would you like to continue?",
       memberOption: "Sign Up / Log In",
-      memberDescription: "Save your info and track your cargo live.",
+      memberDescription: "Save your info and follow which stage your shipment has reached.",
       guestOption: "Continue as Guest",
       guestDescription: "Create a quick request without signing up. (Valid for this order only)",
       recommended: "RECOMMENDED",
-      liveTracking: "Live Tracking",
+      liveTracking: "Shipment Status",
       quickForm: "Quick Form",
     },
   },

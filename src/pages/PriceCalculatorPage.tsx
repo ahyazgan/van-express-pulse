@@ -155,9 +155,9 @@ const PriceCalculatorPage = () => {
 
           <div className="mt-6 grid grid-cols-3 gap-3">
             {[
-              { icon: MapPin, label: "7/24 Canlı GPS Takip" },
+              { icon: MapPin, label: "Aşamalı Sevkiyat Takibi" },
               { icon: Zap, label: "Kapıdan Kapıya Ekspres" },
-              { icon: Shield, label: "Sigortalı Taşıma" },
+              { icon: Shield, label: "CMR Sorumluluğu + Ek Sigorta" },
             ].map((m) => (
               <div
                 key={m.label}
@@ -510,8 +510,8 @@ const PriceCalculatorPage = () => {
         <div className="mx-auto max-w-3xl px-5 py-8 text-sm text-muted-foreground">
           <p className="font-semibold text-foreground">RouteEU Express</p>
           <p className="mt-1">
-            Türkiye ↔ Avrupa kapıdan kapıya ekspres panelvan taşımacılık. Sigortalı taşıma, 7/24
-            canlı GPS takibi.
+            Türkiye ↔ Avrupa kapıdan kapıya ekspres panelvan taşımacılık. CMR taşıma sorumluluğu,
+            talep üzerine ek yük sigortası, takip numarasıyla aşamalı sevkiyat takibi.
           </p>
           <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
             <Link to="/" className="hover:text-foreground hover:underline">

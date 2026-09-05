@@ -5,11 +5,11 @@ const isvicreKargo: SeoPageData = {
   slug: "isvicre-kargo",
   title: "İsviçre'ye Kargo ve Nakliyat | Gümrük Dahil Kapıdan Kapıya | RouteEU",
   description:
-    "Türkiye'den İsviçre'ye kapıdan kapıya kargo ve nakliyat. Zürih, Basel, Bern ve Cenevre'ye 28-46 saatte sigortalı taşıma; gümrük sürecinde uçtan uca rehberlik.",
+    "Türkiye'den İsviçre'ye kapıdan kapıya kargo ve nakliyat. Zürih, Basel, Bern ve Cenevre'ye 28-46 saatte CMR sorumluluğu altında taşıma; gümrük sürecinde uçtan uca rehberlik.",
   h1: "Türkiye'den İsviçre'ye Kapıdan Kapıya Kargo ve Nakliyat",
   intro: [
     "İsviçre, Avrupa Birliği üyesi olmadığı için Türkiye'den İsviçre'ye kargo göndermek, Almanya'ya veya Hollanda'ya göndermekten farklı bir süreçtir: Türkiye çıkışında ihracat beyanı, Avrupa üzerinden geçişte transit belgeleri ve varışta İsviçre ithalat işlemi devreye girer. Bu ek evrak yükü nedeniyle pek çok taşıma firması bu hatta ya hiç çalışmaz ya da yükü yolda başka firmalara devreder. RouteEU Express, İstanbul ve tüm Türkiye'den Zürih, Basel, Bern, Cenevre ve Lozan başta olmak üzere İsviçre'nin her adresine kapıdan kapıya panelvan taşımacılığı yapar ve gümrük sürecinin her adımında size yol gösterir.",
-    "Yükünüz Türkiye'deki adresinizden alınır; araç değiştirmeden, depoda beklemeden doğrudan İsviçre'deki teslimat adresine gider. Çift şoför uygulaması ve hafta sonu TIR seyir yasağından muaf panelvan araçlarımız sayesinde İstanbul'dan Zürih'e teslimat tipik olarak 28-42 saatte tamamlanır. Tüm gönderiler sigortalı taşınır; 7/24 canlı GPS takibiyle yükünüzün Avrupa'nın neresinde olduğunu anlık olarak görürsünüz.",
+    "Yükünüz Türkiye'deki adresinizden alınır; araç değiştirmeden, depoda beklemeden doğrudan İsviçre'deki teslimat adresine gider. Çift şoför uygulaması ve hafta sonu TIR seyir yasağından muaf panelvan araçlarımız sayesinde İstanbul'dan Zürih'e teslimat tipik olarak 28-42 saatte tamamlanır. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır ve talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırırız; takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - İsviçre Transit Süreleri",
@@ -58,7 +58,7 @@ const isvicreKargo: SeoPageData = {
     {
       heading: "Hassas ve Yüksek Değerli Yükler İçin Premium Taşıma",
       paragraphs: [
-        "İsviçre hattında taşınan yüklerin önemli bölümü yüksek değerli ve hassas ürünlerdir: saat ve hassas mekanik parçalar, medikal cihazlar, laboratuvar ekipmanı, ölçüm aletleri ve makine yedek parçaları. Bu tür yükler için panelvan ekspres en güvenli seçenektir; çünkü yük tek araçta, tek ekibin sorumluluğunda ve sigorta kapsamında taşınır, hiçbir aktarma merkezinde elleçlenmez. Üretim hattı duran bir fabrikaya acil parça yetiştirmek ya da değerli bir cihazı hasarsız teslim etmek gerektiğinde, aracın yalnızca sizin yükünüz için yola çıkması ve konumunu 7/24 izleyebilmeniz belirleyici fark yaratır. Değeri yüksek gönderilerde sigorta kapsamını teklif aşamasında birlikte netleştiriyoruz.",
+        "İsviçre hattında taşınan yüklerin önemli bölümü yüksek değerli ve hassas ürünlerdir: saat ve hassas mekanik parçalar, medikal cihazlar, laboratuvar ekipmanı, ölçüm aletleri ve makine yedek parçaları. Bu tür yükler için panelvan ekspres en güvenli seçenektir; çünkü yük tek araçta, tek ekibin sorumluluğunda ve CMR taşıyıcı sorumluluğu kapsamında taşınır, hiçbir aktarma merkezinde elleçlenmez. Üretim hattı duran bir fabrikaya acil parça yetiştirmek ya da değerli bir cihazı hasarsız teslim etmek gerektiğinde, aracın yalnızca sizin yükünüz için yola çıkması ve sevkiyatın hangi aşamada olduğunu takip numaranızla görebilmeniz belirleyici fark yaratır. CMR sorumluluğu yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır; saat, medikal cihaz ve ölçüm aleti gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz, bu nedenle değeri yüksek gönderilerde talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyor ve kapsamı teklif aşamasında birlikte netleştiriyoruz.",
       ],
     },
     {
@@ -75,7 +75,7 @@ const isvicreKargo: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış noktanızı seçin, tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Aracımız belirlenen tarihte Türkiye'deki adresinize gelir; yükünüz güvenle araca alınır, ihracat evrakı süreci başlar.",
-        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak İsviçre'ye hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Yük gümrük işlemlerinin ardından aktarmasız olarak İsviçre'ye hareket eder; güzergâhı haritada görür, o anki yerini WhatsApp'tan sorarsınız.",
         "Teslim: İsviçre ithalat işleminin ardından araç teslimat adresine ulaşır, yükünüz kapıda alıcıya teslim edilir.",
       ],
     },
@@ -106,12 +106,12 @@ const isvicreKargo: SeoPageData = {
     {
       question: "Yükümü nasıl takip ederim?",
       answer:
-        "Her gönderiye canlı GPS takibi tanımlanır. Gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilir, gümrük geçişi ve teslimat aşamalarını uygulamadan izleyebilirsiniz.",
+        "Her gönderiye bir takip numarası tanımlanır. Gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görebilir, güzergâhı harita üzerinde izleyebilirsiniz; aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Gönderim sigortalı mı?",
       answer:
-        "Evet, tüm gönderiler taşıma sigortası kapsamında taşınır. Saat, medikal cihaz ve makine parçası gibi yüksek değerli yüklerde sigorta kapsamını teklif aşamasında birlikte netleştiriyoruz.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Saat, medikal cihaz ve makine parçası gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyor ve kapsamı teklif aşamasında birlikte netleştiriyoruz.",
     },
     {
       question: "Hafta sonu gönderi çıkışı yapılıyor mu?",
@@ -121,7 +121,7 @@ const isvicreKargo: SeoPageData = {
     {
       question: "Komple araç yerine parsiyel gönderebilir miyim?",
       answer:
-        "Evet. Tek koli, birkaç parça eşya veya bir-iki palet için parsiyel seçeneğimiz vardır: yükünüz aynı güzergâhtaki diğer gönderilerle aracı paylaşır, yine aktarmasız ve sigortalı olarak İsviçre'deki adrese teslim edilir. Detaylar için parsiyel taşımacılık sayfamıza bakabilirsiniz.",
+        "Evet. Tek koli, birkaç parça eşya veya bir-iki palet için parsiyel seçeneğimiz vardır: yükünüz aynı güzergâhtaki diğer gönderilerle aracı paylaşır, yine aktarmasız ve CMR sorumluluğu altında İsviçre'deki adrese teslim edilir. Detaylar için parsiyel taşımacılık sayfamıza bakabilirsiniz.",
     },
   ],
   related: [

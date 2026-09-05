@@ -5,11 +5,11 @@ const evEsyasiTasima: SeoPageData = {
   slug: "ev-esyasi-tasima",
   title: "Yurtdışına Ev Eşyası Taşıma | Almanya · Hollanda · Belçika | RouteEU",
   description:
-    "Türkiye'den Almanya, Hollanda ve Belçika'ya kapıdan kapıya ev eşyası ve mobilya taşıma. Aktarmasız panelvan, sigortalı taşıma, canlı takip. Anında teklif alın.",
+    "Türkiye'den Almanya, Hollanda ve Belçika'ya kapıdan kapıya ev eşyası ve mobilya taşıma. Aktarmasız panelvan, CMR sorumluluğu, aşamalı takip. Anında teklif alın.",
   h1: "Türkiye'den Avrupa'ya Ev Eşyası ve Mobilya Taşıma",
   intro: [
     "Yurtdışına taşınmak hayatınızın en büyük adımlarından biridir ve eşyalarınızın bu yolculuğu sorunsuz atlatması, yeni hayata iyi başlamanın ilk şartıdır. RouteEU Express, Türkiye'den Almanya, Hollanda, Belçika başta olmak üzere Avrupa'nın dört bir yanına kapıdan kapıya ev eşyası ve mobilya taşıması yapar: eşyalarınız Türkiye'deki evinizden yüklenir, araç değiştirmeden ve depoya girmeden Avrupa'daki yeni adresinize teslim edilir.",
-    "Konteyner dolduramayacak kadar az, kargoya sığmayacak kadar çok eşyanız varsa panelvan taşımacılığı tam size göredir. 1+0 veya 1+1 bir evin eşyası tipik olarak tek bir panelvana sığar; böylece başkalarının yüküyle birleştirilmeyi beklemez, parsiyel aktarmalarda hasar riski taşımazsınız. Tüm taşımalar sigortalıdır, 7/24 canlı GPS takibiyle eşyalarınızın yolun neresinde olduğunu anlık görürsünüz ve uygulamadan saniyeler içinde tahmini fiyat alabilirsiniz.",
+    "Konteyner dolduramayacak kadar az, kargoya sığmayacak kadar çok eşyanız varsa panelvan taşımacılığı tam size göredir. 1+0 veya 1+1 bir evin eşyası tipik olarak tek bir panelvana sığar; böylece başkalarının yüküyle birleştirilmeyi beklemez, parsiyel aktarmalarda hasar riski taşımazsınız. Tüm taşımalar CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında yapılır ve talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz; takip numaranızla sevkiyatınızın hangi aşamada olduğunu görür ve uygulamadan saniyeler içinde tahmini fiyat alabilirsiniz.",
   ],
   transitTable: {
     caption: "Ev Eşyası Taşımada Tipik Transit Süreleri",
@@ -50,7 +50,7 @@ const evEsyasiTasima: SeoPageData = {
         "Aktarmasız taşıma: Eşyanız yükleme anından teslimata kadar aynı araçta kalır. Depoya girmez, forkliftle bir araçtan diğerine aktarılmaz — mobilya ve kırılacak eşyalar için en büyük hasar riski olan aktarma tamamen ortadan kalkar.",
         "Hafta sonu TIR yasağı muafiyeti: Panelvanlar Avrupa'daki hafta sonu kamyon seyir yasağına tabi değildir; cuma yüklenen ev pazartesiyi beklemeden yola devam eder.",
         "Çift şoför: Uzun güzergahlarda iki şoför dönüşümlü sürer, araç mola için saatlerce durmaz; İstanbul'dan Berlin'e 24-36 saatte ulaşmak böyle mümkün olur.",
-        "Canlı takip: Eşyanızın yüklü olduğu aracı 7/24 harita üzerinde izlersiniz; \"eşyam nerede?\" sorusu için telefon trafiğine gerek kalmaz.",
+        "Aşamalı takip: Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görürsünüz; aracın o anki yerini merak ederseniz WhatsApp'tan sorabilirsiniz.",
       ],
     },
     {
@@ -76,7 +76,7 @@ const evEsyasiTasima: SeoPageData = {
         "1. Teklif ve planlama: Uygulamadan kalkış ve varış şehrini seçerek anında tahmini fiyat alırsınız. Eşya listeniz netleşince taşıma tarihi birlikte planlanır.",
         "2. Paketleme: Kırılacak eşyaları balonlu naylonla, mobilya yüzeylerini battaniye veya köşe koruyucularla sarmanızı öneririz. Kolilerinizi oda ve içerik bilgisiyle etiketleyin, gümrük için sade bir eşya listesi (koli sayısı ve içerik) hazırlayın. Beyaz eşyaların suyunu boşaltıp kapaklarını bantlayın.",
         "3. Yükleme ve gümrük: Eşyalarınız adresinizden araca özenle istiflenir. Gümrük işlemleri için hangi belgelerin gerekeceği konusunda ekibimiz size yol gösterir; evraklar tamam olduğunda sınır geçişi planlı ilerler.",
-        "4. Teslimat: Araç Avrupa'daki yeni adresinize gelir ve eşyalarınız kapınızda teslim edilir. Tüm süreç boyunca aracı canlı olarak takip edersiniz.",
+        "4. Teslimat: Araç Avrupa'daki yeni adresinize gelir ve eşyalarınız kapınızda teslim edilir. Tüm süreç boyunca sevkiyatın hangi aşamada olduğunu takip numaranızdan izlersiniz.",
       ],
     },
     {
@@ -94,16 +94,16 @@ const evEsyasiTasima: SeoPageData = {
       ],
     },
     {
-      heading: "Dolandırıcılığa Karşı: Sözleşme, Sigorta, Canlı Takip",
+      heading: "Dolandırıcılığa Karşı: Sözleşme, Taşıyıcı Sorumluluğu, Takip",
       paragraphs: [
-        "Uluslararası evden eve nakliyat, ne yazık ki güven sorununun en sık yaşandığı alanlardan biridir. Kapora alıp ortadan kaybolan, yola çıktıktan sonra \"ek masraf\" adıyla fiyat artıran ya da eşyayı belirsiz depolarda haftalarca bekleten firmalarla ilgili şikâyetleri siz de duymuşsunuzdur. Önerimiz nettir: hangi firmayla çalışırsanız çalışın, yazılı sözleşme isteyin, sigorta poliçesini görün ve aracın nerede olduğunu gösterebilen bir takip sistemi talep edin.",
+        "Uluslararası evden eve nakliyat, ne yazık ki güven sorununun en sık yaşandığı alanlardan biridir. Kapora alıp ortadan kaybolan, yola çıktıktan sonra \"ek masraf\" adıyla fiyat artıran ya da eşyayı belirsiz depolarda haftalarca bekleten firmalarla ilgili şikâyetleri siz de duymuşsunuzdur. Önerimiz nettir: hangi firmayla çalışırsanız çalışın, yazılı sözleşme isteyin, taşıyıcı sorumluluğunun ve varsa ek sigortanın kapsamını yazılı olarak sorun, sevkiyatın hangi aşamada olduğunu gösteren bir takip sistemi talep edin.",
         "RouteEU olarak bu güvenceleri standart hizmetin parçası yaptık:",
       ],
       list: [
         "Yazılı sözleşme: Taşıma kapsamı, tarih, adresler ve fiyat sözleşmede yazar; sözlü vaatle iş yürütülmez.",
         "Sabit fiyat: Teklifte anlaşılan rakam taşıma günü değişmez; yolda zam, sürpriz \"gümrük ücreti\" veya pazarlık yoktur.",
-        "Sigorta poliçesi: Eşyanız taşıma sigortası kapsamındadır ve poliçe bilgisi tarafınızla paylaşılır.",
-        "7/24 canlı GPS: Eşyanızın yüklü olduğu aracı harita üzerinde anlık izlersiniz; \"araç nerede?\" belirsizliği yaşanmaz.",
+        "CMR sorumluluğu ve ek sigorta: Her sevkiyat CMR konvansiyonunun taşıyıcı sorumluluğu altındadır; bu sorumluluk brüt kilogram başına 8,33 SDR ile sınırlı olduğundan, talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz.",
+        "Takip numarası: Sevkiyatınızın hangi aşamada olduğunu uygulamadan görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorarak öğrenirsiniz.",
         "Kapıda tutanaklı teslim: Teslimatta eşya listesi birlikte kontrol edilir ve teslim tutanağı imzalanır.",
       ],
     },
@@ -136,7 +136,7 @@ const evEsyasiTasima: SeoPageData = {
     {
       question: "Mobilya ve kırılacak eşyalarım taşımada zarar görür mü?",
       answer:
-        "Hasarın en büyük kaynağı aktarma ve depolamadır; panelvan taşımada eşyanız yüklendiği araçtan teslimata kadar hiç çıkmaz, bu risk büyük ölçüde ortadan kalkar. Ayrıca tüm taşımalar sigorta kapsamındadır. Kırılacak eşyaların balonlu naylonla, mobilya yüzeylerinin battaniyeyle sarılması gibi paketleme önerilerimizi uyguladığınızda eşyalarınız yolculuğu sorunsuz tamamlar.",
+        "Hasarın en büyük kaynağı aktarma ve depolamadır; panelvan taşımada eşyanız yüklendiği araçtan teslimata kadar hiç çıkmaz, bu risk büyük ölçüde ortadan kalkar. Ayrıca her sevkiyat CMR taşıyıcı sorumluluğu altında taşınır ve talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Kırılacak eşyaların balonlu naylonla, mobilya yüzeylerinin battaniyeyle sarılması gibi paketleme önerilerimizi uyguladığınızda eşyalarınız yolculuğu sorunsuz tamamlar.",
     },
     {
       question: "Buzdolabı, çamaşır makinesi gibi beyaz eşyalar yurtdışına gönderilebilir mi?",
@@ -163,7 +163,7 @@ const evEsyasiTasima: SeoPageData = {
     {
       question: "Çeyiz eşyası taşıyor musunuz?",
       answer:
-        "Evet. Çeyiz taşıma en sık çalıştığımız taleplerden biridir: Türkiye'den Almanya, Hollanda veya Belçika'daki yeni eve giden çeyiz eşyası, kırılacak parçaları özenle paketlenerek kapıdan kapıya tek araçla taşınır. Taşıma sigortalıdır, teslimat kapıda tutanakla yapılır ve süreç boyunca aracı canlı olarak takip edersiniz.",
+        "Evet. Çeyiz taşıma en sık çalıştığımız taleplerden biridir: Türkiye'den Almanya, Hollanda veya Belçika'daki yeni eve giden çeyiz eşyası, kırılacak parçaları özenle paketlenerek kapıdan kapıya tek araçla taşınır. Taşıma CMR sorumluluğu altındadır ve talep üzerine ek sigorta yaptırılır, teslimat kapıda tutanakla yapılır, süreç boyunca sevkiyatın hangi aşamada olduğunu takip numaranızdan izlersiniz.",
     },
   ],
   related: [

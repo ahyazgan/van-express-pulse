@@ -7,11 +7,11 @@ const deUmzugInDieTuerkei: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Umzug in die Türkei | Tür zu Tür in 24-48 Stunden | RouteEU",
   description:
-    "Umzug in die Türkei ohne Umladen: Ihr Hausrat fährt im eigenen Sprinter von Tür zu Tür, in 24-48 Stunden, versichert und mit GPS-Ortung. Preis sofort berechnen.",
+    "Umzug in die Türkei ohne Umladen: Ihr Hausrat fährt im eigenen Sprinter von Tür zu Tür, in 24-48 Stunden, unter CMR-Haftung und mit Sendungsstatus. Preis sofort berechnen.",
   h1: "Umzug in die Türkei: Ihr Hausrat direkt von Tür zu Tür",
   intro: [
     "Wer seinen Hausrat von Deutschland in die Türkei bringen will, hört fast überall dieselbe Auskunft: zwei bis vier Wochen Laufzeit, Sammelgut, Zwischenlager, ein Umschlagtermin, den niemand genau benennen kann. Wir arbeiten anders. RouteEU fährt Ihren Umzug als Direktfahrt im eigenen Transporter – Abholung an Ihrer Wohnungstür in Deutschland, Zustellung an der neuen Adresse in der Türkei, ohne dass Ihre Möbel unterwegs auch nur einmal auf ein anderes Fahrzeug umgeladen werden.",
-    "Möglich macht das die Fahrzeugklasse: Ein Sprinter unterliegt nicht dem Sonn- und Feiertagsfahrverbot für schwere Lkw, und mit zwei Fahrern rollt das Fahrzeug durch, statt elf Stunden Ruhezeit auf einem Rastplatz zu stehen. Deshalb liegt die Laufzeit nach Istanbul typischerweise bei 24 bis 36 Stunden statt bei Wochen. Ihr Umzugsgut ist während der gesamten Fahrt versichert, und Sie sehen den Standort des Fahrzeugs rund um die Uhr live auf der Karte.",
+    "Möglich macht das die Fahrzeugklasse: Ein Sprinter unterliegt nicht dem Sonn- und Feiertagsfahrverbot für schwere Lkw, und mit zwei Fahrern rollt das Fahrzeug durch, statt elf Stunden Ruhezeit auf einem Rastplatz zu stehen. Deshalb liegt die Laufzeit nach Istanbul typischerweise bei 24 bis 36 Stunden statt bei Wochen. Ihr Umzugsgut fährt unter der Haftung des Frachtführers nach CMR, auf Wunsch mit zusätzlicher Warentransportversicherung, und mit Ihrer Sendungsnummer sehen Sie rund um die Uhr, in welcher Phase Ihre Sendung gerade ist.",
   ],
   transitTable: {
     caption: "Laufzeiten für Ihren Umzug in die Türkei (Direktfahrt, zwei Fahrer)",
@@ -87,15 +87,15 @@ const deUmzugInDieTuerkei: SeoPageData = {
       list: [
         "Angebot: Sie geben Abhol- und Zieladresse sowie das ungefähre Volumen in der App ein und erhalten den Preis sofort. Wenn Sie unsicher sind, wie viele Kubikmeter zusammenkommen, gehen wir die Zimmerliste gemeinsam durch.",
         "Abholung: Zum vereinbarten Termin kommt das Fahrzeug an Ihre Adresse in Deutschland. Die Ladung wird gezählt, dokumentiert und im Laderaum gesichert. Sie erhalten die Transportpapiere.",
-        "Transport: Nach der Zollanmeldung an der Grenze läuft die Fahrt ohne Umladen durch. Sie verfolgen die Position live und wissen jederzeit, wie viele Stunden bis zur Zustellung bleiben.",
+        "Transport: Nach der Zollanmeldung an der Grenze läuft die Fahrt ohne Umladen durch. Mit Ihrer Sendungsnummer sehen Sie den Status Ihrer Sendung (angenommen, Angebot, unterwegs, zugestellt); den aktuellen Standort erfragen Sie jederzeit per WhatsApp.",
         "Zustellung: Das Fahrzeug erreicht die neue Adresse in der Türkei, entladen wird gemeinsam mit Ihnen anhand der Packliste. Tragehilfe in die Wohnung oder über das Erdgeschoss hinaus vereinbaren wir vorab; sie steht als eigener Posten im Angebot. Erst wenn alles vor Ort ist, ist der Auftrag abgeschlossen.",
       ],
     },
     {
-      heading: "Versicherung, Vertrag und GPS-Ortung",
+      heading: "Versicherung, Vertrag und Sendungsstatus",
       paragraphs: [
-        "Ein Umzug ist Vertrauenssache, deshalb halten wir drei Punkte schriftlich fest, bevor das Fahrzeug losfährt. Erstens den Preis: Was im Auftrag steht, gilt – ohne Nachforderung am Ladetag, solange das Volumen dem entspricht, was Sie angemeldet haben. Steht am Ladetag deutlich mehr bereit, nennen wir Ihnen den Aufpreis vor dem Verladen, nicht erst auf der Rechnung. Zweitens den Umfang: Abholadresse, Zieladresse, Ladetermin und Zustellfenster stehen im Vertrag, ebenso die Packliste als Anlage. Drittens die Deckung: Jede Sendung wird versichert transportiert, und bei besonders wertvollen Einzelstücken klären wir die Deckungssumme vor der Buchung, nicht danach.",
-        "Die GPS-Ortung läuft parallel dazu und ist mehr als eine Spielerei. Gerade wenn Sie selbst mit dem Flugzeug vorausreisen und in der Türkei auf den Transporter warten, macht es einen Unterschied, ob Sie den Standort selbst sehen oder in einer Telefonschleife nachfragen müssen. Sie sehen die Position rund um die Uhr und können die Ankunft realistisch planen – etwa den Aufzug im neuen Gebäude reservieren oder Helfer organisieren.",
+        "Ein Umzug ist Vertrauenssache, deshalb halten wir drei Punkte schriftlich fest, bevor das Fahrzeug losfährt. Erstens den Preis: Was im Auftrag steht, gilt – ohne Nachforderung am Ladetag, solange das Volumen dem entspricht, was Sie angemeldet haben. Steht am Ladetag deutlich mehr bereit, nennen wir Ihnen den Aufpreis vor dem Verladen, nicht erst auf der Rechnung. Zweitens den Umfang: Abholadresse, Zieladresse, Ladetermin und Zustellfenster stehen im Vertrag, ebenso die Packliste als Anlage. Drittens die Deckung: Jede Sendung fährt unter der Haftung des Frachtführers nach CMR, und bei besonders wertvollen Einzelstücken vereinbaren wir die zusätzliche Warentransportversicherung samt Deckungssumme vor der Buchung, nicht danach.",
+        "Die Sendungsverfolgung läuft parallel dazu und ist mehr als eine Spielerei. Gerade wenn Sie selbst mit dem Flugzeug vorausreisen und in der Türkei auf den Transporter warten, macht es einen Unterschied, ob Sie den Stand der Dinge selbst abrufen oder in einer Telefonschleife nachfragen müssen. Mit Ihrer Sendungsnummer sehen Sie rund um die Uhr die Phase Ihrer Sendung und die Route auf der Karte; den aktuellen Standort erfragen Sie per WhatsApp und können die Ankunft realistisch planen – etwa den Aufzug im neuen Gebäude reservieren oder Helfer organisieren.",
       ],
     },
     {
@@ -143,7 +143,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
     {
       question: "Kann ich verfolgen, wo mein Umzug gerade ist?",
       answer:
-        "Ja. Jedes Fahrzeug ist mit GPS-Ortung ausgestattet, und Sie sehen die aktuelle Position rund um die Uhr auf der Karte. Das ist besonders praktisch, wenn Sie vorausfliegen und in der Türkei auf die Zustellung warten: Sie können den Entladetermin, den Aufzug und Helfer realistisch planen, statt auf einen Rückruf zu warten.",
+        "Ja. Mit Ihrer Sendungsnummer sehen Sie rund um die Uhr, in welcher Phase Ihre Sendung ist – angenommen, Angebot, unterwegs, zugestellt – und die Route auf der Karte; den aktuellen Standort des Fahrzeugs erfragen Sie jederzeit per WhatsApp. Das ist besonders praktisch, wenn Sie vorausfliegen und in der Türkei auf die Zustellung warten: Sie können den Entladetermin, den Aufzug und Helfer realistisch planen, statt auf einen Rückruf zu warten.",
     },
   ],
   related: [

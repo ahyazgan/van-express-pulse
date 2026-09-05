@@ -4,11 +4,11 @@ const bavulKargo: SeoPageData = {
   slug: "bavul-kargo",
   title: "Yurtdışına Bavul ve Koli Gönderme | Kapıdan Kapıya | RouteEU",
   description:
-    "Yurtdışına bavul, valiz ve koli gönderme: kapıdan alınır, adrese teslim edilir. Uçak fazla bagaj ücretine ekonomik alternatif; sigortalı, GPS takipli.",
+    "Yurtdışına bavul, valiz ve koli gönderme: kapıdan alınır, adrese teslim edilir. Uçak fazla bagaj ücretine ekonomik alternatif; CMR sorumluluğunda, takip numaralı.",
   h1: "Yurtdışına Bavul ve Koli Gönderme",
   intro: [
     "Yurtdışına taşınırken, okula başlarken veya ailenize eşya gönderirken sorun hep aynıdır: havayollarında fazla bagaj ücreti bavul başına yüzlerce euroyu bulur, kargo firmalarının 30 kilogram sınırı ise büyük ve ağır parçaları kapsam dışı bırakır. RouteEU Express bu iki seçeneğin arasındaki boşluğu doldurur: bavullarınız, valizleriniz ve kolileriniz Türkiye'deki adresinizden panelvanla alınır, Avrupa'daki adrese kapıda teslim edilir.",
-    "Tek bavul da gönderebilirsiniz, on bavulluk bir yaşam da. Eşyalarınız sigortalı taşınır, taşıma sözleşmesiyle güvence altına alınır ve 7/24 canlı GPS ile takip edilir; yakın Avrupa ülkelerine teslimat tipik olarak 24-48 saat içinde tamamlanır. Havalimanına gitmek, bagaj kuyruğunda beklemek ya da kargo şubesine koli taşımak yoktur.",
+    "Tek bavul da gönderebilirsiniz, on bavulluk bir yaşam da. Eşyalarınız, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı taşıma sözleşmesiyle taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası da yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görürsünüz; yakın Avrupa ülkelerine teslimat tipik olarak 24-48 saat içinde tamamlanır. Havalimanına gitmek, bagaj kuyruğunda beklemek ya da kargo şubesine koli taşımak yoktur.",
   ],
   sections: [
     {
@@ -63,7 +63,7 @@ const bavulKargo: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış ve varış adreslerinizi seçin, bavul ve koli sayınızı belirtin, tahmini fiyatı saniyeler içinde görün.",
         "Alım: Aracımız belirlenen tarihte kapınıza gelir; bavullarınız evinizden, yurttan veya ofisten teslim alınır.",
-        "Taşıma: Eşyalarınız aktarmasız olarak Avrupa'ya hareket eder; konumu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Eşyalarınız aktarmasız olarak Avrupa'ya hareket eder; takip numaranızla hangi aşamada olduğunu görür, güzergâhı haritada izlersiniz.",
         "Teslim: Araç varış adresine ulaşır, bavullarınız kapıda size veya belirttiğiniz kişiye imza karşılığı teslim edilir.",
       ],
     },
@@ -104,12 +104,12 @@ const bavulKargo: SeoPageData = {
     {
       question: "Gönderimi takip edebilir miyim?",
       answer:
-        "Evet, her gönderiye canlı GPS takibi tanımlanır. Bavullarınızı taşıyan aracın anlık konumunu 7/24 harita üzerinden izleyebilir, takip bağlantısını teslim alacak kişiyle paylaşabilirsiniz.",
+        "Evet, her gönderiye bir takip numarası tanımlanır. Bu numarayla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde izler ve takip bağlantısını teslim alacak kişiyle paylaşabilirsiniz. Aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Bavullarım sigortalı mı?",
       answer:
-        "Evet. Tüm gönderiler taşıma sigortası kapsamında ve yazılı taşıma sözleşmesiyle taşınır. Değerli eşya içeren bavullar için kapsamı teklif aşamasında birlikte netleştiririz; nakit para, mücevher ve kıymetli evrak sigorta kapsamı dışında olduğundan gönderilmez.",
+        "Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında ve yazılı taşıma sözleşmesiyle taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Bavul içeriği elektronik cihaz gibi değerli parçalar içeriyorsa bu tavan çoğu zaman gerçek değeri karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Kapsamı teklif aşamasında birlikte netleştiririz; nakit para, mücevher ve kıymetli evrak hiçbir koşulda gönderilmez.",
     },
     {
       question: "Avrupa'dan Türkiye'ye bavul gönderebilir miyim?",

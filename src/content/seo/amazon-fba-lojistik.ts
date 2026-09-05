@@ -9,7 +9,7 @@ const amazonFbaLojistik: SeoPageData = {
   h1: "Türkiye'den Amazon FBA Depolarına Palet Sevkiyatı",
   intro: [
     "Amazon.de, Amazon.fr, Amazon.it veya Amazon.pl üzerinde satış yapan her Türk satıcının aynı kabusu vardır: listing yükselmişken stok tükenmesi. Buy Box'ı kaybetmek, reklam bütçesinin boşa gitmesi ve sıralamanın gerilemesi, tek bir gecikmiş sevkiyatın faturasıdır. Havayolu kargo hızlıdır ama palet başına maliyeti kâr marjını eritir; klasik karayolu parsiyel taşımada ise mal Avrupa'daki depoya 7-12 günde ulaşır ve o sürede ürün sayfanız \"stokta yok\" gösterir.",
-    "RouteEU Express bu ikilemi ortadan kaldırır. Türkiye'deki üretim yerinizden, deponuzdan veya hazırlık merkezinizden alınan yük, tek panelvanla ve aktarmasız olarak Almanya, Polonya ve İtalya'daki Amazon fulfillment merkezlerine 24-48 saat içinde ulaşır. Beş palete kadar FBA sevkiyatı, çift şoförle ve hafta sonu TIR yasağına takılmadan yola çıkar; depo randevu saatinize göre planlanır ve 7/24 canlı GPS takibiyle yükünüzün nerede olduğunu her an görürsünüz.",
+    "RouteEU Express bu ikilemi ortadan kaldırır. Türkiye'deki üretim yerinizden, deponuzdan veya hazırlık merkezinizden alınan yük, tek panelvanla ve aktarmasız olarak Almanya, Polonya ve İtalya'daki Amazon fulfillment merkezlerine 24-48 saat içinde ulaşır. Beş palete kadar FBA sevkiyatı, çift şoförle ve hafta sonu TIR yasağına takılmadan yola çıkar; depo randevu saatinize göre planlanır ve takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) her an görürsünüz.",
   ],
   transitTable: {
     caption: "Türkiye - Amazon FBA Depo Bölgeleri Transit Süreleri",
@@ -75,9 +75,9 @@ const amazonFbaLojistik: SeoPageData = {
         "Klasik karayolu ve kurye seçeneklerine kıyasla FBA yükleri için fark yaratan unsurlar şunlardır:",
       ],
       list: [
-        "Randevu saatine sadakat: Depo randevusu kaçırıldığında yeni randevu günler sonrasına düşebilir; canlı GPS takibi ve çift şoför sayesinde varış saatini öngörülebilir tutarız.",
+        "Randevu saatine sadakat: Depo randevusu kaçırıldığında yeni randevu günler sonrasına düşebilir; aşama bazlı sevkiyat takibi, sabit güzergâh planı ve çift şoför sayesinde varış saatini öngörülebilir tutarız.",
         "Aktarmasız taşıma: Kutular ve paletler yükleme noktasından depo rampasına kadar aynı araçta kalır; etiket zedelenmesi, kutu ezilmesi ve karışıklık riski en aza iner.",
-        "Sigortalı taşıma: Tüm FBA yükleri taşıma sigortası kapsamındadır; yüksek değerli partilerde kapsamı teklif aşamasında birlikte netleştiririz.",
+        "CMR sorumluluğu ve ek sigorta: Her FBA sevkiyatı, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Elektronik gibi yüksek değerli partilerde bu tavan eşyanın gerçek değerini karşılamayabilir; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz.",
         "Yazılı sözleşme ve tek muhatap: Alım noktasından depo kabulüne kadar tek firma, tek sözleşme, tek takip ekranı.",
         "Parsiyel esneklik: Beş paletten az yükünüz varsa aynı güzergahtaki diğer gönderilerle aracı paylaşır, yalnızca kullandığınız hacim kadar ödersiniz.",
       ],
@@ -97,7 +97,7 @@ const amazonFbaLojistik: SeoPageData = {
       list: [
         "Teklif: Uygulamadan kalkış noktanızı ve hedef depo bölgesini seçin, palet sayınızı girin; tahmini fiyatı saniyeler içinde görün ve talebinizi oluşturun.",
         "Alım: Seller Central'da gönderi planını oluşturup depo randevusunu aldıktan sonra aracımız belirlenen tarihte üretim yerinize veya deponuza gelir; etiketli kutular ve paletler araca alınır.",
-        "Taşıma: İhracat gümrüğü tamamlanır, yük aktarmasız olarak Avrupa'ya hareket eder; giriş kapısında ithalat işlemleri gümrük müşavirinizin beyanıyla yapılır. Aracın konumunu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: İhracat gümrüğü tamamlanır, yük aktarmasız olarak Avrupa'ya hareket eder; giriş kapısında ithalat işlemleri gümrük müşavirinizin beyanıyla yapılır. Sevkiyatın hangi aşamada olduğunu takip numaranızla görür, güzergâhı harita üzerinde izlersiniz; aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
         "Teslim: Araç randevu saatinde fulfillment merkezinin rampasına yanaşır, yük depo görevlilerine teslim edilir; teslim belgesi uygulamaya işlenir ve stok kabulünü Seller Central'dan takip edersiniz.",
       ],
     },
@@ -111,7 +111,7 @@ const amazonFbaLojistik: SeoPageData = {
     {
       question: "Amazon deposunun randevu saatine yetişir mi?",
       answer:
-        "Evet, rotayı randevu saatinize göre planlıyoruz. Çift şoför ve hafta sonu yasağından muafiyet sayesinde varış saati öngörülebilir; canlı GPS takibinden aracın tahmini varış zamanını siz de görürsünüz. Randevuyu Seller Central'dan aldıktan sonra saati bize iletmeniz yeterlidir; öngörülemeyen bir gecikme olursa depo ile yeni randevu için sizi önceden bilgilendiririz.",
+        "Evet, rotayı randevu saatinize göre planlıyoruz. Çift şoför ve hafta sonu yasağından muafiyet sayesinde varış saati öngörülebilir; takip numaranızla sevkiyatın hangi aşamada olduğunu görür, aracın o anki yerini ve tahmini varış zamanını WhatsApp'tan sorabilirsiniz. Randevuyu Seller Central'dan aldıktan sonra saati bize iletmeniz yeterlidir; öngörülemeyen bir gecikme olursa depo ile yeni randevu için sizi önceden bilgilendiririz.",
     },
     {
       question: "FBA için kaç palet gönderebilirim?",

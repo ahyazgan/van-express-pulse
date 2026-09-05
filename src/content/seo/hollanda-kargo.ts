@@ -5,11 +5,11 @@ const hollandaKargo: SeoPageData = {
   slug: "hollanda-kargo",
   title: "Hollanda'ya Panelvan Kargo | 2026 Güncel Fiyat ve Süreler | RouteEU",
   description:
-    "Hollanda'ya kapıdan kapıya panelvan kargo: 2026 güncel fiyatlar ve transit süreler. Amsterdam, Rotterdam'a 30-46 saatte sigortalı taşıma, anında teklif alın.",
+    "Hollanda'ya kapıdan kapıya panelvan kargo: 2026 güncel fiyatlar ve transit süreler. Amsterdam, Rotterdam'a 30-46 saatte aktarmasız ekspres taşıma, anında teklif alın.",
   h1: "Türkiye'den Hollanda'ya Kapıdan Kapıya Ekspres Kargo",
   intro: [
     "Türkiye'den Hollanda'ya kargo veya eşya göndermek istediğinizde klasik yöntem, yükünüzün başka gönderilerle birleştirilip TIR'la haftalar içinde taşınmasıdır. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Amsterdam, Rotterdam, Eindhoven ya da Hollanda'nın hangi şehrine gidecekse doğrudan o kapıya teslim edilir. İstanbul'dan Amsterdam'a tipik transit süre 30-46 saattir; yani bugün yüklenen eşyanız çoğu zaman iki gün içinde Hollanda'daki adresinde olur.",
-    "Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi olmadığı için cuma günü çıkan yük pazartesiyi beklemeden yoluna devam eder; çift şoför uygulamasıyla araç mola vermeden ilerler. Tüm gönderiler sigortalı taşınır, 7/24 canlı GPS takibiyle yükünüzün hangi ülkede, hangi otoyolda olduğunu anlık olarak görürsünüz. Fiyat öğrenmek için telefon trafiğine gerek yok: uygulamadan kalkış ve varış adresinizi seçip anında tahmini teklif alabilirsiniz.",
+    "Panelvan araçlarımız hafta sonu TIR seyir yasağına tabi olmadığı için cuma günü çıkan yük pazartesiyi beklemeden yoluna devam eder; çift şoför uygulamasıyla araç mola vermeden ilerler. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğu için mobilya, elektronik veya makine gibi yüklerde talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu görürsünüz (talep alındı, anlaşma, yolda, teslim edildi); aracın o anki yerini WhatsApp'tan sorabilirsiniz. Fiyat öğrenmek için telefon trafiğine gerek yok: uygulamadan kalkış ve varış adresinizi seçip anında tahmini teklif alabilirsiniz.",
   ],
   transitTable: {
     caption: "Türkiye - Hollanda Transit Süreleri",
@@ -70,7 +70,7 @@ const hollandaKargo: SeoPageData = {
     {
       heading: "Hollanda'ya Koli ve Parça Eşya Gönderme",
       paragraphs: [
-        "Komple panelvan dolduracak kadar yükünüz yoksa Hollanda hattında koli ve parsiyel gönderiler de taşıyoruz. Birkaç koliden birkaç palete kadar her hacim için yer ayrılabilir; gönderiniz yine sigortalı taşınır ve aynı canlı takip sisteminden izlenir. Koli ve parsiyel taşımada sabit bir liste fiyatı yoktur: fiyat, gönderinizin hacmine ve güzergaha göre belirlenir. Uygulamadan ölçü ve adres bilgilerinizi girerek anında teklif alabilirsiniz.",
+        "Komple panelvan dolduracak kadar yükünüz yoksa Hollanda hattında koli ve parsiyel gönderiler de taşıyoruz. Birkaç koliden birkaç palete kadar her hacim için yer ayrılabilir; gönderiniz yine CMR sorumluluğu altında taşınır, talep üzerine ek sigorta yaptırılır ve aynı takip sisteminden aşama aşama izlenir. Koli ve parsiyel taşımada sabit bir liste fiyatı yoktur: fiyat, gönderinizin hacmine ve güzergaha göre belirlenir. Uygulamadan ölçü ve adres bilgilerinizi girerek anında teklif alabilirsiniz.",
         "Hollanda güzergahı, Almanya ve Belçika hatlarımızla aynı koridor üzerinde ilerlediği için parsiyel gönderilerde araç doluluk oranı yüksektir; bu da koli başına maliyeti düşürür ve kalkış sıklığını artırır. Acele etmeyen gönderiler için parsiyel, teslim tarihi kritik yükler için komple panelvan en verimli iki seçenektir. Parsiyel taşımanın işleyişi, hacim hesabı ve kalkış planları hakkında ayrıntılı bilgiyi parsiyel taşımacılık sayfamızda bulabilirsiniz.",
       ],
     },
@@ -84,9 +84,9 @@ const hollandaKargo: SeoPageData = {
         "Transit süre: parsiyel TIR 7-15 gün; RouteEU panelvan 30-46 saat.",
         "Aktarma: parsiyel TIR'da en az bir toplama ve bir dağıtım deposu; panelvanda sıfır aktarma, yükleme anından teslimata aynı araç.",
         "Hafta sonu: TIR'lar cumartesi-pazar seyir yasağına tabi; panelvan kesintisiz yol alır.",
-        "Takip: parsiyelde telefonla sorulan tahmini konum; panelvanda 7/24 canlı GPS.",
+        "Takip: parsiyelde telefonla sorulan tahmini konum; panelvanda takip numarasıyla görülen aşama bilgisi ve WhatsApp'tan alınan güncel konum.",
         "Teslim noktası: parsiyelde sıklıkla depo veya şube; panelvanda doğrudan adres, kapıya teslim.",
-        "Güvence: her RouteEU taşıması yazılı sözleşme ve taşıma sigortası kapsamında yola çıkar.",
+        "Güvence: her RouteEU taşıması yazılı sözleşme ve CMR taşıyıcı sorumluluğu kapsamında yola çıkar; talep üzerine beyan değeri üzerinden ek yük sigortası yaptırılır.",
       ],
     },
     {
@@ -95,16 +95,16 @@ const hollandaKargo: SeoPageData = {
         "Hollanda'ya gönderiniz dört adımda tamamlanır; her adımda yükünüzün durumunu uygulamadan izleyebilirsiniz:",
       ],
       list: [
-        "Teklif: Uygulamadan kalkış adresinizi ve Hollanda'daki varış adresini seçin, yükünüzün hacmini girin ve tahmini fiyatı saniyeler içinde görün. Onayladığınızda taşıma sözleşmesi ve sigorta kapsamı dijital olarak oluşturulur.",
+        "Teklif: Uygulamadan kalkış adresinizi ve Hollanda'daki varış adresini seçin, yükünüzün hacmini girin ve tahmini fiyatı saniyeler içinde görün. Onayladığınızda taşıma sözleşmesi ve CMR sorumluluk kapsamı dijital olarak oluşturulur; ek sigorta isterseniz beyan değerinizi bu aşamada bildirirsiniz.",
         "Alım: Aracımız belirlenen gün ve saatte Türkiye'deki adresinize gelir; eşyanız kontrol edilerek araca yüklenir, gümrük evrakı sizinle birlikte tamamlanır.",
-        "Taşıma: Yük, gümrük işlemlerinin ardından aktarmasız olarak Hollanda'ya hareket eder. Çift şoför sayesinde araç mola için durmaz; konumunu 7/24 canlı haritada izlersiniz.",
+        "Taşıma: Yük, gümrük işlemlerinin ardından aktarmasız olarak Hollanda'ya hareket eder. Çift şoför sayesinde araç mola için durmaz; takip sayfasında aşaması \"yolda\" görünür, güzergâh harita üzerinde gösterilir.",
         "Teslim: Araç Amsterdam, Rotterdam veya Hollanda'daki hangi adrese gidecekse oraya ulaşır; eşyanız kapıda alıcıya teslim edilir ve teslimat bilgisi uygulamada görünür.",
       ],
     },
     {
       heading: "Hollanda'dan Türkiye'ye Dönüş Yükleri",
       paragraphs: [
-        "Taşımalarımız çift yönlüdür: Hollanda'dan Türkiye'ye eşya, koli veya ticari yük göndermek istiyorsanız aynı hız, sigorta ve takip imkânıyla dönüş taşıması da yapıyoruz. Amsterdam veya Rotterdam'dan aldığımız yük, Türkiye'deki teslimat adresine yine aktarmasız gider. Dönüş yönünde de transit süreler aynıdır: Amsterdam'dan İstanbul'a tipik teslimat 30-46 saat içinde tamamlanır.",
+        "Taşımalarımız çift yönlüdür: Hollanda'dan Türkiye'ye eşya, koli veya ticari yük göndermek istiyorsanız aynı hız, güvence ve takip imkânıyla dönüş taşıması da yapıyoruz. Amsterdam veya Rotterdam'dan aldığımız yük, Türkiye'deki teslimat adresine yine aktarmasız gider. Dönüş yönünde de transit süreler aynıdır: Amsterdam'dan İstanbul'a tipik teslimat 30-46 saat içinde tamamlanır.",
         "Hollanda'da yaşayıp Türkiye'ye kalıcı dönüş yapmayı planlıyorsanız, ev eşyalarınızın komple taşınması için kesin dönüş nakliyat hizmetimize göz atabilirsiniz; evinizdeki eşyalar Hollanda'daki adresinizden paketlenmiş halde alınır ve Türkiye'deki yeni adresinize tek araçla teslim edilir.",
       ],
     },
@@ -132,7 +132,7 @@ const hollandaKargo: SeoPageData = {
     {
       question: "Hollanda'ya tek koli gönderebilir miyim?",
       answer:
-        "Evet. Komple araç kiralamanıza gerek yok; koli ve parsiyel gönderileriniz için araçta yer ayırıyoruz. Fiyat, kolinizin hacmine göre belirlenir ve gönderiniz yine sigortalı taşınıp canlı takip edilir.",
+        "Evet. Komple araç kiralamanıza gerek yok; koli ve parsiyel gönderileriniz için araçta yer ayırıyoruz. Fiyat, kolinizin hacmine göre belirlenir; gönderiniz yine CMR sorumluluğu altında taşınır, talep üzerine ek sigorta yaptırılır ve takip numarasıyla aşama aşama izlenir.",
     },
     {
       question: "Hollanda'ya ev eşyası gönderirken gümrükte ne gerekir?",
@@ -142,7 +142,7 @@ const hollandaKargo: SeoPageData = {
     {
       question: "Yükümü yolda takip edebilir miyim?",
       answer:
-        "Evet. Her gönderiye canlı GPS takibi tanımlanır; gönderi takip sayfasından aracınızın anlık konumunu 7/24 harita üzerinde görebilirsiniz. Amsterdam'a giden yükünüzün hangi ülkede olduğunu her an bilirsiniz.",
+        "Evet. Her gönderiye bir takip numarası tanımlanır; gönderi takip sayfasından sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde izlersiniz. Amsterdam'a giden aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz.",
     },
     {
       question: "Hollanda'dan Türkiye'ye de taşıma yapıyor musunuz?",

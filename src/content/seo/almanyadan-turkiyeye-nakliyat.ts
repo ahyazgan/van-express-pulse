@@ -5,11 +5,11 @@ const almanyadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "almanyadan-turkiyeye-nakliyat",
   title: "Almanya'dan Türkiye'ye Nakliyat | 24-48 Saat Kapıdan Kapıya | RouteEU",
   description:
-    "Almanya'dan Türkiye'ye kapıdan kapıya nakliyat ve kargo. Berlin, Münih, Köln'den eşyanız 24-48 saatte adresinizde. Sigortalı, GPS takipli, aktarmasız taşıma.",
+    "Almanya'dan Türkiye'ye kapıdan kapıya nakliyat ve kargo. Berlin, Münih, Köln'den eşyanız 24-48 saatte adresinizde. Aktarmasız, CMR sorumluluğunda, takip numaralı.",
   h1: "Almanya'dan Türkiye'ye Kapıdan Kapıya Nakliyat ve Kargo",
   intro: [
     "Almanya'dan Türkiye'ye eşya veya kargo göndermek isteyenlerin en sık duyduğu cevap bellidir: \"Bir-iki hafta sürer, araç dolunca çıkar.\" RouteEU Express bu bekleme mantığını tersine çevirir. Panelvan araçlarımız Türkiye-Avrupa hattında zaten iki yönlü çalıştığı için Almanya'dan dönüş yükleri de aynı ekspres standartla taşınır: eşyanız Almanya'daki kapınızdan alınır, araç değiştirmeden ve depoya uğramadan 24-48 saat içinde Türkiye'deki adrese teslim edilir.",
-    "Berlin'den İstanbul'a, Köln'den Ankara'ya ya da Münih'ten İzmir'e — çıkış noktası neresi olursa olsun taşıma tek araçla, çift şoförle ve kesintisiz yapılır. Gönderiniz sigorta kapsamındadır ve 7/24 canlı GPS takibi sayesinde eşyanızın Avrupa'nın hangi otoyolunda ilerlediğini telefonunuzdan anlık olarak izlersiniz.",
+    "Berlin'den İstanbul'a, Köln'den Ankara'ya ya da Münih'ten İzmir'e — çıkış noktası neresi olursa olsun taşıma tek araçla, çift şoförle ve kesintisiz yapılır. Gönderiniz, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.",
   ],
   transitTable: {
     caption: "Almanya - Türkiye Transit Süreleri",
@@ -62,7 +62,7 @@ const almanyadanTurkiyeyeNakliyat: SeoPageData = {
     {
       heading: "Sigorta, Sözleşme ve Kapıda Teslim Güvencesi",
       paragraphs: [
-        "Almanya'dan Türkiye'ye taşınan her yük, yükleme anından kapıda teslime kadar taşıma sigortası kapsamındadır; değerli eşya için sigorta bedelini teklif aşamasında birlikte belirleriz. Taşıma öncesinde fiyatı, alım ve teslim adreslerini, tahmini süreyi ve eşya listesini içeren yazılı bir sözleşme düzenlenir; böylece yolda sürpriz bir ek ücretle karşılaşmazsınız. Yükleme sırasında tutulan tutanak, teslimatta imzalanan belgeyle karşılaştırılır. Aradaki tüm süreçte canlı GPS takibi açıktır ve eşyanız yalnızca sözleşmede yazan Türkiye'deki adrese, kapıda teslim edilir.",
+        "Almanya'dan Türkiye'ye taşınan her yük, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlıdır. Mobilya, elektronik veya makine gibi yüklerde bu tavan çoğu zaman eşyanın gerçek değerini karşılamaz; bu nedenle talep üzerine, beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Taşıma öncesinde fiyatı, alım ve teslim adreslerini, tahmini süreyi ve eşya listesini içeren yazılı bir sözleşme düzenlenir; böylece yolda sürpriz bir ek ücretle karşılaşmazsınız. Yükleme sırasında tutulan tutanak, teslimatta imzalanan belgeyle karşılaştırılır. Bu iki an arasında takip numaranızla sevkiyatın hangi aşamada olduğunu görür, aracın o anki yerini WhatsApp'tan sorarsınız; eşyanız yalnızca sözleşmede yazan Türkiye'deki adrese, kapıda teslim edilir.",
       ],
     },
     {
@@ -80,7 +80,7 @@ const almanyadanTurkiyeyeNakliyat: SeoPageData = {
       list: [
         "Teklif: Uygulamada Almanya'daki alım adresini ve Türkiye'deki teslimat noktasını seçin, tahmini fiyatı saniyeler içinde görün.",
         "Alım: Aracımız randevu tarihinde Almanya'daki adresinize gelir; eşyanız güvenle yüklenir ve tutanakla teslim alınır.",
-        "Taşıma: Yük, gümrük evrakları tamamlandıktan sonra aktarmasız olarak Türkiye'ye hareket eder; canlı GPS ile 7/24 konum görürsünüz.",
+        "Taşıma: Yük, gümrük evrakları tamamlandıktan sonra aktarmasız olarak Türkiye'ye hareket eder; takip numaranızla aşamayı görür, konumu WhatsApp'tan sorarsınız.",
         "Teslim: Araç Türkiye'deki adrese ulaşır, eşyanız kapıda size veya alıcınıza imza karşılığı teslim edilir.",
       ],
     },
@@ -129,7 +129,7 @@ const almanyadanTurkiyeyeNakliyat: SeoPageData = {
     {
       question: "Eşyamı yolda takip edebilir miyim?",
       answer:
-        "Evet. Her gönderiye canlı GPS takibi tanımlanır; aracın anlık konumunu Almanya'dan çıkışından Türkiye'deki teslimata kadar 7/24 harita üzerinden izlersiniz.",
+        "Evet. Her gönderiye bir takip numarası tanımlanır; bu numarayla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, güzergâhı harita üzerinde takip edersiniz. Aracın o anki yerini öğrenmek isterseniz WhatsApp'tan sorabilirsiniz.",
     },
   ],
   related: [
