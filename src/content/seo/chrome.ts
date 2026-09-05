@@ -22,6 +22,19 @@ export interface ChromeStrings {
   footerTracking: string;
 }
 
+/**
+ * The year shown in titles that carry a "Fiyatları {{yil}}" pattern.
+ *
+ * Bump this by hand when the rates and transit tables are actually reviewed —
+ * it is a freshness claim, so it should follow a real content review rather than
+ * the system clock. Both renderers (scripts/prerender.ts, src/pages/SeoPage.tsx)
+ * expand the placeholder, so one edit here covers every page.
+ */
+export const CONTENT_YEAR = "2026";
+
+/** Expands {{yil}} in a title or description. */
+export const withYear = (text: string): string => text.split("{{yil}}").join(CONTENT_YEAR);
+
 export const CHROME: Record<PageLang, ChromeStrings> = {
   tr: {
     home: "Ana Sayfa",

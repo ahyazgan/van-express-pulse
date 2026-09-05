@@ -156,6 +156,7 @@ const guvenilirNakliyeFirmasiSecimi: SeoPageData = {
     { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "minivan-ekspres-tasimacilik", label: "Minivan Ekspres Taşımacılık" },
+    { slug: "zati-esya-gumruk-muafiyeti", label: "Zati Eşya Gümrük Muafiyeti" },
   ],
 };
 

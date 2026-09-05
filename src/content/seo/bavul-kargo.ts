@@ -2,9 +2,9 @@ import type { SeoPageData } from "./seoData";
 
 const bavulKargo: SeoPageData = {
   slug: "bavul-kargo",
-  title: "Yurtdışına Bavul ve Koli Gönderme | Kapıdan Kapıya | RouteEU",
+  title: "Yurtdışına Bavul ve Koli Gönderme | Kapıdan Kapıya Teslimat",
   description:
-    "Yurtdışına bavul, valiz ve koli gönderme: kapıdan alınır, adrese teslim edilir. Uçak fazla bagaj ücretine ekonomik alternatif; CMR sorumluluğunda, takip numaralı.",
+    "Yurtdışına bavul, valiz ve koli gönderme: kapıdan alınır, adrese teslim edilir. Uçak fazla bagaj ücretine ekonomik alternatif, takip numaralı.",
   h1: "Yurtdışına Bavul ve Koli Gönderme",
   intro: [
     "Yurtdışına taşınırken, okula başlarken veya ailenize eşya gönderirken sorun hep aynıdır: havayollarında fazla bagaj ücreti bavul başına yüzlerce euroyu bulur, kargo firmalarının 30 kilogram sınırı ise büyük ve ağır parçaları kapsam dışı bırakır. RouteEU Express bu iki seçeneğin arasındaki boşluğu doldurur: bavullarınız, valizleriniz ve kolileriniz Türkiye'deki adresinizden panelvanla alınır, Avrupa'daki adrese kapıda teslim edilir.",
@@ -122,6 +122,7 @@ const bavulKargo: SeoPageData = {
     { slug: "ogrenci-esyasi-tasima", label: "Öğrenci Eşyası Taşıma" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
+    { slug: "yolcu-beraberi-esya-muafiyeti", label: "Yolcu Beraberi Eşya Muafiyeti" },
   ],
 };
 

@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const isvecKargo: SeoPageData = {
   slug: "isvec-kargo",
-  title: "İsveç'e Kargo ve Nakliyat | Stockholm ve Göteborg'a Teslimat | RouteEU",
+  title: "İsveç Kargo Fiyatları {{yil}} | Stockholm ve Göteborg",
   description:
     "Türkiye'den İsveç'e kapıdan kapıya panelvan nakliyat. Stockholm, Göteborg ve Malmö'ye 2-3 günde aktarmasız teslimat, CMR sorumluluğu, takip, anında fiyat.",
   h1: "Türkiye'den İsveç'e Kapıdan Kapıya Nakliyat",

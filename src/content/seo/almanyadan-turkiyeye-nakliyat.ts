@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const almanyadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "almanyadan-turkiyeye-nakliyat",
-  title: "Almanya'dan Türkiye'ye Nakliyat | 24-48 Saat Kapıdan Kapıya | RouteEU",
+  title: "Almanya'dan Türkiye'ye Nakliyat Fiyatları ve Süresi {{yil}}",
   description:
-    "Almanya'dan Türkiye'ye kapıdan kapıya nakliyat ve kargo. Berlin, Münih, Köln'den eşyanız 24-48 saatte adresinizde. Aktarmasız, CMR sorumluluğunda, takip numaralı.",
+    "Almanya'dan Türkiye'ye kapıdan kapıya nakliyat ve kargo. Berlin, Münih ve Köln'den eşyanız 24-48 saatte adresinizde. Aktarmasız, takip numaralı.",
   h1: "Almanya'dan Türkiye'ye Kapıdan Kapıya Nakliyat ve Kargo",
   intro: [
     "Almanya'dan Türkiye'ye eşya veya kargo göndermek isteyenlerin en sık duyduğu cevap bellidir: \"Bir-iki hafta sürer, araç dolunca çıkar.\" RouteEU Express bu bekleme mantığını tersine çevirir. Panelvan araçlarımız Türkiye-Avrupa hattında zaten iki yönlü çalıştığı için Almanya'dan dönüş yükleri de aynı ekspres standartla taşınır: eşyanız Almanya'daki kapınızdan alınır, araç değiştirmeden ve depoya uğramadan 24-48 saat içinde Türkiye'deki adrese teslim edilir.",
@@ -137,6 +137,7 @@ const almanyadanTurkiyeyeNakliyat: SeoPageData = {
     { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
+    { slug: "almanya-kargo-gumruk-vergisi", label: "Almanya Gümrük Vergisi ve Muafiyet Rehberi" },
   ],
 };
 

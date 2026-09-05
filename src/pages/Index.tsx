@@ -8,9 +8,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import type { ShippingMode } from "@/constants/domesticRates";
 
 const HOME_META = {
-  title: "RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri",
+  title: "Uluslararası Nakliyat ve Avrupa Kargo Fiyatları 2026",
   description:
-    "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, sevkiyatınızın hangi aşamada olduğunu takip edin.",
+    "Türkiye'den Avrupa'ya kapıdan kapıya panelvan taşımacılık: 10 ülkeye 24-72 saatte aktarmasız teslimat. Güzergâh fiyatlarını görün, hemen teklif alın.",
   h1: "RouteEU Express - Avrupa'nın En Hızlı Panelvan Ağı",
 } as const;
 

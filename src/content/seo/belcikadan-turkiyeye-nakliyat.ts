@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const belcikadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "belcikadan-turkiyeye-nakliyat",
-  title: "Belçika'dan Türkiye'ye Nakliyat ve Kargo | RouteEU",
+  title: "Belçika'dan Türkiye'ye Nakliyat Fiyatları {{yil}}",
   description:
-    "Belçika'dan Türkiye'ye kapıdan kapıya nakliyat. Brüksel ve Anvers'ten eşyanız 30-46 saatte Türkiye'de. Aktarmasız, CMR sorumluluğu altında, takip numaralı panelvan taşıma.",
+    "Belçika'dan Türkiye'ye kapıdan kapıya nakliyat. Brüksel ve Anvers'ten eşyanız 30-46 saatte Türkiye'de. Aktarmasız, takip numaralı panelvan taşıma.",
   h1: "Belçika'dan Türkiye'ye Kapıdan Kapıya Nakliyat",
   intro: [
     "Belçika'dan Türkiye'ye eşya göndermek çoğu zaman sabır işi sayılır: koliler Brüksel veya Anvers'teki bir depoda haftalarca sıra bekler, teslim tarihi sorulduğunda net bir cevap alınamaz. RouteEU Express'te işleyiş farklıdır. Türkiye-Belçika hattında araçlarımız zaten iki yönlü sefer yaptığından dönüş yükünüz için ayrılmış bir panelvan Belçika'daki adresinize gelir ve eşyanız aktarmasız, depoya uğramadan ve beklemeden 30-46 saat içinde Türkiye'deki kapıya teslim edilir.",

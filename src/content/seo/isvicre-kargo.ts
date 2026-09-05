@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const isvicreKargo: SeoPageData = {
   slug: "isvicre-kargo",
-  title: "İsviçre'ye Kargo ve Nakliyat | Gümrük Dahil Kapıdan Kapıya | RouteEU",
+  title: "İsviçre Kargo Fiyatları {{yil}} | Gümrük Dahil Kapıdan Kapıya",
   description:
-    "Türkiye'den İsviçre'ye kapıdan kapıya kargo ve nakliyat. Zürih, Basel, Bern ve Cenevre'ye 28-46 saatte CMR sorumluluğu altında taşıma; gümrük sürecinde uçtan uca rehberlik.",
+    "Türkiye'den İsviçre'ye kapıdan kapıya kargo. Zürih, Basel, Bern ve Cenevre'ye 28-46 saatte aktarmasız taşıma; gümrük sürecinde uçtan uca rehberlik.",
   h1: "Türkiye'den İsviçre'ye Kapıdan Kapıya Kargo ve Nakliyat",
   intro: [
     "İsviçre, Avrupa Birliği üyesi olmadığı için Türkiye'den İsviçre'ye kargo göndermek, Almanya'ya veya Hollanda'ya göndermekten farklı bir süreçtir: Türkiye çıkışında ihracat beyanı, Avrupa üzerinden geçişte transit belgeleri ve varışta İsviçre ithalat işlemi devreye girer. Bu ek evrak yükü nedeniyle pek çok taşıma firması bu hatta ya hiç çalışmaz ya da yükü yolda başka firmalara devreder. RouteEU Express, İstanbul ve tüm Türkiye'den Zürih, Basel, Bern, Cenevre ve Lozan başta olmak üzere İsviçre'nin her adresine kapıdan kapıya panelvan taşımacılığı yapar ve gümrük sürecinin her adımında size yol gösterir.",

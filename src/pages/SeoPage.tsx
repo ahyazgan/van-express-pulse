@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import RouteEULogo from "@/components/RouteEULogo";
 import usePageMeta from "@/hooks/usePageMeta";
 import { SEO_PAGES } from "@/content/seo/registry";
-import { CHROME, HREFLANG } from "@/content/seo/chrome";
+import { CHROME, HREFLANG, withYear } from "@/content/seo/chrome";
 import NotFound from "./NotFound";
 import type { SeoPageData } from "@/content/seo/seoData";
 
@@ -38,8 +38,12 @@ const useLanguageTags = (page: SeoPageData | undefined) => {
       for (const sibling of siblings) {
         addAlternate(HREFLANG[sibling.lang ?? "tr"], sibling.slug);
       }
-      const turkish = siblings.find((p) => (p.lang ?? "tr") === "tr");
-      if (turkish) addAlternate("x-default", turkish.slug);
+      // Mirrors scripts/prerender.ts: x-default goes to the English member so a
+      // searcher whose language matches no alternate is not dropped into Turkish.
+      const fallback =
+        siblings.find((p) => p.lang === "en") ??
+        siblings.find((p) => (p.lang ?? "tr") === "tr");
+      if (fallback) addAlternate("x-default", fallback.slug);
     }
 
     return () => {
@@ -97,8 +101,8 @@ const SeoPage = () => {
   const page = SEO_PAGES[slug];
 
   usePageMeta({
-    title: page?.title ?? "RouteEU Express",
-    description: page?.description,
+    title: page ? withYear(page.title) : "RouteEU Express",
+    description: page ? withYear(page.description) : undefined,
     canonicalPath: `/${slug}`,
   });
   useStructuredData(page);
@@ -217,6 +221,15 @@ const SeoPage = () => {
                 </table>
               </div>
               <p className="mt-2 text-xs text-muted-foreground">{page.priceTable.disclaimer}</p>
+              {/* Mirrors scripts/prerender.ts: Turkish pages only, because the
+                  calculator exists in Turkish only. */}
+              {lang === "tr" && (
+                <p className="mt-3 text-sm">
+                  <Link to="/fiyat-hesaplama" className="font-medium text-primary underline-offset-4 hover:underline">
+                    Kendi hacminize göre tahmini fiyat hesaplayın
+                  </Link>
+                </p>
+              )}
             </section>
           )}
 

@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const fransaKargo: SeoPageData = {
   slug: "fransa-kargo",
-  title: "Fransa'ya Panelvan Kargo | Paris'e Kapıdan Kapıya 34-48 Saat | RouteEU",
+  title: "Fransa Kargo Fiyatları {{yil}} | Paris'e 34-48 Saat",
   description:
     "Türkiye'den Fransa'ya kapıdan kapıya panelvan kargo: Paris, Lyon, Marsilya ve Strazburg'a 34-48 saatte aktarmasız teslimat, CMR sorumluluğu. Anında teklif alın.",
   h1: "Türkiye'den Fransa'ya Kapıdan Kapıya Panelvan Kargo",

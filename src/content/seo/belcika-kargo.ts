@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const belcikaKargo: SeoPageData = {
   slug: "belcika-kargo",
-  title: "Belçika'ya Panelvan Kargo | Kapıdan Kapıya Ekspres | RouteEU",
+  title: "Belçika Kargo Fiyatları {{yil}} | Kapıdan Kapıya Ekspres",
   description:
     "Türkiye'den Belçika'ya kapıdan kapıya panelvan kargo: Brüksel ve Anvers'e 30-46 saatte aktarmasız teslimat, CMR sorumluluğu, aşama takibi. Anında fiyat alın.",
   h1: "Türkiye'den Belçika'ya Kapıdan Kapıya Kargo",

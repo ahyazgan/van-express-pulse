@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const italyaKargo: SeoPageData = {
   slug: "italya-kargo",
-  title: "İtalya'ya Panelvan Kargo | Milano'ya 24-36 Saat Ekspres | RouteEU",
+  title: "İtalya Kargo Fiyatları {{yil}} | Milano'ya 24-36 Saat",
   description:
     "Türkiye'den İtalya'ya kapıdan kapıya panelvan kargo. Milano ve Verona'ya 24-36 saatte fuar, tekstil ve ticari yük taşıma; anında fiyat, aşamalı gönderi takibi.",
   h1: "Türkiye'den İtalya'ya Kapıdan Kapıya Panelvan Kargo",
@@ -136,6 +136,7 @@ const italyaKargo: SeoPageData = {
     { slug: "minivan-ekspres-tasimacilik", label: "Minivan Ekspres Taşımacılık" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
+    { slug: "isvicre-kargo", label: "İsviçre'ye Kargo ve Nakliyat" },
   ],
 };
 

@@ -2,7 +2,7 @@ import type { SeoPageData } from "./seoData";
 
 const ogrenciEsyasiTasima: SeoPageData = {
   slug: "ogrenci-esyasi-tasima",
-  title: "Öğrenci ve Erasmus Eşyası Taşıma | Yurtdışına Kapıdan Kapıya | RouteEU",
+  title: "Öğrenci ve Erasmus Eşyası Taşıma | Yurtdışına Kapıdan Kapıya",
   description:
     "Erasmus veya yüksek lisans için Avrupa'ya giden öğrencinin kitap, bilgisayar, kışlık ve bisikletini kapıdan yurt odasına taşıyoruz. Dönem sonu dönüş dahil.",
   h1: "Yurtdışı Öğrenci ve Erasmus Eşyası Taşıma",
@@ -124,6 +124,7 @@ const ogrenciEsyasiTasima: SeoPageData = {
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },
+    { slug: "yolcu-beraberi-esya-muafiyeti", label: "Yolcu Beraberi Eşya Muafiyeti Nedir?" },
   ],
 };
 

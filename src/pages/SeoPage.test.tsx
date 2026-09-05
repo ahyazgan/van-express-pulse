@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import SeoPage from "./SeoPage";
 import { SEO_PAGES, SEO_ROUTES, LOCALIZED_PAGES } from "@/content/seo/registry";
 import { SEO_ROUTE_PATHS } from "@/content/seo/seoSlugs";
-import { CHROME } from "@/content/seo/chrome";
+import { CHROME, withYear } from "@/content/seo/chrome";
 
 const slugs = Object.keys(SEO_PAGES);
 const EXPECTED_PAGES = 39;
@@ -20,6 +20,22 @@ describe("SEO landing pages", () => {
 
   it("keeps the App route list in sync with the registry", () => {
     expect([...SEO_ROUTE_PATHS].sort()).toEqual([...SEO_ROUTES].sort());
+  });
+
+  it("keeps titles and descriptions inside what a SERP actually shows", () => {
+    // 21 of 39 titles used to run past this and got truncated mid-phrase, which
+    // wastes the one line a searcher reads before deciding. Lengths are checked
+    // after {{yil}} expands, because that is what ships.
+    for (const page of Object.values(SEO_PAGES)) {
+      const title = withYear(page.title);
+      const description = withYear(page.description);
+      expect(title.length, `${page.slug} title (${title.length}): ${title}`).toBeLessThanOrEqual(60);
+      expect(
+        description.length,
+        `${page.slug} description (${description.length})`
+      ).toBeLessThanOrEqual(160);
+      expect(description.length, `${page.slug} description too short`).toBeGreaterThan(70);
+    }
   });
 
   it("keeps related links inside the known slug set", () => {
@@ -74,7 +90,12 @@ describe("SEO landing pages", () => {
     }
   });
 
-  it("gives every hreflang group exactly one Turkish x-default", () => {
+  it("gives every hreflang group one unambiguous x-default target", () => {
+    // x-default is served to searchers whose language matches no alternate. Both
+    // generators (scripts/prerender.ts, SeoPage.tsx) pick the English member and
+    // fall back to Turkish, so each group needs exactly one of each to make that
+    // choice deterministic. Pointing x-default at Turkish, as it once did, drops
+    // a Polish or Italian searcher into 2.000 words they cannot read.
     const groups = new Map<string, string[]>();
     for (const page of Object.values(SEO_PAGES)) {
       if (!page.hreflangGroup) continue;
@@ -82,8 +103,10 @@ describe("SEO landing pages", () => {
     }
     expect(groups.size).toBeGreaterThan(0);
     for (const [group, members] of groups) {
-      const turkish = members.filter((s) => (SEO_PAGES[s].lang ?? "tr") === "tr");
-      expect(turkish, `${group} x-default`).toHaveLength(1);
+      const byLang = (lang: string) =>
+        members.filter((s) => (SEO_PAGES[s].lang ?? "tr") === lang);
+      expect(byLang("tr"), `${group} Turkish fallback`).toHaveLength(1);
+      expect(byLang("en"), `${group} x-default`).toHaveLength(1);
       const langs = members.map((s) => SEO_PAGES[s].lang ?? "tr");
       expect(new Set(langs).size, `${group} duplicate languages`).toBe(langs.length);
     }
@@ -140,7 +163,7 @@ describe("SEO landing pages", () => {
 
     expect(screen.getByRole("heading", { level: 1 }).textContent).toBe(page.h1);
     expect(screen.getByText(CHROME[page.lang ?? "tr"].faqHeading)).toBeInTheDocument();
-    expect(document.title).toBe(page.title);
+    expect(document.title).toBe(withYear(page.title));
     const canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     expect(canonical?.href).toBe(`https://routeeu24.com/${slug}`);
     expect(document.documentElement.lang).toBe(page.lang ?? "tr");

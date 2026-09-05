@@ -5,9 +5,9 @@ const nlTransportNaarTurkije: SeoPageData = {
   slug: "nl/transport-naar-turkije",
   lang: "nl",
   hreflangGroup: "express-b2b",
-  title: "Transport naar Turkije | Expresslevering zonder overslag | RouteEU",
+  title: "Transport naar Turkije | Expresslevering zonder overslag",
   description:
-    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 28 tot 46 uur, zonder overslag, twee chauffeurs, begeleiding bij de douanepapieren en statustracking.",
+    "Expresstransport naar Turkije: tot 1.300 kg en 5 europallets in 28 tot 46 uur, zonder overslag, twee chauffeurs en hulp bij de douanepapieren.",
   h1: "Transport naar Turkije: expresslevering zonder overslag",
   intro: [
     "Als een productielijn stilstaat of een order de leverdatum dreigt te missen, is de vraag niet wat een zending kost, maar wanneer hij er is. RouteEU Express rijdt spoedtransporten tussen Nederland en Turkije met eigen bestelbussen: wij halen uw goederen op bij uw magazijn, laden ze één keer in en leveren ze 28 tot 46 uur later af bij de ontvanger. Geen hubs, geen overslag, geen wachten tot een trailer vol is.",

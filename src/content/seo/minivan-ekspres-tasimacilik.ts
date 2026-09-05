@@ -4,9 +4,9 @@ import { priceRange } from "./seoData";
 const minivanEkspresTasimacilik: SeoPageData = {
   slug: "minivan-ekspres-tasimacilik",
   hreflangGroup: "express-b2b",
-  title: "Minivan & Panelvan Ekspres Taşımacılık | Avrupa'ya 24-72 Saat | RouteEU",
+  title: "Panelvan Ekspres Taşımacılık Fiyatı | Avrupa'ya 24-72 Saat",
   description:
-    "Avrupa'ya ekspres minivan ve panelvan taşımacılık: ~1.300 kg / 5 palet kapasite, CMR sorumluluğunda, aktarmasız kapıdan kapıya teslimat 24-72 saatte. Fiyat alın.",
+    "Avrupa'ya ekspres minivan ve panelvan taşımacılık: ~1.300 kg / 5 palet kapasite, aktarmasız kapıdan kapıya teslimat 24-72 saatte. Fiyat alın.",
   h1: "Avrupa'ya Ekspres Minivan / Panelvan Taşımacılık",
   intro: [
     "Üretim hattınız bir yedek parça bekliyorsa, fuar standınızın açılışa yetişmesi gerekiyorsa ya da müşteriniz teslim tarihini öne çektiyse, klasik parsiyel TIR taşımacılığının 7-15 günlük süreleri bir seçenek olmaktan çıkar. Minivan ve panelvan ekspres taşımacılık tam bu noktada devreye girer: yükünüz için tahsis edilmiş bir araç, adresinizden yükleme yapar ve Avrupa'daki teslimat noktasına aktarmasız, depo beklemeden, 24-72 saat içinde ulaşır.",
@@ -174,6 +174,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
     { slug: "parsiyel-tasimacilik", label: "Avrupa'ya Parsiyel Taşımacılık" },
     { slug: "acil-yedek-parca-sevkiyati", label: "Acil Yedek Parça Sevkiyatı" },
     { slug: "fuar-tasimaciligi", label: "Fuar Taşımacılığı" },
+    { slug: "guvenilir-nakliye-firmasi-secimi", label: "Güvenilir Nakliye Firması Nasıl Seçilir?" },
   ],
 };
 

@@ -10,7 +10,7 @@ import type { FaqItem } from "./seo/seoData";
  * ayrı durmasının sebebi, scripts/prerender.ts'in bu içeriği React'e hiç
  * dokunmadan statik HTML'e basabilmesi.
  */
-export const CALC_TITLE = "Uluslararası Nakliyat Fiyat Hesaplama | m³ ve Palet | RouteEU";
+export const CALC_TITLE = "Uluslararası Nakliyat Fiyat Hesaplama | m³ ve Palet";
 
 export const CALC_DESCRIPTION =
   "Avrupa'ya nakliyat fiyatını hesaplayın: varış şehrini ve yük hacmini girin, komple panelvan veya parsiyel için tahmini fiyat aralığını anında görün.";

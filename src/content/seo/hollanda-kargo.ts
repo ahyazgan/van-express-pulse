@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const hollandaKargo: SeoPageData = {
   slug: "hollanda-kargo",
-  title: "Hollanda'ya Panelvan Kargo | 2026 Güncel Fiyat ve Süreler | RouteEU",
+  title: "Hollanda Kargo Fiyatları {{yil}} | Kapıdan Kapıya Ekspres",
   description:
-    "Hollanda'ya kapıdan kapıya panelvan kargo: 2026 güncel fiyatlar ve transit süreler. Amsterdam, Rotterdam'a 30-46 saatte aktarmasız ekspres taşıma, anında teklif alın.",
+    "Hollanda'ya kapıdan kapıya panelvan kargo: güncel fiyatlar ve transit süreler. Amsterdam ve Rotterdam'a 30-46 saatte aktarmasız ekspres taşıma.",
   h1: "Türkiye'den Hollanda'ya Kapıdan Kapıya Ekspres Kargo",
   intro: [
     "Türkiye'den Hollanda'ya kargo veya eşya göndermek istediğinizde klasik yöntem, yükünüzün başka gönderilerle birleştirilip TIR'la haftalar içinde taşınmasıdır. RouteEU Express bunun yerine yükünüze ayrılmış bir panelvanla çalışır: eşyanız Türkiye'deki adresinizden alınır, araç değiştirmeden ve depo beklemeden Amsterdam, Rotterdam, Eindhoven ya da Hollanda'nın hangi şehrine gidecekse doğrudan o kapıya teslim edilir. İstanbul'dan Amsterdam'a tipik transit süre 30-46 saattir; yani bugün yüklenen eşyanız çoğu zaman iki gün içinde Hollanda'daki adresinde olur.",

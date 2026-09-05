@@ -5,9 +5,9 @@ const deSpeditionTuerkei: SeoPageData = {
   slug: "de/spedition-tuerkei",
   lang: "de",
   hreflangGroup: "express-b2b",
-  title: "Spedition Türkei | Express-Direktfahrt ohne Umladen | RouteEU",
+  title: "Spedition Türkei | Express-Direktfahrt ohne Umladen",
   description:
-    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-40 Stunden, mit Sendungsstatus und fester Zusage.",
+    "Spedition für zeitkritische Sendungen in die Türkei: Sonderfahrt im Express-Sprinter, ohne Umladen, Laufzeit 24-40 Stunden, mit Sendungsstatus.",
   h1: "Spedition Türkei: Express-Transporte ohne Umladen",
   intro: [
     "Wenn eine Sendung in die Türkei termingebunden ist, hilft der günstigste Frachtsatz wenig. Entscheidend ist, ob die Ware am zugesagten Tag am Werkstor steht. RouteEU fährt zeitkritische Sendungen zwischen Deutschland und der Türkei als Direktfahrt: ein Fahrzeug, eine Ladung, kein Hub, kein Umschlag, kein Zwischenlager. Was in Stuttgart geladen wird, wird in Bursa entladen – von denselben zwei Fahrern.",

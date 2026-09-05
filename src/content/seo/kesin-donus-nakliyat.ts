@@ -4,10 +4,10 @@ import { priceRange } from "./seoData";
 const kesinDonusNakliyat: SeoPageData = {
   slug: "kesin-donus-nakliyat",
   hreflangGroup: "relocation",
-  title: "Kesin Dönüş Nakliyat | Almanya'dan Türkiye'ye Eşya Taşıma | RouteEU",
+  title: "Kesin Dönüş Nakliyatı {{yil}} | Avrupa'dan Türkiye'ye Fiyat",
   description:
-    "Almanya'dan Türkiye'ye kesin dönüş nakliyat: ev eşyanız kapıdan kapıya, CMR sorumluluğunda ve aktarmasız taşınır. Gümrük sürecinde rehberlik, anında fiyat teklifi.",
-  h1: "Almanya'dan Türkiye'ye Kesin Dönüş ve Eşya Taşıma",
+    "Avrupa'dan Türkiye'ye kesin dönüş nakliyat: ev eşyanız kapıdan kapıya ve aktarmasız taşınır. Gümrük sürecinde rehberlik, anında fiyat teklifi.",
+  h1: "Avrupa'dan Türkiye'ye Kesin Dönüş Nakliyatı",
   intro: [
     "Yıllarca Avrupa'da yaşadıktan sonra Türkiye'ye kesin dönüş yapmak büyük bir karar; ev eşyanızın taşınması ise bu kararın en çok kafa karıştıran ayağıdır. RouteEU Express, Almanya başta olmak üzere Hollanda, Belçika, Avusturya ve Fransa'dan Türkiye'ye kapıdan kapıya kesin dönüş nakliyatı yapar: eşyalarınız Avrupa'daki adresinizden alınır, araç değiştirmeden ve ara depoya girmeden Türkiye'deki yeni adresinize kadar aynı panelvanla gider.",
     "Aktarmasız taşıma özellikle ev eşyasında önemlidir; eşyanız elden ele geçmediği için hasar ve kayıp riski en aza iner. Her sevkiyat, CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; bu sorumluluk yasa gereği brüt kilogram başına 8,33 SDR ile sınırlı olduğundan ve mobilya ile elektronikte bu tavan eşyanın gerçek değerini çoğu zaman karşılamadığından, talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu telefonunuzdan görürsünüz (talep alındı, anlaşma, yolda, teslim edildi); aracın o anki yerini WhatsApp'tan sorabilirsiniz. Panelvan araçlar hafta sonu TIR seyir yasağından muaf olduğu için taşımanız cumartesi-pazar da kesintisiz devam eder; çift şoför uygulamasıyla araç mola vermeden yol alır.",
@@ -171,6 +171,8 @@ const kesinDonusNakliyat: SeoPageData = {
     { slug: "hollandadan-turkiyeye-nakliyat", label: "Hollanda'dan Türkiye'ye Nakliyat" },
     { slug: "belcikadan-turkiyeye-nakliyat", label: "Belçika'dan Türkiye'ye Nakliyat" },
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
+    { slug: "zati-esya-gumruk-muafiyeti", label: "Zati Eşya Gümrük Muafiyeti Şartları" },
+    { slug: "yurtdisina-ev-tasima-rehberi", label: "Yurt Dışına Ev Taşıma Adım Adım Rehber" },
   ],
 };
 

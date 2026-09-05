@@ -5,7 +5,7 @@ const enExpressVanTransportTurkey: SeoPageData = {
   slug: "en/express-van-transport-turkey",
   lang: "en",
   hreflangGroup: "express-b2b",
-  title: "Express Van Transport Turkey to Europe | Door to Door in 24-48h",
+  title: "Express Van Transport Turkey to Europe | Door to Door 24-48h",
   description:
     "Dedicated express van transport between Türkiye and Europe. Door-to-door in 24-48 hours, no transhipment, two drivers, customs handled, status tracking.",
   h1: "Express Van Transport Between Türkiye and Europe",

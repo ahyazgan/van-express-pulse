@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const fuarTasimaciligi: SeoPageData = {
   slug: "fuar-tasimaciligi",
-  title: "Yurtdışı Fuar Taşımacılığı | Stand ve Numune 24-48 Saatte | RouteEU",
+  title: "Yurtdışı Fuar Taşımacılığı | Stand ve Numune 24-48 Saatte",
   description:
-    "Fuar standı ve numuneleriniz Frankfurt, Köln, Münih, Milano ve Paris'e 24-48 saatte, aktarmasız ve CMR sorumluluğu altında. Gidiş-dönüş fuar taşıması, takip numarasıyla aşama takibi.",
+    "Fuar standı ve numuneleriniz Frankfurt, Köln, Münih, Milano ve Paris'e 24-48 saatte, aktarmasız. Gidiş-dönüş fuar taşıması, takip numaralı.",
   h1: "Yurtdışı Fuar Taşımacılığı: Fuarınıza 24-48 Saatte Teslimat",
   intro: [
     "Fuar katılımcısının tek bir korkusu vardır: aylarca hazırlanan standın, numunelerin ve kataloğun açılış sabahına yetişmemesi. Fuar alanı kiralanmış, uçak biletleri alınmış, müşteri randevuları planlanmıştır; yük bir depoda ya da sınırda beklerse bütün yatırım boşa gider. RouteEU Express, Türkiye'den Avrupa'nın fuar şehirlerine kapıdan kapıya panelvan ekspres fuar taşımacılığı yapar: standınız atölyenizden alınır, araç değiştirmeden ve depoya girmeden doğrudan fuar alanındaki teslim noktasına gider.",
@@ -165,6 +165,7 @@ const fuarTasimaciligi: SeoPageData = {
     { slug: "acil-yedek-parca-sevkiyati", label: "Acil Yedek Parça Sevkiyatı" },
     { slug: "italya-kargo", label: "İtalya'ya Panelvan Kargo" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
+    { slug: "avrupaya-gonderim-gumruk-belgeleri", label: "Gümrük Belgeleri: CMR, ATR, T1" },
   ],
 };
 

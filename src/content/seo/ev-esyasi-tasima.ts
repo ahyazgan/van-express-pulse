@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const evEsyasiTasima: SeoPageData = {
   slug: "ev-esyasi-tasima",
-  title: "Yurtdışına Ev Eşyası Taşıma | Almanya · Hollanda · Belçika | RouteEU",
+  title: "Uluslararası Evden Eve Nakliyat Fiyatları {{yil}} | Avrupa",
   description:
     "Türkiye'den Almanya, Hollanda ve Belçika'ya kapıdan kapıya ev eşyası ve mobilya taşıma. Aktarmasız panelvan, CMR sorumluluğu, aşamalı takip. Anında teklif alın.",
   h1: "Türkiye'den Avrupa'ya Ev Eşyası ve Mobilya Taşıma",
@@ -171,6 +171,8 @@ const evEsyasiTasima: SeoPageData = {
     { slug: "almanyadan-turkiyeye-nakliyat", label: "Almanya'dan Türkiye'ye Nakliyat" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
+    { slug: "zati-esya-gumruk-muafiyeti", label: "Zati Eşya Gümrük Muafiyeti" },
+    { slug: "yurtdisina-ev-tasima-rehberi", label: "Yurt Dışına Ev Taşıma Rehberi" },
   ],
 };
 

@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const almanyaKargo: SeoPageData = {
   slug: "almanya-kargo",
-  title: "Almanya'ya Panelvan Kargo | Kapıdan Kapıya 24-48 Saatte | RouteEU",
+  title: "Almanya Kargo Fiyatları {{yil}} | Kapıdan Kapıya 24-48 Saat",
   description:
-    "Türkiye'den Almanya'ya kapıdan kapıya panelvan kargo. Berlin, Hamburg, Münih, Köln'e 24-48 saatte aktarmasız ekspres taşıma. Anında fiyat alın, sevkiyat aşamasını takip edin.",
+    "Türkiye'den Almanya'ya kapıdan kapıya panelvan kargo. Berlin, Hamburg, Münih ve Köln'e 24-48 saatte aktarmasız ekspres taşıma. Anında fiyat alın.",
   h1: "Türkiye'den Almanya'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "Türkiye'den Almanya'ya kargo göndermek istediğinizde iki seçeneğiniz vardır: haftalarca süren parsiyel TIR taşımacılığı ya da yükünüz için ayrılmış bir panelvanla 24-48 saat içinde teslimat. RouteEU Express, İstanbul ve tüm Türkiye'den Almanya'nın her şehrine kapıdan kapıya ekspres panelvan taşımacılığı yapar: yükünüz adresinizden alınır, araç değiştirmeden ve depo beklemeden doğrudan Almanya'daki teslimat adresine gider.",
@@ -160,6 +160,8 @@ const almanyaKargo: SeoPageData = {
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "kesin-donus-nakliyat", label: "Kesin Dönüş Nakliyat" },
     { slug: "hollanda-kargo", label: "Hollanda'ya Panelvan Kargo" },
+    { slug: "almanya-kargo-gumruk-vergisi", label: "Almanya Kargo Gümrük Vergisi ve Muafiyet Sınırları" },
+    { slug: "isvicre-kargo", label: "İsviçre'ye Kargo ve Nakliyat" },
   ],
 };
 

@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const polonyaKargo: SeoPageData = {
   slug: "polonya-kargo",
-  title: "Polonya'ya Kargo ve Parsiyel Taşıma | Varşova'ya 24-40 Saat | RouteEU",
+  title: "Polonya Kargo Fiyatları {{yil}} | Varşova'ya 24-40 Saat",
   description:
-    "Türkiye'den Polonya'ya kapıdan kapıya panelvan kargo ve parsiyel taşıma. Varşova, Kraków ve Wrocław'a 24-40 saatte aktarmasız ekspres sevkiyat; hemen teklif alın.",
+    "Türkiye'den Polonya'ya kapıdan kapıya panelvan kargo ve parsiyel taşıma. Varşova, Kraków ve Wrocław'a 24-40 saatte aktarmasız sevkiyat.",
   h1: "Türkiye'den Polonya'ya Kargo ve Parsiyel Taşımacılık",
   intro: [
     "Türkiye ile Polonya arasındaki ticaret hacmi her yıl büyüyor: otomotiv yan sanayiden beyaz eşya komponentine, tekstilden e-ticaret ürünlerine kadar yüzlerce Türk işletmesi Polonya'daki üretici, distribütör ve depolara düzenli mal gönderiyor. RouteEU Express, İstanbul ve tüm Türkiye'den Varşova, Kraków, Wrocław ve Poznań başta olmak üzere Polonya'nın tüm şehirlerine kapıdan kapıya panelvan ekspres ve parsiyel taşımacılık yapar. Yükünüz fabrikanızdan veya deponuzdan alınır, araç değiştirmeden doğrudan Polonya'daki alıcı adresine teslim edilir.",

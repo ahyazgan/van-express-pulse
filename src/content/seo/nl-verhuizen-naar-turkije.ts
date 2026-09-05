@@ -5,9 +5,9 @@ const nlVerhuizenNaarTurkije: SeoPageData = {
   slug: "nl/verhuizen-naar-turkije",
   lang: "nl",
   hreflangGroup: "relocation",
-  title: "Verhuizen naar Turkije | Van deur tot deur in 2 dagen | RouteEU",
+  title: "Verhuizen naar Turkije | Van deur tot deur in 2 dagen",
   description:
-    "Verhuizen naar Turkije met een eigen bestelbus: uw inboedel van deur tot deur in 28 tot 46 uur, zonder overslag, op verzoek verzekerd en met statustracking. Direct een prijs.",
+    "Verhuizen naar Turkije met een eigen bestelbus: van deur tot deur in 28 tot 46 uur, zonder overslag, op verzoek verzekerd. Direct een prijs.",
   h1: "Verhuizen naar Turkije: uw inboedel van deur tot deur",
   intro: [
     "Wie naar Turkije verhuist, krijgt meestal twee opties voorgeschoteld: een zeecontainer die twee tot vier weken onderweg is, of groupage, waarbij uw inboedel eerst in een loods wacht tot de trailer vol is. RouteEU Express pakt het anders aan. Wij zetten één bestelbus in voor uw verhuizing, halen uw spullen op bij uw huidige adres in Nederland en rijden ze in 28 tot 46 uur rechtstreeks naar uw nieuwe adres in Turkije, zonder overslag en zonder tussenopslag.",

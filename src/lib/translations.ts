@@ -74,7 +74,7 @@ export const translations = {
 
     meta: {
       home: {
-        title: "RouteEU Express - Profesyonel Panelvan ve Hızlı Lojistik Çözümleri",
+        title: "Uluslararası Nakliyat ve Avrupa Kargo Fiyatları 2026",
         description: "Türkiye ve Avrupa arası ekspres panelvan taşımacılığı. Hızlı fiyat alın, sevkiyatınızın hangi aşamada olduğunu takip edin.",
       },
       auth: {

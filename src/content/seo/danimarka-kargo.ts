@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const danimarkaKargo: SeoPageData = {
   slug: "danimarka-kargo",
-  title: "Danimarka'ya Kargo ve Nakliyat | Kopenhag'a Kapıdan Kapıya | RouteEU",
+  title: "Danimarka Kargo Fiyatları {{yil}} | Kopenhag'a Teslimat",
   description:
     "Türkiye'den Danimarka'ya kapıdan kapıya panelvan nakliyat. Kopenhag, Aarhus ve Odense'ye 2-3 günde aktarmasız teslimat, gönderi takibi, anında fiyat teklifi.",
   h1: "Türkiye'den Danimarka'ya Kapıdan Kapıya Nakliyat",

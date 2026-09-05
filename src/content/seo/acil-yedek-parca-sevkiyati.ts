@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const acilYedekParcaSevkiyati: SeoPageData = {
   slug: "acil-yedek-parca-sevkiyati",
-  title: "Avrupa'ya Acil Yedek Parça Sevkiyatı | Aynı Gün Çıkış | RouteEU",
+  title: "Avrupa'ya Acil Yedek Parça Sevkiyatı | Aynı Gün Çıkış",
   description:
-    "Üretim hattı durdu mu? Acil yedek parçanız aynı gün çıkar, çift şoförle aktarmasız Münih, Stuttgart, Milano ve Viyana'ya 24-48 saatte teslim. Takip numarasıyla aşama takibi.",
+    "Üretim hattı durdu mu? Acil yedek parçanız aynı gün çıkar; çift şoförle aktarmasız Münih, Stuttgart, Milano ve Viyana'ya 24-48 saatte teslim edilir.",
   h1: "Avrupa'ya Acil Yedek Parça ve Time-Critical Sevkiyat",
   intro: [
     "Üretim hattı durduğunda saat değil, dakika sayarsınız. Almanya'daki bir montaj hattı Türkiye'den gelecek tek bir kalıbı, rulmanı ya da kontrol kartını bekliyorsa her saat hattın durması, cezai şart ve müşteri kaybı demektir. RouteEU Express, Türkiye'den Avrupa'ya acil yedek parça sevkiyatını kapıdan kapıya panelvan ekspresle yapar: talebiniz alındığı gün araç fabrikanıza gelir, parça yüklenir ve depo, aktarma ya da uçuş saati beklemeden doğrudan Avrupa'daki tesise hareket eder.",
@@ -153,6 +153,7 @@ const acilYedekParcaSevkiyati: SeoPageData = {
     { slug: "fuar-tasimaciligi", label: "Yurtdışı Fuar Taşımacılığı" },
     { slug: "polonya-kargo", label: "Polonya'ya Panelvan Kargo" },
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
+    { slug: "avrupaya-gonderim-gumruk-belgeleri", label: "Avrupa Gönderiminde Gümrük Belgeleri" },
   ],
 };
 

@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const hollandadanTurkiyeyeNakliyat: SeoPageData = {
   slug: "hollandadan-turkiyeye-nakliyat",
-  title: "Hollanda'dan Türkiye'ye Kargo ve Eşya Taşıma | RouteEU",
+  title: "Hollanda'dan Türkiye'ye Kargo Fiyatları {{yil}}",
   description:
     "Hollanda'dan Türkiye'ye kapıdan kapıya eşya taşıma ve kargo. Amsterdam, Rotterdam, Lahey'den 30-46 saatte teslimat. CMR sorumluluğunda panelvan, takip numaralı.",
   h1: "Hollanda'dan Türkiye'ye Kapıdan Kapıya Kargo ve Eşya Taşıma",

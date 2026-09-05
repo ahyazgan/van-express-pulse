@@ -3,7 +3,7 @@ import { priceRange } from "./seoData";
 
 const amazonFbaLojistik: SeoPageData = {
   slug: "amazon-fba-lojistik",
-  title: "Amazon FBA Lojistik | Türkiye'den Avrupa Depolarına Sevkiyat | RouteEU",
+  title: "Amazon FBA Lojistik | Türkiye'den Avrupa Depolarına Sevkiyat",
   description:
     "Türkiye'den Amazon FBA depolarına palet sevkiyatı: Almanya, Polonya, İtalya depolarına 24-48 saatte, randevu saatine göre kapıda teslim. Stok bitmeden yetişin.",
   h1: "Türkiye'den Amazon FBA Depolarına Palet Sevkiyatı",
@@ -153,6 +153,7 @@ const amazonFbaLojistik: SeoPageData = {
     { slug: "almanya-kargo", label: "Almanya'ya Panelvan Kargo" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "minivan-ekspres-tasimacilik", label: "Minivan Ekspres Taşımacılık" },
+    { slug: "etgb-mikro-ihracat-rehberi", label: "ETGB ile Mikro İhracat Rehberi" },
   ],
 };
 

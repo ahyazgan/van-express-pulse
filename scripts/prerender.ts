@@ -22,7 +22,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { SEO_PAGES } from "../src/content/seo/registry";
-import { CHROME, HREFLANG } from "../src/content/seo/chrome";
+import { CHROME, HREFLANG, withYear } from "../src/content/seo/chrome";
 import {
   CALC_DESCRIPTION,
   CALC_FAQ,
@@ -90,6 +90,15 @@ const seoBody = (page: SeoPageData): string => {
       ),
       `<p>${esc(page.priceTable.disclaimer)}</p>`
     );
+    // The calculator turns a price band into a number for the reader's own volume,
+    // and it was reachable from nothing: zero internal links pointed at it. Only
+    // Turkish pages link to it — it exists in Turkish only, and sending a German
+    // reader to a Turkish tool is the CTA leak we are trying to stop elsewhere.
+    if (lang === "tr") {
+      parts.push(
+        `<p><a href="/fiyat-hesaplama">Kendi hacminize göre tahmini fiyat hesaplayın</a></p>`
+      );
+    }
   }
 
   for (const s of page.sections) {
@@ -190,14 +199,19 @@ for (const page of Object.values(SEO_PAGES)) {
     hreflang: HREFLANG[p.lang ?? "tr"],
     slug: p.slug,
   }));
-  const turkish = group.find((p) => (p.lang ?? "tr") === "tr");
-  if (turkish) alternates.push({ hreflang: "x-default", slug: turkish.slug });
+  // x-default is what a searcher whose language matches no alternate gets. That
+  // was the Turkish page, so a Polish or Italian searcher landed on 2.000 words
+  // of Turkish. English is the only member they have a chance of reading; Turkish
+  // stays the fallback for groups that have no English version yet.
+  const fallback =
+    group.find((p) => p.lang === "en") ?? group.find((p) => (p.lang ?? "tr") === "tr");
+  if (fallback) alternates.push({ hreflang: "x-default", slug: fallback.slug });
 
   render(template, {
     slug: page.slug,
     lang,
-    title: page.title,
-    description: page.description,
+    title: withYear(page.title),
+    description: withYear(page.description),
     body: seoBody(page),
     alternates,
     structuredData: [

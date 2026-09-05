@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const avusturyaKargo: SeoPageData = {
   slug: "avusturya-kargo",
-  title: "Avusturya'ya Panelvan Kargo | Viyana'ya 20-32 Saat | RouteEU",
+  title: "Avusturya Kargo Fiyatları {{yil}} | Viyana'ya 20-32 Saat",
   description:
-    "Türkiye'den Avusturya'ya panelvan kargo: Viyana, Graz ve Salzburg'a 20-32 saatte kapıdan kapıya, CMR sorumluluğunda, aktarmasız teslimat. Aşama takibi, anında teklif.",
+    "Türkiye'den Avusturya'ya panelvan kargo: Viyana, Graz ve Salzburg'a 20-32 saatte kapıdan kapıya, aktarmasız teslimat. Aşama takibi, anında teklif.",
   h1: "Türkiye'den Avusturya'ya Kapıdan Kapıya Panelvan Kargo",
   intro: [
     "Avusturya, Türkiye'den Batı Avrupa'ya uzanan ana kara güzergâhının tam üzerinde yer alır; bu yüzden panelvanla en hızlı teslimat yaptığımız ülkelerden biridir. RouteEU Express, İstanbul ve tüm Türkiye'den Viyana, Graz, Linz, Salzburg ve Avusturya'nın her şehrine kapıdan kapıya ekspres panelvan taşımacılığı yapar: yükünüz adresinizden alınır, araç değiştirmeden ve depoda beklemeden 20-32 saat içinde Avusturya'daki teslimat adresine ulaşır.",
@@ -156,6 +156,7 @@ const avusturyaKargo: SeoPageData = {
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "parsiyel-tasimacilik", label: "Parsiyel Taşımacılık" },
     { slug: "fransa-kargo", label: "Fransa'ya Panelvan Kargo" },
+    { slug: "isvicre-kargo", label: "İsviçre'ye Panelvan Kargo" },
   ],
 };
 

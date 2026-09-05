@@ -3,9 +3,9 @@ import { priceRange } from "./seoData";
 
 const parsiyelTasimacilik: SeoPageData = {
   slug: "parsiyel-tasimacilik",
-  title: "Avrupa'ya Parsiyel ve Parça Eşya Taşıma | Koli Gönderimi | RouteEU",
+  title: "Avrupa'ya Parsiyel Taşıma Fiyatları {{yil}} | Parça Eşya",
   description:
-    "Avrupa'ya parsiyel taşımacılık: koli, palet ve parça eşyanızı panelvan parsiyelle hızlı, aktarmasız ve CMR sorumluluğu altında gönderin. Hacme göre fiyat, anında teklif.",
+    "Avrupa'ya parsiyel taşımacılık: koli, palet ve parça eşyanızı panelvan parsiyelle hızlı ve aktarmasız gönderin. Hacme göre fiyat, anında teklif.",
   h1: "Avrupa'ya Parsiyel Yük ve Koli Taşıma",
   intro: [
     "Avrupa'ya göndereceğiniz yük bir aracı dolduracak kadar büyük değilse komple panelvan kiralamanıza gerek yok. Parsiyel taşımacılıkta aynı güzergaha giden birden fazla göndericinin yükü tek araçta birleştirilir ve siz yalnızca kendi yükünüzün kapladığı hacim için ödeme yaparsınız. RouteEU Express, Türkiye'den Almanya, Hollanda, Belçika, Avusturya, Fransa ve diğer Avrupa ülkelerine panelvan parsiyel taşıma yapar: birkaç koliden yarım araçlık yüke kadar her ölçekte gönderi için ekonomik ve hızlı bir çözümdür.",
@@ -180,6 +180,8 @@ const parsiyelTasimacilik: SeoPageData = {
     { slug: "ev-esyasi-tasima", label: "Yurtdışına Ev Eşyası Taşıma" },
     { slug: "almanyadan-turkiyeye-nakliyat", label: "Almanya'dan Türkiye'ye Nakliyat" },
     { slug: "bavul-kargo", label: "Avrupa'ya Bavul Kargo" },
+    { slug: "avrupaya-gonderim-gumruk-belgeleri", label: "Avrupa Gönderiminde Gümrük Belgeleri: CMR, ATR, T1" },
+    { slug: "avrupaya-gida-gonderme", label: "Avrupa'ya Gıda Gönderme Kuralları" },
   ],
 };
 

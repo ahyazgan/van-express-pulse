@@ -7,7 +7,7 @@ const deUmzugInDieTuerkei: SeoPageData = {
   hreflangGroup: "relocation",
   title: "Umzug in die Türkei | Tür zu Tür in 24-48 Stunden | RouteEU",
   description:
-    "Umzug in die Türkei ohne Umladen: Ihr Hausrat fährt im eigenen Sprinter von Tür zu Tür, in 24-48 Stunden, unter CMR-Haftung und mit Sendungsstatus. Preis sofort berechnen.",
+    "Umzug in die Türkei ohne Umladen: Ihr Hausrat fährt im eigenen Sprinter von Tür zu Tür, in 24-48 Stunden, unter CMR-Haftung. Preis sofort berechnen.",
   h1: "Umzug in die Türkei: Ihr Hausrat direkt von Tür zu Tür",
   intro: [
     "Wer seinen Hausrat von Deutschland in die Türkei bringen will, hört fast überall dieselbe Auskunft: zwei bis vier Wochen Laufzeit, Sammelgut, Zwischenlager, ein Umschlagtermin, den niemand genau benennen kann. Wir arbeiten anders. RouteEU fährt Ihren Umzug als Direktfahrt im eigenen Transporter – Abholung an Ihrer Wohnungstür in Deutschland, Zustellung an der neuen Adresse in der Türkei, ohne dass Ihre Möbel unterwegs auch nur einmal auf ein anderes Fahrzeug umgeladen werden.",
