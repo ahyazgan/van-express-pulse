@@ -23,6 +23,7 @@ import { fileURLToPath } from "node:url";
 
 import { SEO_PAGES } from "../src/content/seo/registry";
 import { CHROME, HREFLANG, withYear } from "../src/content/seo/chrome";
+import { CONTACT, PHONE_DISPLAY, TEL_HREF, pageWaHref, rowWaHref } from "../src/content/seo/contact";
 import {
   CALC_DESCRIPTION,
   CALC_FAQ,
@@ -47,12 +48,26 @@ const setAttr = (html: string, selector: RegExp, value: string) =>
 const jsonLd = (data: unknown) =>
   `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, "\\u003c")}</script>`;
 
-const table = (caption: string, cols: [string, string], rows: [string, string][]) => `
+/**
+ * Two- or three-column table. The optional third cell is trusted HTML (a
+ * pre-built link) and is NOT escaped; the first two are always escaped text.
+ */
+const table = (
+  caption: string,
+  cols: [string, string] | [string, string, string],
+  rows: ([string, string] | [string, string, string])[],
+  opts: { rawLastCell?: boolean } = {}
+) => `
         <h2>${esc(caption)}</h2>
         <table border="1" cellpadding="6" cellspacing="0">
-          <thead><tr><th>${esc(cols[0])}</th><th>${esc(cols[1])}</th></tr></thead>
+          <thead><tr>${cols.map((c) => `<th>${esc(c)}</th>`).join("")}</tr></thead>
           <tbody>${rows
-            .map((r) => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`)
+            .map((r) => {
+              const cells = r.map((cell, i) =>
+                i === 2 && opts.rawLastCell ? cell : esc(cell)
+              );
+              return `<tr>${cells.map((c) => `<td>${c}</td>`).join("")}</tr>`;
+            })
             .join("")}</tbody>
         </table>`;
 
@@ -66,9 +81,14 @@ const faqBlock = (heading: string, faq: { question: string; answer: string }[]) 
 const seoBody = (page: SeoPageData): string => {
   const lang: PageLang = page.lang ?? "tr";
   const t = CHROME[lang];
+  const c = CONTACT[lang];
   const parts: string[] = [
     `<nav><a href="/">${esc(t.home)}</a> / ${esc(page.h1)}</nav>`,
     `<h1>${esc(page.h1)}</h1>`,
+    // Same contact strip SeoPage renders under the H1, so the crawled page and
+    // the hydrated page agree on how to reach us.
+    `<p><a href="${pageWaHref(lang, page.h1)}">${esc(c.waLabel)}</a> · ` +
+      `<a href="${TEL_HREF}">${esc(c.callLabel)}: ${esc(PHONE_DISPLAY)}</a><br>${esc(c.afterYouWrite)}</p>`,
     ...page.intro.map((p) => `<p>${esc(p)}</p>`),
   ];
 
@@ -85,8 +105,16 @@ const seoBody = (page: SeoPageData): string => {
     parts.push(
       table(
         page.priceTable.caption,
-        [t.routeCol, t.priceCol],
-        page.priceTable.rows.map((r) => [r.route, r.price] as [string, string])
+        [t.routeCol, t.priceCol, ""],
+        page.priceTable.rows.map(
+          (r) =>
+            [
+              r.route,
+              r.price,
+              `<a href="${rowWaHref(lang, r.route, r.price)}">${esc(c.rowLink)}</a>`,
+            ] as [string, string, string]
+        ),
+        { rawLastCell: true }
       ),
       `<p>${esc(page.priceTable.disclaimer)}</p>`
     );

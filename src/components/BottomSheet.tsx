@@ -294,6 +294,22 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                   {t.home.getQuote}
                 </Button>
 
+                {/* What happens after you write: removes the "and then what?"
+                    uncertainty that stops people from sending the first message. */}
+                <ol className="mt-4 space-y-2 rounded-xl border border-border/40 bg-secondary/30 p-4 text-sm">
+                  <li className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    {t.home.nextStepsTitle}
+                  </li>
+                  {t.home.nextSteps.map((step, i) => (
+                    <li key={i} className="flex gap-3 text-foreground">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-[11px] font-bold text-accent-foreground">
+                        {i + 1}
+                      </span>
+                      <span>{step}</span>
+                    </li>
+                  ))}
+                </ol>
+
                 {/* Marketing sections (visible when the sheet is expanded and scrolled) */}
                 <FeaturesSection />
                 <ServicesGrid />

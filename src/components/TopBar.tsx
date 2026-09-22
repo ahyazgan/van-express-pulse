@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { User, HelpCircle } from "lucide-react";
+import { User, HelpCircle, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import RouteEULogo from "./RouteEULogo";
 import HelpModal from "./HelpModal";
+import { waHref } from "@/content/seo/contact";
 
 // Real <a href> so crawlers can discover the route (buttons are invisible to them).
 const MotionLink = motion(Link);
@@ -71,6 +72,23 @@ const TopBar = () => {
             <span className="text-lg">{language === "tr" ? "🇹🇷" : "🇬🇧"}</span>
             <span className="text-xs font-bold text-foreground uppercase">{language}</span>
           </motion.button>
+
+          {/* WhatsApp: the primary way to reach us, so it sits in the bar and
+              not behind the Help modal. */}
+          <motion.a
+            href={waHref(language === "tr"
+              ? "Merhaba, Avrupa'ya panelvan taşıma için fiyat almak istiyorum."
+              : "Hello, I would like a quote for van transport to Europe.")}
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            className="px-3 py-2.5 rounded-full bg-[#25D366] text-white flex items-center gap-2 shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span className="text-sm font-bold hidden sm:inline">WhatsApp</span>
+          </motion.a>
 
           {/* Help Button */}
           <motion.button 

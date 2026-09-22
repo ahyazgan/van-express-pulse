@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, MapPin, Shield, Zap } from "lucide-react";
+import { ArrowRight, MapPin, MessageCircle, Phone, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RouteEULogo from "@/components/RouteEULogo";
 import usePageMeta from "@/hooks/usePageMeta";
 import { SEO_PAGES } from "@/content/seo/registry";
 import { CHROME, HREFLANG, withYear } from "@/content/seo/chrome";
+import { CONTACT, PHONE_DISPLAY, TEL_HREF, pageWaHref, rowWaHref } from "@/content/seo/contact";
 import NotFound from "./NotFound";
 import type { SeoPageData } from "@/content/seo/seoData";
 
@@ -117,6 +118,8 @@ const SeoPage = () => {
 
   const lang = page.lang ?? "tr";
   const t = CHROME[lang];
+  const c = CONTACT[lang];
+  const waPage = pageWaHref(lang, page.h1);
   // A German page must not list thirty Turkish links in its footer.
   const footerPages = Object.values(SEO_PAGES).filter((p) => (p.lang ?? "tr") === lang);
 
@@ -137,7 +140,17 @@ const SeoPage = () => {
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-5 pb-16">
+      <a
+        href={waPage}
+        target="_blank"
+        rel="noopener"
+        aria-label={c.waLabel}
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+      >
+        <MessageCircle className="h-7 w-7" />
+      </a>
+
+      <main className="mx-auto max-w-3xl px-5 pb-24">
         {/* Breadcrumb */}
         <nav aria-label="breadcrumb" className="pt-6 text-sm text-muted-foreground">
           <Link to="/" className="hover:text-foreground hover:underline">
@@ -149,6 +162,29 @@ const SeoPage = () => {
 
         <article>
           <h1 className="mt-4 text-2xl font-black leading-tight sm:text-3xl">{page.h1}</h1>
+
+          {/* Reaching us must not require scrolling or opening a menu: the reader
+              is comparing three tabs and decides in the first screen. */}
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <a
+              href={waPage}
+              target="_blank"
+              rel="noopener"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-opacity hover:opacity-90"
+            >
+              <MessageCircle className="h-4 w-4" />
+              {c.waLabel}
+            </a>
+            <a
+              href={TEL_HREF}
+              className="inline-flex items-center gap-2 rounded-xl border border-border/60 bg-card px-4 py-2.5 text-sm font-semibold hover:border-primary/40"
+            >
+              <Phone className="h-4 w-4 text-primary" />
+              <span className="sr-only">{c.callLabel}: </span>
+              {PHONE_DISPLAY}
+            </a>
+            <span className="basis-full text-xs text-muted-foreground sm:basis-auto">{c.afterYouWrite}</span>
+          </div>
 
           {page.intro.map((p, i) => (
             <p key={i} className="mt-4 leading-relaxed text-muted-foreground">
@@ -208,6 +244,7 @@ const SeoPage = () => {
                     <tr>
                       <th className="px-4 py-3 font-semibold">{t.routeCol}</th>
                       <th className="px-4 py-3 font-semibold">{t.priceCol}</th>
+                      <th className="px-4 py-3 font-semibold"><span className="sr-only">{c.rowLink}</span></th>
                     </tr>
                   </thead>
                   <tbody>
@@ -215,6 +252,16 @@ const SeoPage = () => {
                       <tr key={r.route} className="border-t border-border/60">
                         <td className="px-4 py-3">{r.route}</td>
                         <td className="px-4 py-3 font-medium">{r.price}</td>
+                        <td className="px-4 py-3 text-right">
+                          <a
+                            href={rowWaHref(lang, r.route, r.price)}
+                            target="_blank"
+                            rel="noopener"
+                            className="whitespace-nowrap text-sm font-medium text-primary underline-offset-4 hover:underline"
+                          >
+                            {c.rowLink}
+                          </a>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
