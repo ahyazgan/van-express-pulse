@@ -48,6 +48,30 @@ const cities = [
   { id: "bucharest", coords: [26.1025, 44.4268] as [number, number], label: "Bükreş", country: "RO", isPrimary: false },
   { id: "rome", coords: [12.4964, 41.9028] as [number, number], label: "Roma", country: "IT", isPrimary: false },
   { id: "barcelona", coords: [2.1734, 41.3851] as [number, number], label: "Barcelona", country: "ES", isPrimary: false },
+  // Every tariff city is selectable in the quote form, so every one needs a
+  // point on the map; labels below the showcase zoom stay hidden (see
+  // updateCityLabelVisibility), so this does not crowd the opening view.
+  { id: "lyon", coords: [4.8357, 45.764] as [number, number], label: "Lyon", country: "FR", isPrimary: false },
+  { id: "strasbourg", coords: [7.7521, 48.5734] as [number, number], label: "Strazburg", country: "FR", isPrimary: false },
+  { id: "eindhoven", coords: [5.4697, 51.4416] as [number, number], label: "Eindhoven", country: "NL", isPrimary: false },
+  { id: "rotterdam", coords: [4.4777, 51.9244] as [number, number], label: "Rotterdam", country: "NL", isPrimary: false },
+  { id: "brussels", coords: [4.3517, 50.8503] as [number, number], label: "Brüksel", country: "BE", isPrimary: false },
+  { id: "antwerp", coords: [4.4025, 51.2194] as [number, number], label: "Anvers", country: "BE", isPrimary: false },
+  { id: "graz", coords: [15.4395, 47.0707] as [number, number], label: "Graz", country: "AT", isPrimary: false },
+  { id: "salzburg", coords: [13.055, 47.8095] as [number, number], label: "Salzburg", country: "AT", isPrimary: false },
+  { id: "warsaw", coords: [21.0122, 52.2297] as [number, number], label: "Varşova", country: "PL", isPrimary: false },
+  { id: "krakow", coords: [19.945, 50.0647] as [number, number], label: "Kraków", country: "PL", isPrimary: false },
+  { id: "poznan", coords: [16.9252, 52.4064] as [number, number], label: "Poznań", country: "PL", isPrimary: false },
+  { id: "brno", coords: [16.6068, 49.1951] as [number, number], label: "Brno", country: "CZ", isPrimary: false },
+  { id: "manchester", coords: [-2.2426, 53.4808] as [number, number], label: "Manchester", country: "GB", isPrimary: false },
+  { id: "verona", coords: [10.9916, 45.4384] as [number, number], label: "Verona", country: "IT", isPrimary: false },
+  { id: "zurich", coords: [8.5417, 47.3769] as [number, number], label: "Zürih", country: "CH", isPrimary: false },
+  { id: "basel", coords: [7.5886, 47.5596] as [number, number], label: "Basel", country: "CH", isPrimary: false },
+  { id: "copenhagen", coords: [12.5683, 55.6761] as [number, number], label: "Kopenhag", country: "DK", isPrimary: false },
+  { id: "aarhus", coords: [10.2039, 56.1629] as [number, number], label: "Aarhus", country: "DK", isPrimary: false },
+  { id: "malmo", coords: [13.0038, 55.605] as [number, number], label: "Malmö", country: "SE", isPrimary: false },
+  { id: "gothenburg", coords: [11.9746, 57.7089] as [number, number], label: "Göteborg", country: "SE", isPrimary: false },
+  { id: "stockholm", coords: [18.0686, 59.3293] as [number, number], label: "Stockholm", country: "SE", isPrimary: false },
 ];
 
 // 7 Unique logistics routes following European E-highways
@@ -234,6 +258,27 @@ const vanRoutes = [
 ];
 
 type VanRoute = (typeof vanRoutes)[number];
+
+/**
+ * Only eight destinations have a hand-drawn corridor in vanRoutes; the quote
+ * form offers every tariff city. For the rest, a coarse path through the real
+ * Balkan corridor (Sofia, Belgrade) and then Budapest or Zagreb depending on
+ * where the city lies, so picking Lyon still draws a route instead of nothing.
+ */
+const syntheticRoute = (destinationId: string): VanRoute | undefined => {
+  const city = cities.find((c) => c.id === destinationId);
+  if (!city) return undefined;
+  const [lng, lat] = city.coords;
+  const path: [number, number][] = [
+    [28.9784, 41.0082], // Istanbul
+    [23.3219, 42.6977], // Sofia
+    [20.4489, 44.7866], // Belgrade
+  ];
+  if (lat >= 46.5 && lng >= 14) path.push([19.0402, 47.4979]); // Budapest, northbound
+  else if (lng < 16) path.push([15.9819, 45.815]); // Zagreb, westbound
+  path.push([lng, lat]);
+  return { id: 1000, name: `${city.label} Express`, destinationId, path, duration: 24000 };
+};
 
 // Shared van marker markup (decorative fleet + selected-route van)
 const VAN_MARKER_HTML = `
@@ -537,7 +582,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       const originCity = resolveOriginCity(origin);
       const destinationId = resolveDestinationId(destination);
       const route = destinationId
-        ? vanRoutes.find((r) => r.destinationId === destinationId)
+        ? vanRoutes.find((r) => r.destinationId === destinationId) ?? syntheticRoute(destinationId)
         : undefined;
       if (originCity && route) {
         applySelection(originCity, route);

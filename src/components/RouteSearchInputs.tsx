@@ -1,6 +1,7 @@
 import { MapPin, Navigation, ArrowUpDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SEARCHABLE_CITIES } from "./CitySearchDropdown";
 
 interface RouteSearchInputsProps {
   origin: string;
@@ -73,8 +74,18 @@ const RouteSearchInputs = ({
             onChange={(e) => onDestinationChange(e.target.value)}
             onFocus={onFocus}
             placeholder={language === "tr" ? "Nereye?" : "To?"}
+            list="destination-cities"
+            autoComplete="off"
             className="pl-10 h-11 bg-secondary/60 border-border/40 rounded-xl text-sm placeholder:text-muted-foreground/70 focus:border-accent/50 w-full"
           />
+          {/* Native suggestions: the field was free text, so a Lyon customer had to
+              guess the spelling we price by. Every tariff city is listed. */}
+          <datalist id="destination-cities">
+            {SEARCHABLE_CITIES.map((c) => {
+              const label = typeof c.label === "string" ? c.label : language === "tr" ? c.label.tr : c.label.en;
+              return <option key={c.id} value={label} />;
+            })}
+          </datalist>
         </div>
       </div>
     </div>

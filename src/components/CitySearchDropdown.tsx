@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 // Unique city list with Turkish names preferred
-const SEARCHABLE_CITIES = [
+export const SEARCHABLE_CITIES = [
   { id: "berlin", label: "Berlin", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
   { id: "munich", label: { tr: "Münih", en: "Munich" }, country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
   { id: "frankfurt", label: "Frankfurt", country: { tr: "Almanya", en: "Germany" }, flag: "🇩🇪" },
@@ -30,6 +30,29 @@ const SEARCHABLE_CITIES = [
   { id: "zagreb", label: "Zagreb", country: { tr: "Hırvatistan", en: "Croatia" }, flag: "🇭🇷" },
   { id: "ljubljana", label: "Ljubljana", country: { tr: "Slovenya", en: "Slovenia" }, flag: "🇸🇮" },
   { id: "bratislava", label: "Bratislava", country: { tr: "Slovakya", en: "Slovakia" }, flag: "🇸🇰" },
+  // Every city in the tariff must be selectable; a Lyon customer could not
+  // pick Lyon before this.
+  { id: "lyon", label: "Lyon", country: { tr: "Fransa", en: "France" }, flag: "🇫🇷" },
+  { id: "strasbourg", label: { tr: "Strazburg", en: "Strasbourg" }, country: { tr: "Fransa", en: "France" }, flag: "🇫🇷" },
+  { id: "eindhoven", label: "Eindhoven", country: { tr: "Hollanda", en: "Netherlands" }, flag: "🇳🇱" },
+  { id: "rotterdam", label: "Rotterdam", country: { tr: "Hollanda", en: "Netherlands" }, flag: "🇳🇱" },
+  { id: "brussels", label: { tr: "Brüksel", en: "Brussels" }, country: { tr: "Belçika", en: "Belgium" }, flag: "🇧🇪" },
+  { id: "antwerp", label: { tr: "Anvers", en: "Antwerp" }, country: { tr: "Belçika", en: "Belgium" }, flag: "🇧🇪" },
+  { id: "graz", label: "Graz", country: { tr: "Avusturya", en: "Austria" }, flag: "🇦🇹" },
+  { id: "salzburg", label: "Salzburg", country: { tr: "Avusturya", en: "Austria" }, flag: "🇦🇹" },
+  { id: "warsaw", label: { tr: "Varşova", en: "Warsaw" }, country: { tr: "Polonya", en: "Poland" }, flag: "🇵🇱" },
+  { id: "krakow", label: { tr: "Kraków", en: "Krakow" }, country: { tr: "Polonya", en: "Poland" }, flag: "🇵🇱" },
+  { id: "poznan", label: { tr: "Poznań", en: "Poznan" }, country: { tr: "Polonya", en: "Poland" }, flag: "🇵🇱" },
+  { id: "brno", label: "Brno", country: { tr: "Çekya", en: "Czechia" }, flag: "🇨🇿" },
+  { id: "manchester", label: "Manchester", country: { tr: "İngiltere", en: "UK" }, flag: "🇬🇧" },
+  { id: "verona", label: "Verona", country: { tr: "İtalya", en: "Italy" }, flag: "🇮🇹" },
+  { id: "zurich", label: { tr: "Zürih", en: "Zurich" }, country: { tr: "İsviçre", en: "Switzerland" }, flag: "🇨🇭" },
+  { id: "basel", label: "Basel", country: { tr: "İsviçre", en: "Switzerland" }, flag: "🇨🇭" },
+  { id: "copenhagen", label: { tr: "Kopenhag", en: "Copenhagen" }, country: { tr: "Danimarka", en: "Denmark" }, flag: "🇩🇰" },
+  { id: "aarhus", label: "Aarhus", country: { tr: "Danimarka", en: "Denmark" }, flag: "🇩🇰" },
+  { id: "malmo", label: "Malmö", country: { tr: "İsveç", en: "Sweden" }, flag: "🇸🇪" },
+  { id: "gothenburg", label: { tr: "Göteborg", en: "Gothenburg" }, country: { tr: "İsveç", en: "Sweden" }, flag: "🇸🇪" },
+  { id: "stockholm", label: "Stockholm", country: { tr: "İsveç", en: "Sweden" }, flag: "🇸🇪" },
 ];
 
 interface CitySearchDropdownProps {

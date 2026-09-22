@@ -3,22 +3,60 @@
 //   Turkish feeder leg (origin → İstanbul) + hand-drawn Europe corridor.
 //
 // Origins are limited to DOMESTIC_CITIES (Turkish provinces, coords ready) and
-// destinations to the cities that have a hand-drawn corridor in MapBackground.
+// destinations to the cities on the Europe map (see CORRIDOR_DESTINATIONS).
 // Anything else simply doesn't resolve and the map stays in showcase mode.
 
 import { DOMESTIC_CITIES, haversineKm, type DomesticCity } from "@/constants/domesticRates";
 
-// Destinations with a hand-drawn corridor, keyed by corridor id → accepted names.
-// Keep in sync with vanRoutes[].destinationId in MapBackground.
+// Every destination on the Europe map, keyed by city id → accepted spellings
+// (id, Turkish label, English name). Eight of these have a hand-drawn corridor in
+// MapBackground.vanRoutes; the rest get a synthetic path there. Keep in sync with
+// the `cities` list in MapBackground.
 export const CORRIDOR_DESTINATIONS: Record<string, string[]> = {
-  madrid: ["madrid"],
-  amsterdam: ["amsterdam"],
-  frankfurt: ["frankfurt"],
-  prague: ["prag", "prague"],
-  milan: ["milano", "milan"],
-  berlin: ["berlin"],
   paris: ["paris"],
-  london: ["londra", "london"],
+  berlin: ["berlin"],
+  amsterdam: ["amsterdam"],
+  madrid: ["madrid"],
+  sofia: ["sofia", "sofya"],
+  belgrade: ["belgrade", "belgrad"],
+  budapest: ["budapest", "budapeste"],
+  vienna: ["vienna", "viyana"],
+  munich: ["munich", "munih"],
+  frankfurt: ["frankfurt"],
+  prague: ["prague", "prag"],
+  milan: ["milan", "milano"],
+  zagreb: ["zagreb"],
+  ljubljana: ["ljubljana"],
+  bratislava: ["bratislava"],
+  marseille: ["marseille", "marsilya"],
+  london: ["london", "londra"],
+  stuttgart: ["stuttgart"],
+  cologne: ["cologne", "koln"],
+  hamburg: ["hamburg"],
+  bucharest: ["bucharest", "bukres"],
+  rome: ["rome", "roma"],
+  barcelona: ["barcelona"],
+  lyon: ["lyon"],
+  strasbourg: ["strasbourg", "strazburg"],
+  eindhoven: ["eindhoven"],
+  rotterdam: ["rotterdam"],
+  brussels: ["brussels", "bruksel"],
+  antwerp: ["antwerp", "anvers"],
+  graz: ["graz"],
+  salzburg: ["salzburg"],
+  warsaw: ["warsaw", "varsova"],
+  krakow: ["krakow", "kraków"],
+  poznan: ["poznan", "poznań"],
+  brno: ["brno"],
+  manchester: ["manchester"],
+  verona: ["verona"],
+  zurich: ["zurich", "zurih"],
+  basel: ["basel"],
+  copenhagen: ["copenhagen", "kopenhag"],
+  aarhus: ["aarhus"],
+  malmo: ["malmo"],
+  gothenburg: ["gothenburg", "goteborg"],
+  stockholm: ["stockholm"],
 };
 
 // Turkish-aware slug: "İstanbul"/"Istanbul" → "istanbul", "Şanlıurfa" → "sanliurfa".
@@ -44,7 +82,7 @@ export function resolveOriginCity(input: string): DomesticCity | null {
   );
 }
 
-// Destination must have a hand-drawn corridor; returns the corridor id or null.
+// Destination must be a known Europe map city; returns its id or null.
 export function resolveDestinationId(input: string): string | null {
   const slug = slugifyCity(input);
   if (!slug) return null;

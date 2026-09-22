@@ -53,9 +53,16 @@ describe("resolveDestinationId", () => {
     expect(resolveDestinationId("Londra")).toBe("london");
   });
 
-  it("rejects cities without a hand-drawn corridor", () => {
-    expect(resolveDestinationId("Hamburg")).toBeNull();
+  it("resolves every map city, including ones without a hand-drawn corridor", () => {
+    expect(resolveDestinationId("Hamburg")).toBe("hamburg");
+    expect(resolveDestinationId("Lyon")).toBe("lyon");
+    expect(resolveDestinationId("Strazburg")).toBe("strasbourg");
+    expect(resolveDestinationId("Strasbourg")).toBe("strasbourg");
+  });
+
+  it("rejects the origin hub and unknown places", () => {
     expect(resolveDestinationId("İstanbul")).toBeNull();
+    expect(resolveDestinationId("Atlantis")).toBeNull();
     expect(resolveDestinationId("")).toBeNull();
   });
 });
