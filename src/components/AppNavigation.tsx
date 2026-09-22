@@ -1,13 +1,17 @@
 import { motion } from "framer-motion";
-import { Map, MessageCircle, Package, Search, User } from "lucide-react";
+import { Map, Package, Search, User } from "lucide-react";
+import type { ComponentType } from "react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { waHref } from "@/content/seo/contact";
 
+// lucide icons type strokeWidth as string | number; match it so both fit.
+type Icon = ComponentType<{ className?: string; strokeWidth?: number | string }>;
 type NavItem =
-  | { id: string; icon: typeof Map; label: string; route: string }
-  | { id: string; icon: typeof Map; label: string; href: string };
+  | { id: string; icon: Icon; label: string; route: string }
+  | { id: string; icon: Icon; label: string; href: string };
 
 const AppNavigation = () => {
   const location = useLocation();
@@ -27,7 +31,7 @@ const AppNavigation = () => {
     { id: "track", icon: Search, label: t.nav.liveTracking, route: "/track" },
     user
       ? { id: "profile", icon: User, label: t.nav.profile, route: "/profile" }
-      : { id: "contact", icon: MessageCircle, label: t.nav.contact, href: contactHref },
+      : { id: "contact", icon: WhatsAppIcon, label: t.nav.contact, href: contactHref },
   ];
 
   const getActiveTab = () => {

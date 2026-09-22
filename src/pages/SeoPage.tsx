@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, MapPin, MessageCircle, Phone, Shield, Zap } from "lucide-react";
+import { ArrowRight, MapPin, Phone, Shield, Zap } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import RouteEULogo from "@/components/RouteEULogo";
 import usePageMeta from "@/hooks/usePageMeta";
@@ -147,7 +148,7 @@ const SeoPage = () => {
         aria-label={c.waLabel}
         className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       >
-        <MessageCircle className="h-7 w-7" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
 
       <main className="mx-auto max-w-3xl px-5 pb-24">
@@ -172,7 +173,7 @@ const SeoPage = () => {
               rel="noopener"
               className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white shadow-sm transition-opacity hover:opacity-90"
             >
-              <MessageCircle className="h-4 w-4" />
+              <WhatsAppIcon className="h-4 w-4" />
               {c.waLabel}
             </a>
             <a

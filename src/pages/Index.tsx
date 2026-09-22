@@ -5,7 +5,7 @@ import BottomSheet from "@/components/BottomSheet";
 import AppNavigation from "@/components/AppNavigation";
 import HomeHero from "@/components/HomeHero";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
-import { MessageCircle } from "lucide-react";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waHref } from "@/content/seo/contact";
 import usePageMeta from "@/hooks/usePageMeta";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -52,7 +52,7 @@ const Index = () => {
         aria-label="WhatsApp"
         className="fixed bottom-20 right-4 z-50 md:bottom-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
       >
-        <MessageCircle className="h-7 w-7" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
       <BottomSheet mode={mode} onModeChange={setMode} />
       <AppNavigation />

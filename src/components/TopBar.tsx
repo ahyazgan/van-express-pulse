@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { User, HelpCircle, MessageCircle } from "lucide-react";
+import { User, HelpCircle } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
@@ -86,7 +87,7 @@ const TopBar = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <MessageCircle className="w-4 h-4" />
+            <WhatsAppIcon className="w-4 h-4" />
             <span className="text-sm font-bold hidden sm:inline">WhatsApp</span>
           </motion.a>
 

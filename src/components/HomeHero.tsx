@@ -1,4 +1,5 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PHONE_DISPLAY, TEL_HREF, waHref } from "@/content/seo/contact";
 import { priceRange, priceRangeEn } from "@/content/seo/seoData";
@@ -53,7 +54,7 @@ const HomeHero = () => {
             rel="noopener"
             className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-3.5 py-2 text-sm font-bold text-white shadow-sm transition-opacity hover:opacity-90 sm:px-4 sm:py-2.5"
           >
-            <MessageCircle className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
             {c.wa}
           </a>
           <a
