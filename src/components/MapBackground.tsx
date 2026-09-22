@@ -297,7 +297,19 @@ const VAN_MARKER_HTML = `
 `;
 
 // Major hubs visible at all zoom levels
-const MAJOR_HUBS = ["istanbul", "london", "paris", "berlin", "madrid"];
+// Which destinations earn a price bubble at which zoom. Tier 1 is what people
+// actually ask for (demand research, Sept 2026); tier 2 appears when they zoom
+// in a little, tier 3 only up close. Every city keeps its dot at all zooms.
+// Move a city between tiers here; nothing else needs to change.
+const CITY_TIERS: Record<1 | 2 | 3, string[]> = {
+  1: ["berlin", "munich", "frankfurt", "amsterdam", "paris", "vienna", "milan", "london"],
+  2: ["stuttgart", "cologne", "hamburg", "brussels", "rotterdam", "zurich", "prague", "lyon", "marseille", "rome", "warsaw", "madrid", "barcelona"],
+  3: [],
+};
+const cityTier = (id: string): 1 | 2 | 3 =>
+  CITY_TIERS[1].includes(id) ? 1 : CITY_TIERS[2].includes(id) ? 2 : 3;
+/** Highest tier whose bubbles and labels show at this zoom. */
+const visibleTier = (zoom: number): 1 | 2 | 3 => (zoom < 5 ? 1 : zoom < 6 ? 2 : 3);
 
 const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -321,24 +333,16 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
   // stay; the names return as the user zooms in. Driven by a data attribute so
   // the CSS below does the work and no marker has to be touched.
   const updateCityLabelVisibility = (zoom: number) => {
-    mapContainer.current?.setAttribute("data-labels", zoom < 4.8 ? "primary" : "all");
+    mapContainer.current?.setAttribute("data-tier", String(visibleTier(zoom)));
   };
 
   // Update price tag visibility based on zoom level
   const updatePriceTagVisibility = (zoom: number) => {
     // Single-route mode hides all price tags; zoom events must not re-show them.
     if (selectionActiveRef.current) return;
+    const tier = visibleTier(zoom);
     priceMarkersRef.current.forEach(({ marker, cityId }) => {
-      const element = marker.getElement();
-      const isMajorHub = MAJOR_HUBS.includes(cityId);
-      
-      if (zoom < 4) {
-        // At low zoom, only show major hubs
-        element.style.display = isMajorHub ? "block" : "none";
-      } else {
-        // At higher zoom, show all
-        element.style.display = "block";
-      }
+      marker.getElement().style.display = cityTier(cityId) <= tier ? "block" : "none";
     });
   };
 
@@ -709,7 +713,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         const el = document.createElement("div");
         el.className = "city-marker";
         el.innerHTML = `
-          <div class="marker-container ${city.isPrimary ? "primary" : "secondary"}">
+          <div class="marker-container ${city.isPrimary ? "primary" : "secondary"} tier-${cityTier(city.id)}">
             ${city.isPrimary ? '<div class="pulse-ring"></div>' : ''}
             <div class="marker-dot"></div>
             <div class="marker-label">${city.label}</div>
@@ -735,7 +739,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         if (!rate) return;
         
         const [minPrice] = rate;
-        const isMajorHub = MAJOR_HUBS.includes(city.id);
+        const isMajorHub = cityTier(city.id) === 1;
         
         const el = document.createElement("div");
         el.className = `price-tag-marker ${isMajorHub ? 'major-hub' : 'secondary-hub'}`;
@@ -950,7 +954,10 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           color: hsl(220, 15%, 10%);
         }
         
-        [data-labels="primary"] .marker-container.secondary .marker-label {
+        /* Labels follow the same tiers as the price bubbles (see visibleTier). */
+        [data-tier="1"] .marker-container.tier-2 .marker-label,
+        [data-tier="1"] .marker-container.tier-3 .marker-label,
+        [data-tier="2"] .marker-container.tier-3 .marker-label {
           display: none;
         }
 
