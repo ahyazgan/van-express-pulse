@@ -727,7 +727,18 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       // area so Spain/Portugal are not permanently behind it.
       if (window.matchMedia("(min-width: 768px)").matches) {
         map.current.setPadding({ left: 420, top: 0, right: 0, bottom: 0 });
+      } else {
+        // Hero card on top, sheet (44%) at the bottom: keep the bubbles between.
+        map.current.setPadding({ left: 0, top: 230, right: 0, bottom: Math.round(window.innerHeight * 0.52) });
       }
+      // Padding only applies to camera moves made after it is set; re-apply the
+      // opening view so it is framed inside the padded area. Phones get a wider
+      // view so the major-hub price bubbles fit in the strip between hero and sheet.
+      const phone = !window.matchMedia("(min-width: 768px)").matches;
+      map.current.jumpTo({
+        center: isDomestic ? [35.2, 39.0] : [15.0, 46.5],
+        zoom: isDomestic ? (phone ? 4.6 : 5.2) : phone ? 4.0 : 4.2,
+      });
       map.current.on("zoom", () => {
         if (!map.current) return;
         const zoom = map.current.getZoom();

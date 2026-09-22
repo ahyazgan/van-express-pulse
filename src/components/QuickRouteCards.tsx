@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import { SHIPPING_RATES } from "@/constants/shippingRates";
 
-interface QuickRoute {
+export interface QuickRoute {
   id: number;
   from: string;
   fromFlag: string;
@@ -15,12 +16,22 @@ interface QuickRoute {
 const getFlagUrl = (countryCode: string) => 
   `https://flagcdn.com/w40/${countryCode.toLowerCase()}.png`;
 
-const routes: QuickRoute[] = [
-  { id: 1, from: "İstanbul", fromFlag: "🇹🇷", to: "Berlin", toFlag: "🇩🇪", toCountryCode: "de", time: "24 saat", popular: true },
-  { id: 2, from: "İstanbul", fromFlag: "🇹🇷", to: "Paris", toFlag: "🇫🇷", toCountryCode: "fr", time: "28 saat" },
-  { id: 3, from: "İstanbul", fromFlag: "🇹🇷", to: "Amsterdam", toFlag: "🇳🇱", toCountryCode: "nl", time: "32 saat" },
+// Hours match the transit tables on the landing pages (almanya-kargo,
+// fransa-kargo, hollanda-kargo); a card saying "24 saat" next to a page saying
+// "24-36 saat" for the same route reads as two different promises.
+export const QUICK_ROUTES: QuickRoute[] = [
+  { id: 1, from: "İstanbul", fromFlag: "🇹🇷", to: "Berlin", toFlag: "🇩🇪", toCountryCode: "de", time: "24-36 saat", popular: true },
+  { id: 2, from: "İstanbul", fromFlag: "🇹🇷", to: "Paris", toFlag: "🇫🇷", toCountryCode: "fr", time: "34-48 saat" },
+  { id: 3, from: "İstanbul", fromFlag: "🇹🇷", to: "Amsterdam", toFlag: "🇳🇱", toCountryCode: "nl", time: "30-46 saat" },
   { id: 4, from: "İstanbul", fromFlag: "🇹🇷", to: "Londra", toFlag: "🇬🇧", toCountryCode: "gb", time: "36 saat" },
 ];
+const routes = QUICK_ROUTES;
+
+/** "€1.750+" for a destination, or null when the tariff has no entry. */
+export const fromPrice = (city: string): string | null => {
+  const rate = SHIPPING_RATES[city];
+  return rate ? `€${rate[0].toLocaleString("tr-TR")}+` : null;
+};
 
 interface QuickRouteCardsProps {
   onSelect?: (route: QuickRoute) => void;
@@ -74,6 +85,7 @@ const QuickRouteCards = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
             </p>
             <p className={`text-xs font-medium ${selectedId === route.id ? "text-accent" : "text-muted-foreground"}`}>
               {route.time}
+              {fromPrice(route.to) && <span className="ml-1.5 font-bold text-foreground">{fromPrice(route.to)}</span>}
             </p>
 
             {/* Selected indicator */}

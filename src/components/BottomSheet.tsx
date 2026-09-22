@@ -3,7 +3,7 @@ import { motion, useDragControls, useAnimationControls, PanInfo, AnimatePresence
 import { Clock, Truck, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import QuickRouteCards from "./QuickRouteCards";
+import QuickRouteCards, { QUICK_ROUTES, fromPrice } from "./QuickRouteCards";
 import RouteSearchInputs from "./RouteSearchInputs";
 import FeaturesSection from "./FeaturesSection";
 import ServicesGrid from "./ServicesGrid";
@@ -102,7 +102,9 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
     setOrigin(language === "tr" ? "İstanbul" : "Istanbul");
   };
 
-  const collapsedHeight = "30%";
+  // Collapsed must still show toggle + price strip + both inputs above the
+  // 80px bottom nav on a 740px phone.
+  const collapsedHeight = "52%";
   const expandedHeight = "85%";
 
   useEffect(() => {
@@ -240,6 +242,35 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                   onFocus={handleInputFocus}
                 />
               </div>
+
+              {/* Phone-only price strip, visible while the sheet is collapsed: the
+                  map strip on a phone is too short for price bubbles, and this
+                  is the first thing a visitor asked us to show. Desktop has the
+                  route cards. */}
+              {mode === "europe" && (
+                <div className="-mx-5 mb-4 flex gap-2 overflow-x-auto px-5 pb-1 md:hidden [scrollbar-width:none]">
+                  {QUICK_ROUTES.map((r) => (
+                    <button
+                      key={r.id}
+                      type="button"
+                      onClick={() => {
+                        setSelectedRouteId(r.id);
+                        setOrigin(r.from);
+                        setDestination(r.to);
+                        setIsExpanded(true);
+                        animationControls.start({ height: expandedHeight });
+                      }}
+                      className={`flex shrink-0 items-center gap-2 rounded-xl border px-3 py-2 text-left ${
+                        selectedRouteId === r.id ? "border-accent bg-accent/10" : "border-border/40 bg-secondary/40"
+                      }`}
+                    >
+                      <span className="text-sm font-semibold">{r.to}</span>
+                      <span className="text-xs text-muted-foreground">{r.time}</span>
+                      {fromPrice(r.to) && <span className="text-sm font-bold text-foreground">{fromPrice(r.to)}</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Expanded Content */}
               <motion.div
