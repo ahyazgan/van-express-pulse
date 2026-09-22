@@ -1,6 +1,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
 import { waHref } from "@/content/seo/contact";
+import { BACKEND_ENABLED } from "@/lib/backend";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send, Banknote } from "lucide-react";
@@ -94,9 +95,29 @@ const OrderForm = ({
 
   const canSubmit = isProductValid && isContactValid;
 
+  /** The filled form as a WhatsApp message; used when the database is off or fails. */
+  const waSummary = () =>
+    [
+      `Talep: ${destination}`,
+      `Ürün: ${product.category} / ${product.packagingType} × ${product.quantity}`,
+      `Ağırlık: ${product.totalWeight} kg, hacim: ${product.totalVolume} m³`,
+      `Ad: ${contact.fullName}`,
+      `Telefon: ${contact.phone}`,
+      priceResult ? `Tahmini fiyat: ${priceResult.minPrice}–${priceResult.maxPrice} €` : "",
+    ]
+      .filter(Boolean)
+      .join("\n");
+
   const handleSubmit = async () => {
     if (!canSubmit || isSubmitting) return;
     setIsSubmitting(true);
+
+    if (!BACKEND_ENABLED) {
+      // WhatsApp-only mode: the request goes to the phone, not the database.
+      trackEvent("quote_submit", { mode, channel: "whatsapp" });
+      window.location.assign(waHref(waSummary()));
+      return;
+    }
 
     const orderData: OrderData = {
       destination,
@@ -156,23 +177,13 @@ const OrderForm = ({
       // The database is unreachable more often than one would like (the
       // backend host once dropped out of DNS entirely). The lead must not die
       // with the request: hand the filled form to WhatsApp instead.
-      const summary = [
-        `Talep: ${destination}`,
-        `Ürün: ${product.category} / ${product.packagingType} × ${product.quantity}`,
-        `Ağırlık: ${product.totalWeight} kg, hacim: ${product.totalVolume} m³`,
-        `Ad: ${contact.fullName}`,
-        `Telefon: ${contact.phone}`,
-        priceResult ? `Tahmini fiyat: ${priceResult.minPrice}–${priceResult.maxPrice} €` : "",
-      ]
-        .filter(Boolean)
-        .join("\n");
       trackEvent("quote_submit_fallback", { mode });
       toast.message(t.orderForm.submitFallback, { duration: 6000 });
       setIsSubmitting(false);
       // Navigate rather than window.open: after the awaited request, browsers
       // treat a new window as a popup and may block it; a location change is
       // always allowed and opens the WhatsApp app on phones.
-      window.location.assign(waHref(summary));
+      window.location.assign(waHref(waSummary()));
       return;
     }
 

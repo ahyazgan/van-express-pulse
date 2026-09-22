@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { BACKEND_ENABLED } from "@/lib/backend";
+import { waHref } from "@/content/seo/contact";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -249,6 +252,36 @@ const TrackingPage = () => {
   }, [order, language, t.tracking.origin, t.tracking.destination]);
 
   const currentStageIndex = TRACKING_STAGES.findIndex((s) => s.key === order?.status);
+
+  if (!BACKEND_ENABLED) {
+    // Tracking lives in the database; while it is off, status comes from us.
+    const tr = t.tracking.offline;
+    return (
+      <div className="min-h-screen bg-background pb-24">
+        <TopBar />
+        <main className="max-w-xl mx-auto px-4 pt-24 pb-8">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-xl">{tr.title}</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-sm text-muted-foreground">{tr.body}</p>
+              <a
+                href={waHref(tr.message)}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:opacity-90"
+              >
+                <WhatsAppIcon className="h-4 w-4" />
+                {tr.cta}
+              </a>
+            </CardContent>
+          </Card>
+        </main>
+        <AppNavigation />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background pb-24">

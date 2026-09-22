@@ -195,6 +195,12 @@ export const translations = {
 
     // Tracking Page
     tracking: {
+      offline: {
+        title: "Gönderi durumu",
+        body: "Sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) WhatsApp'tan bildiriyoruz. Adınızı ve varış şehrini yazın, aynı gün cevap alırsınız.",
+        cta: "Durumu WhatsApp'tan sor",
+        message: "Merhaba, gönderimin hangi aşamada olduğunu öğrenmek istiyorum.",
+      },
       title: "Gönderi Takibi",
       searchTitle: "Gönderinizi Takip Edin",
       searchPlaceholder: "Sipariş numaranızı girin...",
@@ -475,6 +481,12 @@ export const translations = {
 
     // Tracking Page
     tracking: {
+      offline: {
+        title: "Shipment status",
+        body: "We report which stage your shipment has reached (received, quoted, in transit, delivered) over WhatsApp. Send your name and the destination city and you get an answer the same day.",
+        cta: "Ask for the status on WhatsApp",
+        message: "Hello, I would like to know the status of my shipment.",
+      },
       title: "Shipment Tracking",
       searchTitle: "Track Your Shipment",
       searchPlaceholder: "Enter your order number...",

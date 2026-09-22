@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import { waHref } from "@/content/seo/contact";
+import { BACKEND_ENABLED } from "@/lib/backend";
 
 // lucide icons type strokeWidth as string | number; match it so both fit.
 type Icon = ComponentType<{ className?: string; strokeWidth?: number | string }>;
@@ -30,7 +31,7 @@ const AppNavigation = () => {
     user
       ? { id: "orders", icon: Package, label: t.nav.shipments, route: "/orders" }
       : { id: "calc", icon: Calculator, label: t.nav.calculator, route: "/fiyat-hesaplama" },
-    { id: "track", icon: Search, label: t.nav.liveTracking, route: "/track" },
+    ...(BACKEND_ENABLED ? [{ id: "track", icon: Search, label: t.nav.liveTracking, route: "/track" } as NavItem] : []),
     user
       ? { id: "profile", icon: User, label: t.nav.profile, route: "/profile" }
       : { id: "contact", icon: WhatsAppIcon, label: t.nav.contact, href: contactHref },
