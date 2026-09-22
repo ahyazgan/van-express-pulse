@@ -167,14 +167,12 @@ const OrderForm = ({
         .filter(Boolean)
         .join("\n");
       trackEvent("quote_submit_fallback", { mode });
-      toast.error(t.orderForm.submitFallback, {
-        duration: 15000,
-        action: {
-          label: t.orderForm.submitFallbackAction,
-          onClick: () => window.open(waHref(summary), "_blank", "noopener"),
-        },
-      });
+      toast.message(t.orderForm.submitFallback, { duration: 6000 });
       setIsSubmitting(false);
+      // Navigate rather than window.open: after the awaited request, browsers
+      // treat a new window as a popup and may block it; a location change is
+      // always allowed and opens the WhatsApp app on phones.
+      window.location.assign(waHref(summary));
       return;
     }
 
