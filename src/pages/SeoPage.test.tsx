@@ -7,7 +7,7 @@ import { SEO_ROUTE_PATHS } from "@/content/seo/seoSlugs";
 import { CHROME, withYear } from "@/content/seo/chrome";
 
 const slugs = Object.keys(SEO_PAGES);
-const EXPECTED_PAGES = 39;
+const EXPECTED_PAGES = 41;
 
 describe("SEO landing pages", () => {
   it(`registers all ${EXPECTED_PAGES} pages with unique titles and descriptions`, () => {

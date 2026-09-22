@@ -19,7 +19,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
       { destination: "İstanbul → Viyana (Avusturya)", time: "20-30 saat" },
       { destination: "İstanbul → Prag (Çekya)", time: "24-36 saat" },
       { destination: "İstanbul → Varşova (Polonya)", time: "28-42 saat" },
-      { destination: "İstanbul → Milano (İtalya)", time: "28-44 saat" },
+      { destination: "İstanbul → Milano (İtalya)", time: "24-36 saat" },
       { destination: "İstanbul → Paris (Fransa)", time: "28-44 saat" },
       { destination: "İstanbul → Amsterdam (Hollanda)", time: "32-48 saat" },
       { destination: "İstanbul → Brüksel (Belçika)", time: "32-48 saat" },
@@ -109,7 +109,7 @@ const minivanEkspresTasimacilik: SeoPageData = {
     {
       question: "Minivan ile Avrupa'ya nakliye kaç saatte gider?",
       answer:
-        "Güzergâha göre 24-72 saat aralığındadır. İstanbul'dan Viyana'ya 20-30 saat, Berlin'e 24-36 saat, Paris'e 28-44 saat, Amsterdam ve Brüksel'e 32-48 saat tipik transit süreleridir. Çift şoför ve hafta sonu seyir muafiyeti sayesinde bu süreler TIR taşımacılığının çok altındadır.",
+        "Güzergâha göre 24-72 saat aralığındadır. İstanbul'dan Viyana'ya 20-32 saat, Berlin'e 24-36 saat, Paris'e 34-48 saat, Amsterdam ve Brüksel'e 30-46 saat tipik transit süreleridir. Çift şoför ve hafta sonu seyir muafiyeti sayesinde bu süreler TIR taşımacılığının çok altındadır.",
     },
     {
       question: "Yurtdışına minibüsle nakliye yapan firmalar nasıl fiyat verir?",

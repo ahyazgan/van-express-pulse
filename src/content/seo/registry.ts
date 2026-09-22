@@ -31,12 +31,14 @@ import zatiEsyaGumrukMuafiyeti from "./zati-esya-gumruk-muafiyeti";
 import yolcuBeraberiEsyaMuafiyeti from "./yolcu-beraberi-esya-muafiyeti";
 import avrupayaGidaGonderme from "./avrupaya-gida-gonderme";
 import guvenilirNakliyeFirmasiSecimi from "./guvenilir-nakliye-firmasi-secimi";
+import avrupayaKargoKacGundeGider from "./avrupaya-kargo-kac-gunde-gider";
 import etgbMikroIhracatRehberi from "./etgb-mikro-ihracat-rehberi";
 import yurtdisinaEvTasimaRehberi from "./yurtdisina-ev-tasima-rehberi";
 // Yabancı dil sayfaları
 import deUmzugInDieTuerkei from "./de-umzug-in-die-tuerkei";
 import deSpeditionTuerkei from "./de-spedition-tuerkei";
 import deTuerkeiTransportKosten from "./de-tuerkei-transport-kosten";
+import deTransportDeutschlandTuerkei from "./de-transport-deutschland-tuerkei";
 import nlVerhuizenNaarTurkije from "./nl-verhuizen-naar-turkije";
 import nlTransportNaarTurkije from "./nl-transport-naar-turkije";
 import enExpressVanTransportTurkey from "./en-express-van-transport-turkey";
@@ -83,12 +85,14 @@ export const GUIDE_PAGES: SeoPageData[] = [
   yolcuBeraberiEsyaMuafiyeti,
   avrupayaGidaGonderme,
   guvenilirNakliyeFirmasiSecimi,
+  avrupayaKargoKacGundeGider,
   etgbMikroIhracatRehberi,
   yurtdisinaEvTasimaRehberi,
 ];
 
 export const LOCALIZED_PAGES: SeoPageData[] = [
   deUmzugInDieTuerkei,
+  deTransportDeutschlandTuerkei,
   deSpeditionTuerkei,
   deTuerkeiTransportKosten,
   nlVerhuizenNaarTurkije,
