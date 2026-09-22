@@ -4,6 +4,8 @@ import { Clock, Truck, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards, { QUICK_ROUTES, fromPrice } from "./QuickRouteCards";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { HOME_COPY } from "./HomeHero";
 import RouteSearchInputs from "./RouteSearchInputs";
 import FeaturesSection from "./FeaturesSection";
 import ServicesGrid from "./ServicesGrid";
@@ -36,18 +38,8 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
   const dragControls = useDragControls();
   // On desktop the sheet is a fixed left column: fully open, no drag. The
   // mobile bottom-sheet pattern stretched across a 1400px screen pushed the
-  // quote button below the fold. Measured synchronously on first render:
-  // useIsMobile() reports "not mobile" until its effect runs, which expanded
-  // the sheet on phones for one frame and left it open.
-  const [isDesktop, setIsDesktop] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches
-  );
-  useEffect(() => {
-    const mql = window.matchMedia("(min-width: 768px)");
-    const onChange = () => setIsDesktop(mql.matches);
-    mql.addEventListener("change", onChange);
-    return () => mql.removeEventListener("change", onChange);
-  }, []);
+  // quote button below the fold.
+  const isDesktop = useIsDesktop();
   const animationControls = useAnimationControls();
   const { toast } = useToast();
 
@@ -102,9 +94,9 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
     setOrigin(language === "tr" ? "İstanbul" : "Istanbul");
   };
 
-  // Collapsed must still show toggle + price strip + both inputs above the
-  // 80px bottom nav on a 740px phone.
-  const collapsedHeight = "52%";
+  // Collapsed must still show headline + toggle + both inputs + price strip
+  // above the 80px bottom nav on a 740px phone.
+  const collapsedHeight = "60%";
   const expandedHeight = "85%";
 
   useEffect(() => {
@@ -211,6 +203,19 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
               exit={{ opacity: 0, x: -20 }}
             >
               {/* Yurt içi / Avrupa mode toggle */}
+              {/* Phone header: the page's H1 and promise live here, because the
+                  card over the map hid the price bubbles. Desktop shows HomeHero. */}
+              {!isDesktop && (
+                <div className="mb-3">
+                  <h1 className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    {language === "en" ? HOME_COPY.en.h1 : HOME_COPY.tr.h1}
+                  </h1>
+                  <p className="mt-0.5 text-base font-black leading-tight text-foreground">
+                    {language === "en" ? HOME_COPY.en.promise : HOME_COPY.tr.promise}
+                  </p>
+                </div>
+              )}
+
               <div className="mb-4 flex items-center gap-1 p-1 rounded-xl bg-secondary/60 border border-border/40">
                 {(["domestic", "europe"] as ShippingMode[]).map((m) => (
                   <button

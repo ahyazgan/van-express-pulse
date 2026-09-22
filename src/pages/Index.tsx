@@ -4,6 +4,7 @@ import MapBackground from "@/components/MapBackground";
 import BottomSheet from "@/components/BottomSheet";
 import AppNavigation from "@/components/AppNavigation";
 import HomeHero from "@/components/HomeHero";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { MessageCircle } from "lucide-react";
 import { waHref } from "@/content/seo/contact";
 import usePageMeta from "@/hooks/usePageMeta";
@@ -20,6 +21,7 @@ const Index = () => {
   const { t } = useLanguage();
   // Shipping mode is shared between the map and the bottom sheet.
   const [mode, setMode] = useState<ShippingMode>("europe");
+  const isDesktop = useIsDesktop();
 
   // Indexable metadata is pinned to Turkish on purpose. The served HTML is
   // Turkish (index.html) and this is the Turkish market's landing page, but the
@@ -39,8 +41,8 @@ const Index = () => {
     <div className="h-screen w-screen overflow-hidden bg-background">
       <MapBackground mode={mode} />
       <TopBar />
-      {/* Visible H1 + contact strip; replaces the old sr-only heading. */}
-      <HomeHero />
+      {/* Visible H1 + contact strip on desktop; phones get it in the sheet. */}
+      {isDesktop && <HomeHero />}
       {/* Same floating WhatsApp button the landing pages carry, lifted above the
           bottom navigation. */}
       <a

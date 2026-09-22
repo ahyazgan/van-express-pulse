@@ -11,8 +11,11 @@ import { priceRange, priceRangeEn } from "@/content/seo/seoData";
  * reach us without scrolling or opening a modal. This block answers both in the
  * first screen. The H1 text is kept identical to the prerendered one in
  * index.html so the crawled page and the hydrated page say the same thing.
+ *
+ * Desktop only: on phones the card covered half the map and repeated what the
+ * sheet says, so BottomSheet renders the same copy as its header instead.
  */
-const COPY = {
+export const HOME_COPY = {
   tr: {
     h1: "Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık",
     promise: "İstanbul'dan Berlin'e 24-36 saatte, kapıdan kapıya.",
@@ -31,7 +34,7 @@ const COPY = {
 
 const HomeHero = () => {
   const { language } = useLanguage();
-  const c = language === "en" ? COPY.en : COPY.tr;
+  const c = language === "en" ? HOME_COPY.en : HOME_COPY.tr;
   const price = language === "en" ? priceRangeEn("Berlin") : priceRange("Berlin");
 
   return (

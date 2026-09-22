@@ -728,8 +728,8 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       if (window.matchMedia("(min-width: 768px)").matches) {
         map.current.setPadding({ left: 420, top: 0, right: 0, bottom: 0 });
       } else {
-        // Hero card on top, sheet (44%) at the bottom: keep the bubbles between.
-        map.current.setPadding({ left: 0, top: 230, right: 0, bottom: Math.round(window.innerHeight * 0.52) });
+        // Top bar above, sheet (60%) below: frame the bubbles in between.
+        map.current.setPadding({ left: 0, top: 90, right: 0, bottom: Math.round(window.innerHeight * 0.6) });
       }
       // Padding only applies to camera moves made after it is set; re-apply the
       // opening view so it is framed inside the padded area. Phones get a wider
