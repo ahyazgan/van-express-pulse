@@ -271,6 +271,14 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
   const pendingSelectionRef = useRef<{ originCity: DomesticCity; route: VanRoute } | null>(null);
   const mapReadyRef = useRef(false);
 
+  // Secondary city labels (Bratislava, Budapest, Ljubljana, Köln...) sit on
+  // top of each other at the showcase zoom. Below the threshold only the dots
+  // stay; the names return as the user zooms in. Driven by a data attribute so
+  // the CSS below does the work and no marker has to be touched.
+  const updateCityLabelVisibility = (zoom: number) => {
+    mapContainer.current?.setAttribute("data-labels", zoom < 4.8 ? "primary" : "all");
+  };
+
   // Update price tag visibility based on zoom level
   const updatePriceTagVisibility = (zoom: number) => {
     // Single-route mode hides all price tags; zoom events must not re-show them.
@@ -714,9 +722,16 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       });
 
       // Add zoom event listener for price tag visibility
+      updateCityLabelVisibility(map.current.getZoom());
+      // The desktop side panel covers the left 420px; shift the map's usable
+      // area so Spain/Portugal are not permanently behind it.
+      if (window.matchMedia("(min-width: 768px)").matches) {
+        map.current.setPadding({ left: 420, top: 0, right: 0, bottom: 0 });
+      }
       map.current.on("zoom", () => {
         if (!map.current) return;
         const zoom = map.current.getZoom();
+        updateCityLabelVisibility(zoom);
         updatePriceTagVisibility(zoom);
       });
 
@@ -879,6 +894,10 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           color: hsl(220, 15%, 10%);
         }
         
+        [data-labels="primary"] .marker-container.secondary .marker-label {
+          display: none;
+        }
+
         .marker-container.secondary .marker-label {
           background: rgba(255, 255, 255, 0.9);
           color: hsl(220, 15%, 15%);

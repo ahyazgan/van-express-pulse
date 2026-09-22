@@ -55,9 +55,9 @@ const ConsentBanner = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
-          className="fixed inset-x-0 bottom-0 z-[60] p-4 pointer-events-none safe-bottom"
+          className="fixed inset-x-0 bottom-0 z-[60] p-4 pointer-events-none safe-bottom md:left-[420px]"
         >
-          <div className="pointer-events-auto mx-auto max-w-md rounded-2xl border border-border bg-card/95 backdrop-blur-xl shadow-lg p-4 flex items-center gap-3">
+          <div className="pointer-events-auto mr-20 max-w-md sm:mx-auto rounded-2xl border border-border bg-card/95 backdrop-blur-xl shadow-lg p-4 flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
               <Cookie className="w-5 h-5 text-primary" />
             </div>

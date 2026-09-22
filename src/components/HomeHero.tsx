@@ -37,7 +37,7 @@ const HomeHero = () => {
   return (
     <section
       aria-label={c.h1}
-      className="pointer-events-none absolute left-0 right-0 top-[76px] z-20 flex justify-center px-4 sm:top-[84px] sm:justify-start sm:px-6"
+      className="pointer-events-none absolute left-0 right-0 top-[76px] z-20 flex justify-center px-4 sm:top-[84px] sm:justify-start sm:px-6 md:left-[420px]"
     >
       <div className="pointer-events-auto max-w-md rounded-2xl border border-border/60 bg-card/92 p-4 shadow-lg backdrop-blur-xl sm:p-5">
         <h1 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">{c.h1}</h1>

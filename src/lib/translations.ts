@@ -8,6 +8,7 @@ export const translations = {
       shipments: "Gönderilerim",
       liveTracking: "Gönderi Takibi",
       profile: "Profil",
+      contact: "Bize Yazın",
     },
 
     // TopBar
@@ -285,6 +286,7 @@ export const translations = {
       shipments: "Shipments",
       liveTracking: "Track Shipment",
       profile: "Profile",
+      contact: "Message Us",
     },
 
     // TopBar

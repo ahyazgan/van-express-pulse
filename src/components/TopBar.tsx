@@ -23,7 +23,7 @@ const TopBar = () => {
     setLanguage(language === "tr" ? "en" : "tr");
   };
 
-  return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none flex justify-center" initial={{
+  return <motion.div className="fixed top-0 left-0 right-0 z-30 safe-top pointer-events-none flex justify-center md:left-[420px]" initial={{
     y: -50,
     opacity: 0
   }} animate={{

@@ -34,6 +34,20 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
   const [origin, setOrigin] = useState(language === "tr" ? "İstanbul" : "Istanbul");
   const [destination, setDestination] = useState("");
   const dragControls = useDragControls();
+  // On desktop the sheet is a fixed left column: fully open, no drag. The
+  // mobile bottom-sheet pattern stretched across a 1400px screen pushed the
+  // quote button below the fold. Measured synchronously on first render:
+  // useIsMobile() reports "not mobile" until its effect runs, which expanded
+  // the sheet on phones for one frame and left it open.
+  const [isDesktop, setIsDesktop] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(min-width: 768px)").matches
+  );
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 768px)");
+    const onChange = () => setIsDesktop(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
   const animationControls = useAnimationControls();
   const { toast } = useToast();
 
@@ -90,6 +104,17 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
 
   const collapsedHeight = "30%";
   const expandedHeight = "85%";
+
+  useEffect(() => {
+    if (isDesktop) {
+      setIsExpanded(true);
+      animationControls.start({ height: "100%" });
+    } else {
+      setIsExpanded(false);
+      animationControls.start({ height: collapsedHeight });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isDesktop]);
 
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     // Disable drag when in order mode
@@ -158,10 +183,10 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
 
   return (
     <motion.div
-      className="fixed inset-x-0 bottom-0 z-40 bottom-sheet pointer-events-auto"
+      className="fixed inset-x-0 bottom-0 z-40 bottom-sheet pointer-events-auto md:inset-y-0 md:right-auto md:w-[420px] md:rounded-none md:rounded-r-[32px] md:border-r md:border-t-0"
       initial={{ height: collapsedHeight }}
       animate={animationControls}
-      drag={viewMode === "browse" ? "y" : false}
+      drag={!isDesktop && viewMode === "browse" ? "y" : false}
       dragControls={dragControls}
       dragConstraints={{ top: 0, bottom: 0 }}
       dragElastic={0.2}
@@ -169,12 +194,12 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
       style={{ touchAction: "none" }}
     >
       {/* Handle */}
-      <div className="pt-3 pb-2 cursor-grab active:cursor-grabbing">
+      <div className="pt-3 pb-2 cursor-grab active:cursor-grabbing md:hidden">
         <div className="sheet-handle" />
       </div>
 
       {/* Content */}
-      <div className={`px-5 overflow-y-auto h-full ${viewMode === "browse" ? "pb-32 sm:pb-24" : "pb-36 sm:pb-28"}`}>
+      <div className={`px-5 overflow-y-auto h-full md:pt-6 ${viewMode === "browse" ? "pb-32 sm:pb-24 md:pb-10" : "pb-36 sm:pb-28 md:pb-10"}`}>
         <AnimatePresence mode="wait">
           {viewMode === "browse" ? (
             <motion.div
