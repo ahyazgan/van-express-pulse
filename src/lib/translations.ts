@@ -41,7 +41,7 @@ export const translations = {
       getQuote: "Fiyat Al",
       nextStepsTitle: "Sonra ne olur?",
       nextSteps: [
-        "Adres ve eşya bilgisini (fotoğraf yeterli) WhatsApp'tan gönderin.",
+        "Adres ve eşya bilgisini WhatsApp'tan yazın.",
         "Aynı gün yazılı teklif ve tahmini teslim süresi alırsınız.",
         "Onaylayın; araç planlanır, sevkiyatı takip numaranızla izlersiniz.",
       ],
@@ -320,7 +320,7 @@ export const translations = {
       getQuote: "Get Quote",
       nextStepsTitle: "What happens next?",
       nextSteps: [
-        "Send the addresses and what you are shipping (a photo is enough) on WhatsApp.",
+        "Send the addresses and what you are shipping on WhatsApp.",
         "You receive a written quote and an estimated delivery time the same day.",
         "Confirm; the van is scheduled and you follow the shipment with your tracking number.",
       ],

@@ -3,7 +3,6 @@ import { User, Phone, Mail } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { ContactInfo } from "./types";
-import PhotoUpload from "./PhotoUpload";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 interface ContactStepProps {
@@ -89,12 +88,9 @@ const ContactStep = ({ data, onChange }: ContactStepProps) => {
           className="h-12 rounded-xl bg-secondary/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary/20"
         />
       </div>
-
-      {/* Cargo photos (optional) */}
-      <PhotoUpload
-        photos={data.photos}
-        onChange={(photos) => updateField("photos", photos)}
-      />
+      {/* Cargo photo upload removed on request: a quote does not need it and the
+          step made the form longer than a WhatsApp message. PhotoUpload stays for
+          the admin side. */}
 
       <div className="p-3 rounded-xl bg-primary/5 border border-primary/20">
         <p className="text-xs text-muted-foreground">
