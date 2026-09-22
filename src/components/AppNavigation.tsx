@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Map, Package, Search, User } from "lucide-react";
+import { Calculator, Map, Package, Search, User } from "lucide-react";
 import type { ComponentType } from "react";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { Link, useLocation } from "react-router-dom";
@@ -27,7 +27,9 @@ const AppNavigation = () => {
   );
   const navItems: NavItem[] = [
     { id: "explore", icon: Map, label: t.nav.explore, route: "/" },
-    { id: "orders", icon: Package, label: t.nav.shipments, route: "/orders" },
+    user
+      ? { id: "orders", icon: Package, label: t.nav.shipments, route: "/orders" }
+      : { id: "calc", icon: Calculator, label: t.nav.calculator, route: "/fiyat-hesaplama" },
     { id: "track", icon: Search, label: t.nav.liveTracking, route: "/track" },
     user
       ? { id: "profile", icon: User, label: t.nav.profile, route: "/profile" }

@@ -9,6 +9,7 @@ export const translations = {
       liveTracking: "Gönderi Takibi",
       profile: "Profil",
       contact: "Bize Yazın",
+      calculator: "Fiyat Hesapla",
     },
 
     // TopBar
@@ -287,6 +288,7 @@ export const translations = {
       liveTracking: "Track Shipment",
       profile: "Profile",
       contact: "Message Us",
+      calculator: "Price Calculator",
     },
 
     // TopBar

@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send, Banknote } from "lucide-react";
@@ -193,6 +194,7 @@ const OrderForm = ({
         console.error("Failed to send notification:", err);
       });
 
+    trackEvent("quote_submit", { mode });
     onSuccess(orderData);
     navigate("/success");
   };

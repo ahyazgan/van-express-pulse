@@ -36,7 +36,8 @@ const TopBar = () => {
     delay: 0.2
   }}>
       <div className="flex items-center justify-between px-5 py-3 w-full max-w-md mx-auto">
-        {/* Profile Button */}
+        {/* Profile Button — only for signed-in users while sign-up is suspended. */}
+        {user ? (
         <MotionLink
           to="/profile"
           aria-label={language === "tr" ? "Profil" : "Profile"}
@@ -50,6 +51,9 @@ const TopBar = () => {
         >
           <User className={`w-5 h-5 ${user ? "text-accent" : "text-foreground"}`} />
         </MotionLink>
+        ) : (
+          <div className="w-12 h-12" aria-hidden="true" />
+        )}
 
         {/* Logo */}
         <motion.div className="flex items-center px-3 py-1.5 rounded-full glass border border-border/60 shadow-md pointer-events-auto" initial={{

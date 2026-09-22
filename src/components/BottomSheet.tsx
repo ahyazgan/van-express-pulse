@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import QuickRouteCards, { QUICK_ROUTES, fromPrice } from "./QuickRouteCards";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
+import { trackEvent } from "@/lib/analytics";
 import { HOME_COPY } from "./HomeHero";
 import RouteSearchInputs from "./RouteSearchInputs";
 import FeaturesSection from "./FeaturesSection";
@@ -141,6 +142,7 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
       return;
     }
     
+    trackEvent("quote_start", { mode, destination });
     // Show quote summary modal first
     setShowQuoteModal(true);
   };
@@ -148,13 +150,12 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
   const handleProceedFromQuote = () => {
     setShowQuoteModal(false);
     
-    // If user is logged in, go directly to order form
-    // Otherwise, show the choice modal
-    if (user) {
-      setViewMode("order");
-    } else {
-      setShowChoiceModal(true);
-    }
+    // Account creation is suspended for now: nobody has to sign up to get a
+    // quote, so the member/guest choice would only add a step. Signed-in users
+    // and guests both go straight to the form (guest orders have user_id null).
+    // The modal stays in the codebase; re-enable by restoring the branch here.
+    void user;
+    handleGuestContinue();
   };
 
   const handleGuestContinue = () => {

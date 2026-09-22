@@ -2,12 +2,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Suspense, lazy, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { initAnalytics, trackPageView } from "./lib/analytics";
 import ConsentBanner from "./components/ConsentBanner";
 // SEO landing page routes. Content lives in src/content/seo/; this list is the
 // cheap mirror of the registry (importing the registry here would drag every
@@ -29,6 +30,18 @@ const PriceCalculatorPage = lazy(() => import("./pages/PriceCalculatorPage"));
 
 const queryClient = new QueryClient();
 
+// Reports SPA navigations to GA4 (no-op until VITE_GA4_ID is set).
+const AnalyticsRouter = () => {
+  const location = useLocation();
+  useEffect(() => {
+    initAnalytics();
+  }, []);
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location.pathname]);
+  return null;
+};
+
 const PageLoader = () => (
   <div className="min-h-screen bg-background flex items-center justify-center">
     <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -44,6 +57,7 @@ const App = () => (
           <Sonner />
           <ConsentBanner />
           <BrowserRouter>
+            <AnalyticsRouter />
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<Index />} />

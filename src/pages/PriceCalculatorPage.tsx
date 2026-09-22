@@ -1,9 +1,10 @@
-﻿import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calculator, MapPin, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import RouteEULogo from "@/components/RouteEULogo";
 import usePageMeta from "@/hooks/usePageMeta";
+import { trackEvent } from "@/lib/analytics";
 import { SEO_PAGES } from "@/content/seo/registry";
 import {
   VAN_CAPACITY_KG,
@@ -106,6 +107,13 @@ const PriceCalculatorPage = () => {
     if (mode === "partial" && volume === undefined) return null;
     return estimateShipmentPrice(city, volume);
   }, [city, mode, volume]);
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (result && !tracked.current) {
+      tracked.current = true;
+      trackEvent("calculator_use", { city, mode });
+    }
+  }, [result, city, mode]);
 
   const dimResult = useMemo(() => {
     const w = parseFloat(dims.w.replace(",", "."));
