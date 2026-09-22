@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { waHref } from "@/content/seo/contact";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send, Banknote } from "lucide-react";
@@ -152,7 +153,27 @@ const OrderForm = ({
 
     if (error) {
       console.error("Error saving order:", error);
-      toast.error(t.orderForm.submitError);
+      // The database is unreachable more often than one would like (the
+      // backend host once dropped out of DNS entirely). The lead must not die
+      // with the request: hand the filled form to WhatsApp instead.
+      const summary = [
+        `Talep: ${destination}`,
+        `Ürün: ${product.category} / ${product.packagingType} × ${product.quantity}`,
+        `Ağırlık: ${product.totalWeight} kg, hacim: ${product.totalVolume} m³`,
+        `Ad: ${contact.fullName}`,
+        `Telefon: ${contact.phone}`,
+        priceResult ? `Tahmini fiyat: ${priceResult.minPrice}–${priceResult.maxPrice} €` : "",
+      ]
+        .filter(Boolean)
+        .join("\n");
+      trackEvent("quote_submit_fallback", { mode });
+      toast.error(t.orderForm.submitFallback, {
+        duration: 15000,
+        action: {
+          label: t.orderForm.submitFallbackAction,
+          onClick: () => window.open(waHref(summary), "_blank", "noopener"),
+        },
+      });
       setIsSubmitting(false);
       return;
     }
