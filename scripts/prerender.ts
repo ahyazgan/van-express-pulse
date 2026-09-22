@@ -24,6 +24,7 @@ import { fileURLToPath } from "node:url";
 import { SEO_PAGES } from "../src/content/seo/registry";
 import { CHROME, HREFLANG, withYear } from "../src/content/seo/chrome";
 import { CONTACT, PHONE_DISPLAY, TEL_HREF, pageWaHref, rowWaHref } from "../src/content/seo/contact";
+import { KEY_FACTS, hasKeyFacts, keyFacts } from "../src/content/seo/keyFacts";
 import {
   CALC_DESCRIPTION,
   CALC_FAQ,
@@ -77,6 +78,19 @@ const faqBlock = (heading: string, faq: { question: string; answer: string }[]) 
           .map((f) => `<h3>${esc(f.question)}</h3>\n        <p>${esc(f.answer)}</p>`)
           .join("\n        ")}`;
 
+const keyFactsBlock = (page: SeoPageData): string => {
+  const lang: PageLang = page.lang ?? "tr";
+  const k = KEY_FACTS[lang];
+  const f = keyFacts(page);
+  const rows: [string, string][] = [];
+  if (f.fastest) rows.push([k.fastest, `${f.fastest.route}: ${f.fastest.time}`]);
+  if (f.cheapest) rows.push([k.cheapest, `${f.cheapest.route}: ${f.cheapest.price}`]);
+  rows.push([k.capacity, f.capacity]);
+  return `<section aria-label="${esc(k.heading)}"><h2>${esc(k.heading)}</h2><dl>${rows
+    .map(([dt, dd]) => `<dt>${esc(dt)}</dt><dd>${esc(dd)}</dd>`)
+    .join("")}</dl></section>`;
+};
+
 /** The crawlable body for one SEO landing page. */
 const seoBody = (page: SeoPageData): string => {
   const lang: PageLang = page.lang ?? "tr";
@@ -89,6 +103,9 @@ const seoBody = (page: SeoPageData): string => {
     // the hydrated page agree on how to reach us.
     `<p><a href="${pageWaHref(lang, page.h1)}">${esc(c.waLabel)}</a> · ` +
       `<a href="${TEL_HREF}">${esc(c.callLabel)}: ${esc(PHONE_DISPLAY)}</a><br>${esc(c.afterYouWrite)}</p>`,
+    // "At a glance": the numbers a reader or an answer engine wants first,
+    // derived from the tables below so they can never disagree with them.
+    ...(hasKeyFacts(page) ? [keyFactsBlock(page)] : []),
     ...page.intro.map((p) => `<p>${esc(p)}</p>`),
   ];
 

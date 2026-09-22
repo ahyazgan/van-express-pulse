@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { SEO_PAGES } from "./registry";
 import { SEO_ROUTE_PATHS } from "./seoSlugs";
+import { hasKeyFacts, keyFacts } from "./keyFacts";
 
 const indexHtml = readFileSync(resolve(process.cwd(), "index.html"), "utf8");
 
@@ -52,6 +53,33 @@ describe("prerender contract", () => {
 
     expect([...listed].sort()).toEqual(expected);
     expect(new Set(listed).size, "sitemap has duplicate <loc> entries").toBe(listed.length);
+  });
+
+  it("derives the at-a-glance box from the page's own tables", () => {
+    // The box must never say something the tables below it do not: the fastest
+    // route is a real transit row, the best price a real price row, and pages
+    // with no tables get no box rather than three lines of filler.
+    for (const page of Object.values(SEO_PAGES)) {
+      const f = keyFacts(page);
+      if (f.fastest) {
+        const row = page.transitTable!.rows.find((r) => r.destination === f.fastest!.route);
+        expect(row?.time, `${page.slug} fastest`).toBe(f.fastest.time);
+        const lower = (t: string) => Number(t.match(/\d+/)![0]);
+        for (const r of page.transitTable!.rows) {
+          if (/\d/.test(r.time)) expect(lower(r.time)).toBeGreaterThanOrEqual(lower(f.fastest.time));
+        }
+      }
+      if (f.cheapest) {
+        const row = page.priceTable!.rows.find((r) => r.route === f.cheapest!.route);
+        expect(row?.price, `${page.slug} cheapest`).toBe(f.cheapest.price);
+        expect(f.cheapest.price, `${page.slug} unpriced row picked`).toMatch(/\d/);
+        const first = (t: string) => Number(t.replace(/[.,\s ](?=\d{3})/g, "").match(/\d+/)![0]);
+        for (const r of page.priceTable!.rows) {
+          if (/\d/.test(r.price)) expect(first(r.price)).toBeGreaterThanOrEqual(first(f.cheapest.price));
+        }
+      }
+      expect(hasKeyFacts(page)).toBe(Boolean(f.fastest || f.cheapest));
+    }
   });
 
   it("gives the SPA fallback so unknown paths still reach React Router", () => {

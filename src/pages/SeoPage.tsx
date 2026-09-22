@@ -8,6 +8,7 @@ import usePageMeta from "@/hooks/usePageMeta";
 import { SEO_PAGES } from "@/content/seo/registry";
 import { CHROME, HREFLANG, withYear } from "@/content/seo/chrome";
 import { CONTACT, PHONE_DISPLAY, TEL_HREF, pageWaHref, rowWaHref } from "@/content/seo/contact";
+import { KEY_FACTS, hasKeyFacts, keyFacts } from "@/content/seo/keyFacts";
 import NotFound from "./NotFound";
 import type { SeoPageData } from "@/content/seo/seoData";
 
@@ -121,6 +122,8 @@ const SeoPage = () => {
   const t = CHROME[lang];
   const c = CONTACT[lang];
   const waPage = pageWaHref(lang, page.h1);
+  const facts = keyFacts(page);
+  const k = KEY_FACTS[lang];
   // A German page must not list thirty Turkish links in its footer.
   const footerPages = Object.values(SEO_PAGES).filter((p) => (p.lang ?? "tr") === lang);
 
@@ -186,6 +189,29 @@ const SeoPage = () => {
             </a>
             <span className="basis-full text-xs text-muted-foreground sm:basis-auto">{c.afterYouWrite}</span>
           </div>
+
+          {/* At a glance: mirrors scripts/prerender.ts keyFactsBlock. Derived from
+              the tables further down, so it cannot contradict them. */}
+          {hasKeyFacts(page) && (
+            <section aria-label={k.heading} className="mt-5">
+              <h2 className="sr-only">{k.heading}</h2>
+              <dl className="grid gap-2 sm:grid-cols-3">
+                {[
+                  facts.fastest && { dt: k.fastest, dd: facts.fastest.time, sub: facts.fastest.route },
+                  facts.cheapest && { dt: k.cheapest, dd: facts.cheapest.price, sub: facts.cheapest.route },
+                  { dt: k.capacity, dd: facts.capacity, sub: "" },
+                ]
+                  .filter((x): x is { dt: string; dd: string; sub: string } => Boolean(x))
+                  .map((x) => (
+                    <div key={x.dt} className="rounded-2xl border border-border/60 bg-card px-4 py-3 shadow-sm">
+                      <dt className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{x.dt}</dt>
+                      <dd className="mt-0.5 text-base font-black leading-tight text-foreground">{x.dd}</dd>
+                      {x.sub && <dd className="mt-0.5 text-xs text-muted-foreground">{x.sub}</dd>}
+                    </div>
+                  ))}
+              </dl>
+            </section>
+          )}
 
           {page.intro.map((p, i) => (
             <p key={i} className="mt-4 leading-relaxed text-muted-foreground">
