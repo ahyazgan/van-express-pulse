@@ -1,7 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { Loader2 } from "lucide-react";
@@ -29,7 +27,6 @@ const SeoPage = lazy(() => import("./pages/SeoPage"));
 const PriceCalculatorPage = lazy(() => import("./pages/PriceCalculatorPage"));
 const KunyePage = lazy(() => import("./pages/KunyePage"));
 
-const queryClient = new QueryClient();
 
 // Reports SPA navigations to GA4 (no-op until VITE_GA4_ID is set).
 const AnalyticsRouter = () => {
@@ -49,11 +46,12 @@ const PageLoader = () => (
   </div>
 );
 
+// No React Query or Tooltip providers: nothing in the app uses them, and they
+// put ~70 KB on the startup path. Re-add them next to the first useQuery or
+// <Tooltip>.
 const App = () => (
-  <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <AuthProvider>
-        <TooltipProvider>
           <Toaster />
           <Sonner />
           <ConsentBanner />
@@ -88,10 +86,8 @@ const App = () => (
               </Routes>
             </Suspense>
           </BrowserRouter>
-        </TooltipProvider>
       </AuthProvider>
     </LanguageProvider>
-  </QueryClientProvider>
 );
 
 export default App;

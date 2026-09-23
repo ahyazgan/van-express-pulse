@@ -16,7 +16,8 @@ import QuoteSummaryModal from "./QuoteSummaryModal";
 import { getShippingPrice } from "@/constants/shippingRates";
 import { getDomesticPrice, type ShippingMode } from "@/constants/domesticRates";
 import { destinationEvents } from "@/lib/destinationEvents";
-import { OrderForm, OrderData } from "./OrderForm";
+import OrderForm from "./OrderForm/OrderForm";
+import type { OrderData } from "./OrderForm/types";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 

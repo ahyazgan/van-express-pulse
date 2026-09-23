@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { User, Session } from "@supabase/supabase-js";
-import { supabase } from "@/integrations/supabase/client";
+import type { User, Session } from "@supabase/supabase-js";
+import { loadSupabase } from "@/integrations/supabase/lazy";
 import { BACKEND_ENABLED } from "@/lib/backend";
 
 interface Profile {
@@ -40,6 +40,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   const fetchProfile = async (userId: string) => {
+    const supabase = await loadSupabase();
     const { data, error } = await supabase
       .from("profiles")
       .select("*")
@@ -57,38 +58,48 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       setLoading(false);
       return;
     }
-    // Set up auth state listener FIRST
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+    let cancelled = false;
+    let unsubscribe: (() => void) | undefined;
+    loadSupabase().then((supabase) => {
+      if (cancelled) return;
+      // Set up auth state listener FIRST
+      const { data: { subscription } } = supabase.auth.onAuthStateChange(
+        (event, session) => {
+          setSession(session);
+          setUser(session?.user ?? null);
+
+          // Defer profile fetch with setTimeout to prevent deadlock
+          if (session?.user) {
+            setTimeout(() => {
+              fetchProfile(session.user.id);
+            }, 0);
+          } else {
+            setProfile(null);
+          }
+        }
+      );
+      unsubscribe = () => subscription.unsubscribe();
+
+      // THEN check for existing session
+      supabase.auth.getSession().then(({ data: { session } }) => {
         setSession(session);
         setUser(session?.user ?? null);
-        
-        // Defer profile fetch with setTimeout to prevent deadlock
         if (session?.user) {
-          setTimeout(() => {
-            fetchProfile(session.user.id);
-          }, 0);
-        } else {
-          setProfile(null);
+          fetchProfile(session.user.id);
         }
-      }
-    );
-
-    // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        fetchProfile(session.user.id);
-      }
-      setLoading(false);
+        setLoading(false);
+      });
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      cancelled = true;
+      unsubscribe?.();
+    };
   }, []);
 
   const signUp = async (email: string, password: string, profileData?: Partial<Profile>) => {
     const redirectUrl = `${window.location.origin}/`;
+    const supabase = await loadSupabase();
     
     const { data, error } = await supabase.auth.signUp({
       email,
@@ -117,6 +128,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const signIn = async (email: string, password: string) => {
+    const supabase = await loadSupabase();
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -125,12 +137,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const signOut = async () => {
+    const supabase = await loadSupabase();
     await supabase.auth.signOut();
     setProfile(null);
   };
 
   const updateProfile = async (data: Partial<Profile>) => {
     if (!user) return { error: new Error("Not authenticated") };
+    const supabase = await loadSupabase();
 
     const { error } = await supabase
       .from("profiles")

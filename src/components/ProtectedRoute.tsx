@@ -1,7 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { useEffect, useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { loadSupabase } from '@/integrations/supabase/lazy';
 import { Loader2 } from 'lucide-react';
 
 interface ProtectedRouteProps {
@@ -28,6 +28,7 @@ export const ProtectedRoute = ({ children, requireAdmin = false }: ProtectedRout
       }
       
       try {
+        const supabase = await loadSupabase();
         // Check if user has admin role using has_role function via RPC
         const { data, error } = await supabase
           .from('user_roles')

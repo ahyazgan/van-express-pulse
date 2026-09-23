@@ -85,6 +85,12 @@ export default defineConfig(({ mode }) => ({
           "maplibre-gl": ["maplibre-gl"],
           "framer-motion": ["framer-motion"],
           "react-vendor": ["react", "react-dom", "react-router-dom"],
+          // Supabase gets its own chunk and tslib stays out of it: left to
+          // Rollup, tslib (shared by Supabase and the Radix dialog stack) landed
+          // inside the Supabase chunk, so opening any dialog downloaded the
+          // whole SDK even though the backend is switched off.
+          supabase: ["@supabase/supabase-js"],
+          tslib: ["tslib"],
         },
       },
     },

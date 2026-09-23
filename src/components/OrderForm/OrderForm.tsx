@@ -10,12 +10,12 @@ import { Button } from "@/components/ui/button";
 import { PriceResult } from "@/constants/shippingRates";
 import { formatMoney } from "@/lib/money";
 import type { ShippingMode } from "@/constants/domesticRates";
-import { supabase } from "@/integrations/supabase/client";
+import { loadSupabase } from "@/integrations/supabase/lazy";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ProductStep from "./ProductStep";
 import ContactStep from "./ContactStep";
 import { ProductInfo, ContactInfo, OrderData } from "./types";
-import { Database } from "@/integrations/supabase/types";
+import type { Database } from "@/integrations/supabase/types";
 
 interface PrefillData {
   fullName: string;
@@ -130,6 +130,7 @@ const OrderForm = ({
     };
 
     // Get current session directly from Supabase for accurate auth state
+    const supabase = await loadSupabase();
     const { data: sessionData } = await supabase.auth.getSession();
     const currentUserId = sessionData?.session?.user?.id || null;
 
