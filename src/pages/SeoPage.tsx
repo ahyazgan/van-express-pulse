@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { isCompanyInfoComplete } from "@/content/company";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, MapPin, Phone, Shield, Zap } from "lucide-react";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
@@ -389,6 +390,11 @@ const SeoPage = () => {
             <Link to="/track" className="hover:text-foreground hover:underline">
               {t.footerTracking}
             </Link>
+            {isCompanyInfoComplete() && (
+              <Link to="/kunye" className="hover:text-foreground hover:underline">
+                {t.footerImprint}
+              </Link>
+            )}
             {footerPages.map((p) => (
               <Link key={p.slug} to={`/${p.slug}`} className="hover:text-foreground hover:underline">
                 {p.h1}

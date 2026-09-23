@@ -20,6 +20,8 @@ export interface ChromeStrings {
   footerTagline: string;
   footerQuote: string;
   footerTracking: string;
+  /** Link to /kunye; only shown once the company data is complete. */
+  footerImprint: string;
 }
 
 /**
@@ -53,6 +55,7 @@ export const CHROME: Record<PageLang, ChromeStrings> = {
       "Türkiye ↔ Avrupa kapıdan kapıya ekspres panelvan taşımacılık. CMR taşıma sorumluluğu, talep üzerine ek yük sigortası, takip numarasıyla aşamalı sevkiyat takibi.",
     footerQuote: "Fiyat Al",
     footerTracking: "Gönderi Takibi",
+    footerImprint: "Künye",
   },
   de: {
     home: "Startseite",
@@ -71,6 +74,7 @@ export const CHROME: Record<PageLang, ChromeStrings> = {
       "Express-Transporte von Tür zu Tür zwischen der Türkei und Europa. CMR-Haftung, Zusatzversicherung auf Wunsch, Sendungsstatus per Sendungsnummer.",
     footerQuote: "Preis berechnen",
     footerTracking: "Sendungsverfolgung",
+    footerImprint: "Impressum",
   },
   nl: {
     home: "Startpagina",
@@ -89,6 +93,7 @@ export const CHROME: Record<PageLang, ChromeStrings> = {
       "Expresstransport van deur tot deur tussen Turkije en Europa. CMR-aansprakelijkheid, bijverzekering op aanvraag, zendingstatus via uw zendingnummer.",
     footerQuote: "Prijs berekenen",
     footerTracking: "Zending volgen",
+    footerImprint: "Colofon",
   },
   en: {
     home: "Home",
@@ -107,6 +112,7 @@ export const CHROME: Record<PageLang, ChromeStrings> = {
       "Door-to-door express van transport between Türkiye and Europe. CMR carrier liability, added cargo cover on request, shipment status by tracking number.",
     footerQuote: "Get a price",
     footerTracking: "Track a shipment",
+    footerImprint: "Imprint",
   },
   fr: {
     home: "Accueil",
@@ -125,6 +131,7 @@ export const CHROME: Record<PageLang, ChromeStrings> = {
       "Transport express porte-à-porte entre la Türkiye et l'Europe. Responsabilité CMR, assurance complémentaire sur demande, statut par numéro de suivi.",
     footerQuote: "Obtenir un prix",
     footerTracking: "Suivi d'envoi",
+    footerImprint: "Mentions légales",
   },
 };
 

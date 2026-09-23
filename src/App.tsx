@@ -27,6 +27,7 @@ const SuccessPage = lazy(() => import("./pages/SuccessPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const SeoPage = lazy(() => import("./pages/SeoPage"));
 const PriceCalculatorPage = lazy(() => import("./pages/PriceCalculatorPage"));
+const KunyePage = lazy(() => import("./pages/KunyePage"));
 
 const queryClient = new QueryClient();
 
@@ -77,6 +78,8 @@ const App = () => (
                   }
                 />
                 <Route path="/fiyat-hesaplama" element={<PriceCalculatorPage />} />
+                {/* Imprint: shows 404 until src/content/company.ts is filled in. */}
+                <Route path="/kunye" element={<KunyePage />} />
                 {SEO_ROUTE_PATHS.map((path) => (
                   <Route key={path} path={path} element={<SeoPage />} />
                 ))}
