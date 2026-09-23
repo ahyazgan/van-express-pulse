@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
         scope: "/",
         display: "standalone",
         orientation: "portrait",
-        theme_color: "#0a0e17",
+        theme_color: "#14213D",
         background_color: "#ffffff",
         categories: ["business", "travel", "navigation"],
         icons: [
@@ -48,6 +48,8 @@ export default defineConfig(({ mode }) => ({
       workbox: {
         // Precache the built app shell so it opens offline.
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
+        // Social preview is fetched by link scrapers, never by the app itself.
+        globIgnores: ["og-image.png"],
         navigateFallback: "index.html",
         // The map vendor chunk is large but needed for the map.
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
