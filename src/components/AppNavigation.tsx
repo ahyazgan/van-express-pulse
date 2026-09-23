@@ -73,7 +73,12 @@ const AppNavigation = () => {
                   animate={{ scale: isActive ? 1.15 : 1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
-                  <item.icon className="w-6 h-6" strokeWidth={isActive ? 2.5 : 2} />
+                  <item.icon
+                    // WhatsApp is the one way to reach a person: its tab keeps
+                    // the brand green so it stands out from the grey tabs.
+                    className={`w-6 h-6 ${item.id === "contact" ? "text-[#25D366]" : ""}`}
+                    strokeWidth={isActive ? 2.5 : 2}
+                  />
                 </motion.div>
                 <span className="text-xs font-bold mt-0.5">{item.label}</span>
 

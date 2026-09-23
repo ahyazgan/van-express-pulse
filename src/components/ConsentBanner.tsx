@@ -57,12 +57,11 @@ const ConsentBanner = () => {
           exit={{ opacity: 0, y: 40 }}
           // Sits just above the bottom nav (safe-area pad + 8px margin + 64px bar)
           // instead of on top of it, so the nav and the WhatsApp button stay usable
-          // while the visitor decides. On phones it also leaves room on the right
-          // for the floating WhatsApp button.
+          // while the visitor decides.
           className="fixed inset-x-0 z-[60] px-4 pointer-events-none bottom-[calc(max(env(safe-area-inset-bottom),16px)+80px)] md:left-[420px]"
         >
           <div
-            className="pointer-events-auto mr-20 max-w-md sm:mx-auto rounded-xl border border-border bg-card/95 backdrop-blur-xl shadow-lg px-3 py-2.5 flex flex-wrap items-center gap-x-3 gap-y-2"
+            className="pointer-events-auto mx-auto max-w-md rounded-xl border border-border bg-card/95 backdrop-blur-xl shadow-lg px-3 py-2.5 flex flex-wrap items-center gap-x-3 gap-y-2"
           >
             <Cookie className="hidden sm:block w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
             <p className="text-xs leading-snug text-muted-foreground flex-1 min-w-[10rem]">{t.consent.message}</p>

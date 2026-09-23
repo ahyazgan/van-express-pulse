@@ -15,6 +15,9 @@ const LOGO_IN_CHIP = false;
 // "segmented": TR | EN side by side, active one filled navy. "classic": the old
 // single button with a flag emoji (Windows shows the emoji as the letters "TR").
 const LANG_TOGGLE_STYLE: "segmented" | "classic" = "segmented";
+// Phones already have the WhatsApp tab in the bottom nav, within thumb reach;
+// the top-bar button only shows from tablet width up. true shows it on phones.
+const TOPBAR_WHATSAPP_ON_PHONE = false;
 
 // Real <a href> so crawlers can discover the route (buttons are invisible to them).
 const MotionLink = motion(Link);
@@ -133,7 +136,7 @@ const TopBar = () => {
             target="_blank"
             rel="noopener"
             aria-label="WhatsApp"
-            className="px-3 py-2.5 rounded-full bg-[#25D366] text-white flex items-center gap-2 shadow-md"
+            className={`px-3 py-2.5 rounded-full bg-[#25D366] text-white items-center gap-2 shadow-md ${TOPBAR_WHATSAPP_ON_PHONE ? "flex" : "hidden md:flex"}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

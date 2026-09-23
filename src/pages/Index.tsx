@@ -17,6 +17,10 @@ const HOME_META = {
     "Türkiye'den Avrupa'ya kapıdan kapıya panelvan taşımacılık: 10 ülkeye 24-72 saatte aktarmasız teslimat. Güzergâh fiyatlarını görün, hemen teklif alın.",
 } as const;
 
+// The home page reaches WhatsApp through the bottom nav tab (and the top bar on
+// desktop). true brings back the extra floating round button.
+const SHOW_FLOATING_WHATSAPP = false;
+
 const Index = () => {
   const { t } = useLanguage();
   // Shipping mode is shared between the map and the bottom sheet.
@@ -44,7 +48,9 @@ const Index = () => {
       {/* Visible H1 + contact strip on desktop; phones get it in the sheet. */}
       {isDesktop && <HomeHero />}
       {/* Same floating WhatsApp button the landing pages carry, lifted above the
-          bottom navigation. */}
+          bottom navigation. Off: it sat right on top of the nav's WhatsApp tab
+          (and over the nav's right end on desktop). */}
+      {SHOW_FLOATING_WHATSAPP && (
       <a
         href={waHref("Merhaba, Avrupa'ya panelvan taşıma için fiyat almak istiyorum.")}
         target="_blank"
@@ -54,6 +60,7 @@ const Index = () => {
       >
         <WhatsAppIcon className="h-7 w-7" />
       </a>
+      )}
       <BottomSheet mode={mode} onModeChange={setMode} />
       <AppNavigation />
     </div>
