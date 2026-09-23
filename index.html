@@ -121,39 +121,13 @@
   <meta name="twitter:title" content="Uluslararası Nakliyat ve Avrupa Kargo Fiyatları 2026">
   <meta property="og:description" content="Türkiye'den Avrupa'ya kapıdan kapıya panelvan taşımacılık: 10 ülkeye 24-72 saatte aktarmasız teslimat. Güzergâh fiyatlarını görün, hemen teklif alın.">
   <meta name="twitter:description" content="Türkiye'den Avrupa'ya kapıdan kapıya panelvan taşımacılık: 10 ülkeye 24-72 saatte aktarmasız teslimat. Güzergâh fiyatlarını görün, hemen teklif alın.">
-    <!-- Static shell: styles the crawlable block inside #root so the first paint
-         looks like the site, not a plain article. Only .ss-* classes; the React
-         app never uses them. src/lib/staticShell.ts keeps the hero on screen
-         until the app has painted. -->
-    <style>
-      .ss{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#14213D;background:#f6f6f4;line-height:1.55}
-      .ss a{color:inherit}
-      /* html/body/#root are scroll-locked for the full-screen app (index.css);
-         the static block scrolls itself so its links stay reachable. */
-      #ss-home{height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch}
-      .ss-hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:radial-gradient(60rem 40rem at 85% 110%,#fff1c2 0%,rgba(255,241,194,0) 60%),radial-gradient(40rem 30rem at 0% 0%,#ffffff 0%,rgba(255,255,255,0) 70%),#f6f6f4}
-      .ss-card{width:100%;max-width:30rem;background:#fff;border:1px solid #e6e8ee;border-radius:24px;box-shadow:0 20px 50px -20px rgba(20,33,61,.25);padding:28px 24px}
-      .ss-logo{display:block;height:56px;width:auto;margin-bottom:20px}
-      .ss-card h1{font-size:1.5rem;line-height:1.2;font-weight:800;margin:0 0 10px;letter-spacing:-.01em}
-      .ss-lead{margin:0 0 18px;color:#44506a;font-size:.975rem}
-      .ss-prices{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-wrap:wrap;gap:8px}
-      .ss-prices a{display:inline-block;text-decoration:none;font-size:.9rem;font-weight:600;padding:8px 12px;border-radius:12px;background:#f3f5f9;border:1px solid #e3e7ef}
-      .ss-prices b{font-weight:800}
-      .ss-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-      .ss-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:14px}
-      .ss-tel{font-weight:700;text-decoration:none;padding:12px 6px}
-      .ss-loading{display:flex;align-items:center;gap:10px;margin:22px 0 0;font-size:.85rem;color:#6b7489}
-      .ss-dot{width:10px;height:10px;border-radius:50%;background:#FFC300;box-shadow:0 0 0 0 rgba(255,195,0,.6);animation:ss-pulse 1.4s ease-out infinite}
-      @keyframes ss-pulse{to{box-shadow:0 0 0 12px rgba(255,195,0,0)}}
-      @media (prefers-reduced-motion:reduce){.ss-dot{animation:none}}
-      .ss-more{max-width:42rem;margin:0 auto;padding:40px 20px 56px;font-size:.95rem}
-      .ss-more h2{font-size:1.1rem;margin:28px 0 8px}
-      .ss-more ul{padding-left:1.1rem;margin:0}
-      .ss-more li{margin:4px 0}
-      .ss-more a{color:#1d3a8a}
-      #ss-overlay{position:fixed;inset:0;z-index:9999;overflow:hidden;transition:opacity .35s ease}
-      #ss-overlay.ss-out{opacity:0;pointer-events:none}
-    </style>
+    <!-- The crawlable block inside #root is for crawlers and no-JS visitors.
+         While the app loads it stays in the DOM but out of sight, so visitors
+         don't see an unstyled article first; React replaces it on mount.
+         html/body/#root are scroll-locked for the app (index.css), so the block
+         scrolls itself when shown without JS. -->
+    <style>#seo-static{visibility:hidden;height:100%;overflow-y:auto}</style>
+    <noscript><style>#seo-static{visibility:visible}</style></noscript>
   </head>
 
   <body>
@@ -164,28 +138,12 @@
            The markers below are load-bearing: scripts/prerender.ts swaps
            everything between them to build a static page per route. -->
       <!--PRERENDER-START-->
-      <div class="ss" id="ss-home">
-        <section class="ss-hero">
-          <div class="ss-card">
-            <img class="ss-logo" src="/routeeu-logo.svg" alt="RouteEU Express" width="155" height="56" />
-            <h1>Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık</h1>
-            <p class="ss-lead">Aktarmasız, kapıdan kapıya ekspres panelvan. Aynı gün yazılı teklif.</p>
-            <ul class="ss-prices">
-              <li><a href="/almanya-kargo">Berlin <b>€1.750'den</b></a></li>
-              <li><a href="/fransa-kargo">Paris <b>€1.900'den</b></a></li>
-              <li><a href="/italya-kargo">Milano <b>€1.600'den</b></a></li>
-            </ul>
-            <div class="ss-cta">
-              <a class="ss-wa" href="https://wa.me/905393308617?text=Merhaba%2C%20Avrupa%27ya%20panelvan%20ta%C5%9F%C4%B1ma%20i%C3%A7in%20fiyat%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan fiyat alın</a>
-              <a class="ss-tel" href="tel:+905393308617">+90 539 330 86 17</a>
-            </div>
-            <p class="ss-loading"><span class="ss-dot"></span>Harita ve fiyat hesaplayıcı yükleniyor…</p>
-          </div>
-        </section>
-        <div class="ss-more">
+      <div id="seo-static">
+      <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.25rem; color: #222; line-height: 1.6;">
+        <h1 style="font-size: 1.5rem; margin-bottom: 0.75rem;">Türkiye'den Avrupa'ya Kapıdan Kapıya Ekspres Panelvan Taşımacılık</h1>
         <p>RouteEU Express, Türkiye ile Avrupa arasında ekspres panelvan ve minivan taşımacılığı yapar. Yükünüz adresinizden alınır, aktarmasız olarak 24–72 saat içinde Avrupa'daki adrese teslim edilir. Her sevkiyat CMR konvansiyonunun belirlediği taşıyıcı sorumluluğu altında taşınır; talep üzerine beyan ettiğiniz değer üzerinden ek yük sigortası yaptırıyoruz. Takip numaranızla sevkiyatınızın hangi aşamada olduğunu (talep alındı, anlaşma, yolda, teslim edildi) görür, aracın o anki yerini WhatsApp'tan sorabilirsiniz.</p>
         <p>Almanya, Hollanda, Belçika, Avusturya ve Fransa başta olmak üzere tüm Avrupa'ya kapıdan kapıya hizmet veriyoruz. Panelvan araçlarımız hafta sonu TIR yasağından muaf olduğu için teslimatlar kesintisiz devam eder.</p>
-        <h2>Ülke Güzergahları</h2>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Ülke Güzergahları</h2>
         <ul>
           <li><a href="/almanya-kargo">Almanya'ya panelvan kargo</a></li>
           <li><a href="/hollanda-kargo">Hollanda'ya panelvan kargo</a></li>
@@ -198,14 +156,14 @@
           <li><a href="/isvec-kargo">İsveç'e nakliyat</a></li>
           <li><a href="/polonya-kargo">Polonya'ya kargo ve parsiyel taşıma</a></li>
         </ul>
-        <h2>Avrupa'dan Türkiye'ye</h2>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Avrupa'dan Türkiye'ye</h2>
         <ul>
           <li><a href="/almanyadan-turkiyeye-nakliyat">Almanya'dan Türkiye'ye nakliyat</a></li>
           <li><a href="/hollandadan-turkiyeye-nakliyat">Hollanda'dan Türkiye'ye kargo</a></li>
           <li><a href="/belcikadan-turkiyeye-nakliyat">Belçika'dan Türkiye'ye nakliyat</a></li>
           <li><a href="/kesin-donus-nakliyat">Kesin dönüş nakliyat</a></li>
         </ul>
-        <h2>Hizmetlerimiz</h2>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Hizmetlerimiz</h2>
         <ul>
           <li><a href="/minivan-ekspres-tasimacilik">Minivan &amp; panelvan ekspres taşımacılık</a></li>
           <li><a href="/parsiyel-tasimacilik">Avrupa'ya parsiyel ve parça eşya taşıma</a></li>
@@ -217,7 +175,7 @@
           <li><a href="/ogrenci-esyasi-tasima">Öğrenci ve Erasmus eşyası taşıma</a></li>
           <li><a href="/fiyat-hesaplama">Nakliyat fiyat hesaplama (m³ ve palet)</a></li>
         </ul>
-        <h2>Gümrük ve Taşıma Rehberleri</h2>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Gümrük ve Taşıma Rehberleri</h2>
         <ul>
           <li><a href="/almanya-kargo-gumruk-vergisi">Almanya'ya kargoda gümrük vergisi</a></li>
           <li><a href="/avrupaya-gonderim-gumruk-belgeleri">Gümrük belgeleri: CMR, ATR, T1, fatura</a></li>
@@ -229,7 +187,7 @@
           <li><a href="/etgb-mikro-ihracat-rehberi">ETGB ve mikro ihracat rehberi</a></li>
           <li><a href="/yurtdisina-ev-tasima-rehberi">Yurtdışına ev taşıma rehberi</a></li>
         </ul>
-        <h2>Other Languages</h2>
+        <h2 style="font-size: 1.15rem; margin: 1.5rem 0 0.5rem;">Other Languages</h2>
         <ul>
           <li><a href="/de/umzug-in-die-tuerkei" hreflang="de">Umzug in die Türkei</a></li>
           <li><a href="/de/spedition-tuerkei" hreflang="de">Spedition Türkei</a></li>
@@ -242,8 +200,8 @@
           <li><a href="/fr/demenagement-turquie" hreflang="fr">Déménagement France–Turquie</a></li>
           <li><a href="/fr/transport-express-turquie" hreflang="fr">Transport express Turquie</a></li>
         </ul>
-        <p><a href="/track">Gönderi takibi</a> · Fiyat almak için WhatsApp'tan yazın ya da fiyat hesaplayıcıyı kullanın.</p>
-        </div>
+        <p><a href="/track">Gönderi takibi</a> · Fiyat almak için uygulamayı kullanın — sayfa yükleniyor…</p>
+      </div>
       </div>
       <!--PRERENDER-END-->
     </div>

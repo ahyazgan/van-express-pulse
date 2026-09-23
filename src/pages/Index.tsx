@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import TopBar from "@/components/TopBar";
 import BottomSheet from "@/components/BottomSheet";
 import AppNavigation from "@/components/AppNavigation";
@@ -7,7 +7,6 @@ import { useIsDesktop } from "@/hooks/useIsDesktop";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waHref } from "@/content/seo/contact";
 import usePageMeta from "@/hooks/usePageMeta";
-import { dismissStaticShell } from "@/lib/staticShell";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { ShippingMode } from "@/constants/domesticRates";
 
@@ -38,12 +37,6 @@ const Index = () => {
   // description and <html lang> off `t` therefore got the homepage indexed in
   // English while the crawled HTML said Turkish. The interface still switches;
   // only the document-level signals stay fixed.
-  // Our UI is in the DOM; let it paint once, then fade out the static hero.
-  useEffect(() => {
-    const id = requestAnimationFrame(() => requestAnimationFrame(dismissStaticShell));
-    return () => cancelAnimationFrame(id);
-  }, []);
-
   usePageMeta({
     title: HOME_META.title,
     description: HOME_META.description,
