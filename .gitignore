@@ -27,3 +27,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Logo drafts and backups (Higgsfield PNGs, old icon sets) — local only
+logo-taslaklar/
