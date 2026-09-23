@@ -3,7 +3,7 @@ import { motion, useDragControls, useAnimationControls, PanInfo, AnimatePresence
 import { Clock, Truck, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import QuickRouteCards, { QUICK_ROUTES, fromPrice } from "./QuickRouteCards";
+import QuickRouteCards, { QUICK_ROUTES, QuickRouteList, fromPrice } from "./QuickRouteCards";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { trackEvent } from "@/lib/analytics";
 import { HOME_COPY } from "./HomeHero";
@@ -25,6 +25,12 @@ interface BottomSheetProps {
   mode: ShippingMode;
   onModeChange: (m: ShippingMode) => void;
 }
+
+// "compact": quote button right under the addresses, one-line note, routes as a
+// short list; no vehicle picker (it changed nothing: not the price, not the
+// message) and no delivery badge (each route shows its own hours).
+// "classic": the earlier layout with all of those. Flip to go back.
+const PANEL_LAYOUT: "compact" | "classic" = "compact";
 
 const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
   const { language, t } = useLanguage();
@@ -250,6 +256,21 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                 />
               </div>
 
+              {/* Compact layout: the quote button sits right under the addresses and
+                  stays visible on phones with the sheet collapsed. */}
+              {PANEL_LAYOUT === "compact" && (
+                <div className="-mt-2 mb-4">
+                  <Button
+                    onClick={handleStartOrder}
+                    className="w-full h-12 btn-primary-glow rounded-xl text-sm gap-2"
+                  >
+                    <FileText className="w-4 h-4" />
+                    {t.home.getQuote}
+                  </Button>
+                  <p className="mt-2 text-center text-xs text-muted-foreground">{t.home.quoteNote}</p>
+                </div>
+              )}
+
               {/* Phone-only price strip, visible while the sheet is collapsed: the
                   map strip on a phone is too short for price bubbles, and this
                   is the first thing a visitor asked us to show. Desktop has the
@@ -268,7 +289,7 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                         animationControls.start({ height: expandedHeight });
                       }}
                       className={`flex shrink-0 items-center gap-2 rounded-xl border px-3 py-2 text-left ${
-                        selectedRouteId === r.id ? "border-accent bg-accent/10" : "border-border/40 bg-secondary/40"
+                        selectedRouteId === r.id ? "border-primary bg-primary/15" : "border-border/40 bg-secondary/40"
                       }`}
                     >
                       <span className="text-sm font-semibold">{r.to}</span>
@@ -286,6 +307,24 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                 transition={{ duration: 0.2 }}
                 className={isExpanded ? "block" : "hidden"}
               >
+                {PANEL_LAYOUT === "compact" ? (
+                  <>
+                    {/* Phones already have these routes in the strip above. */}
+                    {mode === "europe" && (
+                      <div className="hidden md:block">
+                        <QuickRouteList
+                          selectedId={selectedRouteId}
+                          onSelect={(route) => {
+                            setSelectedRouteId(route.id);
+                            setOrigin(route.from);
+                            setDestination(route.to);
+                          }}
+                        />
+                      </div>
+                    )}
+                  </>
+                ) : (
+                <>
                 {/* Delivery Badge */}
                 <div className="mb-4 flex justify-center">
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 border border-success/30">
@@ -372,6 +411,8 @@ const BottomSheet = ({ mode, onModeChange }: BottomSheetProps) => {
                     </li>
                   ))}
                 </ol>
+                </>
+                )}
 
                 {/* Marketing sections (visible when the sheet is expanded and scrolled) */}
                 <FeaturesSection />

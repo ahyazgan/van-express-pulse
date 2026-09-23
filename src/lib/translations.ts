@@ -39,6 +39,8 @@ export const translations = {
       popularRoutes: "Popüler Rotalar",
       bookNow: "Rezervasyon Yap",
       getQuote: "Fiyat Al",
+      // One-line replacement for the three "next steps" in the compact panel.
+      quoteNote: "Fiyatı görün, WhatsApp'tan gönderin; aynı gün yazılı teklif alın.",
       nextStepsTitle: "Sonra ne olur?",
       nextSteps: [
         "Adres ve eşya bilgisini WhatsApp'tan yazın.",
@@ -325,6 +327,7 @@ export const translations = {
       popularRoutes: "Popular Routes",
       bookNow: "Book Now",
       getQuote: "Get Quote",
+      quoteNote: "See the price, send it on WhatsApp and get a written quote the same day.",
       nextStepsTitle: "What happens next?",
       nextSteps: [
         "Send the addresses and what you are shipping on WhatsApp.",

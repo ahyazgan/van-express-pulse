@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { SHIPPING_RATES } from "@/constants/shippingRates";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export interface QuickRoute {
   id: number;
@@ -99,6 +100,57 @@ const QuickRouteCards = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
           </motion.button>
         ))}
       </div>
+    </div>
+  );
+};
+
+// English display names; `to` stays Turkish because it is the tariff key.
+const NAME_EN: Record<string, string> = { Londra: "London" };
+
+/**
+ * Compact list of the same routes: one row per city (flag, name, hours, price).
+ * Takes about half the height of the 2x2 cards. Clicking a row fills the
+ * destination.
+ */
+export const QuickRouteList = ({ onSelect, selectedId }: QuickRouteCardsProps) => {
+  const { t, language } = useLanguage();
+  return (
+    <div className="mb-4">
+      <h3 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        {t.home.popularRoutes}
+      </h3>
+      <ul className="divide-y divide-border/40 rounded-xl border border-border/40 bg-secondary/20">
+        {routes.map((route) => {
+          const active = selectedId === route.id;
+          return (
+            <li key={route.id}>
+              <button
+                type="button"
+                onClick={() => onSelect?.(route)}
+                aria-pressed={active}
+                className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm transition-colors first:rounded-t-xl last:rounded-b-xl ${
+                  active ? "bg-primary/15" : "hover:bg-secondary/60"
+                }`}
+              >
+                <img
+                  src={getFlagUrl(route.toCountryCode)}
+                  alt=""
+                  className="h-5 w-5 shrink-0 rounded-full object-cover"
+                />
+                <span className="flex-1 font-semibold text-foreground">
+                  {language === "en" ? NAME_EN[route.to] ?? route.to : route.to}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {language === "en" ? route.time.replace(" saat", " h") : route.time}
+                </span>
+                {fromPrice(route.to) && (
+                  <span className="w-[4.5rem] text-right font-bold text-foreground">{fromPrice(route.to)}</span>
+                )}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
