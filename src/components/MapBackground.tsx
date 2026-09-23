@@ -4,6 +4,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { SHIPPING_RATES } from "@/constants/shippingRates";
 import { DOMESTIC_CITIES, type DomesticCity, type ShippingMode } from "@/constants/domesticRates";
 import { destinationEvents } from "@/lib/destinationEvents";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   buildSelectedPath,
   pathDistanceKm,
@@ -314,6 +315,51 @@ const PRICE_BUBBLE_STYLE: "classic" | "merged" = "merged";
 // our Turkish ones ("Viyana"). Hide its city/town labels; country names stay.
 const HIDE_BASEMAP_CITY_LABELS = true;
 
+// Basemap labels (countries, seas, regions) follow the site language. The CARTO
+// tiles carry OSM names per language ("name:tr": "Polonya"); the stock style
+// only reads the English field. Turkish names are shown in normal case: the
+// style's "uppercase" is not locale-aware and would print BELÇIKA, not BELÇİKA.
+type LabelOriginal = { field: unknown; transform: unknown };
+const applyBasemapLanguage = (
+  m: maplibregl.Map,
+  lang: "tr" | "en",
+  originals: Map<string, LabelOriginal>,
+) => {
+  for (const layer of m.getStyle().layers ?? []) {
+    if (layer.type !== "symbol") continue;
+    if (!originals.has(layer.id)) {
+      const field = m.getLayoutProperty(layer.id, "text-field");
+      if (field === undefined || !JSON.stringify(field).includes("name")) continue;
+      originals.set(layer.id, { field, transform: m.getLayoutProperty(layer.id, "text-transform") });
+    }
+    const orig = originals.get(layer.id)!;
+    if (lang === "tr") {
+      m.setLayoutProperty(layer.id, "text-field", ["coalesce", ["get", "name:tr"], ["get", "name_en"], ["get", "name"]]);
+      if (orig.transform === "uppercase") m.setLayoutProperty(layer.id, "text-transform", "none");
+    } else {
+      m.setLayoutProperty(layer.id, "text-field", orig.field as maplibregl.ExpressionSpecification);
+      m.setLayoutProperty(layer.id, "text-transform", orig.transform as maplibregl.ExpressionSpecification);
+    }
+  }
+};
+
+// English names for the cities whose Turkish label differs; the rest are the same
+// in both languages. City markers and price bubbles switch with the site language.
+const CITY_NAME_EN: Record<string, string> = {
+  istanbul: "Istanbul", sofia: "Sofia", belgrade: "Belgrade", budapest: "Budapest",
+  vienna: "Vienna", munich: "Munich", prague: "Prague", milan: "Milan",
+  marseille: "Marseille", london: "London", cologne: "Cologne", bucharest: "Bucharest",
+  rome: "Rome", strasbourg: "Strasbourg", brussels: "Brussels", antwerp: "Antwerp",
+  warsaw: "Warsaw", krakow: "Krakow", poznan: "Poznan", zurich: "Zurich",
+  copenhagen: "Copenhagen", gothenburg: "Gothenburg", malmo: "Malmo",
+};
+const cityName = (id: string, trLabel: string, lang: "tr" | "en") =>
+  lang === "en" ? CITY_NAME_EN[id] ?? trLabel : trLabel;
+// Each label carries its own lang so CSS uppercase uses the right rules: the
+// page stays lang="tr", which would turn "Milan" into "MİLAN".
+const cityLabelAttrs = (id: string, trLabel: string, lang: "tr" | "en") =>
+  `data-city-id="${id}" data-tr="${trLabel}" lang="${lang}"`;
+
 const cityTier = (id: string): 1 | 2 | 3 =>
   CITY_TIERS[1].includes(id) ? 1 : CITY_TIERS[2].includes(id) ? 2 : 3;
 /** Highest tier whose bubbles and labels show at this zoom. */
@@ -322,6 +368,11 @@ const visibleTier = (zoom: number): 1 | 2 | 3 => (zoom < 5 ? 1 : zoom < 6 ? 2 : 
 const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
+  const { language } = useLanguage();
+  // Read inside the map's load handler, which is created once per mode.
+  const languageRef = useRef(language);
+  languageRef.current = language;
+  const labelOriginalsRef = useRef<Map<string, LabelOriginal>>(new Map());
   const markersRef = useRef<maplibregl.Marker[]>([]);
   const priceMarkersRef = useRef<{ marker: maplibregl.Marker; cityId: string }[]>([]);
   const vanMarkersRef = useRef<maplibregl.Marker[]>([]);
@@ -728,7 +779,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           <div class="marker-container ${city.isPrimary ? "primary" : "secondary"} tier-${cityTier(city.id)}${hasBubble ? " has-bubble" : ""}">
             ${city.isPrimary ? '<div class="pulse-ring"></div>' : ''}
             <div class="marker-dot"></div>
-            <div class="marker-label">${city.label}</div>
+            <div class="marker-label" ${cityLabelAttrs(city.id, city.label, languageRef.current)}>${cityName(city.id, city.label, languageRef.current)}</div>
           </div>
         `;
 
@@ -763,7 +814,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         el.innerHTML = PRICE_BUBBLE_STYLE === "merged"
           ? `
           <div class="price-tag merged">
-            <span class="price-tag-city">${cityLabel}</span>
+            <span class="price-tag-city" ${cityLabelAttrs(city.id, cityLabel, languageRef.current)}>${cityName(city.id, cityLabel, languageRef.current)}</span>
             <span class="price-tag-text"><span class="price-tag-cur">€</span>${priceText}<span class="price-tag-plus">+</span></span>
           </div>
         `
@@ -803,6 +854,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           }
         }
       }
+      applyBasemapLanguage(map.current, languageRef.current, labelOriginalsRef.current);
       // The desktop side panel covers the left 420px; shift the map's usable
       // area so Spain/Portugal are not permanently behind it.
       if (window.matchMedia("(min-width: 768px)").matches) {
@@ -908,6 +960,8 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       selectionActiveRef.current = false;
       pendingSelectionRef.current = null;
       mapReadyRef.current = false;
+      // The next map loads a fresh style; its originals are captured again.
+      labelOriginalsRef.current = new Map();
 
       // Cleanup map
       if (map.current) {
@@ -918,6 +972,18 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
     // applySelection/startDecorativeVans only touch refs — rebuild strictly on mode
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mode]);
+
+  // Language switch: relabel the basemap in place (before load, the load
+  // handler applies it).
+  useEffect(() => {
+    if (map.current && mapReadyRef.current) {
+      applyBasemapLanguage(map.current, language, labelOriginalsRef.current);
+    }
+    mapContainer.current?.querySelectorAll<HTMLElement>("[data-city-id]").forEach((el) => {
+      el.textContent = cityName(el.dataset.cityId!, el.dataset.tr!, language);
+      el.lang = language;
+    });
+  }, [language]);
 
   return (
     <>
