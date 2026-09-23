@@ -306,6 +306,14 @@ const CITY_TIERS: Record<1 | 2 | 3, string[]> = {
   2: ["stuttgart", "cologne", "hamburg", "brussels", "rotterdam", "zurich", "prague", "lyon", "marseille", "rome", "warsaw", "madrid", "barcelona"],
   3: [],
 };
+// Price bubble design. "classic": white pill with the price only, city name in
+// its own chip next to the dot (the original). "merged": city name + price in a
+// single chip with a pointer to the dot, own chip hidden. Flip to go back.
+const PRICE_BUBBLE_STYLE: "classic" | "merged" = "merged";
+// The CARTO basemap prints its own English city names ("Vienna") right next to
+// our Turkish ones ("Viyana"). Hide its city/town labels; country names stay.
+const HIDE_BASEMAP_CITY_LABELS = true;
+
 const cityTier = (id: string): 1 | 2 | 3 =>
   CITY_TIERS[1].includes(id) ? 1 : CITY_TIERS[2].includes(id) ? 2 : 3;
 /** Highest tier whose bubbles and labels show at this zoom. */
@@ -466,6 +474,8 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
     removeSelectionArtifacts();
     stopDecorativeVans();
     selectionActiveRef.current = true;
+    // Bubbles are hidden in single-route mode; bring the plain city names back.
+    mapContainer.current?.setAttribute("data-selection", "1");
     if (m.getLayer("route-line")) m.setLayoutProperty("route-line", "visibility", "none");
     if (m.getLayer("route-glow")) m.setLayoutProperty("route-glow", "visibility", "none");
     priceMarkersRef.current.forEach(({ marker }) => {
@@ -559,6 +569,7 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
     const m = map.current;
     if (!m || !mapReadyRef.current || !selectionActiveRef.current) return;
     selectionActiveRef.current = false;
+    mapContainer.current?.removeAttribute("data-selection");
 
     removeSelectionArtifacts();
     const source = m.getSource("selected-route") as maplibregl.GeoJSONSource | undefined;
@@ -712,8 +723,9 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       activeCities.forEach((city) => {
         const el = document.createElement("div");
         el.className = "city-marker";
+        const hasBubble = !isDomestic && city.id !== "istanbul" && !!SHIPPING_RATES[city.label];
         el.innerHTML = `
-          <div class="marker-container ${city.isPrimary ? "primary" : "secondary"} tier-${cityTier(city.id)}">
+          <div class="marker-container ${city.isPrimary ? "primary" : "secondary"} tier-${cityTier(city.id)}${hasBubble ? " has-bubble" : ""}">
             ${city.isPrimary ? '<div class="pulse-ring"></div>' : ''}
             <div class="marker-dot"></div>
             <div class="marker-label">${city.label}</div>
@@ -747,9 +759,17 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         if (!isMajorHub) {
           el.style.display = "none";
         }
-        el.innerHTML = `
+        const priceText = minPrice.toLocaleString('tr-TR');
+        el.innerHTML = PRICE_BUBBLE_STYLE === "merged"
+          ? `
+          <div class="price-tag merged">
+            <span class="price-tag-city">${cityLabel}</span>
+            <span class="price-tag-text"><span class="price-tag-cur">€</span>${priceText}<span class="price-tag-plus">+</span></span>
+          </div>
+        `
+          : `
           <div class="price-tag">
-            <span class="price-tag-text">€${minPrice.toLocaleString('tr-TR')}+</span>
+            <span class="price-tag-text">€${priceText}+</span>
           </div>
         `;
         
@@ -762,7 +782,8 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         const priceMarker = new maplibregl.Marker({
           element: el,
           anchor: "bottom",
-          offset: [0, -8],
+          // Merged chips end in a pointer; lift them so its tip clears the dot.
+          offset: [0, PRICE_BUBBLE_STYLE === "merged" ? -14 : -8],
         })
           .setLngLat(city.coords)
           .addTo(map.current!);
@@ -771,7 +792,17 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
       });
 
       // Add zoom event listener for price tag visibility
+      mapContainer.current?.setAttribute("data-bubbles", PRICE_BUBBLE_STYLE);
       updateCityLabelVisibility(map.current.getZoom());
+
+      // Basemap's own city names would duplicate our markers (see constant).
+      if (HIDE_BASEMAP_CITY_LABELS) {
+        for (const layer of map.current.getStyle().layers ?? []) {
+          if (layer.type === "symbol" && /^place_(city|capital|town)/.test(layer.id)) {
+            map.current.setLayoutProperty(layer.id, "visibility", "none");
+          }
+        }
+      }
       // The desktop side panel covers the left 420px; shift the map's usable
       // area so Spain/Portugal are not permanently behind it.
       if (window.matchMedia("(min-width: 768px)").matches) {
@@ -966,6 +997,12 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
           color: hsl(220, 15%, 15%);
           border: 1px solid rgba(0, 0, 0, 0.1);
         }
+
+        /* Merged bubbles carry the city name themselves; the separate chip goes
+           away except in single-route mode, where bubbles are hidden. */
+        [data-bubbles="merged"]:not([data-selection]) .marker-container.has-bubble .marker-label {
+          display: none;
+        }
         
         /* Price Tag Markers - Elegant Pill Design */
         .price-tag-marker {
@@ -1005,6 +1042,79 @@ const MapBackground = ({ mode = "europe" }: { mode?: ShippingMode }) => {
         .price-tag-text {
           display: block;
           letter-spacing: -0.3px;
+        }
+
+        /* ---- Merged design: city name + price, pointer to the dot ---- */
+        .price-tag.merged {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 5px 12px 6px;
+          border-radius: 12px;
+          font-family: 'Inter', system-ui, sans-serif;
+          line-height: 1.1;
+        }
+        .price-tag.merged .price-tag-city {
+          font-size: 9.5px;
+          font-weight: 600;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+          color: hsl(220, 12%, 45%);
+        }
+        .price-tag.merged .price-tag-text {
+          font-size: 14px;
+          font-weight: 800;
+          letter-spacing: -0.2px;
+          font-variant-numeric: tabular-nums;
+          color: hsl(220, 50%, 20%);
+        }
+        .price-tag.merged .price-tag-cur,
+        .price-tag.merged .price-tag-plus {
+          font-size: 11px;
+          font-weight: 700;
+          color: hsl(220, 12%, 50%);
+        }
+        .price-tag.merged .price-tag-cur { margin-right: 1px; }
+        .price-tag.merged .price-tag-plus { margin-left: 1px; }
+        /* Pointer: white fill drawn over a border-colored triangle. */
+        .price-tag.merged::before,
+        .price-tag.merged::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+        }
+        .price-tag.merged::before {
+          bottom: -7px;
+          border-top: 7px solid hsl(220, 15%, 85%);
+        }
+        .price-tag.merged::after {
+          bottom: -5px;
+          border-top: 6px solid rgba(255, 255, 255, 0.95);
+        }
+        .price-tag-marker.major-hub .price-tag.merged::before {
+          border-top-color: hsl(45, 100%, 50%);
+        }
+        .price-tag.merged:hover .price-tag-city,
+        .price-tag.merged:hover .price-tag-text,
+        .price-tag.merged:hover .price-tag-cur,
+        .price-tag.merged:hover .price-tag-plus,
+        .price-tag-marker.pulse-attention .price-tag.merged .price-tag-city,
+        .price-tag-marker.pulse-attention .price-tag.merged .price-tag-text,
+        .price-tag-marker.pulse-attention .price-tag.merged .price-tag-cur,
+        .price-tag-marker.pulse-attention .price-tag.merged .price-tag-plus {
+          color: hsl(220, 15%, 10%);
+        }
+        .price-tag.merged:hover::after,
+        .price-tag-marker.pulse-attention .price-tag.merged::after {
+          border-top-color: hsl(45, 100%, 50%);
+        }
+        .price-tag.merged:hover::before,
+        .price-tag-marker.pulse-attention .price-tag.merged::before {
+          border-top-color: hsl(45, 100%, 45%);
         }
         
         /* Pulse attention animation for flyTo */
