@@ -55,23 +55,27 @@ const ConsentBanner = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 40 }}
-          className="fixed inset-x-0 bottom-0 z-[60] p-4 pointer-events-none safe-bottom md:left-[420px]"
+          // Sits just above the bottom nav (safe-area pad + 8px margin + 64px bar)
+          // instead of on top of it, so the nav and the WhatsApp button stay usable
+          // while the visitor decides. On phones it also leaves room on the right
+          // for the floating WhatsApp button.
+          className="fixed inset-x-0 z-[60] px-4 pointer-events-none bottom-[calc(max(env(safe-area-inset-bottom),16px)+80px)] md:left-[420px]"
         >
-          <div className="pointer-events-auto mr-20 max-w-md sm:mx-auto rounded-2xl border border-border bg-card/95 backdrop-blur-xl shadow-lg p-4 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-              <Cookie className="w-5 h-5 text-primary" />
-            </div>
-            <p className="text-xs text-muted-foreground flex-1">{t.consent.message}</p>
-            <div className="flex gap-2 flex-shrink-0">
+          <div
+            className="pointer-events-auto mr-20 max-w-md sm:mx-auto rounded-xl border border-border bg-card/95 backdrop-blur-xl shadow-lg px-3 py-2.5 flex flex-wrap items-center gap-x-3 gap-y-2"
+          >
+            <Cookie className="hidden sm:block w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />
+            <p className="text-xs leading-snug text-muted-foreground flex-1 min-w-[10rem]">{t.consent.message}</p>
+            <div className="flex gap-2 ml-auto flex-shrink-0">
               <Button
                 variant="outline"
                 size="sm"
-                className="rounded-lg h-8"
+                className="rounded-lg h-7 px-3 text-xs"
                 onClick={() => choose(false)}
               >
                 {t.consent.reject}
               </Button>
-              <Button size="sm" className="rounded-lg h-8" onClick={() => choose(true)}>
+              <Button size="sm" className="rounded-lg h-7 px-3 text-xs" onClick={() => choose(true)}>
                 {t.consent.accept}
               </Button>
             </div>
